@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Pages on Blog của tui</title>
+    <link>https://blogcuatui.xyz/pages/</link>
+    <description>Recent content in Pages on Blog của tui</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <atom:link href="https://blogcuatui.xyz/pages/atom.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Giới thiệu</title>
+      <link>https://blogcuatui.xyz/about/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://blogcuatui.xyz/about/</guid>
+      <description>&lt;p&gt;Tui muốn tạo cho mình một cái blog thật đơn giản, nơi tôi có thể chia sẻ mọi thứ: nhật ký, suy nghĩ, bài học hay, những bức ảnh đẹp, những câu nói hay&amp;hellip; Bất cứ thứ gì có ý nghĩa đối với tui đều được viết trên này.&lt;/p&gt;&#xA;&lt;p&gt;Thật ra đây là blog cá nhân nên tui cũng không biết có ai đọc được nó hay không? Nhưng mặc kệ có ai đọc được hay không thì tui vẫn sẽ viết để sau này có dịp đọc lại mà hồi tưởng về một thời đã qua, cũng có cái để suy ngẫm, đối chiếu và ngắm nhìn sự thay đổi quả tiềm thức qua thời gian.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Đang đọc</title>
+      <link>https://blogcuatui.xyz/reading/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://blogcuatui.xyz/reading/</guid>
+      <description>&lt;p&gt;Tui đang đọc những quyển sách này:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;Ăn gì không chết&lt;/strong&gt; &lt;em&gt;by&lt;/em&gt; Michael Greger&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Thức ăn quyết định số phận của bạn&lt;/strong&gt; &lt;em&gt;by&lt;/em&gt; Namboku Mizuno&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Đi tìm lẽ sống&lt;/strong&gt; &lt;em&gt;by&lt;/em&gt; Viktor Frankl&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
+    </item>
+    <item>
+      <title>Tagcloud</title>
+      <link>https://blogcuatui.xyz/pages/tagcloud/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://blogcuatui.xyz/pages/tagcloud/</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>
