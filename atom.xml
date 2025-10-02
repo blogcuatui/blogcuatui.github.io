@@ -1,0 +1,327 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    
+    <title>Blog của tui</title>
+    <description>Đơn giản chỉ là ghi và chép!</description>
+    <link>https://blogcuatui.xyz/</link>
+    
+    <language>en</language>
+    <copyright>Copyright 2025, Ronalds Vilcins</copyright>
+    <lastBuildDate>Mon, 29 Sep 2025 19:45:28 +0700</lastBuildDate>
+    <generator>Hugo - gohugo.io</generator>
+    <docs>http://cyber.harvard.edu/rss/rss.html</docs>
+    <atom:link href="https://ronaldsvilcins.com/atom.xml" rel="self" type="application/atom+xml"/>
+    
+    <item>
+      <title>Viết blog bằng obsidian trên nền tảng hugo</title>
+      <link>https://blogcuatui.xyz/posts/viet-blog-bang-obsidian-tren-nen-tang-hugo/</link>
+      <description>&lt;p&gt;Trước khi tạo ra trang blog này thì tui sử dụng Jekyll để viết blog, không cần phải rành về lập trình, biết về code để có thể tạo blog trên nền tảng Jekyll. Chỉ cần google cách tạo blog với jekyll là tui đã có thể tự tạo một trang blog để viết theo giao diện đồ sộ sẵn có. Và rồi đến một ngày nọ tui biết đến Hugo và bị nó mê hoặc luôn.&lt;/p&gt;
+&lt;p&gt;Ngày trước muốn blog trên nền tảng jekyll sử dụng github page chỉ cần xiên (fork) nó về &amp;ldquo;repo&amp;rdquo; trong tài khoản github là được. Và rồi hugo đến với tui với một sự tình cờ ngẫu nhiên khi vào một vài blog sử dụng hugo làm nền tảng. Nói thiệt là tạo blog với hugo đúng đã: build siêu nhanh, chỉ cần 1 file chạy, bảo mật và siêu nhẹ, live reload cực đã (khi chỉnh sửa CSS xong là có thể xem sự thay đổi bằng lệnh hugo server)&amp;hellip;&lt;/p&gt;
+&lt;p&gt;Và nó cực kì dễ CI/CD &amp;amp; deploy: chơi tốt với GitHub Pages, Netlify, Vercel; mỗi lần push là auto build &amp;amp; deploy. Tuy nhiên điều sướng nhất là khi sử dụng Obsidian là tui sử dụng Vault chính là thư mục contents trên source hugo trên máy tính, như bài viết này chẳng hạn, tui viết nó trên app obsidian xong rồi chỉnh sửa thêm thắt này kia xong xuôi rồi từ từ push nó lên github page.&lt;/p&gt;
+&lt;p&gt;Và từ đó hễ mỗi lần mắc viết blog thì chỉ cần một chiếc điện thoại có cài sẵn app obsidian và sử dụng vault contents trong thư mục blog là có thể viết thoải mái rồi về nhà chỉnh sửa thêm bớt trước khi gửi nó lên mạng. Từ đó về sau mà chuyện viết blog trở nên dễ dàng và cảm thấy rất muốn viết nhiều hơn.&lt;/p&gt;
+</description>
+      <author>ronalds.vilcins@gmail.com (Ronalds Vilcins)</author>
+      <guid>https://blogcuatui.xyz/posts/viet-blog-bang-obsidian-tren-nen-tang-hugo/</guid>
+      <pubDate>Mon, 29 Sep 2025 19:45:28 +0700</pubDate>
+    </item>
+    
+    <item>
+      <title>11 nguyên tắc để viết hay hơn</title>
+      <link>https://blogcuatui.xyz/posts/11-nguyen-tac-de-viet-hay-hon/</link>
+      <description>&lt;p&gt;Mặc dù không phải là một người viết hay nhưng đôi khi tui cũng hay viết, trước khi nhấn &amp;ldquo;public&amp;rdquo; một bài viết nào cũng đắn đo mãi có nên hay không nên. Tui tự ghi chú lại những nguyên tắc này theo từng bước để dần hoàn thiện kỹ năng viết của bản thân.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Tin nhắn cũng là văn bản → Viết rõ ràng, rà soát trước khi gửi.&lt;/li&gt;
+&lt;li&gt;Ngôn từ là công cụ → Học từ mới, dùng đúng lúc.&lt;/li&gt;
+&lt;li&gt;Viết mỗi ngày → Viết đều để “cơ bắp” viết không yếu đi.&lt;/li&gt;
+&lt;li&gt;Dấu câu = nhịp điệu → Câu ngắn mạnh mẽ, câu dài tuôn chảy.&lt;/li&gt;
+&lt;li&gt;Bỏ vòng vo → Cắt mở đầu thừa, đi thẳng vấn đề.&lt;/li&gt;
+&lt;li&gt;Tôn trọng thời gian độc giả → Ngắn gọn, súc tích.&lt;/li&gt;
+&lt;li&gt;30% viết – 70% sửa → Viết hay = viết lại.&lt;/li&gt;
+&lt;li&gt;Mỗi câu phải đẩy câu chuyện đi tiếp → Nếu không, bỏ.&lt;/li&gt;
+&lt;li&gt;Ít trạng từ thôi → Dùng từ chính xác thay cho “rất/ cực kỳ”.&lt;/li&gt;
+&lt;li&gt;Nắm luật để phá luật → Học ngữ pháp, rồi sáng tạo.&lt;/li&gt;
+&lt;li&gt;Đọc &amp;amp; học về viết → Luôn trau dồi, luyện tập thêm.&lt;/li&gt;
+&lt;/ol&gt;
+</description>
+      <author>ronalds.vilcins@gmail.com (Ronalds Vilcins)</author>
+      <guid>https://blogcuatui.xyz/posts/11-nguyen-tac-de-viet-hay-hon/</guid>
+      <pubDate>Sat, 27 Sep 2025 18:49:14 +0700</pubDate>
+    </item>
+    
+    <item>
+      <title>Giáo án 5K của tui</title>
+      <link>https://blogcuatui.xyz/posts/giao-an-5k-cua-tui/</link>
+      <description>&lt;p&gt;Dạo này thấy nhà nhà chạy bộ, người người chạy bộ, nhiều giải phong trào của công ty và ngân hàng nổ ra khiến cho tui có một chút nôn nao khó tả. Mặc dù đã từ bỏ đi làm công ăn lương rồi nhưng cũng ấp ủ một cái kế hoạch chạy để khỏe với một số mục tiêu sau đây:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;Hoàn thành 5K trong 30–35 phút (pace trung bình 6:00–7:00/km).&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Tạo thói quen chạy đều đặn, tránh chấn thương.&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Nâng cao thể lực, sức bền tim phổi.&lt;/strong&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Hồi trước lúc còn đi học có biết qua giáo án 5K của &lt;a href=&#34;https://yeuchaybo.com&#34;&gt;https://yeuchaybo.com&lt;/a&gt; nhưng thời gian thắm thoắt thoi đưa cộng với cái thói quen lười biếng mà gần chục năm rồi vẫn chưa thực hiện được mục tiêu đề ra, hôm nay nhờ có chát GPT nên cũng xin tí kế hoạch cho dự án 5K này. Bên dưới là kế hoạch của giáo án 5K chi tiết còn hơn chữ chi tiết, tui chia sẻ lại ở đây để có ai hữu duyên tìm đến thì có động lực mà làm theo. Bản này sẽ được cập nhật liên tục để đánh giá tác động và sự thay đổi của cơ thể trước và sau khi thực hiện theo giáo án 5K này.&lt;/p&gt;
+&lt;p&gt;📅 &lt;strong&gt;Lịch tập 8 tuần&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Tuần 1–2: Làm quen&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Ngày 1: Đi bộ nhanh 5 phút khởi động → Chạy 2 phút, đi bộ 2 phút × 6 lần (tổng 24 phút).&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Ngày 2: Nghỉ hoặc tập core nhẹ (plank, gập bụng).&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Ngày 3: Chạy 2.5 km (kết hợp đi bộ nếu mệt).&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Ngày 4: Nghỉ.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Ngày 5: Chạy 2 phút, đi bộ 1 phút × 8 lần (tổng 24 phút).&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Ngày 6: Đi bộ nhanh / đạp xe 30 phút.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Ngày 7: Nghỉ hoàn toàn.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;👉 Mục tiêu: chạy liên tục được 2–3 km.&lt;/p&gt;
+&lt;p&gt;Tuần 3–4: Tăng dần quãng đường&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Ngày 1: Chạy 3 km (pace thoải mái).&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Ngày 2: Core/strength training 20 phút.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Ngày 3: Chạy biến tốc: 400m nhanh + 400m chậm × 4 lần.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Ngày 4: Nghỉ.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Ngày 5: Chạy 3.5 km.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Ngày 6: Đi bộ nhanh hoặc đạp xe 30–40 phút.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Ngày 7: Nghỉ.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;👉 Mục tiêu: chạy liền mạch 3.5 km.&lt;/p&gt;
+&lt;p&gt;Tuần 5–6: Xây sức bền&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Ngày 1: Chạy 4 km.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Ngày 2: Core + squats, lunges.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Ngày 3: Interval: 800m nhanh + 400m chậm × 4 lần.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Ngày 4: Nghỉ.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Ngày 5: Chạy dài 4.5 km.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Ngày 6: Cardio chéo (bơi, đạp xe).&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Ngày 7: Nghỉ.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;👉 Mục tiêu: chạy liền mạch 4.5 km.&lt;/p&gt;
+&lt;p&gt;Tuần 7–8: Hoàn thành 5K&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Ngày 1: Chạy 3 km thả lỏng.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Ngày 2: Strength training nhẹ.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Ngày 3: Interval: 1 km pace nhanh hơn thường 30s/km × 3 lần.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Ngày 4: Nghỉ.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Ngày 5: Chạy dài 5 km (pace dễ chịu).&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Ngày 6: Cardio nhẹ.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Ngày 7: Nghỉ.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;👉 Mục tiêu: hoàn thành 5K liên tục.&lt;/p&gt;
+&lt;p&gt;✅ Lưu ý&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Khởi động: 5–10 phút (xoay khớp, chạy bước nhỏ, skipping).&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Thả lỏng: 5 phút đi bộ + giãn cơ sau chạy.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Tốc độ: 80% quãng chạy giữ pace “thoải mái nói chuyện được”.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Nguyên tắc 10%: Tăng quãng đường/tốc độ không quá 10% mỗi tuần để tránh chấn thương.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Ngủ &amp;amp; dinh dưỡng: Ăn đủ carb, protein, uống đủ nước, ngủ 7–8h.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+      <author>ronalds.vilcins@gmail.com (Ronalds Vilcins)</author>
+      <guid>https://blogcuatui.xyz/posts/giao-an-5k-cua-tui/</guid>
+      <pubDate>Tue, 23 Sep 2025 19:57:36 +0700</pubDate>
+    </item>
+    
+    <item>
+      <title>Một số thay đổi trên blog gần đây</title>
+      <link>https://blogcuatui.xyz/posts/mot-so-thay-doi-tren-blog-gan-day/</link>
+      <description>&lt;p&gt;Nhìn cái trang blog mới toanh mà &amp;ldquo;hắn&amp;rdquo; dám viết bài về một số thay đổi trên blog gần đây?&lt;/p&gt;
+&lt;p&gt;Thật ra thì tui đã bắt đầu viết blog từ năm 2008, khởi nguồn là viết blog trên Yahoo 360, kế đến là Wordpress free rồi đến Wordpress trên hosting, xong rồi đến Tumblr, Jekyll và cuối cùng tui dừng lại ở Hugo. Và cái công thật sự của cái blog này là nhờ chatGPT, nó hướng dẫn tui từng li từng tí một và cộng với một số kiến thức làm blog từ năm 2008 tới giờ mới ra được thành quả như hiện tại.&lt;/p&gt;
+&lt;p&gt;À! Phải nói là tui chẳng biết tí gì về lập trình cả, tui học nông nghiệp nhưng nhờ có chút đam mê tin học nên cũng làm mọi thứ một cách tàm tạm trong khả năng của bản thân. Thật sự là rất vui khi được viết blog, nơi có thể giãi bày những suy nghĩ, tâm trạng cá nhân mà chẳng cần ngại ngùng trước đám đông. Bởi thực tế chưa chắc ai có thể đọc được blog này ngoài mấy anh mấy chị BOT của google hay một công cụ tìm kiếm nào đó. Nghĩ đến đây tui thấy bớt mắc cỡ hẳn ra.&lt;/p&gt;
+&lt;p&gt;Trước khi tui bắt đầu xây dựng blog này, tui có mê cái thiết kế của một lập trình viên trên github tại &lt;a href=&#34;https://riemats.com&#34;&gt;https://riemats.com&lt;/a&gt;. Thích cái thiết kế của anh này nên tui tùy chỉnh lại chút đỉnh sao cho nó gần giống với cái trang đó, tuy không giống được 100% nhưng với tui chỉ bấy nhiêu đây thôi mà tui cũng vui rồi, xem như là từ đây về sau có chỗ bộc bạch cảm xúc, trải lòng các kiểu con đà điểu đồ.
+Bài viết này đặt nền tảng cho những bài chia sẻ sau này, cám ơn bạn nào vô tình đọc được những bài viết này!&lt;/p&gt;
+</description>
+      <author>ronalds.vilcins@gmail.com (Ronalds Vilcins)</author>
+      <guid>https://blogcuatui.xyz/posts/mot-so-thay-doi-tren-blog-gan-day/</guid>
+      <pubDate>Mon, 22 Sep 2025 20:25:25 +0700</pubDate>
+    </item>
+    
+    <item>
+      <title>Uống trà mọi lúc</title>
+      <link>https://blogcuatui.xyz/posts/uong-tra-moi-luc/</link>
+      <description>&lt;p&gt;Tui đặt cái tiêu đề bài viết này thật khó hiểu nhưng mục đích của tiêu đề này là tôi có thể uống trà ở mọi nơi và trong mọi hoàn cảnh.
+Lần đầu tiên tôi biết đến trà Bancha là ở trong một quyển sách về thực dưỡng của Nhật Bốn.
+À mà để tôi nói tại sao là trà Bancha mà không phải là ôlong, lipton, hay trà lài, trà cúc…
+Thật ra Bancha là một loại trà xanh phổ biến ở Nhật Bốn, thu hoạch muộn hơn so với các loại trà khác. Nó không chỉ nhẹ nhàng, dễ uống, không gây sót ruột hay mất ngủ (rất ít caffein) mà nó còn rất tốt cho sức khỏe. Phải kể đến một vài công dụng của nó như sau:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Giàu chất chống oxy hóa&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;Chứa catechin – giúp giảm stress oxy hóa, bảo vệ tế bào, hỗ trợ làm chậm lão hóa.&lt;/li&gt;
+&lt;li&gt;Thường ít hơn Sencha nhưng vẫn đủ để mang lại lợi ích cho sức khỏe.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;Hỗ trợ tiêu hóa&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;Uống Bancha sau bữa ăn có thể giúp hỗ trợ hệ tiêu hóa, giảm đầy hơi và cảm giác nặng bụng.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;Giảm căng thẳng, thư giãn&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;Chứa theanine, một amino acid giúp tăng cảm giác thư giãn, giảm căng thẳng mà không làm buồn ngủ.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start=&#34;4&#34;&gt;
+&lt;li&gt;Thải độc, lợi tiểu nhẹ&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;Bancha có tính mát, lợi tiểu nhẹ, giúp cơ thể đào thải độc tố.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start=&#34;5&#34;&gt;
+&lt;li&gt;Hỗ trợ giảm cân&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;Nhờ catechin và cafein thấp, uống Bancha có thể hỗ trợ trao đổi chất, giúp kiểm soát cân nặng nhẹ nhàng khi kết hợp với chế độ ăn hợp lý.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start=&#34;6&#34;&gt;
+&lt;li&gt;Ít caffeine, thích hợp mọi lúc&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;Bancha caffeine thấp, uống buổi chiều hoặc tối vẫn ổn, khác với các loại trà xanh thu hoạch sớm.
+Đây là loại trà tôi uống hàng ngày, vì giá rẻ mà tôi cũng có thể dùng với những dụng cụ giá rẻ của tôi. Một ly giữ nhiệt lót gốm và một bộ lọc trà inox, khi đâu đó tôi thường bỏ một ít trà trong túi zip và mang đi. Chỉ cần có nước nóng là có thể pha trà mà không cần phải rườm rà trong nhiều khâu.
+Tôi thường lấy khoảng 4 -5ß lá trà, rửa nhẹ qua nước rồi vò nát xong rồi ngâm trà vào nước nóng khoảng 5 phút rồi uống. Có thể đổ thêm 2 lần nước sôi nữa để uống trà loãng.&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+      <author>ronalds.vilcins@gmail.com (Ronalds Vilcins)</author>
+      <guid>https://blogcuatui.xyz/posts/uong-tra-moi-luc/</guid>
+      <pubDate>Tue, 16 Sep 2025 14:36:34 +0700</pubDate>
+    </item>
+    
+    <item>
+      <title>Mua thứ ta thích hơn thứ ta cần</title>
+      <link>https://blogcuatui.xyz/posts/mua-thu-ta-thich-hon-thu-ta-can/</link>
+      <description>&lt;p&gt;Thật ra bài viết này tui viết là để trách bản thân tui.
+Tui không chơi game nhưng lại mê chuột, khoái dùng Mac nhưng lại thích bàn phím gaming, thật ra không hẳn mua bàn phím là để chơi game, tuy nhiên tui lại sắm bàn phím Leopold Fc660m rồi chuyển qua bàn phím custom Nj68ap, sau đó tui bán Fc660m rồi tậu thêm con Leopold fc660mbt vì lí do nó có bluetooth. Rồi cuối cùng tui lại sắm thêm con bàn phím stupid Lenovo Thinkpad cắm dây và bây giờ tui gõ nó thường nhất, gõ liên tục và không biết chán. Mà trước khi viết bài này tui mua thêm con Magic Keyboard mới để dùng và cuối cùng bán lỗ sặc máu vì trong quá trình vận chuyển bị cong vênh do tụi shipper.
+Kế đến là chuột, trước tui xài con chuột Logitech m331 rồi chuyển sang Mx anywhere 2s, cuối cùng tui bán hết nó để mua con cooler master MM710 và sau đó lại là Razer deathadder V2 vì một lí do hết sức tào lao là vì con cooler master MM710 nó dùng pin liền nên tui sợ chai pin nên muốn mua con chuột có gắn pin tiểu. Và một điều vô lý nữa là sau khi mua razer xong tui mới thấy con cooler master mới là con chuột tôi ưng ý nhất.
+Suy cho cùng chúng ta mua thứ chúng ta nghĩ là cần nhưng chưa chắc ta cần mà ngay lúc hiện tại chúng ta chỉ thích nó thôi. Nên kể từ giờ phút này khi muốn mua đồ gì thì tôi tự kìm hãm bản thân sau 2 tuần nếu cần mới mua còn không cần thì thôi.&lt;/p&gt;
+</description>
+      <author>ronalds.vilcins@gmail.com (Ronalds Vilcins)</author>
+      <guid>https://blogcuatui.xyz/posts/mua-thu-ta-thich-hon-thu-ta-can/</guid>
+      <pubDate>Mon, 15 Sep 2025 12:40:51 +0700</pubDate>
+    </item>
+    
+    <item>
+      <title>Tản mạn chuyện viết lách</title>
+      <link>https://blogcuatui.xyz/posts/tan-man-chuyen-viet-lach/</link>
+      <description>&lt;p&gt;Chuyện sợ viết là một điều bình thường và phổ biến ở rất rất nhiều người, nhất là dân học IT, vốn không biết từ đâu bị gắn cho cái mác khô khan. Mấy ngày gần đây mình lại thấy nhiều người than vãn là không dám viết, không có khả năng viết.&lt;/p&gt;
+&lt;p&gt;Cũng là người hay viết linh tinh trên mạng nên mình cũng muốn chia sẽ một chút về chuyện này, hy vọng đọc xong các bạn sẽ cảm thấy tự tin hơn một tí.&lt;/p&gt;
+&lt;p&gt;Thú thực là trong suốt những năm học phổ thông, chưa bao giờ mình tự tin về khả năng viết lách của mình. Điểm kiểm tra môn văn của mình chưa bao giờ quá con số 7 cả. Còn mấy con số ở dưới mức đó thì nhiều vô kể. Đó cũng là một phần nguyên nhân khiến cho mình từ bỏ con đường nghệ thuật =)) để theo ngành IT. Nếu không thì giờ mình đã là một anh họa sĩ,lang thang đâu đó ở cầu cảng Sydney ha bên bờ sông Seine hành nghề vẽ dạo cho mấy cặp tình nhân rồi cũng nên. Thiệt là biết ơn thầy cô quá xá&amp;hellip;&lt;/p&gt;
+&lt;p&gt;Thế rồi không biết sao mà mình cũng đâm đầu vào viết lách, thật may là chỉ viết cho vui chớ không phải viết kiếm cơm, không thì có lẽ đã trở thành thảm họa cấp quốc gia rồi nổi tiếng luôn không biết chừng :v Và cũng may mắn là bài mình viết ra cũng được một vài người đón nhận nên ít nhiều mình cũng cảm thấy những điều mình viết ra có thể giúp ích được cho một ai đó ở đâu đó.&lt;/p&gt;
+&lt;p&gt;Quay trở lại câu chuyện tại sao một thằng dốt văn lại dám đi viết, thì ngay cả mình cũng không hiểu tại sao những bài mình viết được nhiều người ủng hộ. Nếu có thì theo mình, đó là nhờ giọng điệu trong bài viết nó không quá xa lạ hoặc khuông phép, gọi là formal quá, và mình hay bỏ thêm vài hình linh tinh zô đó, chắc nhìn nó hài hài. Về kinh nghiệm viết lách chủ quan của mình, thì cũng đã có một bài viết nói về chuyện này, các bạn có thể tham khảo bài Làm thế nào để viết blog kĩ thuật?.&lt;/p&gt;
+&lt;p&gt;Vì là bài chia sẽ kinh nghiệm cá nhân nên có thể nó sẽ chủ quan một tí, hôm nay mình muốn chia sẽ với các bạn một bài viết khác cũng bàn về chuyện viết lách của tác giả Paul Graham, nếu các bạn chưa biết thì ông này là một trong những đồng sáng lập của tổ chức Y Combinator, nơi sỡ hữu trang tin tức Hacker News nổi tiếng, và cũng là investor danh giá của các công ty lớn như Dropbox, Airbnb, Reddit,&amp;hellip;&lt;/p&gt;
+&lt;p&gt;Bài ông này viết thì phải nói là cực kì dài dòng =.= nhưng mà được cái là rất bổ.&lt;/p&gt;
+&lt;p&gt;Về chuyện viết lách của anh Paul, ảnh có viết một bài có tựa đề là Write like you talk - Viết như khi bạn nói. Đây cũng là một ý trong bài &amp;ldquo;Làm thế nào để viết blog kĩ thuật&amp;rdquo; của mình =)) nhưng không phải là anh Paul bắt chước mình đâu nhé :v&lt;/p&gt;
+&lt;p&gt;Bài này cũng không dài lắm, các bạn có thể tự đọc để cho thấm và tự tin hơn khi viết, vì bất cứ ai cũng có thể viết như vậy được. Mình chỉ tóm tắt sơ một vài ý trong bài, còn phần đọc thì để dành cho các bạn.&lt;/p&gt;
+&lt;p&gt;Thì đại khái trong bài này Paul chia sẽ cách để viết làm sao để bài viết của bạn có được nhiều người đọc hơn, tức là không phải cách PR hay giật tít kiểu lá cải như một số trang tin điện tử ngày nay, mà là viết làm sao để nhiều người hiểu được điều bạn đang viết hơn. Và cách làm thì nghe có vẻ khá là đơn giản:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;write in spoken language&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;Viết bằng ngôn ngữ nói. Và để thuyết phục chúng ta tại sao nên viết bằng ngôn ngữ nói, ảnh đưa ra một vài ví dụ, các bạn có thể tự đọc, nhưng mình kết câu chốt của ảnh:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Informal language is the athletic clothing of ideas.&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;Ngôn ngữ informal (đại khái là không trịnh trọng, không cầu kì) thì giống như là bộ quần áo thể thao dành cho các ý tưởng bạn muốn truyền đạt vậy. &amp;ldquo;athletic clothing&amp;rdquo; là thứ quần áo mỏng và nhẹ, thích hợp khi vận động nên ở đây Paul muốn so sánh một ý tưởng được khoác lên mình bộ đồ thể thao giống như một thứ ý tưởng được truyền đạt một cách gọn gàng, nhanh chóng và dễ hiểu với người đọc.&lt;/p&gt;
+&lt;p&gt;Nhưng mình thích cách nghĩ bậy hơn nên mình sẽ diễn giải câu nói trên là, quần áo thể thao thì mặc vào rất là sexy, trông sẽ bắt mắt và sẽ thu hút được sự chú ý của mọi người hơn =)))))&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;You don&amp;rsquo;t need complex sentences to express complex ideas.&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;Bạn không cần dùng những câu từ phức tạp để diễn đạt các ý tưởng phức tạp. Chắc chắn chẳng có ai đủ kiên nhẫn đẻ đọc những lời giải thích rườm rà lủng củng hoặc dùng toàn những từ ngữ đao to búa lớn, để rồi sau khi căng mắt đọc xong thì không hiểu cái đoạn mình vừa đọc nói về cái gì =)) Ý này làm mình nhớ tới câu nói của Einstein:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;If you can&amp;rsquo;t explain it simply, you don&amp;rsquo;t understand it well enough&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;Nếu bạn không thể diễn đạt một điều gì đó một cách đơn giản thì bạn không hiểu vấn đề đó đủ rõ rồi. Vậy cho nên để viết tốt thì bạn nên hiểu rõ vấn đề mình đang muốn viết trước.&lt;/p&gt;
+&lt;p&gt;Đọc lại và sửa lỗi cùng là một điều quan trọng khi bạn viết xong, anh Paul chia sẽ cách hoàn thiện bài viết của mình:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Before I publish a new essay, I read it out loud and fix everything that doesn&amp;rsquo;t sound like conversation.&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;Trước khi publish bài viết thì ảnh sẽ đọc lại toàn bộ, đọc to ra =)) và nếu thấy chỗ nào không informal, không nghe giống như khi đang nói thì ảnh sẽ sửa ngay.&lt;/p&gt;
+&lt;p&gt;Một kinh nghiệm nữa đó là diễn đạt bài viết của mình cho bạn bè nghe trước, sau đó dùng luôn những lời lẽ khi mình diễn đạt (spoken language) để đưa vào bài viết luôn.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;After writing the first draft, try explaining to a friend what you just wrote. Then replace the draft with what you said to your friend.&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;Và cuối cùng thì anh Paul kết luận một câu đọc vào rất chi là kích thích, đó là:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;If you simply manage to write in spoken language, you&amp;rsquo;ll be ahead of 95% of writers.&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;Nếu bạn có thể viết bằng &amp;ldquo;spoken language&amp;rdquo; thì bạn đã hơn 95% các &amp;ldquo;nhà viết lách&amp;rdquo; khác luôn rồi. Nghe có vẻ giống những lời khích lệ trong mấy quyển sách self-help quá =)) thôi bỏ qua ý này.&lt;/p&gt;
+&lt;p&gt;Và câu kết bài thì thực sự là giá trị đây:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;it&amp;rsquo;s so easy to do: just don&amp;rsquo;t let a sentence through unless it&amp;rsquo;s the way you&amp;rsquo;d say it to a friend.&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;Để viết được như vầy thì không có gì là khó, nếu bạn viết ra một câu, trừ khi câu đó cũng là giọng điệu của bạn khi nói chuyện với bạn bè, còn không thì đừng viết nó ra. Là vậy đó, hãy tưởng tượng người sẽ đọc bài viết này đang ngồi trước mặt bạn, và viết như thể đang nói chuyện với họ, với tư cách là một người bạn.&lt;/p&gt;
+&lt;p&gt;Cuối cùng thì, bắt tay vào viết thôi, chúc các bạn tự tin và sẽ có nhiều bài viết hữu ích!&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://notes.huy.rocks/posts/chuyen-viet-lach.html&#34;&gt;Nguồn bài viết từ đây!&lt;/a&gt;&lt;/p&gt;
+</description>
+      <author>ronalds.vilcins@gmail.com (Ronalds Vilcins)</author>
+      <guid>https://blogcuatui.xyz/posts/tan-man-chuyen-viet-lach/</guid>
+      <pubDate>Sun, 14 Sep 2025 21:29:04 +0700</pubDate>
+    </item>
+    
+    <item>
+      <title>Bài viết đầu tiên</title>
+      <link>https://blogcuatui.xyz/posts/bai-viet-dau-tien/</link>
+      <description>&lt;p&gt;Bài viết đầu tiên lúc nào cũng khó viết, vì nó là bài viết đánh dấu lần đầu gõ trên trang blog.
+Hồi trước tui muốn tạo cho mình một trang blog thật đơn giản, nhẹ nhàng mà miễn phí thì càng tốt. Lúc trước cũng có viết trên Yahoo 360 sau đó chuyển sang Wordpress miễn phí rồi chuyển qua viết blog wordpress trên hosting. Đúng là nhiều hoài niệm và nhiều bạn bè hồi đó. Chỉ có một người anh mà lần đầu tiên tui biết đến đó là anh Trí Thông. Thật ra hồi xưa thấy cái blog ảnh đẹp quá nên gửi mail cho ảnh xin cái themes về cài cho blog, cơ may sau này tìm được ảnh trên Facebook và kết bạn đến giờ. Tính ra cũng hơn chục năm làm bạn cùng nhau.
+Bài viết này không biết nói gì hơn ngoài việc khi viết nó thì nhiều hoài niệm liên tục hồi tưởng lại trong đầu. Cám ơn tất cả, cám ơn cuộc đời đã cho tui thật nhiều người bạn và nhiều trải nghiệm đáng nhớ nhất. &amp;lt;3&lt;/p&gt;
+</description>
+      <author>ronalds.vilcins@gmail.com (Ronalds Vilcins)</author>
+      <guid>https://blogcuatui.xyz/posts/bai-viet-dau-tien/</guid>
+      <pubDate>Thu, 11 Sep 2025 11:44:28 +0700</pubDate>
+    </item>
+    
+  </channel>
+</rss>

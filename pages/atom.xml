@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Pages on Blog của tui</title>
+    <link>https://blogcuatui.xyz/pages/</link>
+    <description>Recent content in Pages on Blog của tui</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <atom:link href="https://blogcuatui.xyz/pages/atom.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Giới thiệu</title>
+      <link>https://blogcuatui.xyz/gioithieu/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://blogcuatui.xyz/gioithieu/</guid>
+      <description>&lt;p&gt;Xin chào bạn! Tui là Quốc Anh, vốn xuất thân làm nông nghiệp nhưng có chút hứng thú về web/blog nên cũng tự mày mò để tạo nên một trang blog nhỏ này xem như là một ngôi nhà trực tuyến trên mạng.&lt;/p&gt;&#xA;&lt;p&gt;Tui muốn tạo cho mình một cái blog thật đơn giản, nơi tôi có thể chia sẻ mọi thứ tôi muốn. Nó có thể là một bài viết hay, một vài suy nghĩ bâng quơ, một vài mẹo vặt hay hoặc có thể là những bức ảnh đẹp&amp;hellip; Bất cứ thứ gì tôi muốn chia sẻ thì nó sẽ tồn tại trong đây.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Tagcloud</title>
+      <link>https://blogcuatui.xyz/pages/tagcloud/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://blogcuatui.xyz/pages/tagcloud/</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>
