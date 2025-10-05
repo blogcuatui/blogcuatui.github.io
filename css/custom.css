@@ -27,7 +27,7 @@
   .content,
   .main,
   .page-content {
-    max-width: 95% !important;  /* nới rộng hơn, mặc định theme thường 80% */
+    max-width: 98% !important;  /* nới rộng hơn, mặc định theme thường 80% */
     padding-left: 1rem !important;
     padding-right: 1rem !important;
   }
