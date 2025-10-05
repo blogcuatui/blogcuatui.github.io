@@ -20,3 +20,26 @@
 .post-title {
   margin-top: 0 !important; /* đảm bảo sát với ngày */
 }
+
+/* ✅ Tăng độ rộng hiển thị trên mobile */
+@media (max-width: 768px) {
+  .post-container,
+  .content,
+  .main,
+  .page-content {
+    max-width: 95% !important;  /* nới rộng hơn, mặc định theme thường 80% */
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
+}
+
+/* ✅ Giới hạn chiều rộng tổng thể trên desktop cho đẹp */
+@media (min-width: 769px) {
+  .post-container,
+  .content,
+  .main,
+  .page-content {
+    max-width: 850px;
+    margin: 0 auto;
+  }
+}
