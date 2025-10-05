@@ -45,3 +45,13 @@
     margin: 0 auto;
   }
 }
+
+body {
+        overflow-x: hidden; /* Ẩn thanh cuộn ngang nếu có */
+    }
+}
+
+/* Điều chỉnh lại container để không bị tràn */
+.container {
+    max-width: 95%; /* Chiếm 95% chiều rộng màn hình */
+    margin: 0 auto; /* Căn giữa */
