@@ -27,10 +27,11 @@
   .content,
   .main,
   .page-content {
-    width: 100%;
-    max-width: 100% !important;  /* nới rộng hơn, mặc định theme thường 80% */
-    padding-left: 1rem !important;
-    padding-right: 1rem !important;
+    width: 98%;
+    max-width: 98% !important;  /* nới rộng hơn, mặc định theme thường 80% */
+    padding-left: .5rem !important;
+    padding-right: .5rem !important;
+  
   }
 }
 
