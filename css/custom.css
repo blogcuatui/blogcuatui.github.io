@@ -1,12 +1,13 @@
-a.back-link {
-  text-decoration: none !important;
-  color: inherit !important;
-  display: inline-block;
-}
+  .post-title a {
+    text-decoration: none;   /* ✅ Bỏ gạch chân */
+    color: inherit;          /* Giữ màu giống tiêu đề */
+  }
 
-a.back-link h1 {
-  text-decoration: none !important;
-}
+  .post-title a:hover {
+    color: #8f6a60;          /* Màu đổi nhẹ khi hover (tuỳ chọn) */
+    text-decoration: none;   /* ✅ Không gạch chân khi hover */
+  }
+
 
 /* ✅ Tăng độ rộng hiển thị trên mobile */
 @media (max-width: 768px) {
