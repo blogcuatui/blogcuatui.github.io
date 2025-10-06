@@ -1,4 +1,4 @@
-.works-title {
+works-title {
   font-family: monospace;
   color: #222;         /* hoặc currentColor để tự theo theme */
   display: inline-flex; /* giữ cùng hàng */
@@ -13,31 +13,6 @@
 
 @keyframes blink {
   50% { opacity: 0; }
-}
-
-
-
-.post-title a {
-  text-decoration: none;
-  color: inherit;
-}
-.post-header {
-  margin-bottom: 0 !important; /* Giảm khoảng cách giữa tiêu đề và nội dung */
-}
-
-.post-title {
-  margin-bottom: 0 !important; /* hoặc 0 nếu muốn sát hơn */
-}
-
-.post-date {
-  margin-bottom: 0 !important;  /* giảm khoảng cách với tiêu đề */
-  display: block; /* đảm bảo nó xuống dòng nếu chưa */
-  color: #777; /* tuỳ chọn: làm màu dịu hơn */
-  font-size: 15px !important;
-}
-
-.post-title {
-  margin-top: 0 !important; /* đảm bảo sát với ngày */
 }
 
 /* ✅ Tăng độ rộng hiển thị trên mobile */
