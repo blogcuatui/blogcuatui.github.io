@@ -8,6 +8,25 @@
     text-decoration: none;   /* ✅ Không gạch chân khi hover */
   }
 
+.works-title {
+  font-family: monospace;
+  font-size: 1rem;   /* chỉnh cỡ tùy ý */
+  color: #222;         /* hoặc currentColor để tự theo theme */
+  display: inline-flex; /* giữ cùng hàng */
+  align-items: center;  /* canh giữa theo chiều dọc */
+}
+
+.cursor {
+  display: inline-block;
+  margin-left: 2px;        /* khoảng cách giữa chữ và _ */
+  animation: blink 1.2s step-start infinite;
+}
+
+@keyframes blink {
+  50% { opacity: 0; }
+}
+
+
 
 /* ✅ Tăng độ rộng hiển thị trên mobile */
 @media (max-width: 768px) {
