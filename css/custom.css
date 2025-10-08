@@ -1,75 +1,74 @@
-  .post-title a {
-    text-decoration: none;   /* ✅ Bỏ gạch chân */
-    color: inherit;          /* Giữ màu giống tiêu đề */
-  }
+/* ==== BỐ CỤC & FONT ==== */
+html, body {
+  background-color: #f6efe6 !important;  /* nền kem nhạt kiểu Claude */
+  color: #2b2b27 !important;             /* chữ đen ấm */
+  font-family: "Georgia", serif !important; /* font chính bạn muốn */
+  font-weight: 400;
+  letter-spacing: 0.01em;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  font-feature-settings: "liga", "kern";
+  overflow-x: hidden; /* Ẩn thanh cuộn ngang nếu có */
+}
 
-  .post-title a:hover {
-    color: #8f6a60;          /* Màu đổi nhẹ khi hover (tuỳ chọn) */
-    text-decoration: none;   /* ✅ Không gạch chân khi hover */
-  }
+/* ==== LINK ==== */
+a {
+  color: #c85a2b !important;             /* màu cam-nâu nhẹ */
+  text-decoration: none !important;
+}
+a:hover {
+  color: #a64a22 !important;             /* hover đậm hơn */
+  text-decoration: underline !important;
+}
 
+/* ==== TIÊU ĐỀ BÀI VIẾT ==== */
+.post-title a {
+  text-decoration: none;
+  color: inherit;
+}
+.post-title a:hover {
+  color: #8f6a60; /* đổi nhẹ khi hover */
+  text-decoration: none;
+}
+
+/* ==== TIÊU ĐỀ WORKS ==== */
 .works-title {
   font-family: "Georgia", serif;
-  font-size: 1rem;   /* chỉnh cỡ tùy ý */
-  color: #222;         /* hoặc currentColor để tự theo theme */
-  display: inline-flex; /* giữ cùng hàng */
-  align-items: center;  /* canh giữa theo chiều dọc */
+  font-size: 1rem;
+  color: #222;
+  display: inline-flex;
+  align-items: center;
 }
 
+/* Hiệu ứng con trỏ nhấp nháy */
 .cursor {
   display: inline-block;
-  margin-left: 2px;        /* khoảng cách giữa chữ và _ */
+  margin-left: 2px;
   animation: blink 1.2s step-start infinite;
 }
-
 @keyframes blink {
   50% { opacity: 0; }
 }
 
-
-
-/* ✅ Tăng độ rộng hiển thị trên mobile */
+/* ==== BỐ CỤC RESPONSIVE ==== */
 @media (max-width: 768px) {
-  .post-container,
-  .content,
-  .main,
-  .page-content {
+  .post-container, .content, .main, .page-content {
     width: 98%;
-    max-width: 98% !important;  /* nới rộng hơn, mặc định theme thường 80% */
+    max-width: 98% !important;
     padding-left: .5rem !important;
     padding-right: .5rem !important;
   }
 }
 
-/* ✅ Giới hạn chiều rộng tổng thể trên desktop cho đẹp */
 @media (min-width: 769px) {
-  .post-container,
-  .content,
-  .main,
-  .page-content {
+  .post-container, .content, .main, .page-content {
     max-width: 850px;
     margin: 0 auto;
   }
 }
-/* Điều chỉnh lại container để không bị tràn */
+
 .container {
-    max-width: 95%; /* Chiếm 95% chiều rộng màn hình */
-    margin: 0 auto; /* Căn giữa */
+  max-width: 95%;
+  margin: 0 auto;
 }
-
-
-/* Làm font chữ hiển thị mượt và tinh tế hơn */
-html, body {
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-rendering: optimizeLegibility;
-  font-feature-settings: "liga", "kern";
-}
-
-/* Nếu bạn muốn font nhìn “nhẹ” hơn một chút */
-body {
-  font-weight: 400;
-  letter-spacing: 0.01em;
-  overflow-x: hidden; /* Ẩn thanh cuộn ngang nếu có */ß
-}
-
