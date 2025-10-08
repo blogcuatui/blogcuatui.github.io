@@ -50,3 +50,27 @@ a:hover {
 @keyframes blink {
   50% { opacity: 0; }
 }
+
+
+/* ✅ Ép toàn bộ layout canh trái trên desktop */
+@media (min-width: 1024px) {
+  body,
+  .container,
+  .main,
+  .content,
+  .page-content,
+  .post-container {
+    margin-left: 0 !important;
+    margin-right: auto !important;
+    text-align: left !important;
+    max-width: none !important;
+    width: auto !important;
+  }
+
+  /* Nếu theme bọc thêm 1 lớp trong .container */
+  .container > * {
+    margin-left: 0 !important;
+    margin-right: auto !important;
+    text-align: left !important;
+  }
+}
