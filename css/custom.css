@@ -63,7 +63,7 @@ a:hover {
     margin-left: 0 !important;
     margin-right: auto !important;
     text-align: left !important;
-    max-width: none !important;
+    max-width: 35em !important;
     width: auto !important;
   }
 
