@@ -9,7 +9,7 @@
   }
 
 .works-title {
-  font-family: "Inter", sans-serif;
+  font-family: "Georgia", serif;
   font-size: 1rem;   /* chỉnh cỡ tùy ý */
   color: #222;         /* hoặc currentColor để tự theo theme */
   display: inline-flex; /* giữ cùng hàng */
@@ -71,7 +71,6 @@ body {
   font-weight: 400;
   letter-spacing: 0.01em;
   overflow-x: hidden; /* Ẩn thanh cuộn ngang nếu có */ß
-  font-family: "Georgia", "Times New Roman", serif !important;
 }
 
 
