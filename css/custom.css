@@ -51,7 +51,6 @@ a:hover {
   50% { opacity: 0; }
 }
 
-
 /* ✅ Ép toàn bộ layout canh trái trên desktop */
 @media (min-width: 1024px) {
   body,
@@ -74,5 +73,6 @@ a:hover {
     text-align: left !important;
   }
 }
+
 
 
