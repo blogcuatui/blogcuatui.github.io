@@ -70,7 +70,8 @@ html, body {
 body {
   font-weight: 400;
   letter-spacing: 0.01em;
-  overflow-x: hidden; /* Ẩn thanh cuộn ngang nếu có */
+  overflow-x: hidden; /* Ẩn thanh cuộn ngang nếu có */ß
+  font-family: "Georgia", "Times New Roman", serif !important;
 }
 
 
