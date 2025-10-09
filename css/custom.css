@@ -97,3 +97,20 @@ a:hover {
     max-width: 100%;
   }
 }
+
+/* Ngăn anchor gạch chân toàn bộ khi hover */
+.work-item .work-link:hover {
+  text-decoration: none !important;
+}
+
+/* Chỉ gạch chân phần tiêu đề khi hover */
+.work-item .work-link:hover .work-title {
+  text-decoration: underline !important;
+}
+
+/* Đảm bảo .year không bị gạch chân */
+.work-item .year {
+  text-decoration: none !important;
+  display: inline-block; /* tách box để trình duyệt không “kéo” underline qua */
+}
+
