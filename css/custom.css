@@ -49,26 +49,7 @@ a:hover {
 }
 @keyframes blink { 50% { opacity: 0; } }
 
-/* ==== CĂN TRÁI LAYOUT DESKTOP ==== */
-@media (min-width: 1024px) {
-  body,
-  .container,
-  .main,
-  .content,
-  .page-content,
-  .post-container {
-    margin-left: 0 !important;
-    margin-right: auto !important;
-    text-align: left !important;
-    max-width: 35em !important;
-    width: auto !important;
-  }
-  .container > * {
-    margin-left: 0 !important;
-    margin-right: auto !important;
-    text-align: left !important;
-  }
-}
+
 
 /* ==== WORK LIST: .year 1 dòng & .work-title cắt … trên mobile ==== */
 @media (max-width: 768px) {
