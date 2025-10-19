@@ -1,7 +1,7 @@
 /* ==== BỐ CỤC & FONT ==== */
 html, body {
-  background-color: #f6efe6 !important;   /* nền kem */
-  color: #2b2b27 !important;              /* chữ đen ấm */
+  background-color: #f6efe6 !important;
+  color: #2b2b27 !important;
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   font-weight: 400;
   letter-spacing: 0.01em;
@@ -9,7 +9,7 @@ html, body {
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
   font-feature-settings: "liga","kern";
-  overflow-x: hidden; /* ẩn thanh ngang ngoài cùng */
+  overflow-x: hidden; /* ẩn thanh ngang */
 }
 
 /* ==== LINK ==== */
@@ -22,17 +22,17 @@ a:hover {
   text-decoration: underline !important;
 }
 
-/* ==== TIÊU ĐỀ BÀI VIẾT (nếu có .post-title) ==== */
+/* ==== TIÊU ĐỀ BÀI VIẾT ==== */
 .post-title a {
-  text-decoration: none !important; /* ghi đè global */
+  text-decoration: none !important;
   color: inherit !important;
 }
 .post-title a:hover {
-  color: #8f6a60 !important;        /* ghi đè màu hover global */
-  text-decoration: none !important; /* không gạch chân ở post-title */
+  color: #8f6a60 !important;
+  text-decoration: none !important;
 }
 
-/* ==== TIÊU ĐỀ MỤC WORKS ==== */
+/* ==== TIÊU ĐỀ WORKS ==== */
 .works-title {
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   font-size: 1.4rem;
@@ -41,7 +41,7 @@ a:hover {
   align-items: center;
 }
 
-/* Hiệu ứng con trỏ nhấp nháy (nếu dùng) */
+/* Hiệu ứng con trỏ nhấp nháy */
 .cursor {
   display: inline-block;
   margin-left: 2px;
@@ -49,48 +49,82 @@ a:hover {
 }
 @keyframes blink { 50% { opacity: 0; } }
 
-
-
-/* ==== WORK LIST: .year 1 dòng & .work-title cắt … trên mobile ==== */
+/* ==== WORK LIST ==== */
 @media (max-width: 768px) {
-  /* Hàng chứa năm + tiêu đề (anchor) */
   .work-item .work-link {
-    display: flex;              /* xếp cùng hàng */
+    display: flex;
     align-items: baseline;
     gap: .5rem;
-    white-space: nowrap;        /* không xuống dòng cả hàng */
+    white-space: nowrap;
   }
-
-  /* Năm: luôn một dòng, không co giãn */
   .work-item .year {
     flex: 0 0 auto;
     white-space: nowrap;
   }
-
-  /* Tiêu đề: chiếm phần còn lại, cắt bằng … */
   .work-item .work-title {
     flex: 1 1 auto;
-    min-width: 0;               /* bắt buộc cho ellipsis trong flex */
+    min-width: 0;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
-    display: inline-block;       /* tăng ổn định ellipsis */
+    display: inline-block;
     max-width: 100%;
   }
 }
-
-/* Ngăn anchor gạch chân toàn bộ khi hover */
 .work-item .work-link:hover {
   text-decoration: none !important;
 }
-
-/* Chỉ gạch chân phần tiêu đề khi hover */
 .work-item .work-link:hover .work-title {
   text-decoration: underline !important;
 }
-
-/* Đảm bảo .year không bị gạch chân */
 .work-item .year {
   text-decoration: none !important;
-  display: inline-block; /* tách box để trình duyệt không “kéo” underline qua */
+  display: inline-block;
+}
+
+/* ======================================================
+   ✅ FIX LAYOUT MOBILE BUNG FULL
+   ====================================================== */
+.container,
+.page-container,
+.content,
+.main,
+.page-content {
+  width: 100% !important;
+  max-width: 580px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  padding-left: 16px !important;
+  padding-right: 16px !important;
+  box-sizing: border-box !important;
+}
+
+@media (max-width: 768px) {
+  .container,
+  .page-container,
+  .content,
+  .main,
+  .page-content {
+    max-width: 100% !important;
+  }
+}
+
+/* ======================================================
+   ✅ BLOCKQUOTE KIỂU KUNALL.IS
+   ====================================================== */
+blockquote {
+  border-left: 3px solid #ddd;
+  padding-left: 18px;
+  margin-left: 0;
+  margin-right: 0;
+  font-style: italic;
+  color: #555;
+  line-height: 1.6;
+}
+blockquote p {
+  margin: 0;
+}
+blockquote strong {
+  font-style: normal;
+  color: #333;
 }
