@@ -41,14 +41,6 @@ a:hover {
   align-items: center;
 }
 
-/* Hiệu ứng con trỏ nhấp nháy */
-.cursor {
-  display: inline-block;
-  margin-left: 2px;
-  animation: blink 1.2s step-start infinite;
-}
-@keyframes blink { 50% { opacity: 0; } }
-
 /* ==== WORK LIST ==== */
 @media (max-width: 768px) {
   .work-item .work-link {
