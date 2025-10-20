@@ -128,3 +128,23 @@ blockquote strong {
   font-style: normal;
   color: #333;
 }
+
+
+.navbar {
+  display: flex;
+  gap: 18px;
+  margin-bottom: 28px;
+  font-size: 15px;
+}
+
+.nav-item {
+  text-decoration: none;
+  color: inherit;
+  opacity: 0.85;
+}
+
+.nav-item:hover {
+  opacity: 1;
+  text-decoration: underline;
+}
+
