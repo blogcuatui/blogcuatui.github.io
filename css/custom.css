@@ -1,3 +1,5 @@
+Custom cd
+
 /* ==== BỐ CỤC & FONT ==== */
 html, body {
   background-color: #f6efe6 !important;
@@ -32,37 +34,9 @@ a:hover {
   text-decoration: none !important;
 }
 
-/* ==== TIÊU ĐỀ WORKS ==== */
-.works-title {
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-  font-size: 1.4rem;
-  color: #222;
-  display: inline-flex;
-  align-items: center;
-}
 
 /* ==== WORK LIST ==== */
-@media (max-width: 768px) {
-  .work-item .work-link {
-    display: flex;
-    align-items: baseline;
-    gap: .5rem;
-    white-space: nowrap;
-  }
-  .work-item .year {
-    flex: 0 0 auto;
-    white-space: nowrap;
-  }
-  .work-item .work-title {
-    flex: 1 1 auto;
-    min-width: 0;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    display: inline-block;
-    max-width: 100%;
-  }
-}
+
 .work-item .work-link:hover {
   text-decoration: none !important;
 }
@@ -73,8 +47,6 @@ a:hover {
   text-decoration: none !important;
   display: inline-block;
   font-size: 0.9em !important;
-
-  
 }
 
 /* ======================================================
