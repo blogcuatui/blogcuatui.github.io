@@ -72,6 +72,8 @@ a:hover {
 .work-item .year {
   text-decoration: none !important;
   display: inline-block;
+  opacity: 0.65 !important;
+  font-size: 0.92em !important;
 }
 
 /* ======================================================
@@ -99,6 +101,15 @@ a:hover {
   .page-content {
     max-width: 100% !important;
   }
+}
+
+/* ==== FIX WORK LIST GIỮ TITLE VÀ NĂM ĐỨNG GẦN NHAU MỌI MÀN HÌNH ==== */
+.work-item .work-link {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 6px !important; /* chỉnh 4–10px tùy bạn */
+  justify-content: flex-start !important;
+  white-space: nowrap !important;
 }
 
 /* ======================================================
