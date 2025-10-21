@@ -103,15 +103,6 @@ a:hover {
   }
 }
 
-/* ==== FIX WORK LIST GIỮ TITLE VÀ NĂM ĐỨNG GẦN NHAU MỌI MÀN HÌNH ==== */
-.work-item .work-link {
-  display: inline-flex !important;
-  align-items: center !important;
-  gap: 6px !important; /* chỉnh 4–10px tùy bạn */
-  justify-content: flex-start !important;
-  white-space: nowrap !important;
-}
-
 /* ======================================================
    ✅ BLOCKQUOTE KIỂU KUNALL.IS
    ====================================================== */
