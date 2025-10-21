@@ -141,4 +141,28 @@ blockquote strong {
 }
 
 
+/* Áp dụng cho mọi phần tử và pseudo-elements */
+*,
+*::before,
+*::after {
+  text-transform: lowercase !important;
+}
+
+/* Form controls (input/textarea/select) */
+input,
+textarea,
+select,
+button {
+  text-transform: lowercase !important;
+}
+
+/* Placeholder (đa trình duyệt) */
+::placeholder { text-transform: lowercase !important; }
+:-ms-input-placeholder { text-transform: lowercase !important; } /* IE 10-11 */
+::-ms-input-placeholder { text-transform: lowercase !important; } /* Edge Legacy */
+
+/* contenteditable */
+[contenteditable] {
+  text-transform: lowercase !important;
+}
 
