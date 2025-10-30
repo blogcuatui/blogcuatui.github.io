@@ -1,9 +1,11 @@
-Custom cd
+/* ======================================================
+   🌙 THEME KIỂU LILYSLAB.XYZ/NOW
+   ====================================================== */
 
 /* ==== BỐ CỤC & FONT ==== */
 html, body {
-  background-color: #f9f7f4 !important;
-  color: #2b2b27 !important;
+  background-color: #0e0e0e !important; /* nền đen ấm */
+  color: #f5f5f5 !important;            /* chữ trắng ngà */
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   font-weight: 400;
   letter-spacing: 0.01em;
@@ -12,31 +14,44 @@ html, body {
   text-rendering: optimizeLegibility;
   font-feature-settings: "liga","kern";
   overflow-x: hidden; /* ẩn thanh ngang */
+  position: relative;
+  z-index: 0;
+}
+
+/* ==== HIỆU ỨNG NOISE ==== */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background:
+    url('https://www.transparenttextures.com/patterns/noisy.png') repeat,
+    linear-gradient(#0e0e0e, #0e0e0e);
+  opacity: 1;
+  z-index: -1;
+  pointer-events: none;
 }
 
 /* ==== LINK ==== */
 a {
-  color: #c85a2b !important;
+  color: #ffb56b !important; /* cam nhẹ */
   text-decoration: none !important;
 }
 a:hover {
-  color: #a64a22 !important;
+  color: #ffc997 !important;
   text-decoration: underline !important;
 }
 
 /* ==== TIÊU ĐỀ BÀI VIẾT ==== */
 .post-title a {
+  color: #fefefe !important;
   text-decoration: none !important;
-  color: inherit !important;
 }
 .post-title a:hover {
-  color: #8f6a60 !important;
+  color: #ffb56b !important;
   text-decoration: none !important;
 }
 
-
 /* ==== WORK LIST ==== */
-
 .work-item .work-link:hover {
   text-decoration: none !important;
 }
@@ -44,14 +59,48 @@ a:hover {
   text-decoration: underline !important;
 }
 .work-item .year {
-  text-decoration: none !important;
   display: inline-block;
   font-size: 0.9em !important;
+  text-decoration: none !important;
 }
 
-/* ======================================================
-   ✅ FIX LAYOUT MOBILE BUNG FULL
-   ====================================================== */
+/* ==== NAVIGATION ==== */
+.navbar {
+  display: flex;
+  gap: 18px;
+  margin-bottom: 28px;
+  font-size: 16px;
+  color: #ddd;
+}
+.nav-item {
+  text-decoration: none;
+  color: inherit;
+  opacity: 0.85;
+}
+.nav-item:hover {
+  opacity: 1;
+  text-decoration: underline;
+}
+
+/* ==== BLOCKQUOTE ==== */
+blockquote {
+  border-left: 3px solid #444;
+  padding-left: 18px;
+  margin-left: 0;
+  margin-right: 0;
+  font-style: italic;
+  color: #ccc;
+  line-height: 1.6;
+}
+blockquote p {
+  margin: 0;
+}
+blockquote strong {
+  font-style: normal;
+  color: #f5f5f5;
+}
+
+/* ==== BỐ CỤC TRANG ==== */
 .container,
 .page-container,
 .content,
@@ -76,121 +125,17 @@ a:hover {
   }
 }
 
-/* ======================================================
-   ✅ BLOCKQUOTE KIỂU KUNALL.IS
-   ====================================================== */
-blockquote {
-  border-left: 3px solid #ddd;
-  padding-left: 18px;
-  margin-left: 0;
-  margin-right: 0;
-  font-style: italic;
-  color: #555;
-  line-height: 1.6;
-}
-blockquote p {
-  margin: 0;
-}
-blockquote strong {
-  font-style: normal;
-  color: #333;
-}
-
-
-.navbar {
-  display: flex;
-  gap: 18px;
-  margin-bottom: 28px;
-  font-size: 16px;
-}
-
-.nav-item {
-  text-decoration: none;
-  color: inherit;
-  opacity: 0.85;
-}
-
-.nav-item:hover {
-  opacity: 1;
-  text-decoration: underline;
-}
-
-
-/* Áp dụng cho mọi phần tử và pseudo-elements */
+/* ==== CHUYỂN TẤT CẢ CHỮ THÀNH CHỮ THƯỜNG ==== */
 *,
 *::before,
-*::after {
-  text-transform: lowercase !important;
-}
-
-/* Form controls (input/textarea/select) */
+*::after,
 input,
 textarea,
 select,
-button {
+button,
+[contenteditable],
+::placeholder,
+:-ms-input-placeholder,
+::-ms-input-placeholder {
   text-transform: lowercase !important;
-}
-
-/* Placeholder (đa trình duyệt) */
-::placeholder { text-transform: lowercase !important; }
-:-ms-input-placeholder { text-transform: lowercase !important; } /* IE 10-11 */
-::-ms-input-placeholder { text-transform: lowercase !important; } /* Edge Legacy */
-
-/* contenteditable */
-[contenteditable] {
-  text-transform: lowercase !important;
-}
-
-
-
-/* ======================================================
-   ✅ THEME NHƯ LILYSLAB.XYZ/NOW — NỀN ĐEN, CHỮ TRẮNG, NOISE
-   ====================================================== */
-html, body {
-  background-color: #0e0e0e !important; /* nền đen mờ ấm */
-  color: #f5f5f5 !important;            /* chữ trắng ngà */
-  position: relative !important;
-  z-index: 0 !important;
-}
-
-/* lớp noise phủ nền */
-body::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  background:
-    url('https://www.transparenttextures.com/patterns/noisy.png') repeat,
-    linear-gradient(#0e0e0e, #0e0e0e);
-  opacity: 1;
-  z-index: -1;
-  pointer-events: none;
-}
-
-/* liên kết */
-a {
-  color: #ffb56b !important; /* cam nhẹ */
-  text-decoration: none !important;
-}
-a:hover {
-  color: #ffc997 !important;
-  text-decoration: underline !important;
-}
-
-/* blockquote */
-blockquote {
-  border-left: 3px solid #444;
-  color: #ccc;
-}
-
-/* navbar */
-.navbar {
-  color: #ddd;
-}
-
-/* tiêu đề bài viết */
-.post-title a {
-  color: #fefefe !important;
-}
-.post-title a:hover {
-  color: #ffb56b !important;
 }
