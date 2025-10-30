@@ -2,7 +2,7 @@ Custom cd
 
 /* ==== BỐ CỤC & FONT ==== */
 html, body {
-  background-color: #FFF !important;
+  background-color: #f9f7f4 !important;
   color: #2b2b27 !important;
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   font-weight: 400;
@@ -142,3 +142,55 @@ button {
 }
 
 
+
+/* ======================================================
+   ✅ THEME NHƯ LILYSLAB.XYZ/NOW — NỀN ĐEN, CHỮ TRẮNG, NOISE
+   ====================================================== */
+html, body {
+  background-color: #0e0e0e !important; /* nền đen mờ ấm */
+  color: #f5f5f5 !important;            /* chữ trắng ngà */
+  position: relative !important;
+  z-index: 0 !important;
+}
+
+/* lớp noise phủ nền */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background:
+    url('https://transparenttextures.com/patterns/noise-pattern-with-subtle-cross-lines.png') repeat,
+    linear-gradient(#0e0e0e, #0e0e0e);
+  opacity: 1;
+  z-index: -1;
+  pointer-events: none;
+}
+
+/* liên kết */
+a {
+  color: #ffb56b !important; /* cam nhẹ */
+  text-decoration: none !important;
+}
+a:hover {
+  color: #ffc997 !important;
+  text-decoration: underline !important;
+}
+
+/* blockquote */
+blockquote {
+  border-left: 3px solid #444;
+  color: #ccc;
+}
+
+/* navbar */
+.navbar {
+  color: #ddd;
+}
+
+/* tiêu đề bài viết */
+.post-title a {
+  color: #fefefe !important;
+}
+.post-title a:hover {
+  color: #ffb56b !important;
+}
