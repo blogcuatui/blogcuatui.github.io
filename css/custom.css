@@ -159,7 +159,7 @@ body::before {
   position: fixed;
   inset: 0;
   background:
-    url('https://transparenttextures.com/patterns/noise-pattern-with-subtle-cross-lines.png') repeat,
+    url('https://www.transparenttextures.com/patterns/noisy.png') repeat,
     linear-gradient(#0e0e0e, #0e0e0e);
   opacity: 1;
   z-index: -1;
