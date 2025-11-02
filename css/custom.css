@@ -1,93 +1,85 @@
 /* ==== BỐ CỤC & FONT ==== */
 html, body {
-  background-color: #fff !important;
-  color: #111 !important;
-  font-family: "Georgia", "Times New Roman", serif;
-  font-size: 1rem;
-  line-height: 1.5;
+  background-color: #f9f7f4;
+  color: #2b2b27;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-weight: 400;
+  letter-spacing: 0.01em;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
+  font-feature-settings: "liga","kern";
   overflow-x: hidden;
 }
 
 /* ==== LINK ==== */
 a {
-  color: #111;
-  text-decoration: underline;
-  text-underline-offset: 3px;
+  color: #222222;
+  text-decoration: none;
 }
 a:hover {
-  color: #555;
-}
-
-/* ==== CỘT NỘI DUNG ==== */
-.content-column {
-  position: relative;
-  padding-left: 2rem;
-}
-.content-column::before {
-  content: "";
-  position: absolute;
-  left: 0.5rem;
-  top: 0;
-  bottom: 0;
-  width: 2px;
-  background-color: #222;
-}
-/* ==== DANH SÁCH BÀI VIẾT ==== */
-.work-item {
-  margin-bottom: 0.8rem;
-}
-
-.work-item a {
-  position: relative;
-  display: inline-block;
-  color: #111;
-  text-decoration: none;
-  font-weight: 600;
-  font-size: 1.05rem; /* nhỉnh hơn chút để cân với date */
-  padding-left: 1rem;
-}
-
-.work-item a::before {
-  content: "■";
-  position: absolute;
-  left: 0;
-  top: 0.15em;
-  color: #111;
-  font-size: 0.45rem;
-}
-
-.work-item a:hover {
+  color: #222222;
   text-decoration: underline;
 }
 
-/* ==== NGÀY ==== */
-.work-item .post-date {
-  color: #888;
-  font-style: italic;
-  margin-left: 0.3rem;
-  font-size: 0.85em;
-  font-weight: 400;
+/* ==== TIÊU ĐỀ BÀI VIẾT ==== */
+.post-title a {
+  text-decoration: none;
+  color: inherit;
+}
+.post-title a:hover {
+  color: #8f6a60;
 }
 
-
-/* ==== TIÊU ĐỀ MỤC ==== */
-.works-title {
-  color: #111;
-  font-weight: 500;
-  text-transform: lowercase;
-  margin-bottom: 1rem;
+/* ==== WORK LIST ==== */
+.work-item .work-link:hover {
+  text-decoration: none;
+}
+.work-item .work-link:hover .work-title {
+  text-decoration: underline;
+}
+.work-item .year {
+  display: inline-block;
+  font-size: 0.9em;
 }
 
-/* ==== BLOCKQUOTE ==== */
+/* ======================================================
+   ✅ FIX LAYOUT MOBILE BUNG FULL NHƯ RIEMATS
+   ====================================================== */
+.container,
+.page-container,
+.content,
+.main,
+.page-content {
+  width: 100%;
+  max-width: none;
+  margin: 0 auto;
+  padding-left: 24px;
+  padding-right: 24px;
+  box-sizing: border-box;
+}
+
+@media (max-width: 768px) {
+  .container,
+  .page-container,
+  .content,
+  .main,
+  .page-content {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+}
+
+/* ======================================================
+   ✅ BLOCKQUOTE KIỂU KUNALL.IS
+   ====================================================== */
 blockquote {
-  border-left: 3px solid #222;
+  border-left: 3px solid #ddd;
   padding-left: 18px;
-  margin: 1.2rem 0;
+  margin-left: 0;
+  margin-right: 0;
   font-style: italic;
-  color: #444;
+  color: #555;
   line-height: 1.6;
 }
 blockquote p {
@@ -95,64 +87,24 @@ blockquote p {
 }
 blockquote strong {
   font-style: normal;
-  color: #000;
+  color: #333;
 }
 
-/* ==== NAVBAR ==== */
+/* ==== NAV ==== */
 .navbar {
   display: flex;
   gap: 18px;
   margin-bottom: 28px;
   font-size: 16px;
 }
+
 .nav-item {
   text-decoration: none;
   color: inherit;
   opacity: 0.85;
 }
+
 .nav-item:hover {
   opacity: 1;
   text-decoration: underline;
-}
-
-/* ==== RESPONSIVE ==== */
-@media (max-width: 600px) {
-  .work-item a {
-    font-size: 1rem; /* giảm nhẹ trên màn nhỏ */
-    padding-left: 0.9rem;
-  }
-  .work-item .post-date {
-    font-size: 0.8em;
-  }
-  .work-item a::before {
-    font-size: 0.4rem;
-    top: 0.2em;
-  }
-  .work-item {
-    margin-bottom: 0.7rem;
-  }
-}
-
-@@media (max-width: 768px) {
-  .page-container,
-  .content-column {
-    padding-left: 0 !important;
-  }
-
-  .content-column::before {
-    left: 0 !important;
-  }
-
-  /* Chừa khoảng cho tiêu đề */
-  .works-title {
-    padding-left: 1rem; /* đẩy chữ “Giới thiệu” ra một chút */
-  }
-
-  .work-item a {
-    padding-left: 1.5rem;
-  }
-
-  .work-item a::before {
-    left: 0.3rem !important;
-  }
 }
