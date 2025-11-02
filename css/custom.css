@@ -35,7 +35,6 @@ a:hover {
   width: 2px;
   background-color: #222;
 }
-
 /* ==== DANH SÁCH BÀI VIẾT ==== */
 .work-item {
   margin-bottom: 0.8rem;
@@ -47,7 +46,7 @@ a:hover {
   color: #111;
   text-decoration: none;
   font-weight: 600;
-  font-size: 1.05rem; /* tăng nhẹ cho cân với năm */
+  font-size: 1.05rem; /* nhỉnh hơn chút để cân với date */
   padding-left: 1rem;
 }
 
@@ -57,7 +56,7 @@ a:hover {
   left: 0;
   top: 0.15em;
   color: #111;
-  font-size: 0.45rem; /* nhỏ hơn xíu để tinh tế hơn */
+  font-size: 0.45rem;
 }
 
 .work-item a:hover {
@@ -117,23 +116,19 @@ blockquote strong {
 }
 
 /* ==== RESPONSIVE ==== */
-.container,
-.page-container,
-.content,
-.main,
-.page-content {
-  width: 100%;
-  max-width: 580px;
-  margin: 0 auto;
-  padding: 0 16px;
-  box-sizing: border-box;
-}
-@media (max-width: 768px) {
-  .container,
-  .page-container,
-  .content,
-  .main,
-  .page-content {
-    max-width: 100%;
+@media (max-width: 600px) {
+  .work-item a {
+    font-size: 1rem; /* giảm nhẹ trên màn nhỏ */
+    padding-left: 0.9rem;
+  }
+  .work-item .post-date {
+    font-size: 0.8em;
+  }
+  .work-item a::before {
+    font-size: 0.4rem;
+    top: 0.2em;
+  }
+  .work-item {
+    margin-bottom: 0.7rem;
   }
 }
