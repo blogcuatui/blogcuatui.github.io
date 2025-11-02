@@ -1,3 +1,5 @@
+Có mới nhất 
+
 /* ==== BỐ CỤC & FONT ==== */
 html, body {
   background-color: #f9f7f4 !important;
@@ -133,4 +135,28 @@ button {
 /* contenteditable */
 [contenteditable] {
   text-transform: lowercase !important;
+}
+
+
+/* ✅ Ép toàn bộ layout canh trái trên desktop */
+@media (min-width: 1024px) {
+  body,
+  .container,
+  .main,
+  .content,
+  .page-content,
+  .post-container {
+    margin-left: 0 !important;
+    margin-right: auto !important;
+    text-align: left !important;
+    max-width: 35em !important;
+    width: auto !important;
+  }
+
+  /* Nếu theme bọc thêm 1 lớp trong .container */
+  .container > * {
+    margin-left: 0 !important;
+    margin-right: auto !important;
+    text-align: left !important;
+  }
 }
