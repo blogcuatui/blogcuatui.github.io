@@ -132,3 +132,27 @@ blockquote strong {
     margin-bottom: 0.7rem;
   }
 }
+
+@@media (max-width: 768px) {
+  .page-container,
+  .content-column {
+    padding-left: 0 !important;
+  }
+
+  .content-column::before {
+    left: 0 !important;
+  }
+
+  /* Chừa khoảng cho tiêu đề */
+  .works-title {
+    padding-left: 1rem; /* đẩy chữ “Giới thiệu” ra một chút */
+  }
+
+  .work-item a {
+    padding-left: 1.5rem;
+  }
+
+  .work-item a::before {
+    left: 0.3rem !important;
+  }
+}
