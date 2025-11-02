@@ -1,138 +1,133 @@
-Có mới nhất 
-
 /* ==== BỐ CỤC & FONT ==== */
 html, body {
-  background-color: #f9f7f4 !important;
-  color: #2b2b27 !important;
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-  font-weight: 400;
-  letter-spacing: 0.01em;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-rendering: optimizeLegibility;
-  font-feature-settings: "liga","kern";
-  overflow-x: hidden; /* ẩn thanh ngang */
+background-color: #000 !important;
+color: #ccc !important;
+font-family: "Georgia", "Times New Roman", serif;
+font-size: 1rem;
+line-height: 1.5;
+-webkit-font-smoothing: antialiased;
+-moz-osx-font-smoothing: grayscale;
+text-rendering: optimizeLegibility;
+overflow-x: hidden;
 }
 
 /* ==== LINK ==== */
 a {
-  color: #222222 !important;
-  text-decoration: none !important;
+color: #60c0c5;
+text-decoration: underline;
+text-underline-offset: 3px;
 }
 a:hover {
-  color: #222222 !important;
-  text-decoration: underline !important;
+color: #9ce7ea;
 }
 
-/* ==== TIÊU ĐỀ BÀI VIẾT ==== */
-.post-title a {
-  text-decoration: none !important;
-  color: inherit !important;
+/* ==== CỘT NỘI DUNG ==== */
+.content-column {
+position: relative;
+padding-left: 2rem;
 }
-.post-title a:hover {
-  color: #8f6a60 !important;
-  text-decoration: none !important;
-}
-
-/* ==== WORK LIST ==== */
-.work-item .work-link:hover {
-  text-decoration: none !important;
-}
-.work-item .work-link:hover .work-title {
-  text-decoration: underline !important;
-}
-.work-item .year {
-  text-decoration: none !important;
-  display: inline-block;
-  font-size: 0.9em !important;
+.content-column::before {
+content: "";
+position: absolute;
+left: 0.5rem;
+top: 0;
+bottom: 0;
+width: 2px;
+background-color: #60c0c5;
 }
 
-/* ======================================================
-   ✅ FIX LAYOUT MOBILE BUNG FULL
-   ====================================================== */
+/* ==== DANH SÁCH BÀI VIẾT ==== */
+.work-item {
+margin-bottom: 0.8rem;
+}
+.work-item a {
+position: relative;
+display: inline-block;
+color: #60c0c5;
+text-decoration: underline;
+text-underline-offset: 3px;
+font-weight: 600;
+padding-left: 1rem;
+}
+.work-item a::before {
+content: "■";
+position: absolute;
+left: 0;
+top: 0.1em;
+color: #60c0c5;
+font-size: 0.55rem;
+}
+.work-item a:hover {
+color: #9ce7ea;
+}
+
+/* ==== NGÀY ==== */
+.work-item .post-date {
+color: #aaa;
+font-style: italic;
+margin-left: 0.3rem;
+}
+
+/* ==== TIÊU ĐỀ MỤC ==== */
+.works-title {
+color: #ccc;
+font-weight: 500;
+text-transform: lowercase;
+margin-bottom: 1rem;
+}
+
+/* ==== BLOCKQUOTE ==== */
+blockquote {
+border-left: 3px solid #60c0c5;
+padding-left: 18px;
+margin: 1.2rem 0;
+font-style: italic;
+color: #bbb;
+line-height: 1.6;
+}
+blockquote p {
+margin: 0;
+}
+blockquote strong {
+font-style: normal;
+color: #fff;
+}
+
+/* ==== NAVBAR ==== */
+.navbar {
+display: flex;
+gap: 18px;
+margin-bottom: 28px;
+font-size: 16px;
+}
+.nav-item {
+text-decoration: none;
+color: inherit;
+opacity: 0.85;
+}
+.nav-item:hover {
+opacity: 1;
+text-decoration: underline;
+}
+
+/* ==== RESPONSIVE ==== */
 .container,
 .page-container,
 .content,
 .main,
 .page-content {
-  width: 100% !important;
-  max-width: 580px !important;
-  margin-left: auto !important;
-  margin-right: auto !important;
-  padding-left: 16px !important;
-  padding-right: 16px !important;
-  box-sizing: border-box !important;
+width: 100%;
+max-width: 580px;
+margin: 0 auto;
+padding: 0 16px;
+box-sizing: border-box;
 }
-
 @media (max-width: 768px) {
-  .container,
-  .page-container,
-  .content,
-  .main,
-  .page-content {
-    max-width: 100% !important;
-  }
+.container,
+.page-container,
+.content,
+.main,
+.page-content {
+max-width: 100%;
 }
-
-/* ======================================================
-   ✅ BLOCKQUOTE KIỂU KUNALL.IS
-   ====================================================== */
-blockquote {
-  border-left: 3px solid #ddd;
-  padding-left: 18px;
-  margin-left: 0;
-  margin-right: 0;
-  font-style: italic;
-  color: #555;
-  line-height: 1.6;
-}
-blockquote p {
-  margin: 0;
-}
-blockquote strong {
-  font-style: normal;
-  color: #333;
-}
-
-.navbar {
-  display: flex;
-  gap: 18px;
-  margin-bottom: 28px;
-  font-size: 16px;
-}
-
-.nav-item {
-  text-decoration: none;
-  color: inherit;
-  opacity: 0.85;
-}
-
-.nav-item:hover {
-  opacity: 1;
-  text-decoration: underline;
-}
-
-/* Áp dụng cho mọi phần tử và pseudo-elements */
-*,
-*::before,
-*::after {
-  text-transform: lowercase !important;
-}
-
-/* Form controls (input/textarea/select) */
-input,
-textarea,
-select,
-button {
-  text-transform: lowercase !important;
-}
-
-/* Placeholder (đa trình duyệt) */
-::placeholder { text-transform: lowercase !important; }
-:-ms-input-placeholder { text-transform: lowercase !important; } /* IE 10-11 */
-::-ms-input-placeholder { text-transform: lowercase !important; } /* Edge Legacy */
-
-/* contenteditable */
-[contenteditable] {
-  text-transform: lowercase !important;
 }
