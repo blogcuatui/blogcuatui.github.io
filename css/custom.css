@@ -40,33 +40,39 @@ a:hover {
 .work-item {
   margin-bottom: 0.8rem;
 }
+
 .work-item a {
   position: relative;
   display: inline-block;
   color: #111;
-  text-decoration: underline;
-  text-underline-offset: 3px;
+  text-decoration: none;
   font-weight: 600;
+  font-size: 1.05rem; /* tăng nhẹ cho cân với năm */
   padding-left: 1rem;
 }
+
 .work-item a::before {
   content: "■";
   position: absolute;
   left: 0;
-  top: 0.1em;
+  top: 0.15em;
   color: #111;
-  font-size: 0.55rem;
+  font-size: 0.45rem; /* nhỏ hơn xíu để tinh tế hơn */
 }
+
 .work-item a:hover {
-  color: #555;
+  text-decoration: underline;
 }
 
 /* ==== NGÀY ==== */
 .work-item .post-date {
-  color: #777;
+  color: #888;
   font-style: italic;
   margin-left: 0.3rem;
+  font-size: 0.85em;
+  font-weight: 400;
 }
+
 
 /* ==== TIÊU ĐỀ MỤC ==== */
 .works-title {
