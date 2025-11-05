@@ -1,25 +1,26 @@
 /* ==== BỐ CỤC & FONT ==== */
 html, body {
-  background-color: #f6efe6 !important;  /* nền kem nhạt kiểu Claude */
-  color: #2b2b27 !important;             /* chữ đen ấm */
-  font-family: "Georgia", serif !important; /* font chính bạn muốn */
+  background-color: #fff;
+  color: #333333;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: 400;
+  font-size: 16px;
   letter-spacing: 0.01em;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
-  font-feature-settings: "liga", "kern";
-  overflow-x: hidden; /* Ẩn thanh cuộn ngang nếu có */
+  font-feature-settings: "liga","kern";
+  overflow-x: hidden;
 }
 
 /* ==== LINK ==== */
 a {
-  color: #c85a2b !important;             /* màu cam-nâu nhẹ */
-  text-decoration: none !important;
+  color: #222222;
+  text-decoration: none;
 }
 a:hover {
-  color: #a64a22 !important;             /* hover đậm hơn */
-  text-decoration: underline !important;
+  color: #0085bd;
+  text-decoration: underline;
 }
 
 /* ==== TIÊU ĐỀ BÀI VIẾT ==== */
@@ -28,156 +29,83 @@ a:hover {
   color: inherit;
 }
 .post-title a:hover {
-  color: #8f6a60; /* đổi nhẹ khi hover */
+  color: #8f6a60;
+}
+
+/* ==== WORK LIST ==== */
+.work-item .work-link:hover {
   text-decoration: none;
 }
-
-/* ==== TIÊU ĐỀ WORKS ==== */
-.works-title {
-  font-family: "Georgia", serif;
-  font-size: 1.4rem;
-  color: #222;
-  display: inline-flex;
-  align-items: center;
+.work-item .work-link:hover .work-title {
+  text-decoration: underline;
 }
-
-/* Hiệu ứng con trỏ nhấp nháy */
-.cursor {
+.work-item .year {
   display: inline-block;
-  margin-left: 2px;
-  animation: blink 1.2s step-start infinite;
-}
-@keyframes blink {
-  50% { opacity: 0; }
+  font-size: 0.9em;
 }
 
-/* ==== BỐ CỤC RESPONSIVE ==== */
+/* ======================================================
+   ✅ FIX LAYOUT MOBILE BUNG FULL NHƯ RIEMATS
+   ====================================================== */
+.container,
+.page-container,
+.content,
+.main,
+.page-content {
+  width: 100% !important;
+  max-width: 580px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  padding-left: 16px !important;
+  padding-right: 16px !important;
+  box-sizing: border-box !important;
+}
+
 @media (max-width: 768px) {
-  .post-container, .content, .main, .page-content {
-    width: 98%;
-    max-width: 98% !important;
-    padding-left: .5rem !important;
-    padding-right: .5rem !important;
-  }
-}
-
-@media (min-width: 769px) {
-  .post-container, .content, .main, .page-content {
-    max-width: 850px;
-    margin: 0 auto;
-  }
-}
-
-.container {
-  max-width: 95%;
-  margin: 0 auto;
-}
-
-
-Exit lần cuối  /* ==== BỐ CỤC & FONT ==== */
-html, body {
-  background-color: #f6efe6 !important;  /* nền kem nhạt kiểu Claude */
-  color: #2b2b27 !important;             /* chữ đen ấm */
-  font-family: "Georgia", serif !important; /* font chính bạn muốn */
-  font-weight: 400;
-  letter-spacing: 0.01em;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-rendering: optimizeLegibility;
-  font-feature-settings: "liga", "kern";
-  overflow-x: hidden; /* Ẩn thanh cuộn ngang nếu có */
-}
-
-/* ==== LINK ==== */
-a {
-  color: #c85a2b !important;             /* màu cam-nâu nhẹ */
-  text-decoration: none !important;
-}
-a:hover {
-  color: #a64a22 !important;             /* hover đậm hơn */
-  text-decoration: underline !important;
-}
-
-/* ==== TIÊU ĐỀ BÀI VIẾT ==== */
-.post-title a {
-  text-decoration: none;
-  color: inherit;
-}
-.post-title a:hover {
-  color: #8f6a60; /* đổi nhẹ khi hover */
-  text-decoration: none;
-}
-
-/* ==== TIÊU ĐỀ WORKS ==== */
-.works-title {
-  font-family: "Georgia", serif;
-  font-size: 1.4rem;
-  color: #222;
-  display: inline-flex;
-  align-items: center;
-}
-
-/* Hiệu ứng con trỏ nhấp nháy */
-.cursor {
-  display: inline-block;
-  margin-left: 2px;
-  animation: blink 1.2s step-start infinite;
-}
-@keyframes blink {
-  50% { opacity: 0; }
-}
-
-/* ✅ Ép toàn bộ layout canh trái trên desktop */
-@media (min-width: 1024px) {
-  body,
   .container,
-  .main,
+  .page-container,
   .content,
-  .page-content,
-  .post-container {
-    margin-left: 0 !important;
-    margin-right: auto !important;
-    text-align: left !important;
-    max-width: 35em !important;
-    width: auto !important;
-  }
-
-  /* Nếu theme bọc thêm 1 lớp trong .container */
-  .container > * {
-    margin-left: 0 !important;
-    margin-right: auto !important;
-    text-align: left !important;
+  .main,
+  .page-content {
+    max-width: 100% !important;
   }
 }
 
+/* ======================================================
+   ✅ BLOCKQUOTE KIỂU KUNALL.IS
+   ====================================================== */
+blockquote {
+  border-left: 3px solid #ddd;
+  padding-left: 18px;
+  margin-left: 0;
+  margin-right: 0;
+  font-style: italic;
+  color: #555;
+  line-height: 1.6;
+}
+blockquote p {
+  margin: 0;
+}
+blockquote strong {
+  font-style: normal;
+  color: #333;
+}
 
+/* ==== NAV ==== */
+.navbar {
+  display: flex;
+  gap: 18px;
+  margin-bottom: 28px;
+  font-size: 16px;
+}
 
+.nav-item {
+  text-decoration: none;
+  color: inherit;
+  opacity: 0.85;
+}
 
-
-/* Giữ .year không xuống dòng, .work-title cắt ... khi dài */
-@media (max-width: 768px) {
-  /* Hàng chứa năm + tiêu đề */
-  .work-item .work-link {
-    display: flex;            /* xếp cùng hàng */
-    align-items: baseline;
-    gap: .5rem;
-    white-space: nowrap;      /* không cho wrap cả hàng */
-  }
-
-  /* Năm luôn 1 khối cố định, không wrap */
-  .work-item .year {
-    flex: 0 0 auto;
-    white-space: nowrap;
-  }
-
-  /* Tiêu đề chiếm phần còn lại và cắt bằng … */
-  .work-item .work-title {
-    flex: 1 1 auto;
-    min-width: 0;             /* QUAN TRỌNG để ellipsis chạy trong flex */
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    display: inline-block;     /* tăng độ ổn định của ellipsis */
-    max-width: 100%;
-  }
+.nav-item:hover {
+  opacity: 1;
+  text-decoration: underline;
 }
