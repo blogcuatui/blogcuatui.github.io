@@ -4,7 +4,7 @@ html, body {
   color: #222; /* giống tone ando.life */
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: 400;
-  font-size: 18px; /* cỡ chữ thân bài như ando */
+  font-size: 16px; /* cỡ chữ thân bài như ando */
   letter-spacing: 0.01em;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
