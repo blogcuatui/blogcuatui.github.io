@@ -1,27 +1,25 @@
 /* ==== BỐ CỤC & FONT ==== */
 html, body {
-  background-color: #fff;
-  color: #222; /* giống tone ando.life */
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  background-color: #f6efe6 !important;  /* nền kem nhạt kiểu Claude */
+  color: #2b2b27 !important;             /* chữ đen ấm */
+  font-family: "Georgia", serif !important; /* font chính bạn muốn */
   font-weight: 400;
-  font-size: 16px; /* cỡ chữ thân bài như ando */
   letter-spacing: 0.01em;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
-  font-feature-settings: "liga","kern";
-  overflow-x: hidden;
-  line-height: 1.6;
+  font-feature-settings: "liga", "kern";
+  overflow-x: hidden; /* Ẩn thanh cuộn ngang nếu có */
 }
 
 /* ==== LINK ==== */
 a {
-  color: #111;
-  text-decoration: none;
+  color: #c85a2b !important;             /* màu cam-nâu nhẹ */
+  text-decoration: none !important;
 }
 a:hover {
-  color: #0085bd;
-  text-decoration: underline;
+  color: #a64a22 !important;             /* hover đậm hơn */
+  text-decoration: underline !important;
 }
 
 /* ==== TIÊU ĐỀ BÀI VIẾT ==== */
@@ -30,106 +28,156 @@ a:hover {
   color: inherit;
 }
 .post-title a:hover {
-  color: #8f6a60;
-}
-
-h1, .post-title {
-  font-size: 2.4rem; /* khoảng 43px */
-  line-height: 1.2;
-  font-weight: 600;
-  margin-bottom: 1em;
-  color: #111;
-}
-h2 {
-  font-size: 1.9rem; /* ~34px */
-  line-height: 1.3;
-  margin-bottom: 0.8em;
-}
-h3 {
-  font-size: 1.4rem; /* ~25px */
-  line-height: 1.4;
-  margin-bottom: 0.6em;
-}
-
-/* ==== WORK LIST ==== */
-.work-item .work-link:hover {
+  color: #8f6a60; /* đổi nhẹ khi hover */
   text-decoration: none;
 }
-.work-item .work-link:hover .work-title {
-  text-decoration: underline;
+
+/* ==== TIÊU ĐỀ WORKS ==== */
+.works-title {
+  font-family: "Georgia", serif;
+  font-size: 1.4rem;
+  color: #222;
+  display: inline-flex;
+  align-items: center;
 }
-.work-item .year {
+
+/* Hiệu ứng con trỏ nhấp nháy */
+.cursor {
   display: inline-block;
-  font-size: 0.9em;
-  opacity: 0.8;
+  margin-left: 2px;
+  animation: blink 1.2s step-start infinite;
+}
+@keyframes blink {
+  50% { opacity: 0; }
 }
 
-/* ======================================================
-   ✅ LAYOUT GIỐNG ANDO — ĐỘ RỘNG VÀ KHOẢNG CÁCH CÂN ĐỐI
-   ====================================================== */
-.container,
-.page-container,
-.content,
-.main,
-.page-content {
-  width: 100% !important;
-  max-width: 720px !important; /* tương đương layout ando */
-  margin-left: auto !important;
-  margin-right: auto !important;
-  padding-left: 24px !important;
-  padding-right: 24px !important;
-  box-sizing: border-box !important;
-}
-
+/* ==== BỐ CỤC RESPONSIVE ==== */
 @media (max-width: 768px) {
-  .container,
-  .page-container,
-  .content,
-  .main,
-  .page-content {
-    max-width: 100% !important;
-    padding-left: 18px !important;
-    padding-right: 18px !important;
-    font-size: 16px; /* giảm nhẹ cho mobile */
-    line-height: 1.7;
+  .post-container, .content, .main, .page-content {
+    width: 98%;
+    max-width: 98% !important;
+    padding-left: .5rem !important;
+    padding-right: .5rem !important;
   }
 }
 
-/* ======================================================
-   ✅ BLOCKQUOTE KIỂU KUNALL.IS
-   ====================================================== */
-blockquote {
-  border-left: 3px solid #ddd;
-  padding-left: 18px;
-  margin-left: 0;
-  margin-right: 0;
-  font-style: italic;
-  color: #555;
-  line-height: 1.7;
-}
-blockquote p {
-  margin: 0;
-}
-blockquote strong {
-  font-style: normal;
-  color: #333;
+@media (min-width: 769px) {
+  .post-container, .content, .main, .page-content {
+    max-width: 850px;
+    margin: 0 auto;
+  }
 }
 
-/* ==== NAV ==== */
-.navbar {
-  display: flex;
-  gap: 18px;
-  margin-bottom: 28px;
-  font-size: 16px;
+.container {
+  max-width: 95%;
+  margin: 0 auto;
 }
 
-.nav-item {
+
+Exit lần cuối  /* ==== BỐ CỤC & FONT ==== */
+html, body {
+  background-color: #f6efe6 !important;  /* nền kem nhạt kiểu Claude */
+  color: #2b2b27 !important;             /* chữ đen ấm */
+  font-family: "Georgia", serif !important; /* font chính bạn muốn */
+  font-weight: 400;
+  letter-spacing: 0.01em;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  font-feature-settings: "liga", "kern";
+  overflow-x: hidden; /* Ẩn thanh cuộn ngang nếu có */
+}
+
+/* ==== LINK ==== */
+a {
+  color: #c85a2b !important;             /* màu cam-nâu nhẹ */
+  text-decoration: none !important;
+}
+a:hover {
+  color: #a64a22 !important;             /* hover đậm hơn */
+  text-decoration: underline !important;
+}
+
+/* ==== TIÊU ĐỀ BÀI VIẾT ==== */
+.post-title a {
   text-decoration: none;
   color: inherit;
-  opacity: 0.85;
+}
+.post-title a:hover {
+  color: #8f6a60; /* đổi nhẹ khi hover */
+  text-decoration: none;
 }
 
-.nav-item:hover {
-  opacity: 1;
-  text-decoration: underline;
+/* ==== TIÊU ĐỀ WORKS ==== */
+.works-title {
+  font-family: "Georgia", serif;
+  font-size: 1.4rem;
+  color: #222;
+  display: inline-flex;
+  align-items: center;
+}
+
+/* Hiệu ứng con trỏ nhấp nháy */
+.cursor {
+  display: inline-block;
+  margin-left: 2px;
+  animation: blink 1.2s step-start infinite;
+}
+@keyframes blink {
+  50% { opacity: 0; }
+}
+
+/* ✅ Ép toàn bộ layout canh trái trên desktop */
+@media (min-width: 1024px) {
+  body,
+  .container,
+  .main,
+  .content,
+  .page-content,
+  .post-container {
+    margin-left: 0 !important;
+    margin-right: auto !important;
+    text-align: left !important;
+    max-width: 35em !important;
+    width: auto !important;
+  }
+
+  /* Nếu theme bọc thêm 1 lớp trong .container */
+  .container > * {
+    margin-left: 0 !important;
+    margin-right: auto !important;
+    text-align: left !important;
+  }
+}
+
+
+
+
+
+/* Giữ .year không xuống dòng, .work-title cắt ... khi dài */
+@media (max-width: 768px) {
+  /* Hàng chứa năm + tiêu đề */
+  .work-item .work-link {
+    display: flex;            /* xếp cùng hàng */
+    align-items: baseline;
+    gap: .5rem;
+    white-space: nowrap;      /* không cho wrap cả hàng */
+  }
+
+  /* Năm luôn 1 khối cố định, không wrap */
+  .work-item .year {
+    flex: 0 0 auto;
+    white-space: nowrap;
+  }
+
+  /* Tiêu đề chiếm phần còn lại và cắt bằng … */
+  .work-item .work-title {
+    flex: 1 1 auto;
+    min-width: 0;             /* QUAN TRỌNG để ellipsis chạy trong flex */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    display: inline-block;     /* tăng độ ổn định của ellipsis */
+    max-width: 100%;
+  }
 }
