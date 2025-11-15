@@ -109,3 +109,14 @@ blockquote strong {
   opacity: 1;
   text-decoration: underline;
 }
+
+/* Giảm cỡ chữ trong bài viết khi xem trên điện thoại */
+@media (max-width: 600px) {
+  .post-content,
+  .post-body,
+  article,
+  .entry-content {
+    font-size: 14px !important;
+    line-height: 1.55 !important;
+  }
+}
