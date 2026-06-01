@@ -50,6 +50,7 @@ img {
 /* ==== LINK & NAV ==== */
 a {
   color: #222222;
+  transition: color 0.2s ease-in-out;
   text-decoration: none;
   border-bottom: 1px solid #ccc; /* Gạch chân nhẹ đứt nét hoặc xám mờ kiểu blog cổ điển */
   padding-bottom: 1px;
