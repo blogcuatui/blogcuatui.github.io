@@ -112,7 +112,7 @@ header a.active-link,
 header a[aria-current="page"] {
     font-weight: 700 !important;
     text-decoration: underline !important;
-    text-decoration-color: #e9c46a !important; /* Dùng màu vàng có sẵn của theme */
+    text-decoration-color: #fc0 !important; /* Dùng màu vàng có sẵn của theme */
     text-decoration-thickness: 2px !important;
     text-underline-offset: 4px !important;
 }
