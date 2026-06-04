@@ -57,7 +57,7 @@ a {
 }
 a:hover {
   color: #c1c1c1; /* Thay bằng mã màu vàng/cam mày đang dùng */
-  border-bottom-color: #ffcc00; /* Đổi luôn màu đường gạch chân cho tiệp với chữ */
+  border-bottom-color: #fc0; /* Đổi luôn màu đường gạch chân cho tiệp với chữ */
 }
 
 .navbar {
