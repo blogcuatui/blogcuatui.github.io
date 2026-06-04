@@ -57,7 +57,7 @@ a {
 }
 a:hover {
   color: #c1c1c1; /* Thay bằng mã màu vàng/cam mày đang dùng */
-  border-bottom-color: #fc0; /* Đổi luôn màu đường gạch chân cho tiệp với chữ */
+  border-bottom-color: #c1c1c1; /* Đổi luôn màu đường gạch chân cho tiệp với chữ */
 }
 
 .navbar {
@@ -113,7 +113,7 @@ header a.active-link,
 header a[aria-current="page"] {
     font-weight: 700 !important;
     text-decoration: underline !important;
-    text-decoration-color: #fc0 !important; /* Dùng màu vàng có sẵn của theme */
+    text-decoration-color: #c1c1c1 !important; /* Dùng màu vàng có sẵn của theme */
     text-decoration-thickness: 2px !important;
     text-underline-offset: 4px !important;
 }
