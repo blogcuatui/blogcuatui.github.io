@@ -49,14 +49,14 @@ img {
 
 /* ==== LINK & NAV ==== */
 a {
-  color: #222222;
+  color: #1d1d1b;
   transition: color 0.2s ease-in-out;
   text-decoration: none;
   border-bottom: 1px solid #ccc; /* Gạch chân nhẹ đứt nét hoặc xám mờ kiểu blog cổ điển */
   padding-bottom: 1px;
 }
 a:hover {
-  color: #ffcc00; /* Thay bằng mã màu vàng/cam mày đang dùng */
+  color: #c1c1c1; /* Thay bằng mã màu vàng/cam mày đang dùng */
   border-bottom-color: #ffcc00; /* Đổi luôn màu đường gạch chân cho tiệp với chữ */
 }
 
