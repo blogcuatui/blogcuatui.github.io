@@ -15,7 +15,7 @@ html, body {
 main {
   width: 100% !important;
   max-width: 540px !important; /* Bóp thẳng xuống 540px (rất hẹp) */
-  margin: 80px auto 100px auto !important; /* Đẩy khối nội dung cách mép trên 80px, mép dưới 100px */
+  margin: 0 auto 100px auto !important; /* Đẩy khối nội dung cách mép trên 80px, mép dưới 100px */
   padding: 0 20px !important;
   box-sizing: border-box !important;
 }
@@ -101,7 +101,7 @@ blockquote p {
 @media (min-width: 601px) and (max-width: 1180px) {
   main {
     max-width: 86% !important; 
-    margin: 60px auto 80px auto !important; 
+    margin: 0 auto 80px auto !important; 
   }
 }
 
@@ -111,7 +111,7 @@ blockquote p {
 @media (max-width: 600px) {
   main {
     max-width: 100% !important;
-    margin: 40px auto 60px auto !important; /* Trên điện thoại thì khoảng trống trên/dưới nhỏ lại */
+    margin: 0 auto 60px auto !important; /* Trên điện thoại thì khoảng trống trên/dưới nhỏ lại */
     padding: 0 16px !important;
   }
   html, body {
@@ -128,4 +128,7 @@ header a[aria-current="page"] {
     text-decoration-color: #c1c1c1 !important; /* Dùng màu vàng có sẵn của theme */
     text-decoration-thickness: 2px !important;
     text-underline-offset: 4px !important;
+}
+header, main {
+    padding-top: 0 !important;
 }
