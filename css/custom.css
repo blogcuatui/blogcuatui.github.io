@@ -140,19 +140,20 @@ header a[aria-current="page"] {
 
 
 /* ======================================================
-   ✅ ÉP THẺ MAIN CỦA THEME GỐC BUNG RỘNG TRÊN IPAD & MOBILE
+   ✅ FIX LỖI IPAD "GIẢ CẦY" DESKTOP & BUNG RỘNG FLUID
    ====================================================== */
 
-/* TABLET (Màn hình 601px đến 1180px) */
-@media (min-width: 601px) and (max-width: 1180px) {
-  main {
-    max-width: 86% !important; /* Đè bẹp cái 55ch của theme gốc */
-  }
+/* Đập bỏ cái lồng 55ch của theme gốc, áp dụng cho TẤT CẢ màn hình từ máy tính tới iPad */
+main {
+  width: 88% !important; /* Ép bung ra chiếm 88% diện tích màn hình */
+  max-width: 760px !important; /* Desktop và iPad bự sẽ dừng ở 760px (nhìn rất thoáng và giống riemats) */
+  margin: 0 auto !important;
 }
 
-/* ĐIỆN THOẠI (Dưới 600px) */
+/* ĐIỆN THOẠI (Dưới 600px thì tràn gần hết viền) */
 @media (max-width: 600px) {
   main {
+    width: 100% !important;
     max-width: 100% !important; 
     padding: 1rem 1.2rem !important; 
   }
