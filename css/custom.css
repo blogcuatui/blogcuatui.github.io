@@ -1,15 +1,15 @@
 /* ==== BỐ CỤC & FONT SIÊU GỌN ==== */
 html, body {
-  background-color: #d6d6d6; /* Màu nền xám bên ngoài giống hình */
-  color: #111111; 
+  background-color: #fafafa; /* Đổi sang màu trắng ngà siêu nhẹ, đọc lâu không bị nhức mắt */
+  color: #111111; /* Đen tuyền để chữ nổi bần bật */
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-  font-size: 17px; 
-  line-height: 1.6; 
+  font-size: 17px; /* Chữ 17px là tỷ lệ vàng cho khung hẹp */
+  line-height: 1.6; /* Siết line-height lại 1.6 cho khối chữ kết dính hơn */
   -webkit-font-smoothing: antialiased;
 }
 
 /* ======================================================
-   ✅ ÉP KHUNG & TẠO HIỆU ỨNG TỜ GIẤY TRẮNG (CARD)
+   ✅ ÉP KHUNG CỰC GẮT & ĐẨY XUỐNG DƯỚI (CHUẨN ZINZY)
    ====================================================== */
 .container,
 .page-container,
@@ -17,18 +17,11 @@ html, body {
 .main,
 .page-content,
 article {
-  background-color: #ffffff !important; /* Bên trong trắng tinh */
   width: 100% !important;
-  max-width: 580px !important; /* Nới rộng ra 1 xíu (580px) vì tí nữa trừ hao padding bên trong là vừa đẹp */
-  margin: 60px auto 100px auto !important; /* Căn giữa, cách trên dưới */
-  
-  /* Thêm khoảng không bên trong để chữ không chạm sát mép giấy trắng */
-  padding: 40px 40px !important; 
+  max-width: 540px !important; /* Bóp thẳng xuống 540px (rất hẹp) */
+  margin: 80px auto 100px auto !important; /* Đẩy khối nội dung cách mép trên 80px, mép dưới 100px */
+  padding: 0 20px !important;
   box-sizing: border-box !important;
-  
-  /* Đổ bóng để tờ giấy nổi lên khỏi nền xám (giống hệt ảnh) */
-  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.05), 0px 1px 3px rgba(0,0,0,0.1) !important; 
-  border-radius: 4px !important; /* Bo góc mép giấy 1 xíu cho mềm mại */
 }
 
 /* ==== KIỂM SOÁT TIÊU ĐỀ & ĐOẠN VĂN ==== */
@@ -42,14 +35,14 @@ h1, h2, h3, h4, h5 {
 
 p {
   margin-top: 0;
-  margin-bottom: 1.4em !important; 
+  margin-bottom: 1.4em !important; /* Khoảng cách đoạn văn dứt khoát */
 }
 
 /* Xử lý ảnh */
 img {
   max-width: 100% !important;
   height: auto;
-  border-radius: 4px; 
+  border-radius: 4px; /* Bo góc cực nhẹ */
   display: block;
   margin: 2em auto;
 }
@@ -59,28 +52,29 @@ a {
   color: #1d1d1b;
   transition: color 0.2s ease-in-out;
   text-decoration: none;
-  border-bottom: 1px solid #ccc; 
+  border-bottom: 1px solid #ccc; /* Gạch chân nhẹ đứt nét hoặc xám mờ kiểu blog cổ điển */
   padding-bottom: 1px;
 }
 a:hover {
-  color: #c1c1c1; 
-  border-bottom-color: #c1c1c1; 
+  color: #c1c1c1; /* Thay bằng mã màu vàng/cam mày đang dùng */
+  border-bottom-color: #c1c1c1; /* Đổi luôn màu đường gạch chân cho tiệp với chữ */
 }
 
 .navbar {
   display: flex;
   gap: 20px;
-  margin-bottom: 40px; 
-  font-size: 15px; 
+  margin-bottom: 40px; /* Cách xa bài viết ra một chút */
+  font-size: 15px; /* Menu nhỏ nhắn lại */
 }
 .nav-item {
-  border-bottom: none; 
-  opacity: 0.6; 
+  border-bottom: none; /* Menu không gạch chân */
+  opacity: 0.6; /* Làm mờ đi để nội dung nổi lên */
 }
 .nav-item:hover {
   opacity: 1;
 }
 
+/* ==== TIÊU ĐỀ BÀI VIẾT NGOÀI TRANG CHỦ ==== */
 .post-title a {
   border-bottom: none;
 }
@@ -89,7 +83,7 @@ a:hover {
    ✅ BLOCKQUOTE
    ====================================================== */
 blockquote {
-  border-left: 2px solid #111; 
+  border-left: 2px solid #111; /* Đổi viền sang màu đen mỏng cho tinh tế */
   padding-left: 16px;
   margin-left: 0;
   margin-right: 0;
@@ -101,26 +95,27 @@ blockquote p {
 }
 
 /* ======================================================
-   ✅ TỐI ƯU GIAO DIỆN ĐIỆN THOẠI (RẤT QUAN TRỌNG VỚI CARD LAYOUT)
+   ✅ MOBILE
    ====================================================== */
 @media (max-width: 600px) {
   .container, .page-container, .content, .main, .page-content, article {
-    margin: 20px auto 40px auto !important; /* Đẩy sát lên trên 1 chút trên điện thoại */
-    padding: 24px 20px !important; /* Giảm padding lại để không bị ép chữ hẹp quá */
-    width: 94% !important; /* Để mép xám hai bên lộ ra 1 xíu, hoặc đổi thành 100% nếu muốn tràn viền trắng */
+    margin: 40px auto 60px auto !important; /* Trên điện thoại thì khoảng trống trên/dưới nhỏ lại */
+    padding: 0 16px !important;
   }
   html, body {
-    font-size: 16px; 
+    font-size: 16px; /* Font điện thoại trả về 16px */
   }
 }
 
-/* Đánh dấu trang hiện tại */
+/* Đánh dấu trang hiện tại trên menu (In đậm + Gạch chân) */
 header a.active, 
 header a.active-link,
 header a[aria-current="page"] {
     font-weight: 700 !important;
     text-decoration: underline !important;
-    text-decoration-color: #c1c1c1 !important; 
+    text-decoration-color: #c1c1c1 !important; /* Dùng màu vàng có sẵn của theme */
     text-decoration-thickness: 2px !important;
     text-underline-offset: 4px !important;
 }
+
+
