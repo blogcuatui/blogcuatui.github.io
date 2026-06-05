@@ -109,7 +109,7 @@ main h2:first-of-type {
    ====================================================== */
 @media (min-width: 601px) and (max-width: 1180px) {
   main {
-    max-width: 86% !important; 
+    max-width: 80% !important; 
     margin: 0 auto 80px auto !important; 
   }
 }
