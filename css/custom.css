@@ -1,6 +1,6 @@
 /* ==== BỐ CỤC & FONT SIÊU GỌN ==== */
 html, body {
-  background-color: #fafafa; /* Trắng ngà siêu nhẹ nguyên bản */
+  background-color: #fafafa; 
   color: #111111; 
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   font-size: 17px; 
@@ -11,14 +11,21 @@ html, body {
 /* ======================================================
    ✅ ÉP KHUNG CỰC GẮT & ĐẨY XUỐNG DƯỚI (CHUẨN ZINZY)
    ====================================================== */
+/* Đã cấy thêm các class bọc nội dung phổ biến nhất (#primary, .site-main, .gh-canvas...) */
 .container,
 .page-container,
 .content,
 .main,
 .page-content,
-article {
+article,
+#primary,
+.site-main,
+.site-content,
+.entry-content,
+.gh-canvas,
+.wrapper {
   width: 100% !important;
-  max-width: 540px !important; /* Bóp thẳng xuống 540px trên Desktop */
+  max-width: 540px !important; 
   margin: 80px auto 100px auto !important; 
   padding: 0 20px !important;
   box-sizing: border-box !important;
@@ -97,10 +104,11 @@ blockquote p {
    ✅ RESPONSIVE: BUNG RỘNG TRÊN TABLET & ĐIỆN THOẠI
    ====================================================== */
 
-/* 1. TABLET (iPad, màn hình cỡ trung) */
-@media (min-width: 601px) and (max-width: 1024px) {
-  .container, .page-container, .content, .main, .page-content, article {
-    max-width: 86% !important; /* Điểm ăn tiền: Bung rộng khung ra trên Tablet */
+/* 1. TABLET (Nới lên 1180px để ôm trọn cả iPad Pro 11/12.9 inch) */
+@media (min-width: 601px) and (max-width: 1180px) {
+  .container, .page-container, .content, .main, .page-content, article,
+  #primary, .site-main, .site-content, .entry-content, .gh-canvas, .wrapper {
+    max-width: 86% !important; 
     margin: 60px auto 80px auto !important; 
     padding: 0 20px !important;
   }
@@ -108,7 +116,8 @@ blockquote p {
 
 /* 2. ĐIỆN THOẠI (Màn hình nhỏ dưới 600px) */
 @media (max-width: 600px) {
-  .container, .page-container, .content, .main, .page-content, article {
+  .container, .page-container, .content, .main, .page-content, article,
+  #primary, .site-main, .site-content, .entry-content, .gh-canvas, .wrapper {
     max-width: 100% !important;
     margin: 40px auto 60px auto !important; 
     padding: 0 16px !important;
