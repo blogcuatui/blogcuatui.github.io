@@ -137,3 +137,23 @@ header a[aria-current="page"] {
     text-decoration-thickness: 2px !important;
     text-underline-offset: 4px !important;
 }
+
+
+/* ======================================================
+   ✅ ÉP THẺ MAIN CỦA THEME GỐC BUNG RỘNG TRÊN IPAD & MOBILE
+   ====================================================== */
+
+/* TABLET (Màn hình 601px đến 1180px) */
+@media (min-width: 601px) and (max-width: 1180px) {
+  main {
+    max-width: 86% !important; /* Đè bẹp cái 55ch của theme gốc */
+  }
+}
+
+/* ĐIỆN THOẠI (Dưới 600px) */
+@media (max-width: 600px) {
+  main {
+    max-width: 100% !important; 
+    padding: 1rem 1.2rem !important; 
+  }
+}
