@@ -128,20 +128,24 @@ main h2:first-of-type {
   }
 }
 
-
-/* 1. Ẩn thẻ time trên mọi thiết bị (cả máy tính lẫn mobile) */
+/* 1. Mặc định ẩn ngày tháng đi, cài đặt hiệu ứng chớp 0.1 giây */
 ul.posts li time {
   opacity: 0; 
-  transition: opacity 0.1s ease; /* Để 0.1s cho nó chớp lên thật nhanh */
+  transition: opacity 0.1s ease; 
 }
 
-/* 2. Hiện lên khi rê chuột (máy tính) HOẶC khi chạm (điện thoại) */
-ul.posts li:hover time,
-ul.posts li:active time,
-ul.posts li:focus-within time {
-  opacity: 1; 
+/* 2. Ép tiêu đề (link) co lại vừa khít cái chữ, không cho chiếm khoảng trống dòng */
+ul.posts li a {
+  display: inline-block;
+  width: max-content; 
 }
 
+/* 3. CHỈ KHI rê chuột/chạm đúng cái chữ tiêu đề (thẻ a), ngày tháng mới hiện lên */
+ul.posts li a:hover ~ time,
+ul.posts li a:active ~ time,
+ul.posts li a:focus ~ time {
+  opacity: 1 !important; 
+}
 
 .menu-logo {
   transition: transform 0.3s ease-in-out;
