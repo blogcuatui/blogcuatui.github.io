@@ -141,3 +141,14 @@ ul.posts li:active time,
 ul.posts li:focus-within time {
   opacity: 1; 
 }
+
+
+/* 1. Gọi tên class logo để thêm hiệu ứng mượt */
+.menu-logo {
+  transition: transform 0.3s ease-in-out;
+}
+
+/* 2. Ép nghiêng đầu sang trái khi rê chuột vào */
+.menu-logo:hover {
+  transform: rotate(-8deg);
+}
