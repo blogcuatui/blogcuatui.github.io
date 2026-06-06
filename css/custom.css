@@ -143,12 +143,12 @@ ul.posts li:focus-within time {
 }
 
 
-/* 1. Gọi tên class logo để thêm hiệu ứng mượt */
 .menu-logo {
   transition: transform 0.3s ease-in-out;
+  border-radius: 16px; /* Bo góc nhẹ nhàng. Muốn cong hơn thì tăng số này lên */
 }
 
-/* 2. Ép nghiêng đầu sang trái khi rê chuột vào */
+/* Hiệu ứng nghiêng vẫn giữ nguyên */
 .menu-logo:hover {
   transform: rotate(-8deg);
 }
