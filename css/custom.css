@@ -127,3 +127,20 @@ main h2:first-of-type {
     font-size: 16px; 
   }
 }
+
+
+/* Cấu hình cơ bản cho thẻ time */
+ul.posts li time {
+  transition: opacity 0.3s ease;
+}
+
+/* Áp dụng hiệu ứng hover CHỈ trên màn hình lớn (Máy tính, Laptop) */
+@media (min-width: 768px) {
+  ul.posts li time {
+    opacity: 0; /* Ẩn đi trên máy tính */
+  }
+  
+  ul.posts li:hover time {
+    opacity: 1; /* Rê chuột vào thì hiện ra */
+  }
+}
