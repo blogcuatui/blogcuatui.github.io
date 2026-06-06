@@ -129,18 +129,15 @@ main h2:first-of-type {
 }
 
 
-/* Cấu hình cơ bản cho thẻ time */
+/* 1. Ẩn thẻ time trên mọi thiết bị (cả máy tính lẫn mobile) */
 ul.posts li time {
-  transition: opacity 0.3s ease;
+  opacity: 0; 
+  transition: opacity 0.1s ease; /* Để 0.1s cho nó chớp lên thật nhanh */
 }
 
-/* Áp dụng hiệu ứng hover CHỈ trên màn hình lớn (Máy tính, Laptop) */
-@media (min-width: 768px) {
-  ul.posts li time {
-    opacity: 0; /* Ẩn đi trên máy tính */
-  }
-  
-  ul.posts li:hover time {
-    opacity: 1; /* Rê chuột vào thì hiện ra */
-  }
+/* 2. Hiện lên khi rê chuột (máy tính) HOẶC khi chạm (điện thoại) */
+ul.posts li:hover time,
+ul.posts li:active time,
+ul.posts li:focus-within time {
+  opacity: 1; 
 }
