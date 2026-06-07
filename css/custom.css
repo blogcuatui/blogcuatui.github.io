@@ -1,10 +1,16 @@
 /* ==== BỐ CỤC & FONT SIÊU GỌN ==== */
 html, body {
-  background-color: #fafafa; /* Đổi sang màu trắng ngà siêu nhẹ */
-  color: #111111; /* Đen tuyền để chữ nổi bần bật */
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-  font-size: 17px; 
-  line-height: 1.6; 
+  background-color: #fafafa;
+  color: #111111;
+  /* Dùng font chữ tương tự Zinzy để tạo cảm giác gọn gàng */
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  
+  /* Giảm font-size xuống 16px (đây là size chuẩn của Zinzy trên PC) */
+  font-size: clamp(16px, 15px + 0.5vw, 18px);
+  
+  /* Line-height (độ cao dòng) 1.5 là con số vàng để dễ đọc, không bị thưa quá như 1.6 */
+  line-height: 1.5; 
+  
   -webkit-font-smoothing: antialiased;
 }
 
@@ -124,7 +130,10 @@ main h2:first-of-type {
     padding: 0 16px !important;
   }
   html, body {
+    /* Đừng giảm size xuống nhỏ hơn 16px trên mobile, rất khó đọc. Giữ nguyên 16px hoặc dùng 1rem */
     font-size: 16px; 
+    /* Tăng nhẹ line-height trên mobile để chữ không bị dính vào nhau khi lướt ngón tay */
+    line-height: 1.55; 
   }
 }
 
