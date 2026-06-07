@@ -128,16 +128,30 @@ main h2:first-of-type {
   }
 }
 
-/* 1. Mặc định ẩn ngày tháng đi, cài đặt hiệu ứng chớp 0.1 giây */
+/* ======================================================
+   ✅ HIỆU ỨNG ẨN/HIỆN NGÀY THÁNG VÀ KHÓA CLICK
+   ====================================================== */
+
+/* 1. Mặc định ẩn ngày tháng, KHÓA luôn click vào ngày tháng */
 ul.posts li time {
   opacity: 0; 
-  transition: opacity 0.1s ease; 
+  transition: opacity 0.1s ease;
+  pointer-events: none !important; /* Không cho click vô ngày tháng */
 }
 
-/* 2. Ép tiêu đề (link) co lại vừa khít cái chữ, không cho chiếm khoảng trống dòng */
+/* 2. Ép thẻ link (tiêu đề) co rút lại, tuyệt đối KHÔNG cho phình to ra khoảng trống */
 ul.posts li a {
-  display: inline-block;
-  width: max-content; 
+  display: inline-block !important;
+  width: fit-content !important; /* Kích thước chỉ vừa khít cái chữ */
+  flex: 0 0 auto !important; /* Cấm giãn nở nếu dùng flexbox */
+  position: static !important; /* Phá vỡ các lớp phủ tàng hình của theme */
+}
+
+/* Dọn dẹp tàn dư: Xóa bỏ mọi lớp tàng hình kéo giãn vùng click của theme */
+ul.posts li a::before,
+ul.posts li a::after {
+  content: none !important;
+  display: none !important;
 }
 
 /* 3. CHỈ KHI rê chuột/chạm đúng cái chữ tiêu đề (thẻ a), ngày tháng mới hiện lên */
@@ -147,6 +161,9 @@ ul.posts li a:focus ~ time {
   opacity: 1 !important; 
 }
 
+/* ======================================================
+   ✅ HIỆU ỨNG LOGO
+   ====================================================== */
 .menu-logo {
   transition: transform 0.3s ease-in-out;
   border-radius: 16px; /* Bo góc nhẹ nhàng. Muốn cong hơn thì tăng số này lên */
