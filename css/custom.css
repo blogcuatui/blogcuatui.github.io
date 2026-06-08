@@ -241,3 +241,12 @@ ul.posts li a:focus ~ time {
 .menu-logo:hover {
   transform: rotate(-8deg);
 }
+
+/* ======================================================
+   🔥 CHỈ CHỈNH TIÊU ĐỀ BÀI VIẾT CHÍNH (H2 TRONG NỘI DUNG KHÔNG ĐỔI)
+   ====================================================== */
+h2[itemprop="name headline"] {
+    font-size: 1.5rem !important;
+    margin-bottom: 0.8em !important;
+    letter-spacing: -0.02em !important; /* Ép chữ khít nhẹ lại một xíu nhìn cho tinh tế chuẩn mnmlist */
+}
