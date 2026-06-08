@@ -163,10 +163,10 @@ ul.posts li {
 }
 
 ul.posts li a {
-  flex: 1 1 auto !important;
+  flex: 0 1 auto !important; /* DÒNG QUAN TRỌNG NHẤT: Đổi số 1 thành 0 để cấm kéo giãn vùng click */
   white-space: normal !important; 
-  display: inline !important; 
-  font-weight: 400 !important; /* Tựa bài ngoài trang chủ cũng không in đậm */
+  display: inline-block !important; /* Bắt cái khung co rút lại ôm vừa khít chữ */
+  font-weight: 400 !important; 
 }
 
 ul.posts li time {
@@ -180,11 +180,12 @@ ul.posts li time {
   pointer-events: none !important; 
 }
 
-ul.posts li:hover time,
+/* CHỈ rê chuột vào ĐÚNG CHỮ của tiêu đề thì mới hiện ngày tháng */
+ul.posts li a:hover ~ time,
+ul.posts li a:active ~ time,
 ul.posts li a:focus ~ time {
   opacity: 1 !important; 
 }
-
 /* ======================================================
    ✅ TABLET & MOBILE
    ====================================================== */
