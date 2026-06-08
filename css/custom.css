@@ -172,19 +172,50 @@ main h2:first-of-type {
    ✅ HIỆU ỨNG ẨN/HIỆN NGÀY THÁNG VÀ KHÓA CLICK
    ====================================================== */
 
-/* 1. Mặc định ẩn ngày tháng, KHÓA luôn click vào ngày tháng */
-ul.posts li time {
-  opacity: 0; 
-  transition: opacity 0.1s ease;
-  pointer-events: none !important; /* Không cho click vô ngày tháng */
+/* ======================================================
+   ✅ HIỆU ỨNG ẨN/HIỆN NGÀY THÁNG VÀ CHỐNG VỠ KHUNG (DÙNG FLEXBOX)
+   ====================================================== */
+
+/* 1. Biến từng dòng bài viết thành một cái khung linh hoạt */
+ul.posts li {
+  display: flex !important;
+  align-items: baseline !important; /* Căn cho chân chữ tiêu đề và chân chữ ngày tháng nằm trên 1 đường thẳng */
+  justify-content: space-between !important; /* Đẩy ngày tháng ra kịch lề phải */
+  gap: 12px !important; /* Chừa một khoảng an toàn 12px giữa tiêu đề và ngày tháng */
+  width: 100% !important;
 }
 
-/* 2. Ép thẻ link (tiêu đề) co rút lại, tuyệt đối KHÔNG cho phình to ra khoảng trống */
+/* 2. Ép thẻ tiêu đề: Được phép co giãn nhưng DƯ LÀ PHẢI CẮT 3 CHẤM */
 ul.posts li a {
-  display: inline-block !important;
-  width: fit-content !important; /* Kích thước chỉ vừa khít cái chữ */
-  flex: 0 0 auto !important; /* Cấm giãn nở nếu dùng flexbox */
-  position: static !important; /* Phá vỡ các lớp phủ tàng hình của theme */
+  flex: 1 1 auto !important; /* Tự động chiếm hết phần không gian trống */
+  min-width: 0 !important; /* Bùa chú cực kỳ quan trọng để text-overflow hoạt động trong Flexbox */
+  white-space: nowrap !important; /* Cấm rớt dòng */
+  overflow: hidden !important; 
+  text-overflow: ellipsis !important; /* Hiện 3 chấm */
+  display: block !important; 
+}
+
+/* 3. Dọn dẹp tàn dư rác của theme cũ */
+ul.posts li a::before,
+ul.posts li a::after {
+  content: none !important;
+  display: none !important;
+}
+
+/* 4. Ép ngày tháng: Giữ nguyên kích thước cứng ngắc, cấm bị ép dẹp hay văng dòng */
+ul.posts li time {
+  flex: 0 0 auto !important; /* Cấm co giãn, tao cần bao nhiêu tao chiếm bấy nhiêu */
+  white-space: nowrap !important; /* Cấm rớt dòng */
+  opacity: 0; /* Vẫn giữ hiệu ứng tàng hình mặc định */
+  transition: opacity 0.1s ease;
+  pointer-events: none !important; 
+}
+
+/* 5. Hiệu ứng Hover: Rê chuột vô tiêu đề thì hiện ngày tháng */
+ul.posts li a:hover ~ time,
+ul.posts li a:active ~ time,
+ul.posts li a:focus ~ time {
+  opacity: 1 !important; 
 }
 
 /* Dọn dẹp tàn dư: Xóa bỏ mọi lớp tàng hình kéo giãn vùng click của theme */
