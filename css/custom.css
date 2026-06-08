@@ -71,15 +71,30 @@ footer a {
   text-decoration: none !important;
 }
 
-/* Đánh dấu trang hiện tại trên menu (In đậm + Gạch chân) */
-header a.active, 
-header a.active-link,
-header a[aria-current="page"] {
-    font-weight: 700 !important;
-    text-decoration: underline !important;
-    text-decoration-color: #c1c1c1 !important; 
-    text-decoration-thickness: 2px !important;
-    text-underline-offset: 4px !important;
+/* ==== HIỆU ỨNG MENU TRÊN CÙNG (DÙNG :has ĐỂ LOẠI TRỪ LOGO CHUẨN XÁC 100%) ==== */
+
+/* 1. Bắt chết thằng liên kết bọc cái logo: Tước bỏ mọi padding và nền */
+header a:has(img) {
+  padding: 0 !important;
+  background-color: transparent !important;
+}
+
+/* 2. Tạo padding và bo góc CHỈ cho các mục menu toàn chữ (không chứa ảnh) */
+header a:not(:has(img)) {
+  padding: 4px 10px !important; 
+  border-radius: 6px !important;
+  transition: background-color 0.2s ease, color 0.2s ease !important;
+}
+
+/* 3. Đổ nền xám khi Hover hoặc Active CHỈ cho các mục menu chữ */
+header a:not(:has(img)):hover,
+header a:not(:has(img)).active, 
+header a:not(:has(img)).active-link,
+header a:not(:has(img))[aria-current="page"] {
+    background-color: #ebebeb !important; /* Đổ nền xám nhạt */
+    color: #111 !important; /* Giữ màu đen cho chữ */
+    font-weight: normal !important; /* Xóa in đậm */
+    text-decoration: none !important; /* Xóa gạch chân */
 }
 
 /* ======================================================
