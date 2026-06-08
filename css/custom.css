@@ -142,13 +142,6 @@ blockquote p {
   margin-bottom: 0 !important;
 }
 
-/* ======================================================
-   ✅ CHỐNG NHẢY TRANG (CÂN BẰNG TỰA BÀI VIẾT)
-   ====================================================== */
-article h2:first-of-type,
-main h2:first-of-type {
-    margin-top: 1em !important; 
-}
 
 /* ======================================================
    ✅ XỬ LÝ NGÀY THÁNG: PC (ẨN/HIỆN) - MOBILE (RỚT DÒNG)
@@ -243,10 +236,17 @@ ul.posts li a:focus ~ time {
 }
 
 /* ======================================================
-   🔥 CHỈ CHỈNH TIÊU ĐỀ BÀI VIẾT CHÍNH (H2 TRONG NỘI DUNG KHÔNG ĐỔI)
+   🔥 CHỈ CHỈNH TIÊU ĐỀ BÀI VIẾT CHÍNH (ÉP MÉP TRÊN BẰNG NHAU)
    ====================================================== */
 h2[itemprop="name headline"] {
     font-size: 1.5rem !important;
+    
+    /* 1. Bóp nghẹt khoảng trắng vô hình trên đầu chữ */
+    line-height: 1.2 !important; 
+    
+    /* 2. Dịch chuyển vật lý để cân bằng mí (Optical Alignment) */
+    margin-top: 18px !important; /* 💡 MÀY CHỈNH SỐ NÀY NHÉ */
+    
     margin-bottom: 0.8em !important;
-    letter-spacing: -0.02em !important; /* Ép chữ khít nhẹ lại một xíu nhìn cho tinh tế chuẩn mnmlist */
+    letter-spacing: -0.02em !important; 
 }
