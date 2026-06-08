@@ -7,8 +7,8 @@ html, body {
   /* BỘ FONT RETRO CỔ ĐIỂN: Trở về với sách giấy */
   font-family: 'Lora', Georgia, "Times New Roman", Times, serif; 
   
-  font-size: 18px; 
-  line-height: 1.8; 
+  font-size: 15px; 
+  line-height: 1.5; 
   -webkit-font-smoothing: antialiased;
 }
 
