@@ -19,9 +19,9 @@ main {
   box-sizing: border-box !important;
 }
 
-/* Ép luôn padding trên cùng bằng 0 để triệt để khoảng trống */
-header, main {
-    padding-top: 0 !important;
+/* ĐÂY, TAO NHÉT VÀO ĐÂY RỒI NÈ: Reset padding cho toàn bộ khối lớn */
+header, main, section, footer {
+    padding: 0 !important; 
 }
 
 /* ==== KIỂM SOÁT TIÊU ĐỀ & ĐOẠN VĂN ==== */
