@@ -7,7 +7,7 @@ html, body {
   /* BỘ FONT RETRO CỔ ĐIỂN: Trở về với sách giấy */
   font-family: 'Lora', Georgia, "Times New Roman", Times, serif; 
   
-  font-size: 15px; 
+  font-size: 16px; 
   line-height: 1.5; 
   -webkit-font-smoothing: antialiased;
 }
@@ -38,10 +38,11 @@ h1, h2, h3, h4, h5 {
   margin-top: 0 !important; 
 }
 
+/* Hạ size tiêu đề của các Page (Giới thiệu, Liên hệ...) xuống cho gọn */
 h1 { 
-  font-size: 1.8rem !important; 
-  margin-bottom: 1.5em !important; 
-  letter-spacing: -0.02em; /* Ép chữ khít lại một chút xíu cho sang */
+  font-size: 1.5rem !important; /* Lúc nãy là 1.8rem, giờ bóp xuống 1.5rem */
+  margin-bottom: 1.2em !important; 
+  letter-spacing: -0.02em; 
 }
 
 h2 { 
@@ -60,10 +61,11 @@ article h2, article h3, article h4,
   margin-top: 2.5em !important; /* Dãn khoảng cách ra xa hơn */
 }
 
+/* Ép chữ đoạn văn về đúng chuẩn nguyên bản, không phóng to nữa */
 p {
   margin-top: 0;
-  margin-bottom: 1.8em !important; /* Dãn đoạn văn ra cho dễ thở */
-  font-size: 1.05rem !important; 
+  margin-bottom: 1.5em !important; /* Thu gọn khoảng cách dòng lại xíu */
+  font-size: 1rem !important; /* DÒNG QUAN TRỌNG: Đưa về đúng 100% kích thước gốc (16px), bỏ cái 1.05rem đi */
   color: #111 !important;
 }
 
@@ -246,7 +248,7 @@ h2[itemprop="name headline"] {
     line-height: 1.2 !important; 
     
     /* 2. Dịch chuyển vật lý để cân bằng mí (Optical Alignment) */
-    margin-top: 18px !important; /* 💡 MÀY CHỈNH SỐ NÀY NHÉ */
+    margin-top: 17px !important; /* 💡 MÀY CHỈNH SỐ NÀY NHÉ */
     
     margin-bottom: 0.8em !important;
     letter-spacing: -0.02em !important; 
