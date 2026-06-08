@@ -1,11 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
 /* ==== BỐ CỤC & FONT SIÊU GỌN ==== */
 html, body {
   background-color: #fafafa;
   color: #111111;
-  font-family: 'Lora', Georgia, serif;
+  font-family: 'Lora', Georgia, serif; /* Đổi sang font văn chương Lora */
   font-size: 18px; 
-  line-height: 1.8;
+  line-height: 1.8; /* Giãn dòng rộng ra cho dễ đọc chữ Serif */
   -webkit-font-smoothing: antialiased;
 }
 
@@ -14,13 +15,12 @@ html, body {
    ====================================================== */
 main {
   width: 100% !important;
-  max-width: 540px !important; /* Bóp thẳng xuống 540px */
-  margin: 0 auto 100px auto !important; /* Dính sát mép trên, cách mép dưới 100px */
+  max-width: 540px !important; 
+  margin: 0 auto 100px auto !important; 
   padding: 0 20px !important;
   box-sizing: border-box !important;
 }
 
-/* ĐÂY, TAO NHÉT VÀO ĐÂY RỒI NÈ: Reset padding cho toàn bộ khối lớn */
 header, main, section, footer {
     padding: 0 !important; 
 }
@@ -28,27 +28,26 @@ header, main, section, footer {
 /* ==== KIỂM SOÁT TIÊU ĐỀ & ĐOẠN VĂN ==== */
 h1, h2, h3, h4, h5 {
   color: #000;
-  line-height: 1.25;
+  line-height: 1.3;
   font-weight: 700;
   margin-top: 0 !important; 
 }
 
 h1 { 
-  font-size: 1.45rem !important; 
+  font-size: 1.55rem !important; /* Size tiêu đề to hơn xíu cho hợp với Lora */
   margin-bottom: 1.2em !important; 
 }
 
 h2 { 
-  font-size: 1.2rem !important; 
+  font-size: 1.25rem !important; 
   margin-bottom: 0.6em !important; 
 }
 
 h3 { 
-  font-size: 1.05rem !important; 
+  font-size: 1.1rem !important; 
   margin-bottom: 0.5em !important;
 }
 
-/* Chỉ đẩy khoảng cách khi tiêu đề nằm TRONG bài viết */
 article h2, article h3, article h4,
 .post-content h2, .post-content h3 {
   margin-top: 1.8em !important; 
@@ -59,12 +58,11 @@ p {
   margin-bottom: 1.4em !important; 
 }
 
-
 /* Xử lý ảnh */
 img {
   max-width: 100% !important;
   height: auto;
-  border-radius: 4px; /* Bo góc cực nhẹ */
+  border-radius: 4px; 
   display: block;
   margin: 2em auto;
 }
@@ -82,7 +80,7 @@ a:hover {
   border-bottom-color: #c1c1c1; 
 }
 
-/* ==== TIÊU ĐỀ BÀI VIẾT & XÓA GẠCH CHÂN THỪA CỦA MENU/LIST ==== */
+/* ==== TIÊU ĐỀ BÀI VIẾT & XÓA GẠCH CHÂN THỪA ==== */
 .post-title a,
 .posts li a,
 .posts li a:hover,
@@ -92,30 +90,26 @@ footer a {
   text-decoration: none !important;
 }
 
-/* ==== HIỆU ỨNG MENU TRÊN CÙNG (DÙNG :has ĐỂ LOẠI TRỪ LOGO CHUẨN XÁC 100%) ==== */
-
-/* 1. Bắt chết thằng liên kết bọc cái logo: Tước bỏ mọi padding và nền */
+/* ==== HIỆU ỨNG MENU TRÊN CÙNG ==== */
 header a:has(img) {
   padding: 0 !important;
   background-color: transparent !important;
 }
 
-/* 2. Tạo padding và bo góc CHỈ cho các mục menu toàn chữ (không chứa ảnh) */
 header a:not(:has(img)) {
   padding: 4px 10px !important; 
   border-radius: 6px !important;
   transition: background-color 0.2s ease, color 0.2s ease !important;
 }
 
-/* 3. Đổ nền xám khi Hover hoặc Active CHỈ cho các mục menu chữ */
 header a:not(:has(img)):hover,
 header a:not(:has(img)).active, 
 header a:not(:has(img)).active-link,
 header a:not(:has(img))[aria-current="page"] {
-    background-color: #ebebeb !important; /* Đổ nền xám nhạt */
-    color: #111 !important; /* Giữ màu đen cho chữ */
-    font-weight: normal !important; /* Xóa in đậm */
-    text-decoration: none !important; /* Xóa gạch chân */
+    background-color: #ebebeb !important; 
+    color: #111 !important; 
+    font-weight: normal !important; 
+    text-decoration: none !important; 
 }
 
 /* ======================================================
@@ -138,11 +132,57 @@ blockquote p {
    ====================================================== */
 article h2:first-of-type,
 main h2:first-of-type {
-    margin-top: 1em !important; /* Con số vàng cân bằng với danh sách bài viết */
+    margin-top: 1em !important; 
 }
 
 /* ======================================================
-   ✅ TABLET (Bung rộng ra 86% như Riemats)
+   ✅ XỬ LÝ NGÀY THÁNG: PC (ẨN/HIỆN) - MOBILE (RỚT DÒNG)
+   ====================================================== */
+
+/* Dọn dẹp rác của theme cũ (BẮT BUỘC) */
+ul.posts li a::before, 
+ul.posts li a::after {
+  content: none !important;
+  display: none !important;
+}
+
+/* 1. MẶC ĐỊNH TRÊN PC: Dàn ngang và TÀNG HÌNH ngày tháng */
+ul.posts li {
+  display: flex !important;
+  align-items: baseline !important;
+  justify-content: space-between !important;
+  gap: 16px !important;
+  width: 100% !important;
+  margin-bottom: 0.8em !important; 
+}
+
+ul.posts li a {
+  flex: 1 1 auto !important;
+  white-space: normal !important; 
+  display: inline !important; 
+}
+
+ul.posts li time {
+  flex: 0 0 auto !important;
+  white-space: nowrap !important;
+  font-size: 0.9rem !important; 
+  color: #777 !important; 
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  
+  /* Cài đặt tàng hình cho PC */
+  opacity: 0; 
+  transition: opacity 0.2s ease-in-out;
+  pointer-events: none !important; 
+}
+
+/* Rê chuột vào nguyên cái dòng bài viết thì hiện ngày tháng */
+ul.posts li:hover time,
+ul.posts li a:focus ~ time {
+  opacity: 1 !important; 
+}
+
+/* ======================================================
+   ✅ TABLET & MOBILE
    ====================================================== */
 @media (min-width: 601px) and (max-width: 1180px) {
   main {
@@ -151,9 +191,6 @@ main h2:first-of-type {
   }
 }
 
-/* ======================================================
-   ✅ MOBILE
-   ====================================================== */
 @media (max-width: 600px) {
   main {
     max-width: 100% !important;
@@ -161,75 +198,30 @@ main h2:first-of-type {
     padding: 0 16px !important;
   }
   html, body {
-    /* Đừng giảm size xuống nhỏ hơn 16px trên mobile, rất khó đọc. Giữ nguyên 16px hoặc dùng 1rem */
     font-size: 16px; 
-    /* Tăng nhẹ line-height trên mobile để chữ không bị dính vào nhau khi lướt ngón tay */
-    line-height: 1.55; 
+    line-height: 1.6; 
   }
-}
-
-/* ======================================================
-   ✅ HIỆU ỨNG ẨN/HIỆN NGÀY THÁNG VÀ KHÓA CLICK
-   ====================================================== */
-
-/* ======================================================
-   ✅ HIỆU ỨNG ẨN/HIỆN NGÀY THÁNG VÀ CHỐNG VỠ KHUNG (DÙNG FLEXBOX)
-   ====================================================== */
-
-/* 1. Biến từng dòng bài viết thành một cái khung linh hoạt */
-ul.posts li {
-  display: flex !important;
-  align-items: baseline !important; /* Căn cho chân chữ tiêu đề và chân chữ ngày tháng nằm trên 1 đường thẳng */
-  justify-content: space-between !important; /* Đẩy ngày tháng ra kịch lề phải */
-  gap: 12px !important; /* Chừa một khoảng an toàn 12px giữa tiêu đề và ngày tháng */
-  width: 100% !important;
-}
-
-/* 2. Ép thẻ tiêu đề: Được phép co giãn nhưng DƯ LÀ PHẢI CẮT 3 CHẤM */
-ul.posts li a {
-  flex: 1 1 auto !important; /* Tự động chiếm hết phần không gian trống */
-  min-width: 0 !important; /* Bùa chú cực kỳ quan trọng để text-overflow hoạt động trong Flexbox */
-  white-space: nowrap !important; /* Cấm rớt dòng */
-  overflow: hidden !important; 
-  text-overflow: ellipsis !important; /* Hiện 3 chấm */
-  display: block !important; 
-}
-
-/* 3. Dọn dẹp tàn dư rác của theme cũ */
-ul.posts li a::before,
-ul.posts li a::after {
-  content: none !important;
-  display: none !important;
-}
-
-/* 4. Ép ngày tháng: Giữ nguyên kích thước cứng ngắc, cấm bị ép dẹp hay văng dòng */
-ul.posts li time {
-  flex: 0 0 auto !important; /* Cấm co giãn, tao cần bao nhiêu tao chiếm bấy nhiêu */
-  white-space: nowrap !important; /* Cấm rớt dòng */
-  opacity: 0; /* Vẫn giữ hiệu ứng tàng hình mặc định */
-  transition: opacity 0.1s ease;
-  pointer-events: none !important; 
-}
-
-/* 5. Hiệu ứng Hover: Rê chuột vô tiêu đề thì hiện ngày tháng */
-ul.posts li a:hover ~ time,
-ul.posts li a:active ~ time,
-ul.posts li a:focus ~ time {
-  opacity: 1 !important; 
-}
-
-/* Dọn dẹp tàn dư: Xóa bỏ mọi lớp tàng hình kéo giãn vùng click của theme */
-ul.posts li a::before,
-ul.posts li a::after {
-  content: none !important;
-  display: none !important;
-}
-
-/* 3. CHỈ KHI rê chuột/chạm đúng cái chữ tiêu đề (thẻ a), ngày tháng mới hiện lên */
-ul.posts li a:hover ~ time,
-ul.posts li a:active ~ time,
-ul.posts li a:focus ~ time {
-  opacity: 1 !important; 
+  
+  /* Cấu hình list bài viết trên Mobile: Tách 2 dòng */
+  ul.posts li {
+    display: block !important; /* Bỏ dàn ngang */
+    margin-bottom: 1.2em !important; 
+  }
+  
+  /* BẬT SÁNG NGÀY THÁNG TRÊN ĐIỆN THOẠI */
+  ul.posts li time {
+    display: block !important; /* Ép rớt xuống dòng dưới */
+    opacity: 1 !important; /* Bật sáng luôn, cấm tàng hình */
+    pointer-events: auto !important; /* Cho phép click */
+    
+    margin-top: 4px !important;
+    font-size: 0.85rem !important;
+    
+    /* Ép ngay hàng thẳng lối với tiêu đề */
+    margin-left: 0 !important; 
+    padding-left: 0 !important; 
+    text-align: left !important; 
+  }
 }
 
 /* ======================================================
@@ -237,10 +229,22 @@ ul.posts li a:focus ~ time {
    ====================================================== */
 .menu-logo {
   transition: transform 0.3s ease-in-out;
-  border-radius: 16px; /* Bo góc nhẹ nhàng. Muốn cong hơn thì tăng số này lên */
+  border-radius: 16px; 
 }
 
-/* Hiệu ứng nghiêng vẫn giữ nguyên */
 .menu-logo:hover {
   transform: rotate(-8deg);
-} 
+}
+
+
+/* ======================================================
+   ✅ HIỆU ỨNG LOGO
+   ====================================================== */
+.menu-logo {
+  transition: transform 0.3s ease-in-out;
+  border-radius: 16px; 
+}
+
+.menu-logo:hover {
+  transform: rotate(-8deg);
+}
