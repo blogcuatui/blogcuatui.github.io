@@ -1,11 +1,12 @@
-@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 
-/* ==== BỐ CỤC & FONT SIÊU GỌN ==== */
+
 html, body {
-  /* Mnmlist chuộng nền trắng bóc, tao đổi sang #ffffff luôn cho đúng vibe. Thích màu cũ thì sửa lại #fafafa */
   background-color: #ffffff !important; 
   color: #111111;
-  font-family: 'Lora', Georgia, serif; 
+  
+  /* BỘ FONT RETRO CỔ ĐIỂN: Trở về với sách giấy */
+  font-family: 'Lora', Georgia, "Times New Roman", Times, serif; 
+  
   font-size: 18px; 
   line-height: 1.8; 
   -webkit-font-smoothing: antialiased;
