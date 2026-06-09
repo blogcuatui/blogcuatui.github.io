@@ -163,8 +163,14 @@ ul.posts li a::after {
 ul.posts li {
   display: flex !important;
   align-items: baseline !important;
-  justify-content: space-between !important;
-  gap: 16px !important;
+  
+  /* Đổi từ space-between thành flex-start để gom tụi nó về chung một phía */
+  justify-content: flex-start !important; 
+  
+  /* Mầy muốn ngày tháng cách cái đuôi tiêu đề bao xa thì chỉnh số này. 
+     Để 16px là vừa đẹp, muốn sát rạt luôn thì hạ xuống 8px hay 10px nha */
+  gap: 16px !important; 
+  
   width: 100% !important;
   margin-bottom: 0.6em !important; 
 }
