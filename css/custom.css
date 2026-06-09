@@ -1,10 +1,7 @@
 html, body {
   background-color: #ffffff !important; 
   color: #111111;
-  
-  /* BỘ FONT RETRO CỔ ĐIỂN: Trở về với sách giấy */
   font-family: 'Lora', Georgia, "Times New Roman", Times, serif; 
-  
   font-size: 14px; 
   line-height: 1.5; 
   -webkit-font-smoothing: antialiased;
