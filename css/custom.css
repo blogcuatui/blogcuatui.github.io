@@ -7,8 +7,8 @@ html, body {
   /* BỘ FONT RETRO CỔ ĐIỂN: Trở về với sách giấy */
   font-family: 'Lora', Georgia, "Times New Roman", Times, serif; 
   
-  font-size: 16px; 
-  line-height: 1.6; 
+  font-size: 14px; 
+  line-height: 1.5; 
   -webkit-font-smoothing: antialiased;
 }
 
@@ -17,8 +17,8 @@ html, body {
    ====================================================== */
 main {
   width: 100% !important;
-  max-width: 540px !important; 
-  margin: 0 auto 100px auto !important; 
+  max-width: 600px !important; 
+  margin: 60px auto 100px auto !important; 
   padding: 0 20px !important;
   box-sizing: border-box !important;
 }
@@ -161,7 +161,7 @@ ul.posts li {
   justify-content: space-between !important;
   gap: 16px !important;
   width: 100% !important;
-  margin-bottom: 1.2em !important; 
+  margin-bottom: 0.6em !important; 
 }
 
 ul.posts li a {
