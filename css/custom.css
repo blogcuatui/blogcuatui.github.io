@@ -10,6 +10,8 @@ html, body {
   font-size: 14px; 
   line-height: 1.5; 
   -webkit-font-smoothing: antialiased;
+  -webkit-text-size-adjust: 100%; 
+  text-size-adjust: 100%;
 }
 
 /* ======================================================
@@ -193,40 +195,45 @@ ul.posts li a:focus ~ time {
   opacity: 1 !important; 
 }
 /* ======================================================
-   ✅ TABLET & MOBILE
+   ✅ TABLET & MOBILE (ÉP GỌN LẠI HOÀN TOÀN)
    ====================================================== */
-@media (min-width: 601px) and (max-width: 1180px) {
-  main {
-    max-width: 80% !important; 
-    margin: 0 auto 80px auto !important; 
-  }
-}
-
 @media (max-width: 600px) {
+  /* 1. Ép lại lề và khoảng trống trên cùng của màn hình */
   main {
     max-width: 100% !important;
-    margin: 0 auto 60px auto !important; 
+    margin: 20px auto 60px auto !important; /* Rút ngắn khoảng cách từ menu xuống bài viết */
     padding: 0 16px !important;
   }
+  
   html, body {
-    font-size: 16px; 
-    line-height: 1.6; 
+    font-size: 15px !important; /* Hạ size chữ gốc trên mobile xuống 15px */
+    line-height: 1.5 !important; 
   }
   
+  /* 2. Khoảng cách giữa các cụm bài viết */
   ul.posts li {
     display: block !important; 
-    margin-bottom: 1.2em !important; 
+    margin-bottom: 20px !important; /* Thu hẹp khoảng cách giữa bài trước và bài sau */
   }
   
+  /* 3. Xử lý cái tiêu đề bài viết cho nhỏ gọn lại */
+  ul.posts li a {
+    font-size: 16px !important; /* Chốt cứng 16px cho tiêu đề trên mobile, không dùng rem nữa */
+    line-height: 1.3 !important; /* Ép các dòng của tiêu đề sát lại nhau nếu rớt dòng */
+    display: block !important;
+  }
+  
+  /* 4. Ép ngày tháng nhỏ lại và dính sát vào tiêu đề */
   ul.posts li time {
     display: block !important; 
     opacity: 1 !important; 
     pointer-events: auto !important; 
-    margin-top: 4px !important;
-    font-size: 0.85rem !important;
+    margin-top: 2px !important; /* Kéo sát ngày tháng lên mép dưới của tiêu đề */
+    font-size: 13px !important; /* Cỡ chữ ngày tháng thật nhỏ và tinh tế */
     margin-left: 0 !important; 
     padding-left: 0 !important; 
     text-align: left !important; 
+    color: #888 !important; /* Cho màu nhạt đi để làm nền cho tiêu đề */
   }
 }
 
