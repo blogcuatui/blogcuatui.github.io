@@ -20,7 +20,7 @@ html, body {
 main {
   width: 100% !important;
   max-width: 600px !important; 
-  margin: 60px auto 100px auto !important; 
+  margin: 20px auto 100px auto !important; 
   padding: 0 20px !important;
   box-sizing: border-box !important;
 }
