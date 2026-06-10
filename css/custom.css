@@ -110,25 +110,33 @@ footer a {
   color: #c1c1c1; 
 }
 
-/* ==== HIỆU ỨNG MENU TRÊN CÙNG ==== */
+/* ==== HIỆU ỨNG MENU TRÊN CÙNG (ĐÃ ĐỘ TRƠN CHỮ CHUẨN MNMLIST) ==== */
 header a:has(img) {
   padding: 0 !important;
   background-color: transparent !important;
 }
 
 header a:not(:has(img)) {
-  padding: 0.25rem 0.625rem !important; /* 4px 10px */
-  border-radius: 0.375rem !important; /* 6px */
-  transition: background-color 0.2s ease, color 0.2s ease !important;
+  padding: 0.25rem 0.625rem !important; 
+  border-radius: 0 !important; /* Lột hoàn toàn bo góc và khung nền */
+  color: #888 !important; /* Mấy chữ bình thường hiện màu xám nhạt */
+  font-weight: 400 !important;
+  transition: color 0.2s ease !important;
 }
 
+/* Ép cái chữ đầu tiên (index) sát rạt lề trái để thẳng hàng với bài viết */
+header a:not(:has(img)):first-of-type {
+  padding-left: 0 !important;
+}
+
+/* Khi hover hoặc khi trang đang active: Lột sạch nền xám, chữ hóa đen tuyền và đậm lên */
 header a:not(:has(img)):hover,
 header a:not(:has(img)).active, 
 header a:not(:has(img)).active-link,
 header a:not(:has(img))[aria-current="page"] {
-    background-color: #ebebeb !important; 
-    color: #111 !important; 
-    font-weight: normal !important; 
+    background-color: transparent !important; /* LỘT SẠCH NỀN XÁM */
+    color: #111 !important; /* Đổi thành đen tuyền */
+    font-weight: 700 !important; /* ÉP CHỮ ĐẬM LÊN 700 */
     text-decoration: none !important; 
 }
 
@@ -249,7 +257,6 @@ ul.posts li a:focus ~ time {
   transform: rotate(-20deg);
 }
 
-
 /* ======================================================
    🔥 CHỈ CHỈNH TIÊU ĐỀ BÀI VIẾT CHÍNH (ÉP MÉP TRÊN BẰNG NHAU)
    ====================================================== */
@@ -263,3 +270,53 @@ h2[itemprop="name headline"] {
     margin-bottom: 0.8em !important;
     letter-spacing: -0.02em !important; 
 }
+
+/* ======================================================
+   ✅ THÊM VÀO: ĐỘ PHÂN TRANG SIÊU CÂN BẰNG & THẲNG HÀNG 100%
+   ====================================================== */
+.pagination, [class*="pagination"] {
+  background: transparent !important;
+  border: none !important;
+  margin-left: 0 !important;
+  padding-left: 0 !important;
+  display: block !important;
+}
+
+.pagination li, [class*="pagination"] li {
+  display: inline-block !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* 💡 BÍ QUYẾT CÂN BẰNG: Không đệm trái (0), chỉ đệm phải (20px) để dù xuất hiện dấu < hay số 1 thì lề vẫn thẳng băng */
+.pagination a, .pagination span,
+[class*="pagination"] a, [class*="pagination"] span {
+  background: transparent !important;
+  border: none !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  color: #888 !important; /* Hiện màu xám nhạt điềm đạm giống menu */
+  font-size: 1rem !important; /* Khóa chết kích thước bằng nhau, chống thô */
+  font-weight: 400 !important;
+  padding: 4px 20px 4px 0 !important; 
+  display: inline-block !important;
+  transition: color 0.2s ease !important;
+}
+
+/* 💡 CHỈ CẦN IN ĐẬM ĐEN TUYỀN: Giữ nguyên size 1rem, chỉ đổi màu và độ đậm hệt như menu active */
+.pagination .active, .pagination .current,
+[class*="pagination"] .active, [class*="pagination"] [class*="current"],
+[class*="pagination"] li[class*="active"] a, [class*="pagination"] li[class*="current"] a,
+.pagination .active span, [class*="pagination"] .current span {
+  color: #111 !important;
+  font-weight: 700 !important; 
+  font-size: 1rem !important; 
+  background: transparent !important;
+}
+
+.pagination a:hover, [class*="pagination"] a:hover {
+  color: #111 !important;
+  background: transparent !important;
+  text-decoration: none !important;
+}
+
