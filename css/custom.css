@@ -244,12 +244,11 @@ ul.posts li a:focus ~ time {
    ====================================================== */
 .menu-logo {
   transition: transform 0.3s ease-in-out;
-  border-radius: 1rem; /* 16px */
+}
+.menu-logo:hover {
+  transform: rotate(-20deg);
 }
 
-.menu-logo:hover {
-  transform: rotate(-8deg);
-}
 
 /* ======================================================
    🔥 CHỈ CHỈNH TIÊU ĐỀ BÀI VIẾT CHÍNH (ÉP MÉP TRÊN BẰNG NHAU)
