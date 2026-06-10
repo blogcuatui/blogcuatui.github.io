@@ -115,11 +115,12 @@ header a:not(:has(img)).active-link, header a:not(:has(img))[aria-current="page"
 blockquote {
   border-left: 2px solid #111; 
   padding-left: 1rem; 
-  margin: 0;
+  margin: 1.5rem 0 !important;
   font-style: italic;
   color: #444;
 }
-blockquote p { margin-bottom: 0 !important; }
+
+blockquote p { margin-bottom: 0 !important; margin-top: 0 !important; }
 
 ul.posts li a::before, ul.posts li a::after { content: none !important; display: none !important; }
 
