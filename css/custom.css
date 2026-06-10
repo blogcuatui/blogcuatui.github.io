@@ -129,14 +129,14 @@ header a:not(:has(img)):first-of-type {
   padding-left: 0 !important;
 }
 
-/* Khi hover hoặc khi trang đang active: Lột sạch nền xám, chữ hóa đen tuyền và đậm lên */
+/* Khi hover hoặc khi trang đang active: Lột sạch nền xám, chữ hóa đen nhưng KHÔNG IN ĐẬM */
 header a:not(:has(img)):hover,
 header a:not(:has(img)).active, 
 header a:not(:has(img)).active-link,
 header a:not(:has(img))[aria-current="page"] {
-    background-color: transparent !important; /* LỘT SẠCH NỀN XÁM */
-    color: #111 !important; /* Đổi thành đen tuyền */
-    font-weight: 700 !important; /* ÉP CHỮ ĐẬM LÊN 700 */
+    background-color: transparent !important; 
+    color: #111 !important; 
+    font-weight: 400 !important; /* GIỮ NGUYÊN NÉT THANH MẢNH */
     text-decoration: none !important; 
 }
 
@@ -303,13 +303,13 @@ h2[itemprop="name headline"] {
   transition: color 0.2s ease !important;
 }
 
-/* 💡 CHỈ CẦN IN ĐẬM ĐEN TUYỀN: Giữ nguyên size 1rem, chỉ đổi màu và độ đậm hệt như menu active */
+/* 💡 CHỈ CẦN HÓA ĐEN TUYỀN: Giữ nguyên nét chữ thanh mảnh, không in đậm */
 .pagination .active, .pagination .current,
 [class*="pagination"] .active, [class*="pagination"] [class*="current"],
 [class*="pagination"] li[class*="active"] a, [class*="pagination"] li[class*="current"] a,
 .pagination .active span, [class*="pagination"] .current span {
   color: #111 !important;
-  font-weight: 700 !important; 
+  font-weight: 400 !important; /* GIỮ NGUYÊN NÉT THANH MẢNH */
   font-size: 1rem !important; 
   background: transparent !important;
 }
@@ -319,4 +319,3 @@ h2[itemprop="name headline"] {
   background: transparent !important;
   text-decoration: none !important;
 }
-
