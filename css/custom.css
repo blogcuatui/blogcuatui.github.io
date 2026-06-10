@@ -1,39 +1,36 @@
+/* ======================================================
+   🎨 1. NỀN MÓNG CƠ BẢN & TYPOGRAPHY
+   ====================================================== */
 html, body {
   background-color: #ffffff !important; 
   color: #111111;
   font-family: 'Lora', Georgia, "Times New Roman", Times, serif; 
-  font-size: 16px; /* Gốc 1rem = 16px */
+  font-size: 16px; 
   line-height: 1.6; 
   -webkit-font-smoothing: antialiased;
-  -webkit-text-size-adjust: 100%; 
   text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%; 
 }
 
-/* ======================================================
-   ✅ ÉP KHUNG TỔNG LỰC CHO MỌI TRANG (CHUẨN MNMLIST)
-   ====================================================== */
+/* Ép khung tổng lực chuẩn mnmlist.com */
 body {
   width: 100% !important;
-  max-width: 570px !important; /* Giữ px cho khung tổng để không bị bóp méo */
-  margin: 3.75rem auto 6.25rem auto !important; /* 60px auto 100px auto */
-  padding: 0 1.25rem !important; /* 0 20px */
+  max-width: 570px !important; 
+  margin: 3.75rem auto 6.25rem auto !important; 
+  padding: 0 1.25rem !important; 
   box-sizing: border-box !important;
 }
 
-/* Gỡ bỏ các giới hạn của thẻ con bên trong để nó tràn ra vừa vặn với body 570px */
-main, article, section, .content, .page-content {
+/* Gỡ bỏ giới hạn của theme để tràn đều khung body */
+main, article, section, .content, .page-content, header, footer {
   width: 100% !important;
   max-width: none !important; 
   margin: 0 !important;
   padding: 0 !important;
 }
 
-header, footer {
-    padding: 0 !important; 
-}
-
 /* ======================================================
-   ✅ KIỂM SOÁT TIÊU ĐỀ & ĐOẠN VĂN (STYLE MNMLIST.COM)
+   📝 2. KIỂM SOÁT TIÊU ĐỀ & ĐOẠN VĂN
    ====================================================== */
 h1, h2, h3, h4, h5 {
   color: #111;
@@ -42,134 +39,95 @@ h1, h2, h3, h4, h5 {
   margin-top: 0 !important; 
 }
 
-/* Hạ size tiêu đề của các Page (Giới thiệu, Liên hệ...) xuống cho gọn */
-h1 { 
-  font-size: 1.5rem !important; 
-  margin-bottom: 1.2em !important; 
-  letter-spacing: -0.02em; 
-}
+h1 { font-size: 1.5rem !important; margin-bottom: 1.2em !important; letter-spacing: -0.02em; }
+h2 { font-size: 1.3rem !important; margin-bottom: 0.8em !important; }
+h3 { font-size: 1.1rem !important; margin-bottom: 0.5em !important; font-style: italic; }
 
-h2 { 
-  font-size: 1.3rem !important; 
-  margin-bottom: 0.8em !important; 
-}
-
-h3 { 
-  font-size: 1.1rem !important; 
-  margin-bottom: 0.5em !important;
-  font-style: italic; 
-}
-
-article h2, article h3, article h4,
-.post-content h2, .post-content h3 {
+article h2, article h3, article h4, .post-content h2, .post-content h3 {
   margin-top: 2.5em !important; 
 }
 
-/* Ép chữ đoạn văn về đúng chuẩn nguyên bản */
 p {
-  margin-top: 0;
-  margin-bottom: 1.5em !important; 
+  margin: 0 0 1.5em 0 !important; 
   font-size: 1rem !important; 
   color: #111 !important;
 }
 
-/* Xử lý ảnh */
 img {
   max-width: 100% !important;
   height: auto;
-  border-radius: 0.25rem; /* 4px */
+  border-radius: 0.25rem; 
   display: block;
   margin: 2em auto;
 }
 
-/* ==== LINK TRONG BÀI VIẾT (Tĩnh lặng, gạch mờ) ==== */
+/* ======================================================
+   🔗 3. HỆ THỐNG ĐƯỜNG LINK (AN CHƠI TINH TẾ)
+   ====================================================== */
+/* Link trong ruột bài viết: gạch chân mờ */
 article a, .post-content a {
   color: #555 !important; 
-  border-bottom: 1px solid #ddd !important; /* Giữ 1px cho viền siêu mỏng */
+  border-bottom: 1px solid #ddd !important; 
   transition: border-color 0.3s ease;
   text-decoration: none;
 }
-
 article a:hover, .post-content a:hover {
   color: #111 !important;
   border-bottom-color: #111 !important; 
 }
 
-/* ==== TIÊU ĐỀ BÀI VIẾT (TRANG CHỦ) ==== */
-.post-title a,
-.posts li a,
-.posts li a:hover,
-header a, 
-footer a {
+/* Tiêu đề trang chủ và Menu: Trơn nhẵn vô hình */
+.post-title a, .posts li a, header a, footer a {
   border-bottom: none !important;
   text-decoration: none !important;
   color: #1d1d1b;
   transition: color 0.2s ease-in-out;
 }
-.posts li a:hover {
-  color: #c1c1c1; 
-}
+.posts li a:hover { color: #c1c1c1; }
 
-/* ==== HIỆU ỨNG MENU TRÊN CÙNG (ĐÃ ĐỘ TRƠN CHỮ CHUẨN MNMLIST) ==== */
-header a:has(img) {
-  padding: 0 !important;
-  background-color: transparent !important;
-}
+/* ======================================================
+   🎯 4. HIỆU ỨNG MENU TRÊN CÙNG (CHỮ TRƠN)
+   ====================================================== */
+header a:has(img) { padding: 0 !important; background-color: transparent !important; }
 
 header a:not(:has(img)) {
   padding: 0.25rem 0.625rem !important; 
-  border-radius: 0 !important; /* Lột hoàn toàn bo góc và khung nền */
-  color: #888 !important; /* Mấy chữ bình thường hiện màu xám nhạt */
+  border-radius: 0 !important; 
+  color: #888 !important; 
   font-weight: 400 !important;
   transition: color 0.2s ease !important;
 }
 
-/* Ép cái chữ đầu tiên (index) sát rạt lề trái để thẳng hàng với bài viết */
-header a:not(:has(img)):first-of-type {
-  padding-left: 0 !important;
-}
+/* Ép chữ đầu tiên (index) sát kịch lề trái */
+header a:not(:has(img)):first-of-type { padding-left: 0 !important; }
 
-/* Khi hover hoặc khi trang đang active: Lột sạch nền xám, chữ hóa đen nhưng KHÔNG IN ĐẬM */
-header a:not(:has(img)):hover,
-header a:not(:has(img)).active, 
-header a:not(:has(img)).active-link,
-header a:not(:has(img))[aria-current="page"] {
-    background-color: transparent !important; 
-    color: #111 !important; 
-    font-weight: 400 !important; /* GIỮ NGUYÊN NÉT THANH MẢNH */
-    text-decoration: none !important; 
+/* Trạng thái active/hover: Hóa đen mộc mạc, không in đậm, không nền xám */
+header a:not(:has(img)):hover, header a:not(:has(img)).active, 
+header a:not(:has(img)).active-link, header a:not(:has(img))[aria-current="page"] {
+  background-color: transparent !important; 
+  color: #111 !important; 
+  font-weight: 400 !important; 
 }
 
 /* ======================================================
-   ✅ BLOCKQUOTE
+   ⚡ 5. BLOCKQUOTE & NGÀY THÁNG (PC)
    ====================================================== */
 blockquote {
-  border-left: 2px solid #111; /* Giữ 2px cho nét kẻ sắc bén */
-  padding-left: 1rem; /* 16px */
-  margin-left: 0;
-  margin-right: 0;
+  border-left: 2px solid #111; 
+  padding-left: 1rem; 
+  margin: 0;
   font-style: italic;
   color: #444;
 }
-blockquote p {
-  margin-bottom: 0 !important;
-}
+blockquote p { margin-bottom: 0 !important; }
 
-/* ======================================================
-   ✅ XỬ LÝ NGÀY THÁNG: PC (ẨN/HIỆN) - MOBILE (RỚT DÒNG)
-   ====================================================== */
-
-ul.posts li a::before, 
-ul.posts li a::after {
-  content: none !important;
-  display: none !important;
-}
+ul.posts li a::before, ul.posts li a::after { content: none !important; display: none !important; }
 
 ul.posts li {
   display: flex !important;
   align-items: baseline !important;
   justify-content: flex-start !important; 
-  gap: 1rem !important; /* 16px */
+  gap: 1rem !important; 
   width: 100% !important;
   margin-bottom: 0.6em !important; 
 }
@@ -179,8 +137,6 @@ ul.posts li a {
   white-space: normal !important; 
   display: inline-block !important; 
   font-weight: 400 !important; 
-  
-  /* ÉP KÍCH THƯỚC CHUẨN ARCHIVE CỦA MNMLIST */
   font-size: 1.15rem !important; 
   line-height: 1.4 !important; 
 }
@@ -195,85 +151,12 @@ ul.posts li time {
   transition: opacity 0.2s ease-in-out;
   pointer-events: none !important; 
 }
-
-/* CHỈ rê chuột vào ĐÚNG CHỮ của tiêu đề thì mới hiện ngày tháng */
-ul.posts li a:hover ~ time,
-ul.posts li a:active ~ time,
-ul.posts li a:focus ~ time {
+ul.posts li a:hover ~ time, ul.posts li a:active ~ time, ul.posts li a:focus ~ time {
   opacity: 1 !important; 
 }
 
 /* ======================================================
-   ✅ TABLET & MOBILE (ÉP GỌN LẠI HOÀN TOÀN)
-   ====================================================== */
-@media (max-width: 600px) {
-  /* 1. Ép lại lề và khoảng trống trên cùng của màn hình */
-  body {
-    max-width: 100% !important;
-    margin: 2.5rem auto 4.75rem auto !important; /* 40px auto 60px auto */
-    padding: 0 1rem !important; /* 0 16px */
-  }
-  
-  html, body {
-    /* Đổi móng nhà: 1rem bây giờ sẽ bằng 15px trên mobile */
-    font-size: 15px !important; 
-    line-height: 1.5 !important; 
-  }
-  
-  /* 2. Khoảng cách giữa các cụm bài viết */
-  ul.posts li {
-    display: block !important; 
-    margin-bottom: 1.33rem !important; /* ~20px */
-  }
-  
-  /* 3. Xử lý cái tiêu đề bài viết cho nhỏ gọn lại */
-  ul.posts li a {
-    font-size: 1.06rem !important; /* ~16px */
-    line-height: 1.3 !important; 
-    display: block !important;
-  }
-  
-  /* 4. Ép ngày tháng nhỏ lại và dính sát vào tiêu đề */
-  ul.posts li time {
-    display: block !important; 
-    opacity: 1 !important; 
-    pointer-events: auto !important; 
-    margin-top: 2px !important; /* Khoảng cách siêu nhỏ nên giữ px */
-    font-size: 0.86rem !important; /* ~13px */
-    margin-left: 0 !important; 
-    padding-left: 0 !important; 
-    text-align: left !important; 
-    color: #888 !important; 
-  }
-}
-
-/* ======================================================
-   🔥 NỚI RỘNG KHOẢNG CÁCH TỪ MENU XUỐNG TIÊU ĐỀ/DANH SÁCH BÀI
-   ====================================================== */
-
-/* Áp dụng cho cả Trang Chủ (ul.posts) và trang Nội dung/Page tĩnh */
-ul.posts,
-main > section > h2[itemprop="name headline"],
-main > section > span[itemprop="articleBody"] {
-  margin-top: 2.8rem !important; /* 💡 Tăng từ mức dính lẹo lên ~45px cho thoáng đạt, sang xịn mịn */
-}
-
-/* ======================================================
-   🔥 CHỈ CHỈNH TIÊU ĐỀ BÀI VIẾT CHÍNH (ÉP MÉP TRÊN BẰNG NHAU)
-   ====================================================== */
-h2[itemprop="name headline"] {
-    font-size: 1.5rem !important;
-    line-height: 1.2 !important; 
-    
-    /* Dịch chuyển vật lý để cân bằng mí: Tuyệt đối phải dùng px ở đây */
-    margin-top: 17px !important; 
-    
-    margin-bottom: 0.8em !important;
-    letter-spacing: -0.02em !important; 
-}
-
-/* ======================================================
-   ✅ THÊM VÀO: ĐỘ PHÂN TRANG SIÊU CÂN BẰNG & THẲNG HÀNG 100%
+   📐 6. ĐỘ PHÂN TRANG (PAGINATION CHUẨN SÁCH IN)
    ====================================================== */
 .pagination, [class*="pagination"] {
   background: transparent !important;
@@ -282,41 +165,77 @@ h2[itemprop="name headline"] {
   padding-left: 0 !important;
   display: block !important;
 }
+.pagination li, [class*="pagination"] li { display: inline-block !important; margin: 0 !important; padding: 0 !important; }
 
-.pagination li, [class*="pagination"] li {
-  display: inline-block !important;
-  margin: 0 !important;
-  padding: 0 !important;
-}
-
-/* 💡 BÍ QUYẾT CÂN BẰNG: Không đệm trái (0), chỉ đệm phải (20px) để dù xuất hiện dấu < hay số 1 thì lề vẫn thẳng băng */
-.pagination a, .pagination span,
-[class*="pagination"] a, [class*="pagination"] span {
+.pagination a, .pagination span, [class*="pagination"] a, [class*="pagination"] span {
   background: transparent !important;
   border: none !important;
   border-radius: 0 !important;
   box-shadow: none !important;
-  color: #888 !important; /* Hiện màu xám nhạt điềm đạm giống menu */
-  font-size: 1rem !important; /* Khóa chết kích thước bằng nhau, chống thô */
+  color: #888 !important; 
+  font-size: 1rem !important; 
   font-weight: 400 !important;
-  padding: 4px 20px 4px 0 !important; 
+  padding: 4px 20px 4px 0 !important; /* Đệm phải chống lệch lề */
   display: inline-block !important;
   transition: color 0.2s ease !important;
 }
 
-/* 💡 CHỈ CẦN HÓA ĐEN TUYỀN: Giữ nguyên nét chữ thanh mảnh, không in đậm */
-.pagination .active, .pagination .current,
-[class*="pagination"] .active, [class*="pagination"] [class*="current"],
+/* Trang hiện tại: Hóa đen thanh mảnh */
+.pagination .active, .pagination .current, [class*="pagination"] .active, [class*="pagination"] [class*="current"],
 [class*="pagination"] li[class*="active"] a, [class*="pagination"] li[class*="current"] a,
 .pagination .active span, [class*="pagination"] .current span {
   color: #111 !important;
-  font-weight: 400 !important; /* GIỮ NGUYÊN NÉT THANH MẢNH */
+  font-weight: 400 !important; 
   font-size: 1rem !important; 
   background: transparent !important;
 }
+.pagination a:hover, [class*="pagination"] a:hover { color: #111 !important; background: transparent !important; }
 
-.pagination a:hover, [class*="pagination"] a:hover {
-  color: #111 !important;
-  background: transparent !important;
-  text-decoration: none !important;
+/* ======================================================
+   🔥 7. ĐIỀU CHỈNH NHỊP ĐIỆU DỌC (FIX KHOẢNG CÁCH HẸP)
+   ====================================================== */
+ul.posts,
+main > section > h2[itemprop="name headline"],
+main > section > span[itemprop="articleBody"] {
+  margin-top: 2.8rem !important; /* Dãn khoảng cách từ Menu xuống nội dung chuẩn tầm mắt */
+}
+
+/* Ép mí tiêu đề bài viết chính */
+h2[itemprop="name headline"] {
+  font-size: 1.5rem !important;
+  line-height: 1.2 !important; 
+  margin-top: 17px !important; 
+  margin-bottom: 0.8em !important;
+  letter-spacing: -0.02em !important; 
+}
+
+/* ======================================================
+   📱 8. CẤU HÌNH TRÊN TABLET & MOBILE
+   ====================================================== */
+@media (max-width: 600px) {
+  body {
+    max-width: 100% !important;
+    margin: 2.5rem auto 4.75rem auto !important; 
+    padding: 0 1rem !important; 
+  }
+  
+  html, body {
+    font-size: 15px !important; 
+    line-height: 1.5 !important; 
+  }
+  
+  ul.posts li { display: block !important; margin-bottom: 1.33rem !important; }
+  ul.posts li a { font-size: 1.06rem !important; line-height: 1.3 !important; display: block !important; }
+  
+  ul.posts li time {
+    display: block !important; 
+    opacity: 1 !important; 
+    pointer-events: auto !important; 
+    margin-top: 2px !important; 
+    font-size: 0.86rem !important; 
+    margin-left: 0 !important; 
+    padding-left: 0 !important; 
+    text-align: left !important; 
+    color: #888 !important; 
+  }
 }
