@@ -2,7 +2,7 @@ html, body {
   background-color: #ffffff !important; 
   color: #111111;
   font-family: 'Lora', Georgia, "Times New Roman", Times, serif; 
-  font-size: 14px; 
+  font-size: 16px; /* Gốc 1rem = 16px */
   line-height: 1.5; 
   -webkit-font-smoothing: antialiased;
   -webkit-text-size-adjust: 100%; 
@@ -14,9 +14,9 @@ html, body {
    ====================================================== */
 body {
   width: 100% !important;
-  max-width: 570px !important; /* ĐÃ CHỐT XUỐNG 570px CHO GỌN HƠN NỮA */
-  margin: 60px auto 100px auto !important; /* Canh giữa, đẩy cách nóc 60px cho thoáng */
-  padding: 0 20px !important;
+  max-width: 570px !important; /* Giữ px cho khung tổng để không bị bóp méo */
+  margin: 3.75rem auto 6.25rem auto !important; /* 60px auto 100px auto */
+  padding: 0 1.25rem !important; /* 0 20px */
   box-sizing: border-box !important;
 }
 
@@ -38,7 +38,6 @@ header, footer {
 h1, h2, h3, h4, h5 {
   color: #111;
   line-height: 1.3;
-  /* ĐÂY LÀ LINH HỒN CỦA MNMLIST: Không in đậm */
   font-weight: 400 !important; 
   margin-top: 0 !important; 
 }
@@ -58,18 +57,18 @@ h2 {
 h3 { 
   font-size: 1.1rem !important; 
   margin-bottom: 0.5em !important;
-  font-style: italic; /* In nghiêng nhẹ nhàng */
+  font-style: italic; 
 }
 
 article h2, article h3, article h4,
 .post-content h2, .post-content h3 {
-  margin-top: 2.5em !important; /* Dãn khoảng cách ra xa hơn */
+  margin-top: 2.5em !important; 
 }
 
-/* Ép chữ đoạn văn về đúng chuẩn nguyên bản, không phóng to nữa */
+/* Ép chữ đoạn văn về đúng chuẩn nguyên bản */
 p {
   margin-top: 0;
-  margin-bottom: 1.5em !important; /* Thu gọn khoảng cách dòng lại xíu */
+  margin-bottom: 1.5em !important; 
   font-size: 1rem !important; 
   color: #111 !important;
 }
@@ -78,7 +77,7 @@ p {
 img {
   max-width: 100% !important;
   height: auto;
-  border-radius: 4px; 
+  border-radius: 0.25rem; /* 4px */
   display: block;
   margin: 2em auto;
 }
@@ -86,7 +85,7 @@ img {
 /* ==== LINK TRONG BÀI VIẾT (Tĩnh lặng, gạch mờ) ==== */
 article a, .post-content a {
   color: #555 !important; 
-  border-bottom: 1px solid #ddd !important; 
+  border-bottom: 1px solid #ddd !important; /* Giữ 1px cho viền siêu mỏng */
   transition: border-color 0.3s ease;
   text-decoration: none;
 }
@@ -111,7 +110,6 @@ footer a {
   color: #c1c1c1; 
 }
 
-
 /* ==== HIỆU ỨNG MENU TRÊN CÙNG ==== */
 header a:has(img) {
   padding: 0 !important;
@@ -119,8 +117,8 @@ header a:has(img) {
 }
 
 header a:not(:has(img)) {
-  padding: 4px 10px !important; 
-  border-radius: 6px !important;
+  padding: 0.25rem 0.625rem !important; /* 4px 10px */
+  border-radius: 0.375rem !important; /* 6px */
   transition: background-color 0.2s ease, color 0.2s ease !important;
 }
 
@@ -138,8 +136,8 @@ header a:not(:has(img))[aria-current="page"] {
    ✅ BLOCKQUOTE
    ====================================================== */
 blockquote {
-  border-left: 2px solid #111; 
-  padding-left: 16px;
+  border-left: 2px solid #111; /* Giữ 2px cho nét kẻ sắc bén */
+  padding-left: 1rem; /* 16px */
   margin-left: 0;
   margin-right: 0;
   font-style: italic;
@@ -148,7 +146,6 @@ blockquote {
 blockquote p {
   margin-bottom: 0 !important;
 }
-
 
 /* ======================================================
    ✅ XỬ LÝ NGÀY THÁNG: PC (ẨN/HIỆN) - MOBILE (RỚT DÒNG)
@@ -163,14 +160,8 @@ ul.posts li a::after {
 ul.posts li {
   display: flex !important;
   align-items: baseline !important;
-  
-  /* Đổi từ space-between thành flex-start để gom tụi nó về chung một phía */
   justify-content: flex-start !important; 
-  
-  /* Mầy muốn ngày tháng cách cái đuôi tiêu đề bao xa thì chỉnh số này. 
-     Để 16px là vừa đẹp, muốn sát rạt luôn thì hạ xuống 8px hay 10px nha */
-  gap: 16px !important; 
-  
+  gap: 1rem !important; /* 16px */
   width: 100% !important;
   margin-bottom: 0.6em !important; 
 }
@@ -208,14 +199,15 @@ ul.posts li a:focus ~ time {
    ✅ TABLET & MOBILE (ÉP GỌN LẠI HOÀN TOÀN)
    ====================================================== */
 @media (max-width: 600px) {
-  /* 1. Ép lại lề và khoảng trống trên cùng của màn hình cho thẻ body */
+  /* 1. Ép lại lề và khoảng trống trên cùng của màn hình */
   body {
     max-width: 100% !important;
-    margin: 40px auto 60px auto !important; 
-    padding: 0 16px !important;
+    margin: 2.5rem auto 3.75rem auto !important; /* 40px auto 60px auto */
+    padding: 0 1rem !important; /* 0 16px */
   }
   
   html, body {
+    /* Đổi móng nhà: 1rem bây giờ sẽ bằng 15px trên mobile */
     font-size: 15px !important; 
     line-height: 1.5 !important; 
   }
@@ -223,12 +215,12 @@ ul.posts li a:focus ~ time {
   /* 2. Khoảng cách giữa các cụm bài viết */
   ul.posts li {
     display: block !important; 
-    margin-bottom: 20px !important; 
+    margin-bottom: 1.33rem !important; /* ~20px */
   }
   
   /* 3. Xử lý cái tiêu đề bài viết cho nhỏ gọn lại */
   ul.posts li a {
-    font-size: 16px !important; 
+    font-size: 1.06rem !important; /* ~16px */
     line-height: 1.3 !important; 
     display: block !important;
   }
@@ -238,8 +230,8 @@ ul.posts li a:focus ~ time {
     display: block !important; 
     opacity: 1 !important; 
     pointer-events: auto !important; 
-    margin-top: 2px !important; 
-    font-size: 13px !important; 
+    margin-top: 2px !important; /* Khoảng cách siêu nhỏ nên giữ px */
+    font-size: 0.86rem !important; /* ~13px */
     margin-left: 0 !important; 
     padding-left: 0 !important; 
     text-align: left !important; 
@@ -252,7 +244,7 @@ ul.posts li a:focus ~ time {
    ====================================================== */
 .menu-logo {
   transition: transform 0.3s ease-in-out;
-  border-radius: 16px; 
+  border-radius: 1rem; /* 16px */
 }
 
 .menu-logo:hover {
@@ -264,11 +256,9 @@ ul.posts li a:focus ~ time {
    ====================================================== */
 h2[itemprop="name headline"] {
     font-size: 1.5rem !important;
-    
-    /* 1. Bóp nghẹt khoảng trắng vô hình trên đầu chữ */
     line-height: 1.2 !important; 
     
-    /* 2. Dịch chuyển vật lý để cân bằng mí (Optical Alignment) */
+    /* Dịch chuyển vật lý để cân bằng mí: Tuyệt đối phải dùng px ở đây */
     margin-top: 17px !important; 
     
     margin-bottom: 0.8em !important;
