@@ -210,7 +210,7 @@ ul.posts li a:focus ~ time {
   /* 1. Ép lại lề và khoảng trống trên cùng của màn hình */
   body {
     max-width: 100% !important;
-    margin: 2.5rem auto 3.75rem auto !important; /* 40px auto 60px auto */
+    margin: 2.5rem auto 4.75rem auto !important; /* 40px auto 60px auto */
     padding: 0 1rem !important; /* 0 16px */
   }
   
@@ -248,13 +248,14 @@ ul.posts li a:focus ~ time {
 }
 
 /* ======================================================
-   ✅ HIỆU ỨNG LOGO
+   🔥 NỚI RỘNG KHOẢNG CÁCH TỪ MENU XUỐNG TIÊU ĐỀ/DANH SÁCH BÀI
    ====================================================== */
-.menu-logo {
-  transition: transform 0.3s ease-in-out;
-}
-.menu-logo:hover {
-  transform: rotate(-20deg);
+
+/* Áp dụng cho cả Trang Chủ (ul.posts) và trang Nội dung/Page tĩnh */
+ul.posts,
+main > section > h2[itemprop="name headline"],
+main > section > span[itemprop="articleBody"] {
+  margin-top: 2.8rem !important; /* 💡 Tăng từ mức dính lẹo lên ~45px cho thoáng đạt, sang xịn mịn */
 }
 
 /* ======================================================
