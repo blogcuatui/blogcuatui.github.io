@@ -210,7 +210,17 @@ h2[itemprop="name headline"] {
 }
 
 /* ======================================================
-   📱 8. CẤU HÌNH TRÊN TABLET & MOBILE
+   🖥️ 7.5. ÉP BỐ CỤC CANH TRÁI (CHỈ ÁP DỤNG TRÊN MÀN HÌNH PC)
+   ====================================================== */
+@media (min-width: 601px) {
+  body {
+    /* Thay auto bằng 10% bên trái để khối web dạt sang trái tinh tế trên máy tính */
+    margin: 3.75rem auto 6.25rem 10% !important; 
+  }
+}
+
+/* ======================================================
+   📱 8. CẤU HÌNH TRÊN TABLET & MOBILE (GIỮ NGUYÊN BẢN CANH GIỮA GỐC)
    ====================================================== */
 @media (max-width: 600px) {
   body {
