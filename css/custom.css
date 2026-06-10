@@ -47,10 +47,9 @@ article h2, article h3, article h4, .post-content h2, .post-content h3 {
   margin-top: 2.5em !important; 
 }
 
-/* 💡 ĐÃ SỬA: Gỡ bỏ !important ở font-size để chữ có thể tự phóng to rõ trên Mobile */
 p {
   margin: 0 0 1.5em 0 !important; 
-  font-size: 1rem; 
+  font-size: 1rem !important; 
   color: #111 !important;
 }
 
@@ -63,7 +62,7 @@ img {
 }
 
 /* ======================================================
-   🔗 3. HỆ THỐNG ĐƯỜNG LINK (ĂN CHƠI TINH TẾ)
+   🔗 3. HỆ THỐNG ĐƯỜNG LINK (AN CHƠI TINH TẾ)
    ====================================================== */
 /* Link trong ruột bài viết: gạch chân mờ */
 article a, .post-content a {
@@ -193,12 +192,12 @@ ul.posts li a:hover ~ time, ul.posts li a:active ~ time, ul.posts li a:focus ~ t
 .pagination a:hover, [class*="pagination"] a:hover { color: #111 !important; background: transparent !important; }
 
 /* ======================================================
-   🔥 7. ĐIỀU CHỈNH NHỊP ĐIỆU DỌC (FIX KHOẢNG CÁCH HẸP TRÊN PC)
+   🔥 7. ĐIỀU CHỈNH NHỊP ĐIỆU DỌC (FIX KHOẢNG CÁCH HẸP)
    ====================================================== */
 ul.posts,
 main > section > h2[itemprop="name headline"],
 main > section > span[itemprop="articleBody"] {
-  margin-top: 2.8rem !important; 
+  margin-top: 2.8rem !important; /* Dãn khoảng cách từ Menu xuống nội dung chuẩn tầm mắt */
 }
 
 /* Ép mí tiêu đề bài viết chính */
@@ -211,59 +210,32 @@ h2[itemprop="name headline"] {
 }
 
 /* ======================================================
-   📱 8. CẤU HÌNH TRÊN TABLET & MOBILE (STYLE RIEMATS SIÊU THOÁNG)
+   📱 8. CẤU HÌNH TRÊN TABLET & MOBILE
    ====================================================== */
 @media (max-width: 600px) {
   body {
     max-width: 100% !important;
-    /* Đẩy toàn bộ trang rớt xuống 5rem (~80px) để chữ không dính vào vạch pin/sóng điện thoại */
-    margin: 5rem auto 5rem auto !important; 
-    padding: 0 1.5rem !important; /* Dãn lề hai bên rộng thêm cho chữ thoáng đạt */
-    box-sizing: border-box !important;
+    margin: 2.5rem auto 4.75rem auto !important; 
+    padding: 0 1rem !important; 
   }
   
   html, body {
-    /* PHÓNG TO CHỮ TOÀN CỤC: Ép font-size nền lên 16px để đọc rõ như sách in */
-    font-size: 16px !important; 
-    line-height: 1.65 !important; /* Dãn dòng thênh thang */
+    font-size: 15px !important; 
+    line-height: 1.5 !important; 
   }
   
-  /* Nới rộng khoảng hở giữa Menu và nội dung bài viết bên dưới */
-  ul.posts,
-  main > section > h2[itemprop="name headline"],
-  main > section > span[itemprop="articleBody"] {
-    margin-top: 5rem !important;   
-    margin-bottom: 5rem !important;
-  }
-  
-  ul.posts li { 
-    display: block !important; 
-    margin-bottom: 1.8rem !important; /* Các hàng bài viết cách nhau rộng rãi */
-    margin-left: 0 !important;
-    padding-left: 0 !important;
-  }
-  
-  ul.posts li a { 
-    font-size: 1.15rem !important; 
-    line-height: 1.4 !important; 
-    display: block !important; 
-  }
+  ul.posts li { display: block !important; margin-bottom: 1.33rem !important; }
+  ul.posts li a { font-size: 1.06rem !important; line-height: 1.3 !important; display: block !important; }
   
   ul.posts li time {
     display: block !important; 
     opacity: 1 !important; 
     pointer-events: auto !important; 
-    margin-top: 6px !important; 
-    font-size: 0.85rem !important; 
+    margin-top: 2px !important; 
+    font-size: 0.86rem !important; 
     margin-left: 0 !important; 
     padding-left: 0 !important; 
     text-align: left !important; 
     color: #888 !important; 
-  }
-
-  /* Chỉnh lại phân trang trơn gọn gàng cho Mobile */
-  .pagination a, .pagination span, [class*="pagination"] a, [class*="pagination"] span {
-    font-size: 1.05rem !important;
-    padding: 4px 24px 4px 0 !important;
   }
 }
