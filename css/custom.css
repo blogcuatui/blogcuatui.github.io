@@ -113,13 +113,22 @@ header a:not(:has(img)) {
   text-decoration: none !important;
 }
 
+/* 💡 ĐÃ SỬA: Chỉ in đậm đúng thằng menu đầu tiên, trả lại nét thanh cho giới thiệu/liên hệ */
+header > a:first-of-type,
+header nav > a:first-of-type,
+header ul > li:first-child > a,
+.menu > li:first-child > a {
+  font-weight: 700 !important;
+  color: #111111 !important;
+}
+
+/* Trạng thái active/hover giữ nguyên */
 header a:not(:has(img)):hover, header a:not(:has(img)).active, 
 header a:not(:has(img)).active-link, header a:not(:has(img))[aria-current="page"] {
   background-color: transparent !important; 
   color: #111 !important; 
   font-weight: 400 !important; 
 }
-
 /* ======================================================
    ⚡ 5. BLOCKQUOTE & NGÀY THÁNG (PC)
    ====================================================== */
@@ -222,20 +231,33 @@ h2[itemprop="name headline"] {
 }
 
 /* ======================================================
-   📱 8. CẤU HÌNH TRÊN TABLET & MOBILE
+   📱 8. CẤU HÌNH TRÊN TABLET & MOBILE (BẢN TINH CHỈNH MENU SIÊU GỌN)
    ====================================================== */
 @media (max-width: 600px) {
   body {
     max-width: 100% !important;
     margin: 2.5rem auto 4.75rem auto !important; 
-    /* 💡 ĐÃ SỬA: Nới padding từ 0.5rem lên 1.25rem để ép bài viết thu gọn lại, 
-       tạo khoảng trống vừa vặn với viền màn hình y chang mnmlist */
     padding: 0 1.25rem !important; 
   }
   
   html, body {
     font-size: 15px !important; 
     line-height: 1.5 !important; 
+  }
+
+  /* 💡 TUYỆT CHIÊU THU GỌN MENU TRÊN MOBILE (Y CHANG MNMLIST) */
+  header, header nav, header ul, .menu {
+    gap: 0.75rem !important; /* Thu hẹp khoảng cách giữa các chữ menu trên mobile cho gọn */
+  }
+
+  header a:not(:has(img)) {
+    /* 1. Đổi sang font không chân thanh mảnh */
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+    /* 2. Hạ size chữ nhỏ xuống cho tinh tế */
+    font-size: 0.85rem !important; 
+    /* 3. Triệt tiêu hoàn toàn padding trên dưới để ép menu thun mỏng lại */
+    padding: 0 !important; 
+    line-height: 1 !important;
   }
   
   ul.posts li { display: block !important; }
@@ -254,11 +276,16 @@ h2[itemprop="name headline"] {
   }
 }
 
-/* 💡 ĐÃ BỔ SUNG: Cấu hình lề chữ to siêu mượt trên điện thoại nhỏ theo mnmlist */
+/* Cấu hình chữ bự khi vào màn hình dọc điện thoại nhỏ */
 @media (max-width: 480px) {
   html, body {
     font-size: 18px !important;
     line-height: 1.6 !important;
+  }
+  
+  /* Giữ cho menu luôn nhỏ gọn độc lập, không bị cái font 18px ở trên phóng to theo */
+  header a:not(:has(img)) {
+    font-size: 0.8rem !important; 
   }
 }
 
