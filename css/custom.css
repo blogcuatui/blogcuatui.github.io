@@ -314,16 +314,17 @@ header {
   margin-bottom: 1rem !important; 
 }
 
+
 /* ======================================================
-   ✂️ 10. ĐƯỜNG KẺ MỜ GIỮA CÁC BÀI VIẾT TRANG CHỦ (BẢN ÉP KHÍT)
+   ✂️ 10. ĐƯỜNG KẺ MỜ GIỮA CÁC BÀI VIẾT TRANG CHỦ (BẢN XÓA ĐƯỜNG KẺ)
    ====================================================== */
 ul.posts li {
-  border-bottom: 1px solid #eaeaea !important; 
-  padding-bottom: 0.4rem !important; 
-  margin-bottom: 0.5rem !important; /* Quản lý duy nhất khoảng cách dòng tại đây */
+  /* 💡 ĐÃ SỬA: Đổi từ '1px solid #eaeaea' thành 'none' để xóa sạch đường kẻ ngang */
+  border-bottom: none !important; 
+  margin-bottom: 1rem !important; /* Khoảng cách dãn giữa các bài viết ngoài trang chủ */
 }
 
+/* Vẫn giữ lệnh xóa lề bài cuối cùng cho an toàn */
 ul.posts li:last-child {
-  border-bottom: none !important;
   margin-bottom: 0 !important;
 }
