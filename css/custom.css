@@ -228,7 +228,9 @@ h2[itemprop="name headline"] {
   body {
     max-width: 100% !important;
     margin: 2.5rem auto 4.75rem auto !important; 
-    padding: 0 0.5rem !important; /* 💡 ĐÃ ĐỒNG BỘ: Khít lề rìa 2 bên đồng bộ với PC */
+    /* 💡 ĐÃ SỬA: Nới padding từ 0.5rem lên 1.25rem để ép bài viết thu gọn lại, 
+       tạo khoảng trống vừa vặn với viền màn hình y chang mnmlist */
+    padding: 0 1.25rem !important; 
   }
   
   html, body {
