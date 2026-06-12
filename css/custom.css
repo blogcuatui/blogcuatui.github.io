@@ -224,11 +224,12 @@ main > section > span[itemprop="articleBody"] {
 
 /* Ép mí tiêu đề bài viết chính */
 h2[itemprop="name headline"] {
-  font-size: 1.5rem !important;
-  line-height: 1.2 !important; 
+  font-size: 1.9rem !important;   /* 💡 ĐỒNG BỘ: Cho bự bằng h1 */
+  font-weight: 700 !important;    /* 💡 ĐỒNG BỘ: In đậm dày dặn */
+  line-height: 1.25 !important; 
   margin-top: 17px !important; 
   margin-bottom: 0.8em !important;
-  letter-spacing: -0.02em !important; 
+  letter-spacing: -0.03em !important; 
 }
 
 /* ======================================================
