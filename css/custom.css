@@ -39,7 +39,7 @@ h1, h2, h3, h4, h5 {
   margin-top: 0 !important; 
 }
 
-h1 { font-size: 2.2rem !important; margin-bottom: 1.2em !important; letter-spacing: -0.03em; line-height: 1.2 !important; margin-top: 17px !important; margin-bottom: 0.8em !important; font-weight: 700 !important;}
+h1 { font-size: 2.1rem !important; margin-bottom: 1.2em !important; letter-spacing: -0.03em !important; line-height: 1.2 !important; font-weight: 700 !important;}
 h2 { font-size: 1.3rem !important; margin-bottom: 0.8em !important; }
 h3 { font-size: 1.1rem !important; margin-bottom: 0.5em !important; font-style: italic; }
 
@@ -219,17 +219,16 @@ ul.posts li a:hover ~ time, ul.posts li a:active ~ time, ul.posts li a:focus ~ t
 ul.posts,
 main > section > h2[itemprop="name headline"],
 main > section > span[itemprop="articleBody"] {
-  margin-top: 2.8rem !important; 
+  margin-top: 2.8rem !important; /* Dãn khoảng cách từ Menu xuống nội dung chuẩn tầm mắt */
 }
 
 /* Ép mí tiêu đề bài viết chính */
 h2[itemprop="name headline"] {
-  font-size: 2.2rem !important;   /* 💡 ĐỒNG BỘ: Cho bự bằng h1 */
-  font-weight: 700 !important;    /* 💡 ĐỒNG BỘ: In đậm dày dặn */
+  font-size: 1.5rem !important;
   line-height: 1.2 !important; 
   margin-top: 17px !important; 
   margin-bottom: 0.8em !important;
-  letter-spacing: -0.03em !important; 
+  letter-spacing: -0.02em !important; 
 }
 
 /* ======================================================
