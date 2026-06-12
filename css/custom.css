@@ -141,19 +141,19 @@ header a:not(:has(img)).active-link, header a:not(:has(img))[aria-current="page"
 blockquote {
   border-left: 2px solid #111; 
   padding-left: 1rem; 
-  margin: 1.5rem 0 !important;
+  margin: 0;
   font-style: italic;
   color: #444;
 }
-blockquote p { margin-bottom: 0 !important; margin-top: 0 !important; }
+blockquote p { margin-bottom: 0 !important; }
 
 ul.posts li a::before, ul.posts li a::after { content: none !important; display: none !important; }
 
+/* Ép khung bài viết rộng hết cỡ để đẩy được date sang phải */
 ul.posts li {
   display: flex !important;
   align-items: baseline !important;
-  justify-content: flex-start !important; 
-  gap: 1rem !important; 
+  justify-content: space-between !important; /* 💡 ĐỘ ĐÔI HAI ĐẦU: Tiêu đề bên trái, date bên phải */
   width: 100% !important;
   margin-bottom: 0.6em !important; 
 }
@@ -170,6 +170,11 @@ ul.posts li a {
 ul.posts li time {
   flex: 0 0 auto !important;
   white-space: nowrap !important;
+  
+  /* 💡 TUYỆT CHIÊU CANH SÁT MÉP PHẢI: Ép ngày tháng dạt kịch biên bên phải */
+  margin-left: auto !important; 
+  text-align: right !important;
+  
   font-size: 0.9rem !important; 
   color: #777 !important; 
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
@@ -177,6 +182,8 @@ ul.posts li time {
   transition: opacity 0.2s ease-in-out;
   pointer-events: none !important; 
 }
+
+/* Hiệu ứng di chuột vào dòng là hiện date kịch phải */
 ul.posts li a:hover ~ time, ul.posts li a:active ~ time, ul.posts li a:focus ~ time {
   opacity: 1 !important; 
 }
@@ -274,4 +281,19 @@ header {
   border-bottom: 1px solid #eaeaea !important; /* Màu xám siêu nhạt tinh tế */
   padding-bottom: .5rem !important; /* Khoảng cách từ chữ menu rớt xuống đường kẻ */
   margin-bottom: 1rem !important; /* Khoảng cách từ đường kẻ dãn xuống nội dung bên dưới */
+}
+
+/* ======================================================
+   ✂️ 10. ĐƯỜNG KẺ MỜ GIỮA CÁC BÀI VIẾT TRANG CHỦ (BẢN ÉP KHÍT)
+   ====================================================== */
+ul.posts li {
+  border-bottom: 1px solid #eaeaea !important; 
+  padding-bottom: 0.4rem !important; 
+  margin-bottom: 0.5rem !important; 
+}
+
+/* Vẫn giữ lệnh xóa đường kẻ ở bài cuối cùng */
+ul.posts li:last-child {
+  border-bottom: none !important;
+  margin-bottom: 0 !important;
 }
