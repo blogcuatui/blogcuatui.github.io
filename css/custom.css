@@ -5,19 +5,19 @@ html, body {
   background-color: #ffffff !important; 
   color: #111111;
   font-family: 'Lora', Georgia, "Times New Roman", Times, serif; 
-  font-size: 16px; 
+  font-size: 19px; /* 💡 ĐÃ ĐỒNG BỘ: Lên hệ 19px đầm chữ chuẩn mnmlist */
   line-height: 1.6; 
   -webkit-font-smoothing: antialiased;
   text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%; 
 }
 
-/* Ép khung tổng lực chuẩn mnmlist.com - ĐÃ TRẢ VỀ CANH GIỮA TOÀN DIỆN */
+/* Ép khung tổng lực chuẩn mnmlist.com */
 body {
   width: 100% !important;
   max-width: 570px !important; 
-  margin: 3.75rem auto 6.25rem auto !important; /* Luôn luôn auto hai bên để cân giữa màn hình */
-  padding: 0 1.25rem !important; 
+  margin: 3.75rem auto 6.25rem auto !important; 
+  padding: 0 0.5rem !important; /* 💡 ĐÃ SỬA: Bóp hẹp lề mép 2 bên giống ảnh màn hình điện thoại */
   box-sizing: border-box !important;
 }
 
@@ -64,7 +64,6 @@ img {
 /* ======================================================
    🔗 3. HỆ THỐNG ĐƯỜNG LINK (AN CHƠI TINH TẾ)
    ====================================================== */
-/* Link trong ruột bài viết: gạch chân mờ */
 article a, .post-content a {
   color: #555 !important; 
   border-bottom: 1px solid #ddd !important; 
@@ -76,7 +75,6 @@ article a:hover, .post-content a:hover {
   border-bottom-color: #111 !important; 
 }
 
-/* Tiêu đề trang chủ và Menu: Trơn nhẵn vô hình */
 .post-title a, .posts li a, header a, footer a {
   border-bottom: none !important;
   text-decoration: none !important;
@@ -86,20 +84,19 @@ article a:hover, .post-content a:hover {
 .posts li a:hover { color: #c1c1c1; }
 
 /* ======================================================
-   🎯 4. HIỆU ỨNG MENU TRÊN CÙNG (CHIA ĐÔI LỀ SPLIT NAVIGATION)
+   🎯 4. HIỆU ỨNG MENU TRÊN CÙNG (HỆ GAP 1.25REM CHUẨN LEO BABAUTA)
    ====================================================== */
-/* 1. Mở khóa Flexbox cho MỌI thẻ có khả năng đang bọc menu của Hugo */
 header, header nav, header ul, .menu {
   display: flex !important;
   align-items: baseline !important;
   flex-wrap: wrap !important;
   width: 100% !important;
-  list-style: none !important; /* Xóa dấu chấm nếu Hugo xài thẻ danh sách */
+  list-style: none !important;
   padding: 0 !important;
   margin: 0 !important;
+  gap: 1.25rem !important; 
 }
 
-/* 2. CHIÊU CUỐI: Lôi cổ phần tử đầu tiên (chữ blogcuatui) đẩy lùi toàn bộ đám còn lại sang lề phải */
 header > a:first-of-type,
 header nav > a:first-of-type,
 header ul > li:first-child,
@@ -107,19 +104,8 @@ header ul > li:first-child,
   margin-right: auto !important; 
 }
 
-/* 3. Dọn sạch lề thừa để chữ blogcuatui bám kịch mép trái màn hình */
-header > a:first-of-type,
-header nav > a:first-of-type,
-header ul > li:first-child > a,
-.menu > li:first-child > a {
-  padding-left: 0 !important;
-}
-
-/* 4. Định dạng màu sắc, khoảng cách chữ của các Menu */
-header a:has(img) { padding: 0 !important; background-color: transparent !important; }
-
 header a:not(:has(img)) {
-  padding: 0.25rem 0.625rem !important; 
+  padding: 0.25rem 0 !important; 
   border-radius: 0 !important; 
   color: #888 !important; 
   font-weight: 400 !important;
@@ -127,7 +113,6 @@ header a:not(:has(img)) {
   text-decoration: none !important;
 }
 
-/* 5. Trạng thái khi di chuột hoặc đang ở trang đó (Hover/Active) */
 header a:not(:has(img)):hover, header a:not(:has(img)).active, 
 header a:not(:has(img)).active-link, header a:not(:has(img))[aria-current="page"] {
   background-color: transparent !important; 
@@ -141,21 +126,21 @@ header a:not(:has(img)).active-link, header a:not(:has(img))[aria-current="page"
 blockquote {
   border-left: 2px solid #111; 
   padding-left: 1rem; 
-  margin: 0;
+  margin: 1.5rem 0 !important; /* Đã sửa khít lề quote cho thoáng dãn */
   font-style: italic;
   color: #444;
 }
-blockquote p { margin-bottom: 0 !important; }
+blockquote p { margin-bottom: 0 !important; margin-top: 0 !important; }
 
 ul.posts li a::before, ul.posts li a::after { content: none !important; display: none !important; }
 
-/* Ép khung bài viết rộng hết cỡ để đẩy được date sang phải */
+/* Cấu hình hàng ngang cho dòng bài viết trang chủ */
 ul.posts li {
   display: flex !important;
   align-items: baseline !important;
-  justify-content: space-between !important; /* 💡 ĐỘ ĐÔI HAI ĐẦU: Tiêu đề bên trái, date bên phải */
+  justify-content: space-between !important; 
   width: 100% !important;
-  margin-bottom: 0.6em !important; 
+  /* 💡 ĐÃ GỘP: Chuyển toàn bộ margin/padding của dòng bài viết xuống Mục 10 xử lý gạch chân */
 }
 
 ul.posts li a {
@@ -170,11 +155,8 @@ ul.posts li a {
 ul.posts li time {
   flex: 0 0 auto !important;
   white-space: nowrap !important;
-  
-  /* 💡 TUYỆT CHIÊU CANH SÁT MÉP PHẢI: Ép ngày tháng dạt kịch biên bên phải */
   margin-left: auto !important; 
   text-align: right !important;
-  
   font-size: 0.9rem !important; 
   color: #777 !important; 
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
@@ -183,7 +165,6 @@ ul.posts li time {
   pointer-events: none !important; 
 }
 
-/* Hiệu ứng di chuột vào dòng là hiện date kịch phải */
 ul.posts li a:hover ~ time, ul.posts li a:active ~ time, ul.posts li a:focus ~ time {
   opacity: 1 !important; 
 }
@@ -208,12 +189,11 @@ ul.posts li a:hover ~ time, ul.posts li a:active ~ time, ul.posts li a:focus ~ t
   color: #888 !important; 
   font-size: 1rem !important; 
   font-weight: 400 !important;
-  padding: 4px 20px 4px 0 !important; /* Đệm phải chống lệch lề */
+  padding: 4px 20px 4px 0 !important; 
   display: inline-block !important;
   transition: color 0.2s ease !important;
 }
 
-/* Trang hiện tại: Hóa đen thanh mảnh */
 .pagination .active, .pagination .current, [class*="pagination"] .active, [class*="pagination"] [class*="current"],
 [class*="pagination"] li[class*="active"] a, [class*="pagination"] li[class*="current"] a,
 .pagination .active span, [class*="pagination"] .current span {
@@ -230,10 +210,9 @@ ul.posts li a:hover ~ time, ul.posts li a:active ~ time, ul.posts li a:focus ~ t
 ul.posts,
 main > section > h2[itemprop="name headline"],
 main > section > span[itemprop="articleBody"] {
-  margin-top: 2.8rem !important; /* Dãn khoảng cách từ Menu xuống nội dung chuẩn tầm mắt */
+  margin-top: 2.8rem !important; 
 }
 
-/* Ép mí tiêu đề bài viết chính */
 h2[itemprop="name headline"] {
   font-size: 1.5rem !important;
   line-height: 1.2 !important; 
@@ -249,7 +228,7 @@ h2[itemprop="name headline"] {
   body {
     max-width: 100% !important;
     margin: 2.5rem auto 4.75rem auto !important; 
-    padding: 0 1rem !important; 
+    padding: 0 0.5rem !important; /* 💡 ĐÃ ĐỒNG BỘ: Khít lề rìa 2 bên đồng bộ với PC */
   }
   
   html, body {
@@ -257,7 +236,7 @@ h2[itemprop="name headline"] {
     line-height: 1.5 !important; 
   }
   
-  ul.posts li { display: block !important; margin-bottom: 1.33rem !important; }
+  ul.posts li { display: block !important; }
   ul.posts li a { font-size: 1.06rem !important; line-height: 1.3 !important; display: block !important; }
   
   ul.posts li time {
@@ -273,14 +252,21 @@ h2[itemprop="name headline"] {
   }
 }
 
+/* 💡 ĐÃ BỔ SUNG: Cấu hình lề chữ to siêu mượt trên điện thoại nhỏ theo mnmlist */
+@media (max-width: 480px) {
+  html, body {
+    font-size: 18px !important;
+    line-height: 1.6 !important;
+  }
+}
+
 /* ======================================================
-   ✂️ 9. ĐƯỜNG KẺ MỜ PHÂN CÁCH (DƯỚI MENU & TIÊU ĐỀ)
+   ✂️ 9. ĐƯỜNG KẺ MỜ PHÂN CÁCH (DƯỚI MENU)
    ====================================================== */
-/* 1. Đường kẻ vắt ngang dưới thanh Menu */
 header {
-  border-bottom: 1px solid #eaeaea !important; /* Màu xám siêu nhạt tinh tế */
-  padding-bottom: .5rem !important; /* Khoảng cách từ chữ menu rớt xuống đường kẻ */
-  margin-bottom: 1rem !important; /* Khoảng cách từ đường kẻ dãn xuống nội dung bên dưới */
+  border-bottom: 1px solid #eaeaea !important; 
+  padding-bottom: .5rem !important; 
+  margin-bottom: 1rem !important; 
 }
 
 /* ======================================================
@@ -289,10 +275,9 @@ header {
 ul.posts li {
   border-bottom: 1px solid #eaeaea !important; 
   padding-bottom: 0.4rem !important; 
-  margin-bottom: 0.5rem !important; 
+  margin-bottom: 0.5rem !important; /* Quản lý duy nhất khoảng cách dòng tại đây */
 }
 
-/* Vẫn giữ lệnh xóa đường kẻ ở bài cuối cùng */
 ul.posts li:last-child {
   border-bottom: none !important;
   margin-bottom: 0 !important;
