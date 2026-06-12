@@ -233,7 +233,7 @@ h2[itemprop="name headline"] {
 }
 
 /* ======================================================
-   📱 8. CẤU HÌNH TRÊN TABLET & MOBILE (BẢN TINH CHỈNH MENU SIÊU GỌN)
+   📱 8. CẤU HÌNH TRÊN TABLET & MOBILE (BẢN FIX CÂN ĐỐI CHỮ TRANG CHỦ)
    ====================================================== */
 @media (max-width: 600px) {
   body {
@@ -247,29 +247,35 @@ h2[itemprop="name headline"] {
     line-height: 1.5 !important; 
   }
 
-  /* 💡 TUYỆT CHIÊU THU GỌN MENU TRÊN MOBILE (Y CHANG MNMLIST) */
   header, header nav, header ul, .menu {
-    gap: 0.75rem !important; /* Thu hẹp khoảng cách giữa các chữ menu trên mobile cho gọn */
+    gap: 0.75rem !important; 
   }
 
- header a:not(:has(img)) {
-    /* 💡 ĐÃ SỬA: Trả lại font Lora/Georgia có chân đồng bộ 100% với bản PC */
+  header a:not(:has(img)) {
     font-family: 'Lora', Georgia, "Times New Roman", Times, serif !important;
-    /* Hạ size chữ nhỏ xuống cho tinh tế, không bị choán diện tích */
-    font-size: 0.85rem !important; 
+    font-size: 0.82rem !important; /* Hạ nhẹ một chút cho tiệm cận độ tinh tế của mnmlist */
     padding: 0 !important; 
     line-height: 1 !important;
   }
   
-  ul.posts li { display: block !important; }
-  ul.posts li a { font-size: 1.06rem !important; line-height: 1.3 !important; display: block !important; }
+  /* 💡 ÉP TIÊU ĐỀ LIST BÀI VIẾT NGOÀI TRANG CHỦ GỌN GÀNG */
+  ul.posts li { 
+    display: block !important; 
+  }
+  ul.posts li a { 
+    /* 1. Hạ size chữ nhỏ xuống cho mịn và sang */
+    font-size: 0.95rem !important; 
+    /* 2. Ép khoảng cách dòng khít rịt lại khi bị rớt dòng */
+    line-height: 1.25 !important; 
+    display: inline-block !important; 
+  }
   
   ul.posts li time {
     display: block !important; 
     opacity: 1 !important; 
     pointer-events: auto !important; 
     margin-top: 2px !important; 
-    font-size: 0.86rem !important; 
+    font-size: 0.8rem !important; /* Hạ date nhỏ xuống theo tỉ lệ chữ tiêu đề */
     margin-left: 0 !important; 
     padding-left: 0 !important; 
     text-align: left !important; 
@@ -277,16 +283,25 @@ h2[itemprop="name headline"] {
   }
 }
 
-/* Cấu hình chữ bự khi vào màn hình dọc điện thoại nhỏ */
+/* Cấu hình khi vào màn hình dọc điện thoại nhỏ */
 @media (max-width: 480px) {
   html, body {
+    /* Ruột bài viết bên trong thì giữ 18px cho dễ đọc */
     font-size: 18px !important;
     line-height: 1.6 !important;
   }
   
-  /* Giữ cho menu luôn nhỏ gọn độc lập, không bị cái font 18px ở trên phóng to theo */
+  /* 💡 ĐỒNG BỘ: Khóa cứng font ngoài trang chủ không cho bung theo size 18px của body */
   header a:not(:has(img)) {
     font-size: 0.8rem !important; 
+  }
+
+  ul.posts li a { 
+    font-size: 0.95rem !important; /* Giữ nguyên độ mịn màng, không cho phóng to */
+  }
+
+  ul.posts li time {
+    font-size: 0.8rem !important;
   }
 }
 
