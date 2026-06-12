@@ -86,8 +86,36 @@ article a:hover, .post-content a:hover {
 .posts li a:hover { color: #c1c1c1; }
 
 /* ======================================================
-   🎯 4. HIỆU ỨNG MENU TRÊN CÙNG (CHỮ TRƠN)
+   🎯 4. HIỆU ỨNG MENU TRÊN CÙNG (CHIA ĐÔI LỀ SPLIT NAVIGATION)
    ====================================================== */
+/* 1. Mở khóa Flexbox cho MỌI thẻ có khả năng đang bọc menu của Hugo */
+header, header nav, header ul, .menu {
+  display: flex !important;
+  align-items: baseline !important;
+  flex-wrap: wrap !important;
+  width: 100% !important;
+  list-style: none !important; /* Xóa dấu chấm nếu Hugo xài thẻ danh sách */
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+/* 2. CHIÊU CUỐI: Lôi cổ phần tử đầu tiên (chữ blogcuatui) đẩy lùi toàn bộ đám còn lại sang lề phải */
+header > a:first-of-type,
+header nav > a:first-of-type,
+header ul > li:first-child,
+.menu > li:first-child {
+  margin-right: auto !important; 
+}
+
+/* 3. Dọn sạch lề thừa để chữ blogcuatui bám kịch mép trái màn hình */
+header > a:first-of-type,
+header nav > a:first-of-type,
+header ul > li:first-child > a,
+.menu > li:first-child > a {
+  padding-left: 0 !important;
+}
+
+/* 4. Định dạng màu sắc, khoảng cách chữ của các Menu */
 header a:has(img) { padding: 0 !important; background-color: transparent !important; }
 
 header a:not(:has(img)) {
@@ -96,12 +124,10 @@ header a:not(:has(img)) {
   color: #888 !important; 
   font-weight: 400 !important;
   transition: color 0.2s ease !important;
+  text-decoration: none !important;
 }
 
-/* Ép chữ đầu tiên (index) sát kịch lề trái */
-header a:not(:has(img)):first-of-type { padding-left: 0 !important; }
-
-/* Trạng thái active/hover: Hóa đen mộc mạc, không in đậm, không nền xám */
+/* 5. Trạng thái khi di chuột hoặc đang ở trang đó (Hover/Active) */
 header a:not(:has(img)):hover, header a:not(:has(img)).active, 
 header a:not(:has(img)).active-link, header a:not(:has(img))[aria-current="page"] {
   background-color: transparent !important; 
@@ -238,4 +264,14 @@ h2[itemprop="name headline"] {
     text-align: left !important; 
     color: #888 !important; 
   }
+}
+
+/* ======================================================
+   ✂️ 9. ĐƯỜNG KẺ MỜ PHÂN CÁCH (DƯỚI MENU & TIÊU ĐỀ)
+   ====================================================== */
+/* 1. Đường kẻ vắt ngang dưới thanh Menu */
+header {
+  border-bottom: 1px solid #eaeaea !important; /* Màu xám siêu nhạt tinh tế */
+  padding-bottom: .5rem !important; /* Khoảng cách từ chữ menu rớt xuống đường kẻ */
+  margin-bottom: 1rem !important; /* Khoảng cách từ đường kẻ dãn xuống nội dung bên dưới */
 }
