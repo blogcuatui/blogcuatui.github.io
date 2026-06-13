@@ -17,7 +17,7 @@ body {
   width: 100% !important;
   max-width: 570px !important; 
   margin: 3.75rem auto 6.25rem auto !important; 
-  padding: 0 0.5rem !important; /* 💡 ĐÃ SỬA: Bóp hẹp lề mép 2 bên giống ảnh màn hình điện thoại */
+  padding: 0 0.5rem !important; 
   box-sizing: border-box !important;
 }
 
@@ -39,6 +39,7 @@ h1, h2, h3, h4, h5 {
   margin-top: 0 !important; 
 }
 
+/* 💡 CHUẨN LEO: h1 to bự, dãn chữ vi tế, margin top/bottom siêu thoáng */
 h1 { font-size: 2.1rem !important; margin: 3.5rem 0 2rem !important; letter-spacing: -0.005em !important; line-height: 1.2 !important; font-weight: 700 !important;}
 h2 { font-size: 1.3rem !important; margin-bottom: 0.8em !important; }
 h3 { font-size: 1.1rem !important; margin-bottom: 0.5em !important; font-style: italic; }
@@ -62,7 +63,7 @@ img {
 }
 
 /* ======================================================
-   🔗 3. HỆ THỐNG ĐƯỜNG LINK (AN CHƠI TINH TẾ)
+   🔗 3. HỆ THỐNG ĐƯỜNG LINK (ĂN CHƠI TINH TẾ)
    ====================================================== */
 article a, .post-content a {
   color: #555 !important; 
@@ -83,24 +84,19 @@ article a:hover, .post-content a:hover {
 }
 .posts li a:hover { color: #c1c1c1; }
 
-
 /* ======================================================
-   📖 BƠM OXY CHO NỘI DUNG BÀI VIẾT (CHUẨN MNMLIST 21PX)
+   📖 3B. BƠM OXY CHO NỘI DUNG BÀI VIẾT (CHUẨN MNMLIST 21PX)
    ====================================================== */
 main p, 
 article p, 
 span[itemprop="articleBody"] p,
 .content p {
-  /* 💡 KÍCH CHỮ TO BỰ NHƯ MNMLIST */
   font-size: 21px !important;       
-  /* 💡 DÃN DÒNG CỰC THOÁNG */
   line-height: 1.7 !important;      
-  /* 💡 TÁCH CÁC ĐOẠN VĂN XA NHAU RA */
   margin-bottom: 1.8rem !important; 
   color: #111111 !important;        
 }
 
-/* Kích luôn mấy cái gạch đầu dòng (li) trong bài viết cho nó cân đối với chữ 21px */
 main ul li, 
 article ul li,
 span[itemprop="articleBody"] ul li {
@@ -109,9 +105,8 @@ span[itemprop="articleBody"] ul li {
   margin-bottom: 0.8rem !important;
 }
 
-
 /* ======================================================
-   🎯 4. HIỆU ỨNG MENU TRÊN CÙNG (HỆ GAP 1.25REM CHUẨN LEO BABAUTA)
+   🎯 4. HIỆU ỨNG MENU TRÊN CÙNG (HỆ GAP 1.25REM CHUẨN LEO)
    ====================================================== */
 header, header nav, header ul, .menu {
   display: flex !important;
@@ -140,7 +135,6 @@ header a:not(:has(img)) {
   text-decoration: none !important;
 }
 
-/* 💡 ĐÃ SỬA: Chỉ in đậm đúng thằng menu đầu tiên, trả lại nét thanh cho giới thiệu/liên hệ */
 header > a:first-of-type,
 header nav > a:first-of-type,
 header ul > li:first-child > a,
@@ -149,7 +143,6 @@ header ul > li:first-child > a,
   color: #111111 !important;
 }
 
-/* Trạng thái active/hover giữ nguyên */
 header a:not(:has(img)):hover, header a:not(:has(img)).active, 
 header a:not(:has(img)).active-link, header a:not(:has(img))[aria-current="page"] {
   background-color: transparent !important; 
@@ -158,7 +151,7 @@ header a:not(:has(img)).active-link, header a:not(:has(img))[aria-current="page"
 }
 
 /* ======================================================
-   ⚡ 5. BLOCKQUOTE & NGÀY THÁNG (PC)
+   ⚡ 5. LIST BÀI VIẾT TRANG CHỦ & NGÀY THÁNG (PC)
    ====================================================== */
 blockquote {
   border-left: 2px solid #111; 
@@ -171,13 +164,13 @@ blockquote p { margin-bottom: 0 !important; }
 
 ul.posts li a::before, ul.posts li a::after { content: none !important; display: none !important; }
 
-/* Ép khung bài viết rộng hết cỡ để đẩy được date sang phải */
 ul.posts li {
   display: flex !important;
   align-items: baseline !important;
-  justify-content: space-between !important; /* 💡 ĐỘ ĐÔI HAI ĐẦU: Tiêu đề bên trái, date bên phải */
+  justify-content: space-between !important; 
   width: 100% !important;
-  margin-bottom: 0.6em !important; 
+  border-bottom: none !important; /* Xóa đường kẻ */
+  margin-bottom: 1.2rem !important; /* Dãn khoảng cách bài viết */
 }
 
 ul.posts li a {
@@ -185,7 +178,7 @@ ul.posts li a {
   white-space: normal !important; 
   display: inline-block !important; 
   font-weight: 400 !important; 
-  font-size: 19px !important; 
+  font-size: 19px !important; /* 💡 KHÓA CỨNG 19PX CHUẨN LEO */
   line-height: 1.65 !important;
   color: #444444 !important; 
 }
@@ -193,11 +186,8 @@ ul.posts li a {
 ul.posts li time {
   flex: 0 0 auto !important;
   white-space: nowrap !important;
-  
-  /* 💡 TUYỆT CHIÊU CANH SÁT MÉP PHẢI: Ép ngày tháng dạt kịch biên bên phải */
   margin-left: auto !important; 
   text-align: right !important;
-  
   font-size: 0.9rem !important; 
   color: #777 !important; 
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
@@ -206,11 +196,9 @@ ul.posts li time {
   pointer-events: none !important; 
 }
 
-/* Hiệu ứng di chuột vào dòng là hiện date kịch phải */
 ul.posts li a:hover ~ time, ul.posts li a:active ~ time, ul.posts li a:focus ~ time {
   opacity: 1 !important; 
 }
-
 
 /* ======================================================
    📐 6. ĐỘ PHÂN TRANG (PAGINATION CHUẨN SÁCH IN)
@@ -248,18 +236,17 @@ ul.posts li a:hover ~ time, ul.posts li a:active ~ time, ul.posts li a:focus ~ t
 .pagination a:hover, [class*="pagination"] a:hover { color: #111 !important; background: transparent !important; }
 
 /* ======================================================
-   🔥 7. ĐIỀU CHỈNH NHỊP ĐIỆU DỌC (FIX KHOẢNG CÁCH HẸP)
+   🔥 7. ĐIỀU CHỈNH NHỊP ĐIỆU DỌC
    ====================================================== */
 ul.posts,
 main > section > h2[itemprop="name headline"],
 main > section > span[itemprop="articleBody"] {
-  margin-top: 2.8rem !important; /* Dãn khoảng cách từ Menu xuống nội dung chuẩn tầm mắt */
+  margin-top: 2.8rem !important; 
 }
 
-/* Ép mí tiêu đề bài viết chính */
 h2[itemprop="name headline"] {
-  font-size: 1.9rem !important;   /* 💡 ĐỒNG BỘ: Cho bự bằng h1 */
-  font-weight: 700 !important;    /* 💡 ĐỒNG BỘ: In đậm dày dặn */
+  font-size: 1.9rem !important;  
+  font-weight: 700 !important;   
   line-height: 1.25 !important; 
   margin-top: 17px !important; 
   margin-bottom: 0.8em !important;
@@ -267,7 +254,7 @@ h2[itemprop="name headline"] {
 }
 
 /* ======================================================
-   📱 8. CẤU HÌNH TRÊN TABLET & MOBILE (BẢN CỨU NGÀY THÁNG TINH TẾ)
+   📱 8. CẤU HÌNH TRÊN TABLET & MOBILE (BẢN SẠCH TUYỆT ĐỐI)
    ====================================================== */
 @media (max-width: 600px) {
   body {
@@ -281,46 +268,18 @@ h2[itemprop="name headline"] {
     line-height: 1.5 !important; 
   }
 
-  header, header nav, header ul, .menu {
-    gap: 0.75rem !important; 
-  }
-
- /* ======================================================
-   Sửa trong @media (max-width: 600px)
-   ====================================================== */
-@media (max-width: 600px) {
-  /* ... các đoạn trên giữ nguyên ... */
-
-  /* 💡 Nới khoảng cách giữa các mục menu ra cho dễ bấm */
+  /* Kích menu to rõ dễ bấm */
   header, header nav, header ul, .menu {
     gap: 1.2rem !important; 
   }
-
-  /* 💡 KÍCH TO CHỮ MENU LÊN 16PX */
   header a:not(:has(img)) {
     font-family: 'Lora', Georgia, "Times New Roman", Times, serif !important;
-    font-size: 16px !important; /* Tăng từ 0.8rem lên hẳn 16px cho bự rõ */
+    font-size: 16px !important; 
     padding: 0 !important; 
     line-height: 1 !important;
   }
   
-  /* ... các đoạn tiêu đề giữ nguyên ... */
-}
-
-/* ======================================================
-   Sửa trong @media (max-width: 480px)
-   ====================================================== */
-@media (max-width: 480px) {
-  /* ... các đoạn trên giữ nguyên ... */
-
-  /* 💡 KÍCH TO CHỮ MENU LÊN 16PX KHI CẦM ĐIỆN THOẠI DỌC */
-  header a:not(:has(img)) {
-    font-size: 16px !important; /* Đừng để 0.8rem nữa, đổi thành 16px */
-  }
-
-  /* ... các đoạn tiêu đề giữ nguyên ... */
-}
-  
+  /* Tiêu đề bài viết chi tiết */
   h1, 
   h2[itemprop="name headline"] {
     font-size: 1.6rem !important; 
@@ -329,24 +288,23 @@ h2[itemprop="name headline"] {
     margin-bottom: 0.8em !important;
     letter-spacing: -0.02em !important;
   }
-/* 💡 QUY HOẠCH LẠI DÒNG BÀI VIẾT TRÊN MOBILE: Dàn hàng dọc, canh trái thẳng tắp */
+
+  /* List bài viết dàn dọc thẳng tắp */
   ul.posts li { 
-    display: block !important; /* 💡 BỎ FLEX: Chuyển về dạng khối để tự rớt dòng */
+    display: block !important; 
     margin-bottom: 1.5rem !important; 
   }
-  
   ul.posts li a { 
-    display: block !important; /* Cho tiêu đề chiếm trọn dòng trên */
-    font-size: 1.15rem !important; 
-    line-height: 1.4 !important; 
+    display: block !important; 
+    font-size: 19px !important; /* Giữ chuẩn 19px */
+    line-height: 1.65 !important; 
     color: #444444 !important;
-    margin-bottom: 0.15rem !important; /* Khoảng thở siêu nhỏ giữa chữ và ngày */
+    margin-bottom: 0.15rem !important; 
   }
-  
   ul.posts li time {
-    display: block !important; /* Ép ngày tháng xuống dòng riêng biệt */
-    text-align: left !important; /* 💡 CANH TRÁI: Thẳng tắp với mép trái của tiêu đề */
-    margin-left: 0 !important; /* Xóa bỏ lệnh đẩy sang phải */
+    display: block !important; 
+    text-align: left !important; 
+    margin-left: 0 !important; 
     padding-left: 0 !important;
     opacity: 1 !important; 
     pointer-events: auto !important; 
@@ -354,28 +312,48 @@ h2[itemprop="name headline"] {
     color: #b1b1b1 !important; 
     font-family: 'Lora', Georgia, serif !important; 
   }
+}
 
-/* Cấu hình đặc biệt khi vào màn hình dọc điện thoại nhỏ dưới 480px */
+/* ======================================================
+   📱 8B. ĐIỆN THOẠI DỌC DƯỚI 480PX (ÉP GỌN CHUẨN MNMLIST)
+   ====================================================== */
 @media (max-width: 480px) {
   html, body {
-    font-size: 18px !important;
+    font-size: 16px !important; /* Hạ gốc xuống 16px để chữ không bị ngợp */
     line-height: 1.6 !important;
   }
   
-  /* 💡 ĐÃ HẠ CẤP: Ép tiêu đề xuống 1.4rem để triệt tiêu độ bự của font gốc 18px */
+  /* h1 về 24px (~1.5rem), dãn chữ tự nhiên */
   h1 {
-    font-size: 1.4rem !important; /* ~25.2px, thon gọn vừa vặn y xì kích thước của Leo */
+    font-size: 24px !important; 
+    margin: 0 0 1.2rem !important; 
+    letter-spacing: -0.005em !important;
     font-weight: 700 !important;
     line-height: 1.25 !important;
-    letter-spacing: -0.02em !important;
-    margin-bottom: 0.8em !important;
   }
 
-  /* Các phần còn lại giữ nguyên */
-  header a:not(:has(img)) { font-size: 0.8rem !important; }
-  ul.posts li a { font-size: 1.15rem !important; }
-  ul.posts li time { font-size: 0.85rem !important; }
+  /* Thu nhỏ menu lại một chút cho đỡ thô */
+  header a:not(:has(img)) { 
+    font-size: 14px !important; 
+  }
+  
+  /* Hạ list bài viết xuống 17px nhìn thanh thoát, dẹt và sang */
+  ul.posts li a { 
+    font-size: 17px !important; 
+    line-height: 1.5 !important;
+    color: #444444 !important;
+  }
+  
+  /* Ngày tháng nhỏ gọn tàng hình */
+  ul.posts li time { 
+    font-size: 13px !important; 
+  }
+  
+  ul.posts li {
+    margin-bottom: 1.2rem !important;
+  }
 }
+
 /* ======================================================
    ✂️ 9. ĐƯỜNG KẺ MỜ PHÂN CÁCH (DƯỚI MENU)
    ====================================================== */
@@ -383,5 +361,3 @@ header {
   border-bottom: 1px solid #eaeaea !important; 
   padding-bottom: .5rem !important; 
 }
-
-
