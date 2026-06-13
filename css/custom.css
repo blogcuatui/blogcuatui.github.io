@@ -280,7 +280,8 @@ h2[itemprop="name headline"] {
     line-height: 1 !important;
   }
   
-  h1, h2[itemprop="name headline"] {
+ /* 💡 ĐÃ SỬA: Xóa h2 đi, chỉ giữ lại h1 để ép size thôi */
+  h1 {
     font-size: 1.6rem !important; 
     font-weight: 700 !important;
     line-height: 1.25 !important;
