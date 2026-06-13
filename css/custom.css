@@ -129,27 +129,28 @@ header a:not(:has(img)).active-link, header a:not(:has(img))[aria-current="page"
   color: #111 !important; 
   font-weight: 400 !important; 
 }
+
 /* ======================================================
    ⚡ 5. BLOCKQUOTE & NGÀY THÁNG (PC)
    ====================================================== */
 blockquote {
   border-left: 2px solid #111; 
   padding-left: 1rem; 
-  margin: 1.5rem 0 !important; /* Đã sửa khít lề quote cho thoáng dãn */
+  margin: 0;
   font-style: italic;
   color: #444;
 }
-blockquote p { margin-bottom: 0 !important; margin-top: 0 !important; }
+blockquote p { margin-bottom: 0 !important; }
 
 ul.posts li a::before, ul.posts li a::after { content: none !important; display: none !important; }
 
-/* Cấu hình hàng ngang cho dòng bài viết trang chủ */
+/* Ép khung bài viết rộng hết cỡ để đẩy được date sang phải */
 ul.posts li {
   display: flex !important;
   align-items: baseline !important;
-  justify-content: space-between !important; 
+  justify-content: space-between !important; /* 💡 ĐỘ ĐÔI HAI ĐẦU: Tiêu đề bên trái, date bên phải */
   width: 100% !important;
-  /* 💡 ĐÃ GỘP: Chuyển toàn bộ margin/padding của dòng bài viết xuống Mục 10 xử lý gạch chân */
+  margin-bottom: 0.6em !important; 
 }
 
 ul.posts li a {
@@ -164,8 +165,11 @@ ul.posts li a {
 ul.posts li time {
   flex: 0 0 auto !important;
   white-space: nowrap !important;
+  
+  /* 💡 TUYỆT CHIÊU CANH SÁT MÉP PHẢI: Ép ngày tháng dạt kịch biên bên phải */
   margin-left: auto !important; 
   text-align: right !important;
+  
   font-size: 0.9rem !important; 
   color: #777 !important; 
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
@@ -174,9 +178,11 @@ ul.posts li time {
   pointer-events: none !important; 
 }
 
+/* Hiệu ứng di chuột vào dòng là hiện date kịch phải */
 ul.posts li a:hover ~ time, ul.posts li a:active ~ time, ul.posts li a:focus ~ time {
   opacity: 1 !important; 
 }
+
 
 /* ======================================================
    📐 6. ĐỘ PHÂN TRANG (PAGINATION CHUẨN SÁCH IN)
@@ -233,7 +239,7 @@ h2[itemprop="name headline"] {
 }
 
 /* ======================================================
-   📱 8. CẤU HÌNH TRÊN TABLET & MOBILE (BẢN FIX CÂN ĐỐI CHỮ TRANG CHỦ)
+   📱 8. CẤU HÌNH TRÊN TABLET & MOBILE (BẢN CỨU NGÀY THÁNG TINH TẾ)
    ====================================================== */
 @media (max-width: 600px) {
   body {
@@ -253,78 +259,70 @@ h2[itemprop="name headline"] {
 
   header a:not(:has(img)) {
     font-family: 'Lora', Georgia, "Times New Roman", Times, serif !important;
-    font-size: 0.82rem !important; /* Hạ nhẹ một chút cho tiệm cận độ tinh tế của mnmlist */
+    font-size: 0.82rem !important; 
     padding: 0 !important; 
     line-height: 1 !important;
   }
   
-  /* 💡 ÉP TIÊU ĐỀ LIST BÀI VIẾT NGOÀI TRANG CHỦ GỌN GÀNG */
-  ul.posts li { 
-    display: block !important; 
+  h1, 
+  h2[itemprop="name headline"] {
+    font-size: 1.6rem !important; 
+    font-weight: 700 !important;
+    line-height: 1.25 !important;
+    margin-bottom: 0.8em !important;
+    letter-spacing: -0.02em !important;
   }
+/* 💡 QUY HOẠCH LẠI DÒNG BÀI VIẾT TRÊN MOBILE: Dàn hàng dọc, canh trái thẳng tắp */
+  ul.posts li { 
+    display: block !important; /* 💡 BỎ FLEX: Chuyển về dạng khối để tự rớt dòng */
+    margin-bottom: 1.5rem !important; 
+  }
+  
   ul.posts li a { 
-    /* 1. Hạ size chữ nhỏ xuống cho mịn và sang */
-    font-size: 0.95rem !important; 
-    /* 2. Ép khoảng cách dòng khít rịt lại khi bị rớt dòng */
-    line-height: 1.25 !important; 
-    display: inline-block !important; 
+    display: block !important; /* Cho tiêu đề chiếm trọn dòng trên */
+    font-size: 1.15rem !important; 
+    line-height: 1.4 !important; 
+    color: #444444 !important;
+    margin-bottom: 0.15rem !important; /* Khoảng thở siêu nhỏ giữa chữ và ngày */
   }
   
   ul.posts li time {
-    display: block !important; 
+    display: block !important; /* Ép ngày tháng xuống dòng riêng biệt */
+    text-align: left !important; /* 💡 CANH TRÁI: Thẳng tắp với mép trái của tiêu đề */
+    margin-left: 0 !important; /* Xóa bỏ lệnh đẩy sang phải */
+    padding-left: 0 !important;
     opacity: 1 !important; 
     pointer-events: auto !important; 
-    margin-top: 2px !important; 
-    font-size: 0.8rem !important; /* Hạ date nhỏ xuống theo tỉ lệ chữ tiêu đề */
-    margin-left: 0 !important; 
-    padding-left: 0 !important; 
-    text-align: left !important; 
-    color: #888 !important; 
+    font-size: 0.85rem !important; 
+    color: #b1b1b1 !important; 
+    font-family: 'Lora', Georgia, serif !important; 
   }
-}
 
-/* Cấu hình khi vào màn hình dọc điện thoại nhỏ */
+/* Cấu hình đặc biệt khi vào màn hình dọc điện thoại nhỏ dưới 480px */
 @media (max-width: 480px) {
   html, body {
-    /* Ruột bài viết bên trong thì giữ 18px cho dễ đọc */
     font-size: 18px !important;
     line-height: 1.6 !important;
   }
   
-  /* 💡 ĐỒNG BỘ: Khóa cứng font ngoài trang chủ không cho bung theo size 18px của body */
-  header a:not(:has(img)) {
-    font-size: 0.8rem !important; 
+  h1 {
+    font-size: 1.7rem !important; 
+    font-weight: 700 !important;
+    line-height: 1.25 !important;
+    letter-spacing: -0.02em !important;
+    margin-bottom: 0.8em !important;
   }
 
-  ul.posts li a { 
-    font-size: 0.95rem !important; /* Giữ nguyên độ mịn màng, không cho phóng to */
-  }
-
-  ul.posts li time {
-    font-size: 0.8rem !important;
-  }
+  header a:not(:has(img)) { font-size: 0.8rem !important; }
+  ul.posts li a { font-size: 1.15rem !important; }
+  ul.posts li time { font-size: 0.85rem !important; }
 }
-
 /* ======================================================
    ✂️ 9. ĐƯỜNG KẺ MỜ PHÂN CÁCH (DƯỚI MENU)
    ====================================================== */
 header {
   border-bottom: 1px solid #eaeaea !important; 
   padding-bottom: .5rem !important; 
-  margin-bottom: 1rem !important; 
 }
 
 
-/* ======================================================
-   ✂️ 10. ĐƯỜNG KẺ MỜ GIỮA CÁC BÀI VIẾT TRANG CHỦ (BẢN XÓA ĐƯỜNG KẺ)
-   ====================================================== */
-ul.posts li {
-  /* 💡 ĐÃ SỬA: Đổi từ '1px solid #eaeaea' thành 'none' để xóa sạch đường kẻ ngang */
-  border-bottom: none !important; 
-  margin-bottom: 1rem !important; /* Khoảng cách dãn giữa các bài viết ngoài trang chủ */
-}
-
-/* Vẫn giữ lệnh xóa lề bài cuối cùng cho an toàn */
-ul.posts li:last-child {
-  margin-bottom: 0 !important;
-}
