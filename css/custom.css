@@ -125,7 +125,7 @@ header > a:first-of-type,
 header nav > a:first-of-type,
 header ul > li:first-child,
 .menu > li:first-child {
-  margin-right: auto !important; 
+  margin-right: 0 !important; 
 }
 
 header a:not(:has(img)) {
@@ -143,6 +143,7 @@ header ul > li:first-child > a,
 .menu > li:first-child > a {
   font-weight: 700 !important;
   color: #111111 !important;
+  font-size: 19px !important;
 }
 
 header a:not(:has(img)):hover, header a:not(:has(img)).active, 
@@ -347,11 +348,4 @@ h2[itemprop="name headline"] {
   
   ul.posts li time { font-size: 12px !important; }
   ul.posts li { margin-bottom: 1.2rem !important; }
-}
-/* ======================================================
-   ✂️ 9. ĐƯỜNG KẺ MỜ PHÂN CÁCH (DƯỚI MENU)
-   ====================================================== */
-header {
-  border-bottom: 1px solid #eaeaea !important; 
-  padding-bottom: .5rem !important; 
 }
