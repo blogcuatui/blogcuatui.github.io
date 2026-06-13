@@ -158,8 +158,9 @@ ul.posts li a {
   white-space: normal !important; 
   display: inline-block !important; 
   font-weight: 400 !important; 
-  font-size: 1.15rem !important; 
-  line-height: 1.4 !important; 
+  font-size: 19px !important; 
+  line-height: 1.65 !important;
+  color: #444444 !important; 
 }
 
 ul.posts li time {
@@ -305,14 +306,16 @@ h2[itemprop="name headline"] {
     line-height: 1.6 !important;
   }
   
+  /* 💡 ĐÃ HẠ CẤP: Ép tiêu đề xuống 1.4rem để triệt tiêu độ bự của font gốc 18px */
   h1 {
-    font-size: 1.7rem !important; 
+    font-size: 1.4rem !important; /* ~25.2px, thon gọn vừa vặn y xì kích thước của Leo */
     font-weight: 700 !important;
     line-height: 1.25 !important;
     letter-spacing: -0.02em !important;
     margin-bottom: 0.8em !important;
   }
 
+  /* Các phần còn lại giữ nguyên */
   header a:not(:has(img)) { font-size: 0.8rem !important; }
   ul.posts li a { font-size: 1.15rem !important; }
   ul.posts li time { font-size: 0.85rem !important; }
