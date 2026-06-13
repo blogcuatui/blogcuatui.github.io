@@ -268,20 +268,15 @@ h2[itemprop="name headline"] {
     line-height: 1.5 !important; 
   }
 
-  /* Kích menu to rõ dễ bấm */
-  header, header nav, header ul, .menu {
-    gap: 1.2rem !important; 
-  }
+  header, header nav, header ul, .menu { gap: 1.2rem !important; }
   header a:not(:has(img)) {
     font-family: 'Lora', Georgia, "Times New Roman", Times, serif !important;
-    font-size: 16px !important; 
+    font-size: 15px !important; 
     padding: 0 !important; 
     line-height: 1 !important;
   }
   
-  /* Tiêu đề bài viết chi tiết */
-  h1, 
-  h2[itemprop="name headline"] {
+  h1, h2[itemprop="name headline"] {
     font-size: 1.6rem !important; 
     font-weight: 700 !important;
     line-height: 1.25 !important;
@@ -289,15 +284,19 @@ h2[itemprop="name headline"] {
     letter-spacing: -0.02em !important;
   }
 
-  /* List bài viết dàn dọc thẳng tắp */
-  ul.posts li { 
-    display: block !important; 
-    margin-bottom: 1.5rem !important; 
+  /* 💡 FIX CHÍ MẠNG: Hạ size ruột bài viết trên Tablet xuống 16px */
+  main p, article p, span[itemprop="articleBody"] p, .content p,
+  main ul li, article ul li, span[itemprop="articleBody"] ul li {
+    font-size: 16px !important;       
+    line-height: 1.6 !important;      
+    margin-bottom: 1.2rem !important; 
   }
+
+  ul.posts li { display: block !important; margin-bottom: 1.2rem !important; }
   ul.posts li a { 
     display: block !important; 
-    font-size: 19px !important; /* Giữ chuẩn 19px */
-    line-height: 1.65 !important; 
+    font-size: 17px !important; 
+    line-height: 1.5 !important; 
     color: #444444 !important;
     margin-bottom: 0.15rem !important; 
   }
@@ -310,7 +309,6 @@ h2[itemprop="name headline"] {
     pointer-events: auto !important; 
     font-size: 0.85rem !important; 
     color: #b1b1b1 !important; 
-    font-family: 'Lora', Georgia, serif !important; 
   }
 }
 
@@ -319,41 +317,35 @@ h2[itemprop="name headline"] {
    ====================================================== */
 @media (max-width: 480px) {
   html, body {
-    font-size: 16px !important; /* Hạ gốc xuống 16px để chữ không bị ngợp */
-    line-height: 1.6 !important;
-  }
-  
-  /* h1 về 24px (~1.5rem), dãn chữ tự nhiên */
-  h1 {
-    font-size: 24px !important; 
-    margin: 0 0 1.2rem !important; 
-    letter-spacing: -0.005em !important;
-    font-weight: 700 !important;
-    line-height: 1.25 !important;
-  }
-
-  /* Thu nhỏ menu lại một chút cho đỡ thô */
-  header a:not(:has(img)) { 
-    font-size: 14px !important; 
-  }
-  
-  /* Hạ list bài viết xuống 17px nhìn thanh thoát, dẹt và sang */
-  ul.posts li a { 
-    font-size: 17px !important; 
+    font-size: 15px !important; /* Hạ gốc cực nhỏ gọn */
     line-height: 1.5 !important;
-    color: #444444 !important;
   }
   
-  /* Ngày tháng nhỏ gọn tàng hình */
-  ul.posts li time { 
-    font-size: 13px !important; 
+  /* h1 về 22px để không bị thô */
+  h1 {
+    font-size: 22px !important; 
+    margin: 0 0 1.2rem !important; 
   }
-  
-  ul.posts li {
-    margin-bottom: 1.2rem !important;
-  }
-}
 
+  header a:not(:has(img)) { font-size: 14px !important; }
+  
+  /* 💡 FIX CHÍ MẠNG: Hạ ruột bài viết trên Mobile về 15px (Chuẩn mịn mnmlist) */
+  main p, article p, span[itemprop="articleBody"] p, .content p,
+  main ul li, article ul li, span[itemprop="articleBody"] ul li {
+    font-size: 15px !important;       
+    line-height: 1.6 !important;      
+    margin-bottom: 1.2rem !important; 
+  }
+
+  /* Hạ list bài viết ngoài trang chủ xuống 16px cho thanh thoát */
+  ul.posts li a { 
+    font-size: 16px !important; 
+    line-height: 1.5 !important;
+  }
+  
+  ul.posts li time { font-size: 12px !important; }
+  ul.posts li { margin-bottom: 1.2rem !important; }
+}
 /* ======================================================
    ✂️ 9. ĐƯỜNG KẺ MỜ PHÂN CÁCH (DƯỚI MENU)
    ====================================================== */
