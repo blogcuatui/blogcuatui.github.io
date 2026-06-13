@@ -41,7 +41,7 @@ h1, h2, h3, h4, h5 {
 }
 
 /* 💡 CHUẨN LEO: h1 to bự, dãn chữ vi tế, margin top/bottom siêu thoáng */
-h1 { font-size: 2.1rem !important; margin: 3.5rem 0 2rem !important; letter-spacing: -0.005em !important; line-height: 1.2 !important; font-weight: 700 !important;}
+h1 { font-size: clamp(22px, 1.2vw + 18px, 33.6px) !important; margin: 3.5rem 0 2rem !important; letter-spacing: -0.005em !important; line-height: 1.2 !important; font-weight: 700 !important;}
 h2 { font-size: 1.3rem !important; margin-bottom: 0.8em !important; }
 h3 { font-size: 1.1rem !important; margin-bottom: 0.5em !important; font-style: italic; }
 
@@ -86,14 +86,14 @@ article a:hover, .post-content a:hover {
 .posts li a:hover { color: #c1c1c1; }
 
 /* ======================================================
-   📖 3B. BƠM OXY CHO NỘI DUNG BÀI VIẾT (TRẢ VỀ CHUẨN 18PX)
+   📖 3B. BƠM OXY CHO NỘI DUNG BÀI VIẾT (HỆ CLAMP LINH HOẠT)
    ====================================================== */
 main p, 
 article p, 
 span[itemprop="articleBody"] p,
 .content p {
-  /* 💡 FIX CHÍ MẠNG: Hạ từ 21px xuống 18px cho chữ dẹt lại, thanh thoát y chang mnmlist */
-  font-size: 18px !important;       
+  /* 💡 LÒ XO CHO RUỘT BÀI: Mobile mịn màng 15px, PC thanh tao 18px */
+  font-size: clamp(15px, 0.3vw + 14px, 18px) !important;       
   line-height: 1.65 !important;      
   margin-bottom: 1.5rem !important; 
   color: #111111 !important;        
@@ -102,11 +102,12 @@ span[itemprop="articleBody"] p,
 main ul li, 
 article ul li,
 span[itemprop="articleBody"] ul li {
-  /* 💡 Ép luôn mấy cái gạch đầu dòng về 18px */
-  font-size: 18px !important;
+  /* Ép luôn mấy cái gạch đầu dòng ăn theo hệ clamp của đoạn văn */
+  font-size: clamp(15px, 0.3vw + 14px, 18px) !important;
   line-height: 1.65 !important;
   margin-bottom: 0.8rem !important;
 }
+
 /* ======================================================
    🎯 4. HIỆU ỨNG MENU TRÊN CÙNG (HỆ GAP 1.25REM CHUẨN LEO)
    ====================================================== */
@@ -258,7 +259,7 @@ h2[itemprop="name headline"] {
 }
 
 /* ======================================================
-   📱 8. CẤU HÌNH TRÊN TABLET & MOBILE (BẢN SẠCH TUYỆT ĐỐI)
+   📱 8. CẤU HÌNH TRÊN TABLET & MOBILE (BẢN ĐÃ THÔNG KINH MẠCH CLAMP)
    ====================================================== */
 @media (max-width: 600px) {
   body {
@@ -280,19 +281,17 @@ h2[itemprop="name headline"] {
     line-height: 1 !important;
   }
   
- /* 💡 ĐÃ SỬA: Xóa h2 đi, chỉ giữ lại h1 để ép size thôi */
+  /* 💡 ĐÃ XÓA FONT-SIZE: Để cho h1 tự dãn bằng lò xo clamp() ở trên */
   h1 {
-    font-size: 1.6rem !important; 
     font-weight: 700 !important;
     line-height: 1.25 !important;
     margin-bottom: 0.8em !important;
     letter-spacing: -0.02em !important;
   }
 
-  /* 💡 FIX CHÍ MẠNG: Hạ size ruột bài viết trên Tablet xuống 16px */
+  /* 💡 ĐÃ XÓA FONT-SIZE: Trả tự do cho ruột bài viết tự mượt mà theo clamp() */
   main p, article p, span[itemprop="articleBody"] p, .content p,
   main ul li, article ul li, span[itemprop="articleBody"] ul li {
-    font-size: 16px !important;       
     line-height: 1.6 !important;      
     margin-bottom: 1.2rem !important; 
   }
@@ -322,22 +321,20 @@ h2[itemprop="name headline"] {
    ====================================================== */
 @media (max-width: 480px) {
   html, body {
-    font-size: 15px !important; /* Hạ gốc cực nhỏ gọn */
+    font-size: 15px !important; 
     line-height: 1.5 !important;
   }
   
-  /* h1 về 22px để không bị thô */
+  /* 💡 ĐÃ XÓA FONT-SIZE: Mở đường cho clamp() */
   h1 {
-    font-size: 22px !important; 
     margin: 0 0 1.2rem !important; 
   }
 
   header a:not(:has(img)) { font-size: 14px !important; }
   
-  /* 💡 FIX CHÍ MẠNG: Hạ ruột bài viết trên Mobile về 15px (Chuẩn mịn mnmlist) */
+  /* 💡 ĐÃ XÓA FONT-SIZE: Mở đường cho clamp() */
   main p, article p, span[itemprop="articleBody"] p, .content p,
   main ul li, article ul li, span[itemprop="articleBody"] ul li {
-    font-size: 15px !important;       
     line-height: 1.6 !important;      
     margin-bottom: 1.2rem !important; 
   }
