@@ -248,7 +248,8 @@ main > section > span[itemprop="articleBody"] {
 }
 
 h2[itemprop="name headline"] {
-  font-size: 1.9rem !important;  
+  /* 💡 TUYỆT KỸ FLUID TYPOGRAPHY: Tự động co dãn như lò xo từ Mobile (1.56rem) lên PC (2rem) */
+  font-size: clamp(1.56rem, 0.44vw + 1.48rem, 2rem) !important;  
   font-weight: 700 !important;   
   line-height: 1.25 !important; 
   margin-top: 17px !important; 
