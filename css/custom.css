@@ -355,3 +355,32 @@ header {
   border-bottom: 1px solid #eaeaea !important; 
   padding-bottom: .5rem !important; 
 }
+
+
+/* ======================================================
+   🌟 10. TAGLINE DƯỚI LOGO (KHÔNG CẦN SỬA HTML)
+   ====================================================== */
+/* Ép cái chữ "blogcuatui" (logo) thành khối dọc để nhét tagline xuống đáy */
+header > a:first-of-type,
+header nav > a:first-of-type,
+header ul > li:first-child > a,
+.menu > li:first-child > a {
+  display: inline-flex !important;
+  flex-direction: column !important;
+  align-items: flex-start !important;
+  line-height: 1 !important; /* Bóp khít khoảng cách lại */
+}
+
+/* Dùng bùa ::after để "triệu hồi" dòng tagline ra đúng vị trí */
+header > a:first-of-type::after,
+header nav > a:first-of-type::after,
+header ul > li:first-child > a::after,
+.menu > li:first-child > a::after {
+  content: "sống đơn giản cho đời thanh thản" !important; /* 💡 MÀY MUỐN ĐỔI CHỮ THÌ SỬA Ở ĐÂY NÈ */
+  font-size: 15px !important; /* Nhỏ nhắn, mảnh mai */
+  font-weight: 400 !important; /* Nét mỏng, không in đậm */
+  color: #888888 !important; /* Màu xám mờ y xì cái hình mày gửi */
+  margin-top: 5px !important; /* Khoảng cách rơi rớt xuống dưới chữ blogcuatui */
+  letter-spacing: 0.01em !important; /* Dãn nhẹ chữ ra tí xíu cho sang */
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important; /* Font không chân nhìn cho hiện đại */
+}
