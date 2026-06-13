@@ -5,7 +5,8 @@ html, body {
   background-color: #ffffff !important; 
   color: #111111;
   font-family: 'Lora', Georgia, "Times New Roman", Times, serif; 
-  font-size: 19px; /* 💡 ĐÃ ĐỒNG BỘ: Lên hệ 19px đầm chữ chuẩn mnmlist */
+  /* 💡 ĐÃ HẠ XUỐNG: 18px là tỷ lệ vàng cho khung 570px, thon gọn thanh tao */
+  font-size: 18px !important; 
   line-height: 1.6; 
   -webkit-font-smoothing: antialiased;
   text-size-adjust: 100%;
@@ -85,26 +86,27 @@ article a:hover, .post-content a:hover {
 .posts li a:hover { color: #c1c1c1; }
 
 /* ======================================================
-   📖 3B. BƠM OXY CHO NỘI DUNG BÀI VIẾT (CHUẨN MNMLIST 21PX)
+   📖 3B. BƠM OXY CHO NỘI DUNG BÀI VIẾT (TRẢ VỀ CHUẨN 18PX)
    ====================================================== */
 main p, 
 article p, 
 span[itemprop="articleBody"] p,
 .content p {
-  font-size: 21px !important;       
-  line-height: 1.7 !important;      
-  margin-bottom: 1.8rem !important; 
+  /* 💡 FIX CHÍ MẠNG: Hạ từ 21px xuống 18px cho chữ dẹt lại, thanh thoát y chang mnmlist */
+  font-size: 18px !important;       
+  line-height: 1.65 !important;      
+  margin-bottom: 1.5rem !important; 
   color: #111111 !important;        
 }
 
 main ul li, 
 article ul li,
 span[itemprop="articleBody"] ul li {
-  font-size: 21px !important;
-  line-height: 1.7 !important;
+  /* 💡 Ép luôn mấy cái gạch đầu dòng về 18px */
+  font-size: 18px !important;
+  line-height: 1.65 !important;
   margin-bottom: 0.8rem !important;
 }
-
 /* ======================================================
    🎯 4. HIỆU ỨNG MENU TRÊN CÙNG (HỆ GAP 1.25REM CHUẨN LEO)
    ====================================================== */
