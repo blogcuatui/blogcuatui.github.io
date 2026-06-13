@@ -39,7 +39,7 @@ h1, h2, h3, h4, h5 {
   margin-top: 0 !important; 
 }
 
-h1 { font-size: 2.1rem !important; margin-bottom: 1.2em !important; letter-spacing: -0.03em !important; line-height: 1.2 !important; font-weight: 700 !important;}
+h1 { font-size: 2.1rem !important; margin: 3.5rem 0 2rem !important; letter-spacing: -0.005em !important; line-height: 1.2 !important; font-weight: 700 !important;}
 h2 { font-size: 1.3rem !important; margin-bottom: 0.8em !important; }
 h3 { font-size: 1.1rem !important; margin-bottom: 0.5em !important; font-style: italic; }
 
@@ -82,6 +82,33 @@ article a:hover, .post-content a:hover {
   transition: color 0.2s ease-in-out;
 }
 .posts li a:hover { color: #c1c1c1; }
+
+
+/* ======================================================
+   📖 BƠM OXY CHO NỘI DUNG BÀI VIẾT (CHUẨN MNMLIST 21PX)
+   ====================================================== */
+main p, 
+article p, 
+span[itemprop="articleBody"] p,
+.content p {
+  /* 💡 KÍCH CHỮ TO BỰ NHƯ MNMLIST */
+  font-size: 21px !important;       
+  /* 💡 DÃN DÒNG CỰC THOÁNG */
+  line-height: 1.7 !important;      
+  /* 💡 TÁCH CÁC ĐOẠN VĂN XA NHAU RA */
+  margin-bottom: 1.8rem !important; 
+  color: #111111 !important;        
+}
+
+/* Kích luôn mấy cái gạch đầu dòng (li) trong bài viết cho nó cân đối với chữ 21px */
+main ul li, 
+article ul li,
+span[itemprop="articleBody"] ul li {
+  font-size: 21px !important;
+  line-height: 1.7 !important;
+  margin-bottom: 0.8rem !important;
+}
+
 
 /* ======================================================
    🎯 4. HIỆU ỨNG MENU TRÊN CÙNG (HỆ GAP 1.25REM CHUẨN LEO BABAUTA)
@@ -258,12 +285,41 @@ h2[itemprop="name headline"] {
     gap: 0.75rem !important; 
   }
 
+ /* ======================================================
+   Sửa trong @media (max-width: 600px)
+   ====================================================== */
+@media (max-width: 600px) {
+  /* ... các đoạn trên giữ nguyên ... */
+
+  /* 💡 Nới khoảng cách giữa các mục menu ra cho dễ bấm */
+  header, header nav, header ul, .menu {
+    gap: 1.2rem !important; 
+  }
+
+  /* 💡 KÍCH TO CHỮ MENU LÊN 16PX */
   header a:not(:has(img)) {
     font-family: 'Lora', Georgia, "Times New Roman", Times, serif !important;
-    font-size: 0.82rem !important; 
+    font-size: 16px !important; /* Tăng từ 0.8rem lên hẳn 16px cho bự rõ */
     padding: 0 !important; 
     line-height: 1 !important;
   }
+  
+  /* ... các đoạn tiêu đề giữ nguyên ... */
+}
+
+/* ======================================================
+   Sửa trong @media (max-width: 480px)
+   ====================================================== */
+@media (max-width: 480px) {
+  /* ... các đoạn trên giữ nguyên ... */
+
+  /* 💡 KÍCH TO CHỮ MENU LÊN 16PX KHI CẦM ĐIỆN THOẠI DỌC */
+  header a:not(:has(img)) {
+    font-size: 16px !important; /* Đừng để 0.8rem nữa, đổi thành 16px */
+  }
+
+  /* ... các đoạn tiêu đề giữ nguyên ... */
+}
   
   h1, 
   h2[itemprop="name headline"] {
