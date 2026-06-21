@@ -166,7 +166,7 @@ ul.posts {
 ul.posts li {
   position: relative !important; /* 💡 MỎ NEO CHÍNH: Giữ tiêu đề nằm im làm gốc tọa độ */
   display: block !important; /* Bỏ flex đi để tiêu đề tự do đứng sát lề trái */
-  margin-bottom: 0.5rem !important; 
+  margin-bottom: .5rem !important; 
 }
 
 ul.posts li a {
@@ -299,10 +299,12 @@ h2[itemprop="name headline"] {
     margin-bottom: 0.15rem !important; 
   }
   ul.posts li time {
+    position: static !important; 
     display: block !important; 
     text-align: left !important; 
     margin-left: 0 !important; 
     padding-left: 0 !important;
+    margin-top: 0.2rem !important; 
     opacity: 1 !important; 
     pointer-events: auto !important; 
     font-size: 0.85rem !important; 
