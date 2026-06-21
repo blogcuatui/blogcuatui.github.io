@@ -157,50 +157,44 @@ header a:not(:has(img)).active-link, header a:not(:has(img))[aria-current="page"
 /* ======================================================
    ⚡ 5. LIST BÀI VIẾT TRANG CHỦ & NGÀY THÁNG (PC)
    ====================================================== */
-blockquote {
-  border-left: 2px solid #111; 
-  padding-left: 1rem; 
-  margin: 0;
-  font-style: italic;
-  color: #444;
+ul.posts {
+  list-style-type: none !important; 
+  padding: 0 !important; 
+  margin: 0 !important; 
 }
-blockquote p { margin-bottom: 0 !important; }
-
-ul.posts li a::before, ul.posts li a::after { content: none !important; display: none !important; }
 
 ul.posts li {
-  display: flex !important;
-  align-items: baseline !important;
-  justify-content: space-between !important; 
-  width: 100% !important;
-  border-bottom: none !important; /* Xóa đường kẻ */
-  margin-bottom: .5rem !important; /* Dãn khoảng cách bài viết */
+  position: relative !important; /* 💡 MỎ NEO CHÍNH: Giữ tiêu đề nằm im làm gốc tọa độ */
+  display: block !important; /* Bỏ flex đi để tiêu đề tự do đứng sát lề trái */
+  margin-bottom: 0.5rem !important; 
 }
 
 ul.posts li a {
-  flex: 0 1 auto !important; 
-  white-space: normal !important; 
-  display: inline-block !important; 
-  font-weight: 400 !important; 
-  font-size: 19px !important; /* 💡 KHÓA CỨNG 19PX CHUẨN LEO */
-  line-height: 1.65 !important;
-  color: #444444 !important; 
+  font-size: 19px !important; 
+  color: #111111 !important; 
+  text-decoration: none !important; 
+  display: inline-block !important;
+  line-height: 1.5 !important;
 }
 
 ul.posts li time {
-  flex: 0 0 auto !important;
-  white-space: nowrap !important;
-  margin-left: auto !important; 
-  text-align: right !important;
+  position: absolute !important; /* 💡 Bốc ngày tháng lên khỏi luồng văn bản */
+  right: 100% !important; /* 💡 Đẩy nó văng hoàn toàn ra khỏi mép trái của tiêu đề */
+  margin-right: 1.5rem !important; /* 💡 Khoảng cách cách từ ngày đến tiêu đề cho dễ thở */
+  top: 3px !important; /* Căn chỉnh cho nó ngang hàng với chữ của tiêu đề */
+  
+  white-space: nowrap !important; /* Ép ngày tháng nằm thẳng 1 hàng, không rớt dòng */
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
   font-size: 0.85rem !important; 
-  color: #777 !important; 
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  opacity: 0; 
-  transition: opacity 0.2s ease-in-out;
+  color: #b1b1b1 !important; 
+  
+  /* 💡 Giữ nguyên hiệu ứng ẩn hiện (hover) */
+  opacity: 0 !important; 
   pointer-events: none !important; 
+  transition: opacity 0.3s ease !important; 
 }
 
-ul.posts li a:hover ~ time, ul.posts li a:active ~ time, ul.posts li a:focus ~ time {
+ul.posts li:hover time {
   opacity: 1 !important; 
 }
 
@@ -347,4 +341,30 @@ h2[itemprop="name headline"] {
   
   ul.posts li time { font-size: 12px !important; }
   ul.posts li { margin-bottom: 1.2rem !important; }
+}
+
+/* ======================================================
+   💬 ÉP TRÍCH DẪN (BLOCKQUOTE) THẲNG HÀNG TUYỆT ĐỐI 
+   ====================================================== */
+blockquote, 
+main blockquote, 
+article blockquote, 
+.content blockquote {
+  /* 💡 Bồi thêm lệnh margin-inline-start để khóa họng các theme cứng đầu */
+  margin-left: 0 !important; 
+  margin-inline-start: 0 !important; 
+  margin-right: 0 !important;
+  margin-top: 1.5rem !important;
+  margin-bottom: 1.5rem !important;
+  
+  padding-left: 1.25rem !important; 
+  padding-inline-start: 1.25rem !important; 
+  
+  border-left: 3px solid #d3d3d3 !important; 
+  color: #555555 !important; 
+  font-style: italic !important;
+}
+
+blockquote p {
+  margin-bottom: 0 !important; 
 }
