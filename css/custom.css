@@ -100,42 +100,61 @@ span[itemprop="articleBody"] ul li {
 }
 
 /* ======================================================
-   🎯 4. HIỆU ỨNG MENU TRÊN CÙNG
+   🎯 4. HIỆU ỨNG MENU TRÊN CÙNG (XÓA VIỀN KHOANH TRÒN LOGO)
    ====================================================== */
 header, header nav, header ul, .menu {
-  display: flex !important;
-  align-items: baseline !important;
-  flex-wrap: wrap !important;
+  display: block !important; 
   width: 100% !important;
   list-style: none !important;
   padding: 0 !important;
-  margin: 0 !important;
-  gap: 1.25rem !important; 
+  margin: 0 0 2rem 0 !important; 
+  text-align: left !important; 
 }
 
-header > a:first-of-type,
-header nav > a:first-of-type,
-header ul > li:first-child,
-.menu > li:first-child {
-  margin-right: 0 !important; 
+/* Ép các mục con nằm ngang hàng */
+header ul li, 
+header nav ul li, 
+.menu li {
+  display: inline-block !important; 
+  vertical-align: middle !important; 
+  margin: 0 1.5rem 0 0 !important; 
+  padding: 0 !important;
+  clear: none !important; 
+}
+
+header ul li:last-child, 
+header nav ul li:last-child, 
+.menu li:last-child {
+  margin-right: 0 !important;
 }
 
 header a:not(:has(img)) {
-  padding: 0.25rem 0 !important; 
+  display: inline-block !important;
+  padding: 0 !important; 
   border-radius: 0 !important; 
   color: #888 !important; 
   font-weight: 400 !important;
+  font-size: 16px !important;
   transition: color 0.2s ease !important;
   text-decoration: none !important;
 }
 
-header > a:first-of-type,
-header nav > a:first-of-type,
-header ul > li:first-child > a,
-.menu > li:first-child > a {
-  font-weight: 700 !important;
-  color: #111111 !important;
-  font-size: 19px !important;
+/* 💡 XỬ LÝ LOGO: Xóa sạch bách mọi loại viền/khoanh tròn do code tạo ra */
+header a img, 
+.menu a img {
+  height: 44px !important; 
+  width: auto !important;
+  display: inline-block !important; 
+  vertical-align: middle !important;
+  
+  /* 💥 LỆNH CỨU MẠNG XÓA VIỀN */
+  border: none !important; /* Xóa viền khung */
+  outline: none !important; /* Xóa viền ngoài */
+  box-shadow: none !important; /* Xóa bóng đổ tạo viền */
+  border-radius: 0 !important; /* Reset bo góc */
+  
+  mix-blend-mode: multiply !important; 
+  margin: 0 !important;
 }
 
 header a:not(:has(img)):hover, header a:not(:has(img)).active, 
