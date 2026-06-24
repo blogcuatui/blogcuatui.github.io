@@ -1,5 +1,5 @@
 /* ======================================================
-   🎨 1. NỀN MÓNG CƠ BẢN & TYPOGRAPHY (CHUẨN THU-LE)
+   🎨 1. NỀN MÓNG CƠ BẢN & TYPOGRAPHY (BÓP KHUNG SIÊU HẸP)
    ====================================================== */
 html, body {
   background-color: #fdfdfd !important; 
@@ -11,16 +11,15 @@ html, body {
   -webkit-text-size-adjust: 100%; 
 }
 
-/* Ép khung tổng lực chuẩn thu-le.com (650px) */
+/* 💡 Kéo bề ngang hẹp lại đúng form Thu Lê */
 body {
   width: 100% !important;
-  max-width: 650px !important; 
+  max-width: 540px !important; /* 💡 ÉP GẮT: Từ 650px xuống 540px */
   margin: 5rem auto 6rem auto !important; 
   padding: 0 1.25rem !important; 
   box-sizing: border-box !important;
 }
 
-/* Gỡ bỏ giới hạn của theme để tràn đều khung body */
 main, article, section, .content, .page-content, header, footer {
   width: 100% !important;
   max-width: none !important; 
@@ -29,7 +28,7 @@ main, article, section, .content, .page-content, header, footer {
 }
 
 /* ======================================================
-   📝 2. KIỂM SOÁT TIÊU ĐỀ & ĐOẠN VĂN
+   📝 2. KIỂM SOÁT TIÊU ĐỀ & ĐOẠN VĂN (ĐÃ HẠ SIZE PC)
    ====================================================== */
 h1, h2, h3, h4, h5 {
   color: #111;
@@ -38,8 +37,8 @@ h1, h2, h3, h4, h5 {
   margin-top: 0 !important; 
 }
 
-/* Chuẩn: h1 to bự, dãn chữ vi tế, margin siêu thoáng */
-h1 { font-size: clamp(22px, 1.2vw + 18px, 33.6px) !important; margin: 3.5rem 0 2rem !important; letter-spacing: -0.005em !important; line-height: 1.2 !important; font-weight: 700 !important;}
+/* 💡 Hạ kịch kim h1 trên PC xuống 28px cho bớt "bảng hiệu" */
+h1 { font-size: clamp(22px, 1.2vw + 16px, 28px) !important; margin: 3.5rem 0 2rem !important; letter-spacing: -0.005em !important; line-height: 1.2 !important; font-weight: 700 !important;}
 h2 { font-size: 1.3rem !important; margin-bottom: 0.8em !important; }
 h3 { font-size: 1.1rem !important; margin-bottom: 0.5em !important; font-style: italic; }
 
@@ -84,27 +83,20 @@ article a:hover, .post-content a:hover {
 .posts li a:hover { color: #c1c1c1; }
 
 /* ======================================================
-   📖 3B. BƠM OXY CHO NỘI DUNG (HỆ CLAMP 20PX CHUẨN THU-LE)
+   📖 3B. BƠM OXY CHO NỘI DUNG (CHỮ PC NHỎ LẠI CHO CÂN ĐỐI)
    ====================================================== */
 main p, 
 article p, 
 span[itemprop="articleBody"] p,
-.content p {
-  /* 💡 LÒ XO CHO RUỘT BÀI: Mobile mịn màng 16px, PC bung to 20px */
-  font-size: clamp(16px, 1.2vw + 14px, 20px) !important;       
-  line-height: 1.65 !important;      
-  margin-bottom: 1.7rem !important; 
-  color: #1a1a1a !important;        
-}
-
+.content p,
 main ul li, 
 article ul li,
 span[itemprop="articleBody"] ul li {
-  /* Ép luôn mấy cái gạch đầu dòng ăn theo hệ clamp của đoạn văn */
-  font-size: clamp(16px, 1.2vw + 14px, 20px) !important;
-  line-height: 1.65 !important;
-  margin-bottom: 0.8rem !important;
-  color: #1a1a1a !important;
+  /* 💡 LÒ XO KHÓA TRẦN: PC bung tối đa 16px thôi, nhìn mới tinh tế */
+  font-size: clamp(15px, 0.4vw + 14px, 16px) !important;       
+  line-height: 1.65 !important;      
+  margin-bottom: 1.5rem !important; 
+  color: #1a1a1a !important;        
 }
 
 /* ======================================================
@@ -154,7 +146,7 @@ header a:not(:has(img)).active-link, header a:not(:has(img))[aria-current="page"
 }
 
 /* ======================================================
-   ⚡ 5. LIST BÀI VIẾT & ĐƯỜNG DẪN MẮT (CSS THUẦN - FLEXBOX)
+   ⚡ 5. LIST BÀI VIẾT & ĐƯỜNG DẪN MẮT (THU NHỎ TIÊU ĐỀ LIST)
    ====================================================== */
 ul.posts {
   list-style-type: none !important; 
@@ -165,39 +157,43 @@ ul.posts {
 ul.posts li {
   display: flex !important; 
   justify-content: space-between !important;
-  align-items: baseline !important; /* Giữ ngày tháng thẳng hàng với dòng đầu tiên của tiêu đề */
+  align-items: baseline !important; 
   margin-bottom: 1.2rem !important; 
 }
 
 ul.posts li a {
-  font-size: 19px !important; 
+  /* 💡 Ốp thẳng tay con số gốc mày vừa moi ra (tương đương 19px) */
+  font-size: 1.1875rem !important; 
+  
   color: #111111 !important; 
   text-decoration: none !important; 
   line-height: 1.5 !important;
   flex: 0 1 auto !important; 
-  order: 1 !important; /* Khóa tiêu đề đứng vị trí số 1 */
+  order: 1 !important; 
 }
 
-/* 💡 MẸO THẦN THÁNH: Tự đẻ ra đường gạch nối mà không cần sửa HTML */
+/* Đường gạch đứt dẫn mắt */
 ul.posts li::before {
   content: "" !important;
   display: block !important;
-  flex-grow: 1 !important; /* Tự động phình to lấp đầy khoảng trống ở giữa */
-  border-bottom: 1px dashed #d3d3d3 !important; /* Đường gạch đứt (đổi thành dotted nếu thích dấu chấm) */
-  margin: 0 1rem !important; /* Khoảng cách 2 đầu của đường gạch */
-  order: 2 !important; /* Bắt buộc đường kẻ nằm ở vị trí số 2 (ở giữa) */
-  transform: translateY(-4px) !important; /* Nhích nhẹ đường gạch lên cho vừa tầm mắt chữ */
+  flex-grow: 1 !important; 
+  border-bottom: 1px dashed #d3d3d3 !important; 
+  margin: 0 1rem !important; 
+  order: 2 !important; 
+  transform: translateY(-4px) !important; 
+  opacity: 0.5 !important; /* Làm mờ đường gạch một chút xíu cho bớt gắt */
 }
 
+/* 💡 Kéo nhẹ size của ngày tháng lên một tí xíu cho cân với cái 1.1875rem ở trên */
 ul.posts li time {
   white-space: nowrap !important; 
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
-  font-size: 0.85rem !important; 
+  font-size: 0.9rem !important; /* Tương đương khoảng 14.5px */
   color: #b1b1b1 !important; 
   flex: 0 0 auto !important; 
   opacity: 1 !important; 
   pointer-events: auto !important;
-  order: 3 !important; /* Khóa ngày tháng đứng vị trí số 3 bên phải */
+  order: 3 !important; 
 }
 
 /* ======================================================
