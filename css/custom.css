@@ -232,7 +232,7 @@ ul.posts li time {
 .pagination a:hover, [class*="pagination"] a:hover { color: #111 !important; background: transparent !important; }
 
 /* ======================================================
-   🔥 7. ĐIỀU CHỈNH NHỊP ĐIỆU DỌC
+   🔥 7. ĐIỀU CHỈNH NHỊP ĐIỆU DỌC (HẠ SIZE TIÊU ĐỀ BÀI VIẾT)
    ====================================================== */
 ul.posts,
 main > section > h2[itemprop="name headline"],
@@ -241,12 +241,16 @@ main > section > span[itemprop="articleBody"] {
 }
 
 h2[itemprop="name headline"] {
-  font-size: clamp(1.56rem, 0.44vw + 1.48rem, 2rem) !important;  
+  /* 💡 ĐÃ HẠ TRẦN: 
+     Mobile rút về 1.35rem (~21px) 
+     PC bung tối đa 1.65rem (~26px) 
+  */
+  font-size: clamp(1.35rem, 1vw + 1.1rem, 1.65rem) !important;  
   font-weight: 700 !important;   
   line-height: 1.25 !important; 
   margin-top: 17px !important; 
   margin-bottom: 0.8em !important;
-  letter-spacing: -0.03em !important; 
+  letter-spacing: -0.02em !important; /* Thu khoảng cách chữ lại một xíu cho đầm */
 }
 
 /* ======================================================
