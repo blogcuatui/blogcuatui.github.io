@@ -1,24 +1,22 @@
 /* ======================================================
-   🎨 1. NỀN MÓNG CƠ BẢN & TYPOGRAPHY
+   🎨 1. NỀN MÓNG CƠ BẢN & TYPOGRAPHY (CHUẨN THU-LE)
    ====================================================== */
 html, body {
-  background-color: #ffffff !important; 
-  color: #111111;
+  background-color: #fdfdfd !important; 
+  color: #1a1a1a;
   font-family: 'Lora', Georgia, "Times New Roman", Times, serif; 
-  /* 💡 ĐÃ HẠ XUỐNG: 18px là tỷ lệ vàng cho khung 570px, thon gọn thanh tao */
-  font-size: 18px !important; 
-  line-height: 1.6; 
+  line-height: 1.65; 
   -webkit-font-smoothing: antialiased;
   text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%; 
 }
 
-/* Ép khung tổng lực chuẩn mnmlist.com */
+/* Ép khung tổng lực chuẩn thu-le.com (650px) */
 body {
   width: 100% !important;
-  max-width: 570px !important; 
-  margin: 3.75rem auto 6.25rem auto !important; 
-  padding: 0 0.5rem !important; 
+  max-width: 650px !important; 
+  margin: 5rem auto 6rem auto !important; 
+  padding: 0 1.25rem !important; 
   box-sizing: border-box !important;
 }
 
@@ -40,7 +38,7 @@ h1, h2, h3, h4, h5 {
   margin-top: 0 !important; 
 }
 
-/* 💡 CHUẨN LEO: h1 to bự, dãn chữ vi tế, margin top/bottom siêu thoáng */
+/* Chuẩn: h1 to bự, dãn chữ vi tế, margin siêu thoáng */
 h1 { font-size: clamp(22px, 1.2vw + 18px, 33.6px) !important; margin: 3.5rem 0 2rem !important; letter-spacing: -0.005em !important; line-height: 1.2 !important; font-weight: 700 !important;}
 h2 { font-size: 1.3rem !important; margin-bottom: 0.8em !important; }
 h3 { font-size: 1.1rem !important; margin-bottom: 0.5em !important; font-style: italic; }
@@ -86,30 +84,31 @@ article a:hover, .post-content a:hover {
 .posts li a:hover { color: #c1c1c1; }
 
 /* ======================================================
-   📖 3B. BƠM OXY CHO NỘI DUNG BÀI VIẾT (HỆ CLAMP LINH HOẠT)
+   📖 3B. BƠM OXY CHO NỘI DUNG (HỆ CLAMP 20PX CHUẨN THU-LE)
    ====================================================== */
 main p, 
 article p, 
 span[itemprop="articleBody"] p,
 .content p {
-  /* 💡 LÒ XO CHO RUỘT BÀI: Mobile mịn màng 15px, PC thanh tao 18px */
-  font-size: clamp(15px, 0.3vw + 14px, 18px) !important;       
+  /* 💡 LÒ XO CHO RUỘT BÀI: Mobile mịn màng 16px, PC bung to 20px */
+  font-size: clamp(16px, 1.2vw + 14px, 20px) !important;       
   line-height: 1.65 !important;      
-  margin-bottom: 1.5rem !important; 
-  color: #111111 !important;        
+  margin-bottom: 1.7rem !important; 
+  color: #1a1a1a !important;        
 }
 
 main ul li, 
 article ul li,
 span[itemprop="articleBody"] ul li {
   /* Ép luôn mấy cái gạch đầu dòng ăn theo hệ clamp của đoạn văn */
-  font-size: clamp(15px, 0.3vw + 14px, 18px) !important;
+  font-size: clamp(16px, 1.2vw + 14px, 20px) !important;
   line-height: 1.65 !important;
   margin-bottom: 0.8rem !important;
+  color: #1a1a1a !important;
 }
 
 /* ======================================================
-   🎯 4. HIỆU ỨNG MENU TRÊN CÙNG (HỆ GAP 1.25REM CHUẨN LEO)
+   🎯 4. HIỆU ỨNG MENU TRÊN CÙNG
    ====================================================== */
 header, header nav, header ul, .menu {
   display: flex !important;
@@ -164,8 +163,8 @@ ul.posts {
 }
 
 ul.posts li {
-  position: relative !important; /* 💡 MỎ NEO CHÍNH: Giữ tiêu đề nằm im làm gốc tọa độ */
-  display: block !important; /* Bỏ flex đi để tiêu đề tự do đứng sát lề trái */
+  position: relative !important; 
+  display: block !important; 
   margin-bottom: .5rem !important; 
 }
 
@@ -178,17 +177,16 @@ ul.posts li a {
 }
 
 ul.posts li time {
-  position: absolute !important; /* 💡 Bốc ngày tháng lên khỏi luồng văn bản */
-  right: 100% !important; /* 💡 Đẩy nó văng hoàn toàn ra khỏi mép trái của tiêu đề */
-  margin-right: 1.5rem !important; /* 💡 Khoảng cách cách từ ngày đến tiêu đề cho dễ thở */
-  top: 3px !important; /* Căn chỉnh cho nó ngang hàng với chữ của tiêu đề */
+  position: absolute !important; 
+  right: 100% !important; 
+  margin-right: 1.5rem !important; 
+  top: 3px !important; 
   
-  white-space: nowrap !important; /* Ép ngày tháng nằm thẳng 1 hàng, không rớt dòng */
+  white-space: nowrap !important; 
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
   font-size: 0.85rem !important; 
   color: #b1b1b1 !important; 
   
-  /* 💡 Giữ nguyên hiệu ứng ẩn hiện (hover) */
   opacity: 0 !important; 
   pointer-events: none !important; 
   transition: opacity 0.3s ease !important; 
@@ -243,7 +241,6 @@ main > section > span[itemprop="articleBody"] {
 }
 
 h2[itemprop="name headline"] {
-  /* 💡 TUYỆT KỸ FLUID TYPOGRAPHY: Tự động co dãn như lò xo từ Mobile (1.56rem) lên PC (2rem) */
   font-size: clamp(1.56rem, 0.44vw + 1.48rem, 2rem) !important;  
   font-weight: 700 !important;   
   line-height: 1.25 !important; 
@@ -253,17 +250,16 @@ h2[itemprop="name headline"] {
 }
 
 /* ======================================================
-   📱 8. CẤU HÌNH TRÊN TABLET & MOBILE (BẢN ĐÃ THÔNG KINH MẠCH CLAMP)
+   📱 8. CẤU HÌNH TRÊN TABLET & MOBILE (BẢN SẠCH TUYỆT ĐỐI)
    ====================================================== */
 @media (max-width: 600px) {
   body {
     max-width: 100% !important;
-    margin: 2.5rem auto 4.75rem auto !important; 
+    margin: 2rem auto 4.75rem auto !important; 
     padding: 0 1.25rem !important; 
   }
   
   html, body {
-    font-size: 15px !important; 
     line-height: 1.5 !important; 
   }
 
@@ -275,7 +271,6 @@ h2[itemprop="name headline"] {
     line-height: 1 !important;
   }
   
-  /* 💡 ĐÃ XÓA FONT-SIZE: Để cho h1 tự dãn bằng lò xo clamp() ở trên */
   h1 {
     font-weight: 700 !important;
     line-height: 1.25 !important;
@@ -283,7 +278,6 @@ h2[itemprop="name headline"] {
     letter-spacing: -0.02em !important;
   }
 
-  /* 💡 ĐÃ XÓA FONT-SIZE: Trả tự do cho ruột bài viết tự mượt mà theo clamp() */
   main p, article p, span[itemprop="articleBody"] p, .content p,
   main ul li, article ul li, span[itemprop="articleBody"] ul li {
     line-height: 1.6 !important;      
@@ -298,6 +292,8 @@ h2[itemprop="name headline"] {
     color: #444444 !important;
     margin-bottom: 0.15rem !important; 
   }
+  
+  /* 💡 Triệu hồi Ngày tháng trên Mobile, hủy lệnh absolute của PC */
   ul.posts li time {
     position: static !important; 
     display: block !important; 
@@ -313,29 +309,25 @@ h2[itemprop="name headline"] {
 }
 
 /* ======================================================
-   📱 8B. ĐIỆN THOẠI DỌC DƯỚI 480PX (ÉP GỌN CHUẨN MNMLIST)
+   📱 8B. ĐIỆN THOẠI DỌC DƯỚI 480PX (ÉP GỌN)
    ====================================================== */
 @media (max-width: 480px) {
   html, body {
-    font-size: 15px !important; 
     line-height: 1.5 !important;
   }
   
-  /* 💡 ĐÃ XÓA FONT-SIZE: Mở đường cho clamp() */
   h1 {
     margin: 0 0 1.2rem !important; 
   }
 
   header a:not(:has(img)) { font-size: 14px !important; }
   
-  /* 💡 ĐÃ XÓA FONT-SIZE: Mở đường cho clamp() */
   main p, article p, span[itemprop="articleBody"] p, .content p,
   main ul li, article ul li, span[itemprop="articleBody"] ul li {
     line-height: 1.6 !important;      
     margin-bottom: 1.2rem !important; 
   }
 
-  /* Hạ list bài viết ngoài trang chủ xuống 16px cho thanh thoát */
   ul.posts li a { 
     font-size: 16px !important; 
     line-height: 1.5 !important;
@@ -346,27 +338,30 @@ h2[itemprop="name headline"] {
 }
 
 /* ======================================================
-   💬 ÉP TRÍCH DẪN (BLOCKQUOTE) THẲNG HÀNG TUYỆT ĐỐI 
+   💬 9. ÉP TRÍCH DẪN (BLOCKQUOTE) - BÙA KÉO BẠO LỰC
    ====================================================== */
-blockquote, 
-main blockquote, 
-article blockquote, 
-.content blockquote {
-  /* 💡 Bồi thêm lệnh margin-inline-start để khóa họng các theme cứng đầu */
-  margin-left: 0 !important; 
-  margin-inline-start: 0 !important; 
+body main blockquote, 
+body article blockquote, 
+body .content blockquote,
+html body blockquote {
+  /* 💡 Kéo số âm ra để thẳng hàng với mép ngoài. 
+     Nếu vẫn chưa thẳng 100%, nắn -25px thành -20px hoặc -30px nha */
+  margin-left: -25px !important; 
+  margin-inline-start: -25px !important;
+  
   margin-right: 0 !important;
   margin-top: 1.5rem !important;
   margin-bottom: 1.5rem !important;
   
-  padding-left: 1.25rem !important; 
-  padding-inline-start: 1.25rem !important; 
+  padding-left: 18px !important; 
+  padding-inline-start: 18px !important;
   
   border-left: 3px solid #d3d3d3 !important; 
   color: #555555 !important; 
   font-style: italic !important;
 }
 
-blockquote p {
+body main blockquote p, 
+body article blockquote p {
   margin-bottom: 0 !important; 
 }
