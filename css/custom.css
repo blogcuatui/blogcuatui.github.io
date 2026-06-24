@@ -154,7 +154,7 @@ header a:not(:has(img)).active-link, header a:not(:has(img))[aria-current="page"
 }
 
 /* ======================================================
-   ⚡ 5. LIST BÀI VIẾT TRANG CHỦ & NGÀY THÁNG (PC)
+   ⚡ 5. LIST BÀI VIẾT & ĐƯỜNG DẪN MẮT (CSS THUẦN - FLEXBOX)
    ====================================================== */
 ul.posts {
   list-style-type: none !important; 
@@ -163,37 +163,41 @@ ul.posts {
 }
 
 ul.posts li {
-  position: relative !important; 
-  display: block !important; 
-  margin-bottom: .5rem !important; 
+  display: flex !important; 
+  justify-content: space-between !important;
+  align-items: baseline !important; /* Giữ ngày tháng thẳng hàng với dòng đầu tiên của tiêu đề */
+  margin-bottom: 1.2rem !important; 
 }
 
 ul.posts li a {
   font-size: 19px !important; 
   color: #111111 !important; 
   text-decoration: none !important; 
-  display: inline-block !important;
   line-height: 1.5 !important;
+  flex: 0 1 auto !important; 
+  order: 1 !important; /* Khóa tiêu đề đứng vị trí số 1 */
+}
+
+/* 💡 MẸO THẦN THÁNH: Tự đẻ ra đường gạch nối mà không cần sửa HTML */
+ul.posts li::before {
+  content: "" !important;
+  display: block !important;
+  flex-grow: 1 !important; /* Tự động phình to lấp đầy khoảng trống ở giữa */
+  border-bottom: 1px dashed #d3d3d3 !important; /* Đường gạch đứt (đổi thành dotted nếu thích dấu chấm) */
+  margin: 0 1rem !important; /* Khoảng cách 2 đầu của đường gạch */
+  order: 2 !important; /* Bắt buộc đường kẻ nằm ở vị trí số 2 (ở giữa) */
+  transform: translateY(-4px) !important; /* Nhích nhẹ đường gạch lên cho vừa tầm mắt chữ */
 }
 
 ul.posts li time {
-  position: absolute !important; 
-  right: 100% !important; 
-  margin-right: 1.5rem !important; 
-  top: 3px !important; 
-  
   white-space: nowrap !important; 
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
   font-size: 0.85rem !important; 
   color: #b1b1b1 !important; 
-  
-  opacity: 0 !important; 
-  pointer-events: none !important; 
-  transition: opacity 0.3s ease !important; 
-}
-
-ul.posts li:hover time {
+  flex: 0 0 auto !important; 
   opacity: 1 !important; 
+  pointer-events: auto !important;
+  order: 3 !important; /* Khóa ngày tháng đứng vị trí số 3 bên phải */
 }
 
 /* ======================================================
@@ -250,20 +254,18 @@ h2[itemprop="name headline"] {
 }
 
 /* ======================================================
-   📱 8. CẤU HÌNH TABLET & MOBILE (ĐÃ HẠ SIZE CHO CÂN ĐỐI)
+   📱 8. CẤU HÌNH TABLET & MOBILE (ĐỒNG BỘ ĐƯỜNG KẺ)
    ====================================================== */
 @media (max-width: 600px) {
   body {
     max-width: 100% !important;
     margin: 1.5rem auto 4rem auto !important; 
-    /* Thu lề 2 bên lại một chút (1.25rem) để bề ngang có thêm không gian chứa chữ */
     padding: 0 1.25rem !important; 
   }
 
   header, header nav, header ul, .menu { gap: 1rem !important; }
   header a:not(:has(img)) { font-size: 15px !important; }
   
-  /* 💡 Hạ size Tiêu đề xuống cho bớt ngộp */
   h1 {
     font-size: 24px !important; 
     font-weight: 700 !important;
@@ -272,7 +274,6 @@ h2[itemprop="name headline"] {
     margin-bottom: 1.2rem !important;
   }
 
-  /* 💡 Rút size ruột bài viết về 16px, dãn dòng 1.6 vừa vặn */
   main p, article p, span[itemprop="articleBody"] p, .content p,
   main ul li, article ul li, span[itemprop="articleBody"] ul li {
     font-size: 16px !important; 
@@ -280,39 +281,40 @@ h2[itemprop="name headline"] {
     margin-bottom: 1.3rem !important; 
   }
 
-  ul.posts li { display: block !important; margin-bottom: 1.2rem !important; }
+  /* Giữ cấu trúc dàn hàng ngang trên Mobile */
+  ul.posts li { 
+    display: flex !important; 
+    margin-bottom: 1.2rem !important; 
+  }
+  
   ul.posts li a { 
     display: block !important; 
     font-size: 17px !important; 
     line-height: 1.5 !important; 
-    margin-bottom: 0.15rem !important; 
+    margin-bottom: 0 !important; 
+  }
+  
+  /* Thu hẹp khoảng cách đường kẻ trên điện thoại cho đỡ chật màn hình */
+  ul.posts li::before {
+    margin: 0 0.6rem !important;
+    transform: translateY(-3px) !important; 
   }
   
   ul.posts li time {
-    position: static !important; 
-    display: block !important; 
-    text-align: left !important; 
-    margin-left: 0 !important; 
-    padding-left: 0 !important;
-    margin-top: 0.2rem !important; 
-    opacity: 1 !important; 
-    pointer-events: auto !important; 
     font-size: 0.85rem !important; 
   }
 }
 
 /* ======================================================
-   📱 8B. ĐIỆN THOẠI DỌC DƯỚI 480PX (RÚT GỌN TINH TẾ)
+   📱 8B. ĐIỆN THOẠI DỌC DƯỚI 480PX (TINH CHỈNH NHẸ)
    ====================================================== */
 @media (max-width: 480px) {
-  /* H1 nắn nhỏ lại 22px cho gọn gàng trên màn hình dọc */
   h1 {
     font-size: 22px !important; 
     margin-top: 2rem !important; 
     margin-bottom: 1rem !important; 
   }
 
-  /* 💡 Chữ ruột bài rút về 15px (Chuẩn vàng của font Lora trên Mobile) */
   main p, article p, span[itemprop="articleBody"] p, .content p,
   main ul li, article ul li, span[itemprop="articleBody"] ul li {
     font-size: 15px !important; 
@@ -322,6 +324,10 @@ h2[itemprop="name headline"] {
 
   ul.posts li a { 
     font-size: 16px !important; 
+  }
+  
+  ul.posts li time {
+    font-size: 12px !important;
   }
 }
 
