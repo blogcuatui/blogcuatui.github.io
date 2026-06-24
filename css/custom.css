@@ -250,38 +250,34 @@ h2[itemprop="name headline"] {
 }
 
 /* ======================================================
-   📱 8. CẤU HÌNH TRÊN TABLET & MOBILE (BẢN SẠCH TUYỆT ĐỐI)
+   📱 8. CẤU HÌNH TABLET & MOBILE (ĐÃ HẠ SIZE CHO CÂN ĐỐI)
    ====================================================== */
 @media (max-width: 600px) {
   body {
     max-width: 100% !important;
-    margin: 2rem auto 4.75rem auto !important; 
+    margin: 1.5rem auto 4rem auto !important; 
+    /* Thu lề 2 bên lại một chút (1.25rem) để bề ngang có thêm không gian chứa chữ */
     padding: 0 1.25rem !important; 
   }
-  
-  html, body {
-    line-height: 1.5 !important; 
-  }
 
-  header, header nav, header ul, .menu { gap: 1.2rem !important; }
-  header a:not(:has(img)) {
-    font-family: 'Lora', Georgia, "Times New Roman", Times, serif !important;
-    font-size: 15px !important; 
-    padding: 0 !important; 
-    line-height: 1 !important;
-  }
+  header, header nav, header ul, .menu { gap: 1rem !important; }
+  header a:not(:has(img)) { font-size: 15px !important; }
   
+  /* 💡 Hạ size Tiêu đề xuống cho bớt ngộp */
   h1 {
+    font-size: 24px !important; 
     font-weight: 700 !important;
     line-height: 1.25 !important;
-    margin-bottom: 0.8em !important;
-    letter-spacing: -0.02em !important;
+    margin-top: 2.5rem !important; 
+    margin-bottom: 1.2rem !important;
   }
 
+  /* 💡 Rút size ruột bài viết về 16px, dãn dòng 1.6 vừa vặn */
   main p, article p, span[itemprop="articleBody"] p, .content p,
   main ul li, article ul li, span[itemprop="articleBody"] ul li {
+    font-size: 16px !important; 
     line-height: 1.6 !important;      
-    margin-bottom: 1.2rem !important; 
+    margin-bottom: 1.3rem !important; 
   }
 
   ul.posts li { display: block !important; margin-bottom: 1.2rem !important; }
@@ -289,11 +285,9 @@ h2[itemprop="name headline"] {
     display: block !important; 
     font-size: 17px !important; 
     line-height: 1.5 !important; 
-    color: #444444 !important;
     margin-bottom: 0.15rem !important; 
   }
   
-  /* 💡 Triệu hồi Ngày tháng trên Mobile, hủy lệnh absolute của PC */
   ul.posts li time {
     position: static !important; 
     display: block !important; 
@@ -304,37 +298,31 @@ h2[itemprop="name headline"] {
     opacity: 1 !important; 
     pointer-events: auto !important; 
     font-size: 0.85rem !important; 
-    color: #b1b1b1 !important; 
   }
 }
 
 /* ======================================================
-   📱 8B. ĐIỆN THOẠI DỌC DƯỚI 480PX (ÉP GỌN)
+   📱 8B. ĐIỆN THOẠI DỌC DƯỚI 480PX (RÚT GỌN TINH TẾ)
    ====================================================== */
 @media (max-width: 480px) {
-  html, body {
-    line-height: 1.5 !important;
-  }
-  
+  /* H1 nắn nhỏ lại 22px cho gọn gàng trên màn hình dọc */
   h1 {
-    margin: 0 0 1.2rem !important; 
+    font-size: 22px !important; 
+    margin-top: 2rem !important; 
+    margin-bottom: 1rem !important; 
   }
 
-  header a:not(:has(img)) { font-size: 14px !important; }
-  
+  /* 💡 Chữ ruột bài rút về 15px (Chuẩn vàng của font Lora trên Mobile) */
   main p, article p, span[itemprop="articleBody"] p, .content p,
   main ul li, article ul li, span[itemprop="articleBody"] ul li {
+    font-size: 15px !important; 
     line-height: 1.6 !important;      
     margin-bottom: 1.2rem !important; 
   }
 
   ul.posts li a { 
     font-size: 16px !important; 
-    line-height: 1.5 !important;
   }
-  
-  ul.posts li time { font-size: 12px !important; }
-  ul.posts li { margin-bottom: 1.2rem !important; }
 }
 
 /* ======================================================
