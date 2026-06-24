@@ -351,30 +351,37 @@ h2[itemprop="name headline"] {
 }
 
 /* ======================================================
-   💬 9. ÉP TRÍCH DẪN (BLOCKQUOTE) - BÙA KÉO BẠO LỰC
+   💬 9. ÉP TRÍCH DẪN (BLOCKQUOTE) - TỰ TAY NẮN THẲNG LỀ
    ====================================================== */
 body main blockquote, 
 body article blockquote, 
 body .content blockquote,
-html body blockquote {
-  /* 💡 Kéo số âm ra để thẳng hàng với mép ngoài. 
-     Nếu vẫn chưa thẳng 100%, nắn -25px thành -20px hoặc -30px nha */
-  margin-left: -25px !important; 
-  margin-inline-start: -25px !important;
+.post-content blockquote,
+blockquote {
+  
+  /* 💡 THƯỚC ĐO THẦN THÁNH: Mày nhìn màn hình rồi tự nắn con số này nha:
+     - Nếu cái vạch vẫn bị LỆCH RA NGOÀI (bên trái): Thay số 0 thành số dương: 3px, 5px, 8px...
+     - Nếu cái vạch bị THỤT VÀO TRONG (bên phải): Thay số 0 thành số âm: -3px, -5px, -8px...
+     Mày cứ tăng giảm vài pixel rồi F5, đảm bảo sẽ có một con số chuẩn phát trúng ngay chóc! */
+  margin-left: 0px !important; 
+  margin-inline-start: 0px !important;
   
   margin-right: 0 !important;
   margin-top: 1.5rem !important;
   margin-bottom: 1.5rem !important;
   
-  padding-left: 18px !important; 
-  padding-inline-start: 18px !important;
+  /* Khoảng cách từ vạch xám đến chữ nghiêng bên trong blockquote */
+  padding-left: 16px !important; 
+  padding-inline-start: 16px !important;
   
   border-left: 3px solid #d3d3d3 !important; 
   color: #555555 !important; 
   font-style: italic !important;
 }
 
-body main blockquote p, 
-body article blockquote p {
+blockquote p,
+body main blockquote p {
   margin-bottom: 0 !important; 
 }
+
+ß
