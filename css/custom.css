@@ -384,4 +384,49 @@ body main blockquote p {
   margin-bottom: 0 !important; 
 }
 
-ß
+/* ======================================================
+   🛠️ 10. ĐỔI CỤC VUÔNG THÀNH DẤU GẠCH NGANG BÀI VIẾT
+   ====================================================== */
+/* Chỉ áp dụng cho danh sách nằm TRONG ruột bài viết, không đụng tới menu hay list trang chủ */
+article ul, .post-content ul, .content ul, span[itemprop="articleBody"] ul {
+  list-style-type: none !important; /* Tiêu diệt cục vuông/chấm tròn mặc định */
+  padding-left: 0 !important; /* Thu hồi khoảng cách lề cũ */
+}
+
+article ul li, .post-content ul li, .content ul li, span[itemprop="articleBody"] ul li {
+  position: relative !important;
+  padding-left: 1.2rem !important; /* Đẩy chữ lùi vô trong 1 chút để nhường chỗ cho dấu gạch */
+  margin-bottom: 1rem !important; 
+}
+
+/* 💡 Ma thuật: Tự đẻ ra dấu gạch ngang nằm sát mép lề trái */
+article ul li::before, .post-content ul li::before, .content ul li::before, span[itemprop="articleBody"] ul li::before {
+  content: "–" !important; /* 💡 Xài dấu En dash (–) dài hơn và thanh lịch hơn dấu trừ (-) thông thường */
+  position: absolute !important;
+  left: 0 !important;
+  top: 0 !important; /* Ép nó nằm thẳng hàng với dòng đầu tiên */
+  color: #1a1a1a !important; 
+}
+
+/* ======================================================
+   🔢 11. ĐỒNG BỘ SIZE CHỮ DANH SÁCH CÓ SỐ (OL LI)
+   ====================================================== */
+main ol li, 
+article ol li, 
+.post-content ol li, 
+.content ol li,
+span[itemprop="articleBody"] ol li {
+  /* 💡 Bơm size chữ của list số lên đúng bằng size của đoạn văn (15px - 16px) */
+  font-size: clamp(15px, 0.4vw + 14px, 16px) !important;       
+  line-height: 1.65 !important;      
+  margin-bottom: 1.5rem !important; 
+  color: #1a1a1a !important;        
+}
+
+/* Chỉnh lại khoảng cách nếu có danh sách thụt lề lồng nhau */
+main ol li ul, 
+article ol li ul,
+.post-content ol li ul {
+  margin-top: 0.8rem !important;
+  margin-bottom: 0 !important;
+}
