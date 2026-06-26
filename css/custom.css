@@ -289,3 +289,50 @@ body.dark-theme ul.posts li::before { border-bottom-color: #444444 !important; }
 /* 💡 Xử lý ảnh và bảo vệ Logo */
 body.dark-theme img { filter: brightness(0.85) contrast(1.1); }
 body.dark-theme header a img, body.dark-theme .menu a img { mix-blend-mode: normal !important; filter: none !important; }
+
+/* ======================================================
+   🏷️ 13. STYLE CHO TAGS (BO TRÒN HÌNH VIÊN THUỐC)
+   ====================================================== */
+/* Tóm cổ toàn bộ các link có chứa chữ /tags/ trong đường dẫn */
+.tags a, .post-tags a, .post-meta a[href*="/tags/"], a[href*="/tags/"] {
+  display: inline-block !important;
+  background-color: #f0f2f5 !important; /* Nền xám xanh nhạt giống hệt hình */
+  color: #4a5568 !important; /* Chữ xám navy */
+  padding: 6px 16px !important; /* Căn lề trên dưới, trái phải cho mập mạp */
+  border-radius: 999px !important; /* Bo tròn tuyệt đối hai đầu */
+  font-size: 14px !important; /* Chữ nhỏ nhắn tinh tế */  
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important; /* Xài font không chân cho tag nhìn hiện đại */
+  font-weight: 500 !important;
+  text-decoration: none !important;
+  border-bottom: none !important; /* Ép xóa cái vạch kẻ gạch chân dưới link của theme */
+  margin: 0 8px 8px 0 !important; /* Đẩy các tag ra xa nhau một chút */
+  transition: all 0.2s ease !important;
+}
+
+/* Hiệu ứng khi rê chuột vào (sậm màu nền lên một chút) */
+.tags a:hover, .post-tags a:hover, .post-meta a[href*="/tags/"]:hover, a[href*="/tags/"]:hover {
+  background-color: #e2e8f0 !important; 
+  color: #1a202c !important;
+  border-bottom: none !important; 
+}
+
+/* ======================================================
+   🌙 GẮN LUÔN DARK MODE CHO TAGS 
+   ====================================================== */
+body.dark-theme .tags a, 
+body.dark-theme .post-tags a, 
+body.dark-theme .post-meta a[href*="/tags/"],
+body.dark-theme a[href*="/tags/"] {
+  background-color: #2d3748 !important; /* Nền xám đen chìm xuống */
+  color: #e2e8f0 !important; /* Chữ xám sáng */
+  border: 1px solid #4a5568 !important; /* Thêm cái viền mỏng cho nổi bật trong bóng đêm */
+}
+
+/* Hiệu ứng hover khi tắt đèn */
+body.dark-theme .tags a:hover, 
+body.dark-theme .post-tags a:hover, 
+body.dark-theme .post-meta a[href*="/tags/"]:hover,
+body.dark-theme a[href*="/tags/"]:hover {
+  background-color: #4a5568 !important;
+  color: #ffffff !important;
+}
