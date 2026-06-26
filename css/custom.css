@@ -255,17 +255,3 @@ body.dark-theme .tags a:hover, body.dark-theme .post-tags a:hover, body.dark-the
 body.dark-theme header a img, body.dark-theme .menu a img, body.dark-theme header a svg, body.dark-theme .menu a svg { filter: invert(1) brightness(2) !important; opacity: 0.8 !important; }
 header ul li, header nav ul li, .menu li { margin: 0 1rem 0 0 !important; }
 header ul li:last-child, header nav ul li:last-child, .menu li:last-child { margin-left: auto !important; margin-right: 0 !important; }
-
-/* ======================================================
-   🌀 HIỆU ỨNG XOAY XOAY CHO LOGO/ICON (CỰC MƯỢT)
-   ====================================================== */
-   
-/* Áp dụng cho icon/logo trong menu */
-header a:has(img) {
-    display: inline-block !important;
-    transition: transform 0.8s ease-in-out !important; /* Thời gian xoay 0.8s */
-}
-
-header a:has(img):hover {
-    transform: rotate(90deg) !important; /* Xoay đúng 1 vòng 360 độ */
-}
