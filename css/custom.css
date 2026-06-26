@@ -97,68 +97,46 @@ span[itemprop="articleBody"] ul li {
 }
 
 /* ======================================================
-   🎯 4. HIỆU ỨNG MENU TRÊN CÙNG (ĐẨY NÚT TẮT ĐÈN SANG PHẢI)
+   🎯 4. HIỆU ỨNG MENU TRÊN CÙNG (FIX KHOẢNG CÁCH)
    ====================================================== */
-header, header nav {
-  display: block !important; 
-  width: 100% !important;
-  margin: 0 0 2rem 0 !important; 
-}
+header, header nav { display: block !important; width: 100% !important; margin: 0 0 -1rem 0 !important; }
 
-/* Bật hệ thống dàn hàng ngang Flexbox cho khung menu */
-header ul, header nav ul, .menu {
-  display: flex !important;
-  align-items: center !important; /* Canh giữa logo, chữ và icon theo chiều dọc */
-  list-style: none !important;
-  padding: 0 !important;
+header ul, header nav ul, .menu { 
+  display: flex !important; 
+  align-items: center !important; 
+  list-style: none !important; 
+  padding: 0 !important; 
   margin: 0 !important; 
   width: 100% !important;
 }
 
-/* Khoảng cách lề giữa logo và chữ giới thiệu */
-header ul li, header nav ul li, .menu li {
-  margin: 0 1.5rem 0 0 !important; 
-  padding: 0 !important;
-}
+/* KHOẢNG CÁCH: chỉnh margin-right ở đây để logo và chữ gần lại */
+header ul li, header nav ul li, .menu li { margin: 0 0.8rem 0 0 !important; }
 
-/* 💡 MA THUẬT Ở ĐÂY: Đẩy cái mục cuối cùng (Nút ◐) văng sát mép bên phải */
-header ul li:last-child, header nav ul li:last-child, .menu li:last-child {
+/* Nút Đêm/Ngày: Đẩy ra tận cùng bên phải */
+header ul li:last-child, header nav ul li:last-child, .menu li:last-child { 
   margin-left: auto !important; 
-  margin-right: 0 !important;
+  margin-right: 0 !important; 
 }
 
-/* Cấu hình chữ menu (giới thiệu...) */
-header a:not(:has(img)) {
-  display: inline-block !important;
-  padding: 0 !important; 
-  border-radius: 0 !important; 
-  color: #888 !important; 
-  font-weight: 400 !important;
-  font-size: 16px !important;
-  transition: color 0.2s ease !important;
-  text-decoration: none !important;
-}
-
-/* Cấu hình Logo trái tim */
-header a img, .menu a img {
-  height: 44px !important; 
-  width: auto !important;
+/* Chữ Giới thiệu */
+header a:not(:has(img)) { 
   display: inline-block !important; 
-  vertical-align: middle !important;
-  border: none !important; 
-  outline: none !important; 
-  box-shadow: none !important; 
-  border-radius: 0 !important; 
-  mix-blend-mode: multiply !important; 
-  margin: 0 !important;
+  padding: 0 !important; 
+  color: #888 !important; 
+  font-size: 16px !important; 
+  text-decoration: none !important; 
 }
 
-header a:not(:has(img)):hover, header a:not(:has(img)).active, 
-header a:not(:has(img)).active-link, header a:not(:has(img))[aria-current="page"] {
-  background-color: transparent !important; 
-  color: #111 !important; 
-  font-weight: 400 !important; 
+/* Logo */
+header a img, .menu a img { 
+  height: 44px !important; 
+  width: auto !important; 
+  display: block !important;
+  mix-blend-mode: multiply !important; 
 }
+
+header a:not(:has(img)):hover, header a:not(:has(img)).active { color: #111 !important; }
 
 /* ======================================================
    ⚡ 5. LIST BÀI VIẾT & ĐƯỜNG DẪN MẮT
@@ -255,3 +233,12 @@ body.dark-theme .tags a:hover, body.dark-theme .post-tags a:hover, body.dark-the
 body.dark-theme header a img, body.dark-theme .menu a img, body.dark-theme header a svg, body.dark-theme .menu a svg { filter: invert(1) brightness(2) !important; opacity: 0.8 !important; }
 header ul li, header nav ul li, .menu li { margin: 0 1rem 0 0 !important; }
 header ul li:last-child, header nav ul li:last-child, .menu li:last-child { margin-left: auto !important; margin-right: 0 !important; }
+
+/* 🛠️ GỠ KHUNG LOGO - ÉP NÓ HIỂN THỊ TRONG SUỐT */
+header a:has(img) img {
+    border: none !important;        /* Xóa viền */
+    outline: none !important;       /* Xóa viền outline (nếu có) */
+    background: transparent !important; /* Đảm bảo nền trong suốt */
+    box-shadow: none !important;    /* Xóa đổ bóng (nếu có) */
+    padding: 0 !important;          /* Xóa khoảng cách đệm */
+}
