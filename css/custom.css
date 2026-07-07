@@ -130,7 +130,7 @@ header a:not(:has(img)) {
 
 /* Logo */
 header a img, .menu a img { 
-  height: 44px !important; 
+  height: 54px !important; 
   width: auto !important; 
   display: block !important;
   mix-blend-mode: multiply !important; 
