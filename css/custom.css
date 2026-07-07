@@ -97,30 +97,33 @@ span[itemprop="articleBody"] ul li {
 }
 
 /* ======================================================
-   🎯 4. HIỆU ỨNG MENU TRÊN CÙNG (FIX KHOẢNG CÁCH)
+   🎯 4. HIỆU ỨNG MENU (ÉP CHỮ SÁT RẠT)
    ====================================================== */
-header, header nav { display: block !important; width: 100% !important; margin: 0 0 -1rem 0 !important; }
+header { margin: 0 0 0.5rem 0 !important; }
 
-header ul, header nav ul, .menu { 
+header ul { 
   display: flex !important; 
   align-items: center !important; 
   list-style: none !important; 
   padding: 0 !important; 
   margin: 0 !important; 
-  width: 100% !important;
 }
 
-/* KHOẢNG CÁCH: chỉnh margin-right ở đây để logo và chữ gần lại */
-header ul li, header nav ul li, .menu li { margin: 0 0.8rem 0 0 !important; }
+/* Ẩn Logo */
+header a:has(img) { display: none !important; }
 
-/* Nút Đêm/Ngày: Đẩy ra tận cùng bên phải */
-header ul li:last-child, header nav ul li:last-child, .menu li:last-child { 
+/* ÉP SÁT CHỮ: Giảm margin-right xuống cực nhỏ (0.5rem hoặc 0.2rem) */
+header ul li:not(:last-child) { 
+  margin-right: 0.5rem !important; 
+}
+
+/* ĐẨY ICON SÁNG TỐI RA NGOÀI CÙNG BÊN PHẢI */
+header ul li:last-child { 
   margin-left: auto !important; 
-  margin-right: 0 !important; 
 }
 
-/* Chữ Giới thiệu */
-header a:not(:has(img)) { 
+/* Cấu hình chữ menu */
+header a { 
   display: inline-block !important; 
   padding: 0 !important; 
   color: #888 !important; 
@@ -128,15 +131,10 @@ header a:not(:has(img)) {
   text-decoration: none !important; 
 }
 
-/* Logo */
-header a img, .menu a img { 
-  height: 54px !important; 
-  width: auto !important; 
-  display: block !important;
-  mix-blend-mode: multiply !important; 
-}
+header a:hover { color: #111 !important; }
 
-header a:not(:has(img)):hover, header a:not(:has(img)).active { color: #111 !important; }
+/* Fix icon sáng tối khi tối */
+body.dark-theme header a svg { filter: invert(1) brightness(2) !important; opacity: 0.8 !important; }
 
 /* ======================================================
    ⚡ 5. LIST BÀI VIẾT & ĐƯỜNG DẪN MẮT
@@ -159,7 +157,7 @@ ul.posts li time { white-space: nowrap !important; font-family: -apple-system, B
 /* ======================================================
    🔥 7. ĐIỀU CHỈNH NHỊP ĐIỆU DỌC
    ====================================================== */
-ul.posts, main > section > h2[itemprop="name headline"], main > section > span[itemprop="articleBody"] { margin-top: 2.8rem !important; }
+ul.posts, main > section > h2[itemprop="name headline"], main > section > span[itemprop="articleBody"] { margin-top: 1rem !important; }
 h2[itemprop="name headline"] { font-size: clamp(1.35rem, 1vw + 1.65rem, 1.65rem) !important; font-weight: 700 !important; line-height: 1.25 !important; margin-top: 17px !important; margin-bottom: 0.8em !important; letter-spacing: -0.02em !important; }
 
 /* ======================================================
@@ -227,18 +225,4 @@ body.dark-theme header a img, body.dark-theme .menu a img { mix-blend-mode: norm
 body.dark-theme .tags a, body.dark-theme .post-tags a, body.dark-theme .post-meta a[href*="/tags/"], body.dark-theme a[href*="/tags/"] { background-color: #2d3748 !important; color: #e2e8f0 !important; border: 1px solid #4a5568 !important; }
 body.dark-theme .tags a:hover, body.dark-theme .post-tags a:hover, body.dark-theme .post-meta a[href*="/tags/"]:hover, body.dark-theme a[href*="/tags/"]:hover { background-color: #4a5568 !important; color: #ffffff !important; }
 
-/* ======================================================
-   🔥 14. FIX ICON MENU (SÁNG LÊN KHI TỐI & KÉO LẠI GẦN)
-   ====================================================== */
-body.dark-theme header a img, body.dark-theme .menu a img, body.dark-theme header a svg, body.dark-theme .menu a svg { filter: invert(1) brightness(2) !important; opacity: 0.8 !important; }
-header ul li, header nav ul li, .menu li { margin: 0 1rem 0 0 !important; }
-header ul li:last-child, header nav ul li:last-child, .menu li:last-child { margin-left: auto !important; margin-right: 0 !important; }
 
-/* 🛠️ GỠ KHUNG LOGO - ÉP NÓ HIỂN THỊ TRONG SUỐT */
-header a:has(img) img {
-    border: none !important;        /* Xóa viền */
-    outline: none !important;       /* Xóa viền outline (nếu có) */
-    background: transparent !important; /* Đảm bảo nền trong suốt */
-    box-shadow: none !important;    /* Xóa đổ bóng (nếu có) */
-    padding: 0 !important;          /* Xóa khoảng cách đệm */
-}
