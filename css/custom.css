@@ -97,9 +97,13 @@ span[itemprop="articleBody"] ul li {
 }
 
 /* ======================================================
-   🎯 4. HIỆU ỨNG MENU (ÉP CHỮ SÁT RẠT)
+   🎯 4. HIỆU ỨNG MENU (CÓ ĐƯỜNG KẺ NGANG PHÍA DƯỚI)
    ====================================================== */
-header { margin: 0 0 0.5rem 0 !important; }
+header { 
+  margin: 0 0 3rem 0 !important;
+  padding-bottom: 0 !important; /* Tạo khoảng trống trước khi kẻ */ 
+  border-bottom: 1px solid #eee !important; /* Đường kẻ ngang */
+}
 
 header ul { 
   display: flex !important; 
@@ -112,17 +116,17 @@ header ul {
 /* Ẩn Logo */
 header a:has(img) { display: none !important; }
 
-/* ÉP SÁT CHỮ: Giảm margin-right xuống cực nhỏ (0.5rem hoặc 0.2rem) */
-header ul li:not(:last-child) { 
-  margin-right: 0.5rem !important; 
+/* 1. Ép Home đứng sát lề trái */
+header ul li:first-child { 
+  margin-right: auto !important; 
 }
 
-/* ĐẨY ICON SÁNG TỐI RA NGOÀI CÙNG BÊN PHẢI */
-header ul li:last-child { 
-  margin-left: auto !important; 
+/* 2. Khoảng cách giữa "About" và Icon sáng tối */
+header ul li:nth-child(2) { 
+  margin-right: 1rem !important; /* Tăng nhẹ để không bị quá sát */
 }
 
-/* Cấu hình chữ menu */
+/* 3. Cấu hình chữ menu */
 header a { 
   display: inline-block !important; 
   padding: 0 !important; 
@@ -136,6 +140,8 @@ header a:hover { color: #111 !important; }
 /* Fix icon sáng tối khi tối */
 body.dark-theme header a svg { filter: invert(1) brightness(2) !important; opacity: 0.8 !important; }
 
+/* Chỉnh màu đường kẻ khi ở chế độ tối */
+body.dark-theme header { border-bottom: 1px solid #333 !important; }
 /* ======================================================
    ⚡ 5. LIST BÀI VIẾT & ĐƯỜNG DẪN MẮT
    ====================================================== */
