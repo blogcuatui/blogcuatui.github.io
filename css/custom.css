@@ -162,7 +162,7 @@ ul.posts li time { white-space: nowrap !important; font-family: -apple-system, B
     display: flex !important;
     justify-content: space-between !important;
     align-items: center !important;
-    margin-top: 3rem !important;
+    margin-top: 1.5rem !important;
     padding: 1.5rem 0 !important;
 }
 
@@ -183,7 +183,7 @@ ul.posts li time { white-space: nowrap !important; font-family: -apple-system, B
 }
 
 /* Chỉnh màu cho chế độ tối */
-body.dark-theme .pagination { border-top: 1px solid #333 !important; }
+
 body.dark-theme .pagination a { color: #888 !important; }
 body.dark-theme .pagination a:hover { color: #fff !important; }
 
