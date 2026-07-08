@@ -187,7 +187,7 @@ h2[itemprop="name headline"] { font-size: clamp(1.35rem, 1vw + 1.65rem, 1.65rem)
   header a:not(:has(img)) { font-size: 15px !important; }
   h1 { font-size: 24px !important; font-weight: 700 !important; line-height: 1.25 !important; margin-top: 2.5rem !important; margin-bottom: 1.2rem !important; }
   main p, article p, span[itemprop="articleBody"] p, .content p, main ul li, article ul li, span[itemprop="articleBody"] ul li { font-size: 16px !important; line-height: 1.6 !important; margin-bottom: 1.3rem !important; }
-  ul.posts li { display: flex !important; margin-bottom: 1.2rem !important; }
+  ul.posts li { display: flex !important; margin-bottom: .5rem !important; }
   ul.posts li a { display: block !important; font-size: 17px !important; line-height: 1.5 !important; margin-bottom: 0 !important; }
   ul.posts li::before { margin: 0 0.6rem !important; transform: translateY(-3px) !important; }
   ul.posts li time { font-size: 0.85rem !important; }
