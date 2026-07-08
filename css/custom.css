@@ -156,13 +156,36 @@ ul.posts li::before { content: "" !important; display: block !important; flex-gr
 ul.posts li time { white-space: nowrap !important; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important; font-size: 0.9rem !important; color: #b1b1b1 !important; flex: 0 0 auto !important; opacity: 1 !important; pointer-events: auto !important; order: 3 !important; }
 
 /* ======================================================
-   📐 6. ĐỘ PHÂN TRANG (PAGINATION)
+   📐 6. ĐỘ PHÂN TRANG (PAGINATION: NEWER / OLDER)
    ====================================================== */
-.pagination, [class*="pagination"] { background: transparent !important; border: none !important; margin-left: 0 !important; padding-left: 0 !important; display: block !important; }
-.pagination li, [class*="pagination"] li { display: inline-block !important; margin: 0 !important; padding: 0 !important; }
-.pagination a, .pagination span, [class*="pagination"] a, [class*="pagination"] span { background: transparent !important; border: none !important; border-radius: 0 !important; box-shadow: none !important; color: #888 !important; font-size: 1rem !important; font-weight: 400 !important; padding: 4px 20px 4px 0 !important; display: inline-block !important; transition: color 0.2s ease !important; }
-.pagination .active, .pagination .current, [class*="pagination"] .active, [class*="pagination"] [class*="current"], [class*="pagination"] li[class*="active"] a, [class*="pagination"] li[class*="current"] a, .pagination .active span, [class*="pagination"] .current span { color: #111 !important; font-weight: 400 !important; font-size: 1rem !important; background: transparent !important; }
-.pagination a:hover, [class*="pagination"] a:hover { color: #111 !important; background: transparent !important; }
+.pagination {
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    margin-top: 3rem !important;
+    padding: 1.5rem 0 !important;
+}
+
+.pagination a {
+    color: #888 !important;
+    font-size: 0.9rem !important;
+    text-decoration: none !important;
+    transition: color 0.2s ease !important;
+}
+
+.pagination a:hover {
+    color: #111 !important;
+}
+
+/* Đảm bảo khi không có nút Older hoặc Newer thì layout không bị vỡ */
+.pagination-empty {
+    width: 0 !important;
+}
+
+/* Chỉnh màu cho chế độ tối */
+body.dark-theme .pagination { border-top: 1px solid #333 !important; }
+body.dark-theme .pagination a { color: #888 !important; }
+body.dark-theme .pagination a:hover { color: #fff !important; }
 
 /* ======================================================
    🔥 7. ĐIỀU CHỈNH NHỊP ĐIỆU DỌC
