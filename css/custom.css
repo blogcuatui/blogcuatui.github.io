@@ -97,42 +97,30 @@ span[itemprop="articleBody"] ul li {
 }
 
 /* ======================================================
-   🎯 4. HIỆU ỨNG MENU (CÓ ĐƯỜNG KẺ NGANG PHÍA DƯỚI)
-  ====================================================== */
+   🎯 4. HIỆU ỨNG MENU TRÊN CÙNG (FIX KHOẢNG CÁCH)
+   ====================================================== */
+header, header nav { display: block !important; width: 100% !important; margin: 0 0 2.5rem 0 !important; }
 
-header { 
-  margin: 0 0 1rem 0 !important;
-}
-
-header ul { 
+header ul, header nav ul, .menu { 
   display: flex !important; 
   align-items: center !important; 
   list-style: none !important; 
   padding: 0 !important; 
   margin: 0 !important; 
+  width: 100% !important;
 }
 
-/* Ẩn Logo */
-header a:has(img) { display: none !important; }
+/* KHOẢNG CÁCH: chỉnh margin-right ở đây để logo và chữ gần lại */
+header ul li, header nav ul li, .menu li { margin: 0 .5rem 0 0 !important; }
 
-
-/* 1. Ép Home đứng sát lề trái */
-header ul li:first-child { 
-  margin-right: auto !important; 
-
+/* Nút Đêm/Ngày: Đẩy ra tận cùng bên phải */
+header ul li:last-child, header nav ul li:last-child, .menu li:last-child { 
+  margin-left: auto !important; 
+  margin-right: 0 !important; 
 }
 
-/* 2. Khoảng cách giữa "About" và Icon sáng tối */
-
-header ul li:nth-child(2) { 
-  margin-right: 1rem !important; /* Tăng nhẹ để không bị quá sát */
-
-}
-
-
-/* 3. Cấu hình chữ menu */
-
-header a { 
+/* Chữ Giới thiệu */
+header a:not(:has(img)) { 
   display: inline-block !important; 
   padding: 0 !important; 
   color: #888 !important; 
@@ -140,11 +128,8 @@ header a {
   text-decoration: none !important; 
 }
 
-header a:hover { color: #111 !important; }
 
-/* Fix icon sáng tối khi tối */
 
-body.dark-theme header a svg { filter: invert(1) brightness(2) !important; opacity: 0.8 !important; }
 
 /* ======================================================
    ⚡ 5. LIST BÀI VIẾT & ĐƯỜNG DẪN MẮT
@@ -257,5 +242,3 @@ body.dark-theme header a img, body.dark-theme .menu a img { mix-blend-mode: norm
 .tags a:hover, .post-tags a:hover, .post-meta a[href*="/tags/"]:hover, a[href*="/tags/"]:hover { background-color: #e2e8f0 !important; color: #1a202c !important; border-bottom: none !important; }
 body.dark-theme .tags a, body.dark-theme .post-tags a, body.dark-theme .post-meta a[href*="/tags/"], body.dark-theme a[href*="/tags/"] { background-color: #2d3748 !important; color: #e2e8f0 !important; border: 1px solid #4a5568 !important; }
 body.dark-theme .tags a:hover, body.dark-theme .post-tags a:hover, body.dark-theme .post-meta a[href*="/tags/"]:hover, body.dark-theme a[href*="/tags/"]:hover { background-color: #4a5568 !important; color: #ffffff !important; }
-
-
