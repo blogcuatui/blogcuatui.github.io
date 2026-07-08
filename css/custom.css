@@ -100,9 +100,9 @@ span[itemprop="articleBody"] ul li {
    🎯 4. HIỆU ỨNG MENU (CÓ ĐƯỜNG KẺ NGANG PHÍA DƯỚI)
    ====================================================== */
 header { 
-  margin: 0 0 3rem 0 !important;
+  margin: 0 0 1rem 0 !important;
   padding-bottom: 0 !important; /* Tạo khoảng trống trước khi kẻ */ 
-  border-bottom: 1px solid #eee !important; /* Đường kẻ ngang */
+  border-bottom: none; /* Đường kẻ ngang */
 }
 
 header ul { 
@@ -141,14 +141,14 @@ header a:hover { color: #111 !important; }
 body.dark-theme header a svg { filter: invert(1) brightness(2) !important; opacity: 0.8 !important; }
 
 /* Chỉnh màu đường kẻ khi ở chế độ tối */
-body.dark-theme header { border-bottom: 1px solid #333 !important; }
+body.dark-theme header { border-bottom: none; }
 /* ======================================================
    ⚡ 5. LIST BÀI VIẾT & ĐƯỜNG DẪN MẮT
    ====================================================== */
 ul.posts { list-style-type: none !important; padding: 0 !important; margin: 0 !important; }
 ul.posts li { display: flex !important; justify-content: space-between !important; align-items: baseline !important; margin-bottom: 1.2rem !important; }
 ul.posts li a { font-size: 1.1875rem !important; color: #111111 !important; text-decoration: none !important; line-height: 1.5 !important; flex: 0 1 auto !important; order: 1 !important; }
-ul.posts li::before { content: "" !important; display: block !important; flex-grow: 1 !important; border-bottom: 1px dashed #d3d3d3 !important; margin: 0 1rem !important; order: 2 !important; transform: translateY(-4px) !important; opacity: 0.5 !important; }
+ul.posts li::before { content: "" !important; display: block !important; flex-grow: 1 !important; border-bottom: none; margin: 0 1rem !important; order: 2 !important; transform: translateY(-4px) !important; opacity: 0.5 !important; }
 ul.posts li time { white-space: nowrap !important; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important; font-size: 0.9rem !important; color: #b1b1b1 !important; flex: 0 0 auto !important; opacity: 1 !important; pointer-events: auto !important; order: 3 !important; }
 
 /* ======================================================
