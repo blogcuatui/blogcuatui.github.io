@@ -275,3 +275,43 @@ body.dark-theme .tags a:hover, body.dark-theme .post-tags a:hover, body.dark-the
     flex-shrink: 0 !important; /* Ngăn không cho icon bị co lại */
     margin-top: 0 !important; /* Xóa margin-top cũ */
 }
+
+/* 1. Mặc định (Light mode): Icon là màu Đen */
+#theme-toggle svg {
+    stroke: #000000 !important;
+    transition: stroke 0.3s ease !important;
+}
+
+/* 2. Ép icon thành màu trắng khi ở Dark Mode */
+body.dark-theme #theme-toggle svg {
+    stroke: #ffffff !important;
+}
+
+/* 3. Đảm bảo nút cha không bị đổi màu vô tội vạ */
+#theme-toggle {
+    color: inherit !important;
+    display: inline-flex !important;
+    align-items: center !important;
+}
+
+#theme-toggle {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    cursor: pointer !important;
+    color: #1a1a1a !important; /* Màu mặc định cho chữ và icon */
+    transition: transform 0.3s ease, color 0.3s ease !important;
+}
+
+/* Ép icon nhỏ lại một chút để cân bằng với font 16px */
+#theme-toggle svg {
+    display: block !important;
+    width: 17px !important;  /* Giảm từ 20px xuống 17px để nhỏ bằng chữ */
+    height: 17px !important;
+    stroke-width: 2.2 !important; /* Tăng độ dày nét lên tí cho sắc nét */
+}
+
+/* Đảm bảo chữ days.log cũng dùng chung font-size này */
+header .header-left a {
+    font-size: 16px !important;
+}
