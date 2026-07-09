@@ -243,7 +243,7 @@ h2[itemprop="name headline"] {
   }
   ul.posts li {
     display: flex !important;
-    margin-bottom: .5rem !important;
+    margin-bottom: 1.2rem !important;
   }
   ul.posts li a {
     display: block !important;
