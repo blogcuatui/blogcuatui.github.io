@@ -435,3 +435,34 @@ body.dark-theme .tags a:hover, body.dark-theme .post-tags a:hover, body.dark-the
 body.dark-theme #theme-toggle svg {
   stroke: #ffffff !important;
 }
+
+/* 1. Mặc định: Tất cả các tiêu đề đều bình thường */
+ul.posts {
+  transition: opacity 0.3s ease !important;
+  /* Tạo độ mượt cho toàn bộ danh sách */
+}
+/* 2. Khi rê chuột vào danh sách: Làm mờ tất cả tiêu đề */
+ul.posts:hover li a {
+  opacity: 0.3 !important;
+  /* Làm mờ các mục khác */
+  color: #999 !important;
+  /* Chuyển sang màu xám nhạt */
+}
+/* 3. Đưa tiêu đề đang rê chuột về trạng thái rõ nhất */
+ul.posts li:hover a {
+  opacity: 1 !important;
+  /* Làm rõ tiêu đề được chọn */
+  color: #000 !important;
+  /* Đen tuyền */
+  font-weight: 600 !important;
+  /* Đậm hơn */
+  transform: translateX(4px);
+  /* Hiệu ứng trượt nhẹ */
+}
+/* Dark mode hỗ trợ */
+body.dark-theme ul.posts:hover li a {
+  color: #555 !important;
+}
+body.dark-theme ul.posts li:hover a {
+  color: #fff !important;
+}
