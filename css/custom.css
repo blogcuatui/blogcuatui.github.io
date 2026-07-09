@@ -158,22 +158,39 @@ ul.posts li::before {
   transform: translateY(-4px) !important;
   opacity: 0.5 !important;
 }
+/* ======================================================⏰ 5B. ĐIỀU KHIỂN THỜI GIAN (ĐỒNG BỘ MỜ/RÕ)====================================================== */
 ul.posts li time {
   white-space: nowrap !important;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
   font-size: 0.85rem !important;
   font-weight: 300 !important;
   color: #c8c8c8 !important;
+  /* Màu xám nhạt mặc định */
   flex: 0 0 auto !important;
-  opacity: 0.8 !important;
-  pointer-events: auto !important;
+  opacity: 0.5 !important;
+  /* Mặc định luôn mờ */
+  transition: opacity 0.3s ease, color 0.3s ease !important;
+  /* Mượt mà */
+  pointer-events: none !important;
+  /* Không bắt chuột vào time để tránh lỗi hover */
   order: 3 !important;
-  transition: opacity 0.3s ease !important;
 }
+/* Khi rê chuột vào cả dòng bài viết, time sẽ hiện rõ */
 ul.posts li:hover time {
   opacity: 1 !important;
   color: #888 !important;
-  /* Đậm hơn một chút khi hover */
+  /* Đậm hơn khi hover */
+}
+/* Đảm bảo Dark Mode vẫn giữ độ mờ 0.5 */
+body.dark-theme ul.posts li time {
+  color: #666 !important;
+  /* Màu xám tối cho dark mode */
+  opacity: 0.5 !important;
+}
+body.dark-theme ul.posts li:hover time {
+  color: #aaa !important;
+  /* Hiện rõ hơn trong dark mode */
+  opacity: 1 !important;
 }
 
 /* ======================================================📐 6. ĐỘ PHÂN TRANG (PAGINATION: NEWER / OLDER)====================================================== */
@@ -454,10 +471,6 @@ ul.posts li:hover a {
   /* Làm rõ tiêu đề được chọn */
   color: #000 !important;
   /* Đen tuyền */
-  font-weight: 600 !important;
-  /* Đậm hơn */
-  transform: translateX(4px);
-  /* Hiệu ứng trượt nhẹ */
 }
 /* Dark mode hỗ trợ */
 body.dark-theme ul.posts:hover li a {
