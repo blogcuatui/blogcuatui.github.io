@@ -101,7 +101,7 @@ header {
     display: flex !important;
     justify-content: space-between !important;
     align-items: center !important; 
-    margin: 0 0 2rem 0 !important;
+    margin: 0 0 3rem 0 !important;
     padding: 0 !important;
 }
 
@@ -187,7 +187,7 @@ body.dark-theme .pagination a:hover { color: #fff !important; }
    🔥 7. ĐIỀU CHỈNH NHỊP ĐIỆU DỌC
    ====================================================== */
 ul.posts, main > section > h2[itemprop="name headline"], main > section > span[itemprop="articleBody"] { margin-top: 1rem !important; }
-h2[itemprop="name headline"] { font-size: clamp(1.35rem, 1vw + 1.65rem, 1.65rem) !important; font-weight: 700 !important; line-height: 1.25 !important; margin-top: 17px !important; margin-bottom: 0.8em !important; letter-spacing: -0.02em !important; }
+h2[itemprop="name headline"] { font-size: clamp(1.35rem, 1vw + 1.65rem, 1.65rem) !important; font-weight: 500 !important; line-height: 1.25 !important; margin-top: 17px !important; margin-bottom: 0.8em !important; letter-spacing: -0.02em !important; }
 
 /* ======================================================
    📱 8. CẤU HÌNH TABLET & MOBILE
