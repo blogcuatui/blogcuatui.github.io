@@ -142,6 +142,14 @@ header nav ul li a {
     padding-top: 1px !important; 
 }
 
+@media (max-width: 600px) {
+    #theme-toggle {
+        font-size: 22px !important;    /* Phóng to icon trên mobile */
+        padding: 8px !important;      /* Tăng vùng chạm (hit area) */
+        margin-right: -8px !important; /* Cân bằng lại khoảng cách lề */
+    }
+}
+
 /* ======================================================
    ⚡ 5. LIST BÀI VIẾT & ĐƯỜNG DẪN MẮT
    ====================================================== */
