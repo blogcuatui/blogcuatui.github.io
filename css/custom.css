@@ -255,63 +255,45 @@ body.dark-theme .tags a, body.dark-theme .post-tags a, body.dark-theme .post-met
 body.dark-theme .tags a:hover, body.dark-theme .post-tags a:hover, body.dark-theme .post-meta a[href*="/tags/"]:hover, body.dark-theme a[href*="/tags/"]:hover { background-color: #4a5568 !important; color: #ffffff !important; }
 
 
-/* Style cho nút back SVG */
+/* ======================================================
+   ✨14. CẤU HÌNH ICON & NÚT BACK (GỘP)
+   ====================================================== */
+
+/* Nút Back */
 .back-button {
     display: inline-flex !important;
-    flex-direction: row !important; /* Đảm bảo icon và chữ nằm cùng hàng ngang */
-    align-items: center !important; /* Căn giữa theo chiều dọc */
-    justify-content: flex-start !important; /* Bắt đầu từ bên trái */
+    align-items: center !important;
+    gap: 6px !important;
     color: #111 !important;
     text-decoration: none !important;
     font-size: 16px !important;
     font-weight: 500 !important;
-    gap: 6px !important; /* Khoảng cách giữa icon và chữ (dùng gap thay cho margin-left) */
     transition: transform 0.2s ease !important;
 }
+.back-button:hover { transform: translateX(-4px); }
+.back-button svg { display: block !important; flex-shrink: 0 !important; }
 
-/* Đảm bảo SVG không bị ép xuống dòng */
-.back-button svg {
-    display: block !important;
-    flex-shrink: 0 !important; /* Ngăn không cho icon bị co lại */
-    margin-top: 0 !important; /* Xóa margin-top cũ */
-}
-
-/* 1. Mặc định (Light mode): Icon là màu Đen */
-#theme-toggle svg {
-    stroke: #000000 !important;
-    transition: stroke 0.3s ease !important;
-}
-
-/* 2. Ép icon thành màu trắng khi ở Dark Mode */
-body.dark-theme #theme-toggle svg {
-    stroke: #ffffff !important;
-}
-
-/* 3. Đảm bảo nút cha không bị đổi màu vô tội vạ */
-#theme-toggle {
-    color: inherit !important;
-    display: inline-flex !important;
-    align-items: center !important;
-}
-
+/* Nút Theme Toggle (Đã gộp) */
 #theme-toggle {
     display: inline-flex !important;
     align-items: center !important;
     justify-content: center !important;
     cursor: pointer !important;
-    color: #1a1a1a !important; /* Màu mặc định cho chữ và icon */
     transition: transform 0.3s ease, color 0.3s ease !important;
 }
+#theme-toggle:hover { transform: rotate(15deg) scale(1.1); }
 
-/* Ép icon nhỏ lại một chút để cân bằng với font 16px */
+/* Kích thước & Màu sắc Icon (Cố định ở đây) */
 #theme-toggle svg {
     display: block !important;
-    width: 17px !important;  /* Giảm từ 20px xuống 17px để nhỏ bằng chữ */
+    width: 17px !important;
     height: 17px !important;
-    stroke-width: 2.2 !important; /* Tăng độ dày nét lên tí cho sắc nét */
+    stroke-width: 2.2 !important;
+    stroke: #000000 !important; /* Mặc định Light Mode: Đen */
+    transition: stroke 0.3s ease !important;
 }
 
-/* Đảm bảo chữ days.log cũng dùng chung font-size này */
-header .header-left a {
-    font-size: 16px !important;
+/* Chế độ tối: Icon tự thành màu trắng */
+body.dark-theme #theme-toggle svg {
+    stroke: #ffffff !important;
 }
