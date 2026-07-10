@@ -258,12 +258,37 @@ h2[itemprop="name headline"] {
       margin: 1.5rem auto 4rem auto !important;
       padding: 0 1.25rem !important;
    }
-   header, header nav, header ul, .menu {
-      gap: 1rem !important;
+   
+   header {
+      display: flex !important;
+      justify-content: space-between !important; /* Vẫn giữ cho tên blog ở trái */
+      align-items: center !important;
+      gap: 0.5rem !important; 
    }
+
+   header nav {
+      margin-left: auto !important; /* Đẩy toàn bộ khối nav sang phải */
+      display: flex !important;
+      align-items: center !important;
+   }
+
+   header nav ul {
+      display: flex !important;
+      gap: 0.8rem !important;
+      margin-right: 0.8rem !important; /* Khoảng cách giữa Menu và Icon */
+      padding: 0 !important;
+   }
+
+   /* Loại bỏ khoảng trống thừa của icon */
+   #theme-toggle {
+      padding-left: 0 !important;
+      margin-left: 0 !important;
+   }
+
    header a:not(:has(img)) {
       font-size: 15px !important;
    }
+
    h1 {
       font-size: 24px !important;
       font-weight: 700 !important;
@@ -271,25 +296,30 @@ h2[itemprop="name headline"] {
       margin-top: 2.5rem !important;
       margin-bottom: 1.2rem !important;
    }
+
    main p, article p, span[itemprop="articleBody"] p, .content p, main ul li, article ul li, span[itemprop="articleBody"] ul li {
       font-size: 16px !important;
       line-height: 1.6 !important;
       margin-bottom: 1.3rem !important;
    }
+
    ul.posts li {
       display: flex !important;
       margin-bottom: 1.2rem !important;
    }
+
    ul.posts li a {
       display: block !important;
       font-size: 17px !important;
       line-height: 1.5 !important;
       margin-bottom: 0 !important;
    }
+
    ul.posts li::before {
       margin: 0 0.6rem !important;
       transform: translateY(-3px) !important;
    }
+
    ul.posts li time {
       font-size: 0.85rem !important;
    }
