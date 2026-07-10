@@ -479,3 +479,39 @@ body.dark-theme ul.posts:hover li a {
 body.dark-theme ul.posts li:hover a {
   color: #fff !important;
 }
+
+
+
+
+/* Ép ảnh về kích thước tối giản, cố định */
+article img, .content img, span[itemprop="articleBody"] img {
+    /* Đặt tỷ lệ khung hình 16:9 hoặc 3:2 để ảnh luôn nằm trong khung hình ngang */
+    aspect-ratio: 16 / 9 !important; 
+    
+    /* Ép ảnh lấp đầy khung hình đó */
+    object-fit: cover !important; 
+    
+    /* Chiều rộng tối đa */
+    max-width: 100% !important; 
+    
+    display: block !important;
+    margin: 2rem auto !important;
+    border-radius: 0.25rem !important;
+    border: 1px solid #eee !important;
+}
+
+/* Dark mode hỗ trợ viền */
+body.dark-theme img {
+    border-color: #333 !important;
+}
+
+/* Thêm cái này vào nếu muốn ảnh tự chuyển sang trắng đen */
+article img {
+    filter: grayscale(100%) !important;
+    transition: filter 0.5s ease !important;
+}
+
+/* Khi hover chuột vào mới hiện màu */
+article img:hover {
+    filter: grayscale(0%) !important;
+}
