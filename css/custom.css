@@ -91,7 +91,7 @@ header {
   display: flex !important;
   justify-content: space-between !important;
   align-items: center !important;
-  margin: 0 0 3rem 0 !important;
+  margin: 0 0 4rem 0 !important;
   padding: 0 !important;
 }
 header .header-left a {
