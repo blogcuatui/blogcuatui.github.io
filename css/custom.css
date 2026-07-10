@@ -480,9 +480,6 @@ body.dark-theme ul.posts li:hover a {
   color: #fff !important;
 }
 
-
-
-
 /* Ép ảnh về kích thước tối giản, cố định */
 article img, .content img, span[itemprop="articleBody"] img {
     /* Đặt tỷ lệ khung hình 16:9 hoặc 3:2 để ảnh luôn nằm trong khung hình ngang */
