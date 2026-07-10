@@ -128,6 +128,25 @@ header nav ul li a {
   /* Nếu bạn có class này cho icon */
   padding-top: 1px !important;
 }
+/* Chặn không cho trình duyệt "quét khối" (bôi đen) khi click nhanh */
+#theme-toggle,ul.posts li a,.header-left a {
+  -webkit-user-select: none !important;
+  /* Safari */
+  -ms-user-select: none !important;
+  /* IE 10+ */
+  user-select: none !important;
+  /* Standard */
+  -webkit-tap-highlight-color: transparent !important;
+  /* Chặn highlight màu xanh trên mobile */
+}
+/* Đảm bảo icon theme không bị "dính" vào vùng chữ */
+#theme-toggle {
+  cursor: pointer !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  /* Thêm khoảng đệm nhỏ để chuột không chạm nhầm vào tiêu đề */
+  padding-left: 10px !important;
+}
 /* ======================================================⚡ 5. LIST BÀI VIẾT & ĐƯỜNG DẪN MẮT====================================================== */
 ul.posts {
   list-style-type: none !important;
@@ -192,7 +211,6 @@ body.dark-theme ul.posts li:hover time {
   /* Hiện rõ hơn trong dark mode */
   opacity: 1 !important;
 }
-
 /* ======================================================📐 6. ĐỘ PHÂN TRANG (PAGINATION: NEWER / OLDER)====================================================== */
 .pagination {
   display: flex !important;
@@ -452,7 +470,6 @@ body.dark-theme .tags a:hover, body.dark-theme .post-tags a:hover, body.dark-the
 body.dark-theme #theme-toggle svg {
   stroke: #ffffff !important;
 }
-
 /* 1. Mặc định: Tất cả các tiêu đề đều bình thường */
 ul.posts {
   transition: opacity 0.3s ease !important;
@@ -479,36 +496,29 @@ body.dark-theme ul.posts:hover li a {
 body.dark-theme ul.posts li:hover a {
   color: #fff !important;
 }
-
 /* Ép ảnh về kích thước tối giản, cố định */
 article img, .content img, span[itemprop="articleBody"] img {
-    /* Đặt tỷ lệ khung hình 16:9 hoặc 3:2 để ảnh luôn nằm trong khung hình ngang */
-    aspect-ratio: 16 / 9 !important; 
-    
-    /* Ép ảnh lấp đầy khung hình đó */
-    object-fit: cover !important; 
-    
-    /* Chiều rộng tối đa */
-    max-width: 100% !important; 
-    
-    display: block !important;
-    margin: 2rem auto !important;
-    border-radius: 0.25rem !important;
-    border: 1px solid #eee !important;
+  /* Đặt tỷ lệ khung hình 16:9 hoặc 3:2 để ảnh luôn nằm trong khung hình ngang */
+  aspect-ratio: 16 / 9 !important;
+  /* Ép ảnh lấp đầy khung hình đó */
+  object-fit: cover !important;
+  /* Chiều rộng tối đa */
+  max-width: 100% !important;
+  display: block !important;
+  margin: 2rem auto !important;
+  border-radius: 0.25rem !important;
+  border: 1px solid #eee !important;
 }
-
 /* Dark mode hỗ trợ viền */
 body.dark-theme img {
-    border-color: #333 !important;
+  border-color: #333 !important;
 }
-
 /* Thêm cái này vào nếu muốn ảnh tự chuyển sang trắng đen */
 article img {
-    filter: grayscale(100%) !important;
-    transition: filter 0.5s ease !important;
+  filter: grayscale(100%) !important;
+  transition: filter 0.5s ease !important;
 }
-
 /* Khi hover chuột vào mới hiện màu */
 article img:hover {
-    filter: grayscale(0%) !important;
+  filter: grayscale(0%) !important;
 }
