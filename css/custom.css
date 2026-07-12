@@ -148,9 +148,8 @@ body.dark-theme #theme-toggle svg { stroke: #ffffff !important; }
 /* ======================================================
    ICONS & BACK BUTTON 
    ====================================================== */
-.back-button { display: inline-flex !important; align-items: center !important; gap: 6px !important; color: #111 !important; text-decoration: none !important; font-size: 16px !important; font-weight: 500 !important; transition: transform 0.2s ease !important; }
+.back-button { display: inline-flex !important; align-items: center !important; gap: 6px !important; color: #111 !important; text-decoration: none !important; font-size: 16px !important; font-weight: 500 !important; transition: transform 0.2s ease !important;}
 .back-button:hover { color: #111 !important; }
 .back-button svg { display: block !important; flex-shrink: 0 !important; }
-#theme-toggle { display: inline-flex !important; align-items: center !important; justify-content: center !important; cursor: pointer !important; transition: transform 0.3s ease, color 0.3s ease !important; }
-#theme-toggle:hover { transform: rotate(15deg) scale(1.1); }
-#theme-toggle svg { display: block !important; width: 17px !important; height: 17px !important; stroke-width: 2.2 !important; stroke: #000000 !important; transition: stroke 0.3s ease !important; }
+#theme-toggle { display: inline-flex !important; align-items: center !important; justify-content: center !important; cursor: pointer !important; transition: transform 0.3s ease, color 0.3s ease !important;}
+#theme-toggle svg { display: block !important; width: 17px !important; height: 17px !important; stroke-width: 2.2 !important; stroke: #000000 !important; transition: stroke 0.3s ease !important;}
