@@ -44,7 +44,7 @@ p {
 }
 
 main p, article p, span[itemprop="articleBody"] p, .content p, main ul li, article ul li, span[itemprop="articleBody"] ul li { 
-  font-size: clamp(15px, 0.4vw + 14px, 16px) !important; 
+  font-size: clamp(14px, -0.2vw + 15px, 13px) !important;
   line-height: 1.75 !important; 
   margin-bottom: 1.6rem !important; 
   color: #1a1a1a !important; 
