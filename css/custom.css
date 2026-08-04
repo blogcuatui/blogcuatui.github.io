@@ -86,7 +86,7 @@ ul.posts li:hover time { opacity: 1 !important; color: #888 !important; }
 /* ======================================================
    ARTICLE 
    ====================================================== */
-h2[itemprop="name headline"] { font-size: clamp(1.35rem, 1vw + 1.65rem, 1.65rem) !important; font-weight: 500 !important; line-height: 1.25 !important; margin-top: 17px !important; margin-bottom: 0.8em !important; letter-spacing: -0.02em !important; }
+h2[itemprop="name headline"] { font-size: 1.1875rem !important; font-weight: 500 !important; line-height: 1.25 !important; margin-top: 17px !important; margin-bottom: 0.8em !important; letter-spacing: -0.02em !important; }
 ul.posts, main > section > h2[itemprop="name headline"], main > section > span[itemprop="articleBody"] { margin-top: 1rem !important; }
 
 /* ======================================================
