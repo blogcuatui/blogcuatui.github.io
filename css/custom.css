@@ -179,3 +179,15 @@ body.dark-theme #theme-toggle svg { stroke: #ffffff !important; }
 .back-button svg { display: block !important; flex-shrink: 0 !important; }
 #theme-toggle { display: inline-flex !important; align-items: center !important; justify-content: center !important; cursor: pointer !important; transition: transform 0.3s ease, color 0.3s ease !important;}
 #theme-toggle svg { display: block !important; width: 17px !important; height: 17px !important; stroke-width: 2.2 !important; stroke: #000000 !important; transition: stroke 0.3s ease !important;}
+
+
+
+.cursor {
+    display: inline-block;
+    animation: blink 1.2s step-end infinite; /* 1.2s là tốc độ chớp, chậm và dễ chịu */
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
