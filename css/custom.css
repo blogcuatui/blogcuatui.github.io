@@ -20,7 +20,7 @@ html, body {
   text-size-adjust: 100%; 
   -webkit-text-size-adjust: 100%; 
 }
-body { width: 100% !important; max-width: 560px !important; margin: 5rem auto 6rem auto !important; padding: 0 1.25rem !important; box-sizing: border-box !important; }
+body { width: 100% !important; max-width: 480px !important; margin: 5rem auto 6rem auto !important; padding: 0 1.25rem !important; box-sizing: border-box !important; }
 
 /* ======================================================
    LAYOUT 
