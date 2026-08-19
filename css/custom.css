@@ -662,13 +662,3 @@ body.dark-theme #theme-toggle svg {
     stroke: #000000 !important;
     transition: stroke 0.3s ease !important;
 }
-
-.cursor {
-    display: inline-block;
-    animation: blink 1.2s step-end infinite;
-}
-
-@keyframes blink {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0; }
-}
