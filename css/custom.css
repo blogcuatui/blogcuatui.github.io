@@ -30,7 +30,7 @@ html, body {
 
 body {
     width: 100% !important;
-    max-width: 680px !important;
+    max-width: 600px !important;
     margin: 5rem auto 6rem auto !important;
     padding: 0 1.5rem !important;
     box-sizing: border-box !important;
