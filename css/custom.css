@@ -30,7 +30,7 @@ html, body {
 
 body {
     width: 100% !important;
-    max-width: 480px !important;
+    max-width: 680px !important;
     margin: 5rem auto 6rem auto !important;
     padding: 0 1.5rem !important;
     box-sizing: border-box !important;
@@ -605,6 +605,11 @@ body.dark-theme #theme-toggle svg {
 }
 
 @media (max-width: 480px) {
+    body {
+        max-width: 100% !important;
+        margin: 1.5rem auto 4rem auto !important;
+        padding: 0 1.25rem !important;
+    }
     h1 {
         font-size: 22px !important;
         margin-top: 2rem !important;
