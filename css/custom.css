@@ -582,8 +582,8 @@ body.dark-theme #theme-toggle svg {
         margin-bottom: 1.2rem !important;
     }
     main p, article p, span[itemprop="articleBody"] p, .content p, main ul li, article ul li, span[itemprop="articleBody"] ul li {
-        font-size: 16px !important;
-        line-height: 1.7 !important;
+        font-size: 1.1rem !important;
+        line-height: 1.75 !important;
         margin-bottom: 1.4rem !important;
     }
     ul.posts li {
