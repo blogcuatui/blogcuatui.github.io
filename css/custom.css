@@ -17,8 +17,8 @@ body.dark-theme {
 html, body { 
     background-color: #fdfdfd !important; 
     color: #1a1a1a; 
-    font-family: ui-monospace, SFMono-Regular, "SF Mono", "JetBrains Mono", Menlo, Consolas, "Space Mono", monospace !important; 
-    line-height: 1.75 !important; 
+    font-family: "Lora", Georgia, serif !important; /* Đưa Lora lên đầu tiên */
+    line-height: 1.8 !important; 
     font-weight: 400 !important;
     letter-spacing: -0.01em !important;
     text-align: left !important;
@@ -30,9 +30,9 @@ html, body {
 
 body {
     width: 100% !important;
-    max-width: 600px !important;
+    max-width: 680px !important;
     margin: 5rem auto 6rem auto !important;
-    padding: 0 1.5rem !important;
+    padding: 0 2rem !important;
     box-sizing: border-box !important;
 }
 
@@ -62,17 +62,17 @@ h1 {
     font-size: clamp(22px, 1.2vw + 16px, 28px) !important;
     margin: 3.5rem 0 2rem !important;
     letter-spacing: -0.01em !important;
-    line-height: 1.25 !important;
+    line-height: 1.3 !important;
     font-weight: 700 !important;
 }
 
 h2 {
-    font-size: 1.3rem !important;
+    font-size: 1.4rem !important;
     margin-bottom: 0.8em !important;
 }
 
 h3 {
-    font-size: 1.1rem !important;
+    font-size: 1.2rem !important;
     margin-bottom: 0.5em !important;
     font-style: italic;
 }
@@ -83,14 +83,15 @@ article h2, article h3, article h4, .post-content h2, .post-content h3 {
 
 p { 
     margin: 0 0 1.6em 0 !important; 
-    font-size: 1rem !important; 
+    font-size: 1.125rem !important; /* Tăng kích thước đoạn văn lên ~18px cho dễ đọc */
     color: #111 !important; 
     text-align: left !important; 
 }
 
+/* Tăng kích thước chữ cho các khối nội dung bài viết và danh sách */
 main p, article p, span[itemprop="articleBody"] p, .content p, main ul li, article ul li, span[itemprop="articleBody"] ul li { 
-    font-size: clamp(14px, -0.2vw + 15px, 13px) !important;
-    line-height: 1.75 !important; 
+    font-size: 1.125rem !important; /* Tương đương 18px, chuẩn size đọc sách */
+    line-height: 1.8 !important; 
     margin-bottom: 1.6rem !important; 
     color: #1a1a1a !important; 
     text-align: left !important; 
@@ -251,11 +252,11 @@ ul.posts li:hover time {
    ARTICLE 
    ====================================================== */
 h2[itemprop="name headline"] {
-    font-size: 1.1875rem !important;
-    font-weight: 500 !important;
+    font-size: clamp(1.5rem, 1vw + 1.2rem, 1.9rem) !important; /* To bản, nổi bật như ảnh mẫu */
+    font-weight: 700 !important;
     line-height: 1.25 !important;
-    margin-top: 17px !important;
-    margin-bottom: 0.8em !important;
+    margin-top: 2rem !important;
+    margin-bottom: 2rem !important;
     letter-spacing: -0.02em !important;
 }
 
