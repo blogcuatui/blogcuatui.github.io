@@ -201,7 +201,7 @@ ul.posts li {
 }
 
 ul.posts li a {
-    font-size: 1.125rem !important;
+    font-size: 1.188rem !important;
     color: #111111 !important;
     text-decoration: none !important;
     line-height: 1.5 !important;
@@ -592,7 +592,7 @@ body.dark-theme #theme-toggle svg {
     }
     ul.posts li a {
         display: block !important;
-        font-size: 17px !important;
+        font-size: 19px !important;
         line-height: 1.5 !important;
         margin-bottom: 0 !important;
     }
@@ -622,7 +622,7 @@ body.dark-theme #theme-toggle svg {
         margin-bottom: 1.3rem !important;
     }
     ul.posts li a {
-        font-size: 16px !important;
+        font-size: 19px !important;
     }
     ul.posts li time {
         font-size: 12px !important;
