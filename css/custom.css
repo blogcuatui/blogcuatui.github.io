@@ -582,9 +582,11 @@ body.dark-theme #theme-toggle svg {
         margin-bottom: 1.2rem !important;
     }
     main p, article p, span[itemprop="articleBody"] p, .content p, main ul li, article ul li, span[itemprop="articleBody"] ul li {
-        font-size: 1.1rem !important;
-        line-height: 1.75 !important;
-        margin-bottom: 1.4rem !important;
+        font-size: clamp(1.15rem, 0.5vw + 0.95rem, 1.2rem) !important;
+        line-height: 1.8 !important;
+        margin-bottom: 1.6rem !important;
+        color: #1a1a1a !important; 
+        text-align: left !important;
     }
     ul.posts li {
         display: flex !important;
