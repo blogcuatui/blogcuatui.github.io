@@ -206,9 +206,10 @@ ul.posts li a {
     line-height: 1.5 !important;
     flex: 0 1 auto !important;
     order: 1 !important;
+    transition: opacity 0.3s ease, color 0.3s ease !important;
 }
 
-/* Đường gạch đứt nét mặc định bị ẩn đi */
+/* Đường gạch mặc định ẩn */
 ul.posts li::before {
     content: "" !important;
     display: block !important;
@@ -217,33 +218,44 @@ ul.posts li::before {
     margin: 0 1rem !important;
     order: 2 !important;
     transform: translateY(-4px) !important;
-    opacity: 0 !important; /* Mặc định ẩn */
+    opacity: 0 !important;
     transition: opacity 0.3s ease !important;
 }
 
-/* Ngày tháng mặc định cũng ẩn đi */
+/* Ngày tháng mặc định ẩn */
 ul.posts li time {
     white-space: nowrap !important;
     font-family: ui-monospace, SFMono-Regular, "SF Mono", monospace !important;
     font-size: 0.85rem !important;
     font-weight: 300 !important;
-    color: #c8c8c8 !important;
+    color: #888888 !important;
     flex: 0 0 auto !important;
     order: 3 !important;
-    opacity: 0 !important; /* Mặc định ẩn */
+    opacity: 0 !important;
     transition: opacity 0.3s ease, color 0.3s ease !important;
 }
 
-/* Khi rê chuột vào dòng bài viết (li): Cả đường gạch và ngày tháng cùng hiện ra */
+/* --- HIỆU ỨNG KHI RÊ CHUỘT VÀO DANH SÁCH (Áp dụng chung Light/Dark) --- */
+/* Khi rê chuột vào vùng ul.posts, toàn bộ tiêu đề và ngày tháng khác bị mờ đi */
+ul.posts:hover li a,
+ul.posts:hover li time {
+    opacity: 0.3 !important;
+}
+
+/* Riêng dòng đang được rê chuột vào: Tiêu đề sáng đậm, đường gạch hiện ra, ngày tháng sáng rõ */
+ul.posts li:hover a {
+    opacity: 1 !important;
+    color: #000000 !important;
+}
+
 ul.posts li:hover::before {
-    opacity: 0.5 !important; /* Hoặc 1 tùy độ đậm bạn thích */
+    opacity: 0.5 !important;
 }
 
 ul.posts li:hover time {
     opacity: 1 !important;
-    color: #888 !important;
+    color: #555555 !important;
 }
-
 /* ======================================================
    ARTICLE 
    ====================================================== */
@@ -454,15 +466,6 @@ body.dark-theme span[itemprop="articleBody"] time {
     color: #e0e0e0 !important;
 }
 
-body.dark-theme ul.posts li:hover time {
-    opacity: 1 !important;
-    color: #bbbbbb !important;
-}
-
-body.dark-theme ul.posts li:hover a {
-    color: #ffffff !important;
-}
-
 body.dark-theme h1 {
     color: #ffffff !important;
 }
@@ -534,12 +537,25 @@ body.dark-theme a[href*="/tags/"]:hover {
     box-shadow: none !important;
 }
 
-body.dark-theme ul.posts:hover li a {
-    color: #555 !important;
+/* Hiệu ứng hover danh sách bài viết trong Dark Mode */
+body.dark-theme ul.posts:hover li a,
+body.dark-theme ul.posts:hover li time {
+    opacity: 0.3 !important;
 }
 
 body.dark-theme ul.posts li:hover a {
-    color: #fff !important;
+    opacity: 1 !important;
+    color: #ffffff !important;
+}
+
+body.dark-theme ul.posts li:hover time {
+    opacity: 1 !important;
+    color: #aaaaaa !important;
+}
+
+body.dark-theme ul.posts li:hover::before {
+    border-bottom-color: #444444 !important;
+    opacity: 0.8 !important;
 }
 
 body.dark-theme #theme-toggle svg {
