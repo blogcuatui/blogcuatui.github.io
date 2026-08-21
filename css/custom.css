@@ -190,7 +190,6 @@ ul.posts {
     list-style-type: none !important;
     padding: 0 !important;
     margin: 0 !important;
-    transition: opacity 0.3s ease !important;
 }
 
 ul.posts li {
@@ -209,6 +208,7 @@ ul.posts li a {
     order: 1 !important;
 }
 
+/* Đường gạch đứt nét mặc định bị ẩn đi */
 ul.posts li::before {
     content: "" !important;
     display: block !important;
@@ -217,9 +217,11 @@ ul.posts li::before {
     margin: 0 1rem !important;
     order: 2 !important;
     transform: translateY(-4px) !important;
-    opacity: 0.5 !important;
+    opacity: 0 !important; /* Mặc định ẩn */
+    transition: opacity 0.3s ease !important;
 }
 
+/* Ngày tháng mặc định cũng ẩn đi */
 ul.posts li time {
     white-space: nowrap !important;
     font-family: ui-monospace, SFMono-Regular, "SF Mono", monospace !important;
@@ -227,20 +229,14 @@ ul.posts li time {
     font-weight: 300 !important;
     color: #c8c8c8 !important;
     flex: 0 0 auto !important;
-    opacity: 0.5 !important;
-    transition: opacity 0.3s ease, color 0.3s ease !important;
-    pointer-events: none !important;
     order: 3 !important;
+    opacity: 0 !important; /* Mặc định ẩn */
+    transition: opacity 0.3s ease, color 0.3s ease !important;
 }
 
-ul.posts:hover li a {
-    opacity: 0.3 !important;
-    color: #999 !important;
-}
-
-ul.posts li:hover a {
-    opacity: 1 !important;
-    color: #000 !important;
+/* Khi rê chuột vào dòng bài viết (li): Cả đường gạch và ngày tháng cùng hiện ra */
+ul.posts li:hover::before {
+    opacity: 0.5 !important; /* Hoặc 1 tùy độ đậm bạn thích */
 }
 
 ul.posts li:hover time {
@@ -456,6 +452,15 @@ body.dark-theme span[itemprop="articleBody"] em,
 body.dark-theme span[itemprop="articleBody"] i, 
 body.dark-theme span[itemprop="articleBody"] time {
     color: #e0e0e0 !important;
+}
+
+body.dark-theme ul.posts li:hover time {
+    opacity: 1 !important;
+    color: #bbbbbb !important;
+}
+
+body.dark-theme ul.posts li:hover a {
+    color: #ffffff !important;
 }
 
 body.dark-theme h1 {
