@@ -98,56 +98,89 @@ main p, article p, span[itemprop="articleBody"] p, .content p, main ul li, artic
 }
 
 /* ======================================================
-   HEADER 
+   HEADER
    ====================================================== */
+
 header {
     display: flex !important;
-    justify-content: space-between !important;
-    align-items: center !important;
+    justify-content: flex-start !important;
+    align-items: baseline !important;
+    width: 100% !important;
     margin: 0 0 3rem 0 !important;
     padding: 0 !important;
 }
 
-header .header-left a {
-    font-weight: 700 !important;
-    color: #111 !important;
-    font-size: 16px !important;
-    line-height: 1 !important;
-    display: block !important;
-    padding-top: 2px !important;
-}
-
-header nav ul {
+/* Menu chính */
+header nav.main-menu {
     display: flex !important;
-    align-items: center !important;
+    align-items: baseline !important;
     margin: 0 !important;
     padding: 0 !important;
-    list-style: none !important;
+    gap: 0 !important;
 }
 
-header nav ul li {
-    margin-left: 1.5rem !important;
-    display: flex !important;
-    align-items: center !important;
-}
+/* Các link trong menu */
+header nav.main-menu a {
+    margin: 0 !important;
+    padding: 0 !important;
 
-header nav ul li a {
     font-size: 16px !important;
     color: #888 !important;
     line-height: 1 !important;
-    display: flex !important;
-    align-items: center !important;
+
+    display: inline-flex !important;
+    align-items: baseline !important;
+
+    text-decoration: none !important;
 }
 
-.dark-mode-toggle {
-    padding-top: 1px !important;
+/* Home */
+header .home-link {
+    font-weight: 700 !important;
+    color: #111 !important;
 }
 
-#theme-toggle {
+/* Nút quay lại */
+header .back-button {
+    display: inline-flex !important;
+    align-items: baseline !important;
+    gap: 6px !important;
+
+    font-size: 16px !important;
+    font-weight: 400 !important;
+    color: #111 !important;
+
+    text-decoration: none !important;
+}
+
+header .back-button svg {
+    transform: translateY(5px) !important;
+    display: block !important;
+    flex-shrink: 0 !important;
+}
+
+/* Dấu / */
+header .menu-separator {
+    display: inline-block !important;
+    margin: 0 0.7rem !important;
+
+    color: #888 !important;
+    font-size: 16px !important;
+    line-height: 1 !important;
+}
+
+/* Dark mode */
+header #theme-toggle {
     cursor: pointer !important;
+
     display: inline-flex !important;
     align-items: center !important;
-    padding-left: 10px !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    font-size: 16px !important;
+    line-height: 1 !important;
 }
 
 /* ======================================================
