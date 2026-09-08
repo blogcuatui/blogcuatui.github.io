@@ -119,6 +119,11 @@ header nav.main-menu {
     gap: 0 !important;
 }
 
+header nav.main-menu a.active {
+    font-weight: 700 !important;
+    color: #111 !important;
+}
+
 /* Các link trong menu */
 header nav.main-menu a {
     margin: 0 !important;
@@ -172,7 +177,7 @@ header .menu-separator {
 /* Dark mode */
 header #theme-toggle {
     cursor: pointer !important;
-
+    transform: translateY(4px) !important;
     display: inline-flex !important;
     align-items: center !important;
 
