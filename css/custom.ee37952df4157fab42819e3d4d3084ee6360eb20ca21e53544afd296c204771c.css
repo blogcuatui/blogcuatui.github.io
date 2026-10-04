@@ -1,4 +1,3 @@
-
 /* ======================================================
    VARIABLES
    ====================================================== */
@@ -32,11 +31,12 @@ body {
 
 body {
     width: 100% !important;
-    max-width: 500px !important;
-    margin: 4rem 0 6rem 4vw !important;
+    max-width: 560px !important;
+    margin: 9rem auto 6rem !important;
     padding: 2vh 2em 0 !important;
     box-sizing: border-box !important;
 }
+
 /* ======================================================
    LAYOUT
    ====================================================== */
@@ -51,7 +51,7 @@ footer {
     max-width: none !important;
     margin: 0 !important;
     padding: 0 !important;
-    text-align: justify !important;
+    text-align: left !important;
 }
 
 /* ======================================================
@@ -101,9 +101,9 @@ main p,
 article p,
 span[itemprop="articleBody"] p,
 .content p {
-    font-size: .85rem !important;
+    font-size: 15px !important;
     color: #111 !important;
-    text-align: justify;
+    text-align: left !important;
     margin: 0 0 1.35rem !important;
     line-height: 1.5 !important;
 }
@@ -113,7 +113,7 @@ article ul li,
 span[itemprop="articleBody"] ul li,
 .post-content ul li,
 .content ul li {
-    font-size: .85rem !important;
+    font-size: 15px !important;
     line-height: 1.45 !important;
     margin-bottom: .35rem !important;
 }
@@ -129,7 +129,7 @@ header {
 
 #theme-toggle {
     color: #888 !important;
-    font-size: .85rem !important;
+    font-size: 15px !important;
     font-weight: 400 !important;
     line-height: 1 !important;
     cursor: pointer !important;
@@ -209,7 +209,7 @@ ul.posts li:has(a:hover)::before {
 
 ul.posts li a {
     display: inline-block !important;
-    font-size: .85rem !important;
+    font-size: 15px !important;
     color: #111 !important;
     text-decoration: none !important;
     line-height: 1.5 !important;
@@ -302,7 +302,7 @@ article ul li,
 span[itemprop="articleBody"] ul li {
     position: relative !important;
     padding-left: 1.2rem !important;
-    text-align: justify !important;
+    text-align: left !important;
 }
 
 article ul li::before,
@@ -321,17 +321,17 @@ article ol li,
 .post-content ol li,
 .content ol li,
 span[itemprop="articleBody"] ol li {
-    font-size: .85rem !important;
+    font-size: 15px !important;
     line-height: 1.5 !important;
     margin-bottom: 1.2rem !important;
     color: inherit !important;
-    text-align: justify !important;
+    text-align: left !important;
 }
 
 main ol li ul,
 article ol li ul,
 .post-content ol li ul {
-    margin-top: 0.85rem !important;
+    margin-top: 0.8rem !important;
     margin-bottom: 0 !important;
 }
 
@@ -348,7 +348,7 @@ article ol li ul,
     border: none !important;
     box-shadow: none !important;
     border-radius: 0 !important;
-    font-size: .85rem !important;
+    font-size: 15px !important;
     font-family: inherit !important;
     font-weight: 400 !important;
     text-decoration: underline !important;
@@ -388,7 +388,7 @@ article ol li ul,
 
 .pagination a {
     color: #888 !important;
-    font-size: .85rem !important;
+    font-size: 0.9rem !important;
     text-decoration: none !important;
     transition: color 0.2s ease !important;
 }
@@ -551,18 +551,17 @@ body.dark-theme #theme-toggle svg {
 /* ======================================================
    RESPONSIVE
    ====================================================== */
-
 @media (max-width: 900px) {
     body {
-        margin: 3rem auto 6rem !important;
+        margin: 3rem auto 6rem;
     }
 }
 
 @media (max-width: 600px) {
     body {
         max-width: 100% !important;
-        margin: 3rem auto 4rem !important;
-        padding: 0 1.25rem !important;
+        margin: 1.5rem auto 4rem;
+        padding: 5vh 2em 0;
     }
 
     header {
@@ -577,7 +576,7 @@ body.dark-theme #theme-toggle svg {
     }
 
     header a:not(:has(img)) {
-        font-size: .85rem !important;
+        font-size: 15px !important;
     }
 
     h1 {
@@ -592,15 +591,15 @@ body.dark-theme #theme-toggle svg {
     article p,
     span[itemprop="articleBody"] p,
     .content p {
-        font-size: .85rem !important;
+        font-size: 15px !important;
         line-height: 1.5 !important;
         margin-bottom: 1.4rem !important;
     }
+
 }
 
 @media (max-width: 480px) {
     body {
-        margin: 3rem auto 4rem !important;
         padding: 0 1.25rem !important;
     }
 
@@ -611,10 +610,12 @@ body.dark-theme #theme-toggle svg {
     }
 
     ul.posts li a {
-        font-size: .85rem !important;
+        font-size: 15px !important;
         line-height: 1.5 !important;
     }
+
 }
+
 
 .site-header {
     display: block !important;
@@ -624,7 +625,7 @@ body.dark-theme #theme-toggle svg {
 .site-title {
     display: block !important;
     color: #111 !important;
-    font-size: .85rem !important;
+    font-size: 15px !important;
     font-weight: 400 !important;
     line-height: 1.5 !important;
     text-decoration: none !important;
@@ -669,7 +670,7 @@ body.dark-theme #theme-toggle svg {
 .main-menu a {
     color: #888 !important;
     text-decoration: none !important;
-    font-size: .85rem !important;
+    font-size: 15px !important;
     line-height: 1 !important;
 }
 
@@ -685,4 +686,3 @@ body.dark-theme .main-menu a {
 body.dark-theme .main-menu a:hover {
     color: #aaa !important;
 }
-
