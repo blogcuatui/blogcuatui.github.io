@@ -1,0 +1,384 @@
+513
+514
+515
+516
+517
+518
+519
+520
+521
+522
+523
+524
+525
+526
+527
+528
+529
+530
+531
+532
+533
+534
+535
+536
+537
+538
+539
+540
+541
+542
+543
+544
+545
+546
+547
+548
+549
+550
+551
+552
+553
+554
+555
+556
+557
+558
+559
+560
+561
+562
+563
+564
+565
+566
+567
+568
+569
+570
+571
+572
+573
+574
+575
+576
+577
+578
+579
+580
+581
+582
+583
+584
+585
+586
+587
+588
+589
+590
+591
+592
+593
+594
+595
+596
+597
+598
+599
+600
+601
+602
+603
+604
+605
+606
+607
+608
+609
+610
+611
+612
+613
+614
+615
+616
+617
+618
+619
+620
+621
+622
+623
+624
+625
+626
+627
+628
+629
+630
+631
+632
+633
+634
+635
+636
+637
+638
+639
+640
+641
+642
+643
+644
+645
+646
+647
+648
+649
+650
+651
+652
+653
+654
+655
+656
+657
+658
+659
+660
+661
+662
+663
+664
+665
+666
+667
+668
+669
+670
+671
+672
+673
+674
+675
+676
+677
+678
+679
+680
+681
+682
+683
+684
+685
+686
+687
+688
+689
+690
+691
+692
+693
+694
+695
+696
+697
+698
+699
+700
+701
+702
+703
+704
+    color: #666 !important;
+}
+
+body.dark-theme .pagination a:hover {
+    color: #fff !important;
+}
+
+body.dark-theme .tags a,
+body.dark-theme .post-tags a,
+body.dark-theme .post-meta a[href*="/tags/"] {
+    color: #888 !important; 
+}
+
+body.dark-theme .tags a:hover,
+body.dark-theme .post-tags a:hover,
+body.dark-theme .post-meta a[href*="/tags/"]:hover {
+    background: none !important;
+    color: #fff !important;
+    border: none !important;
+    box-shadow: none !important;
+}
+
+body.dark-theme ul.posts li a:hover {
+    color: #fff !important;
+}
+
+body.dark-theme ul.posts li::before {
+    color: #888 !important;
+}
+
+body.dark-theme ul.posts li:has(a:hover)::before {
+    color: #fff !important;
+}
+
+body.dark-theme #theme-toggle svg {
+    stroke: #888 !important;
+}
+
+/* ======================================================
+   RESPONSIVE
+   ====================================================== */
+
+@media (max-width: 900px) {
+    body {
+        margin: 3rem auto 6rem !important;
+    }
+}
+
+@media (max-width: 600px) {
+    body {
+        max-width: 100% !important;
+        margin: 3rem auto 4rem !important;
+        padding: 0 1.25rem !important;
+    }
+
+    header {
+        justify-content: space-between !important;
+        align-items: center !important;
+        gap: 0.5rem !important;
+    }
+
+    #theme-toggle {
+        padding-left: 0 !important;
+        margin-left: 0 !important;
+    }
+
+    header a:not(:has(img)) {
+        font-size: 1rem !important;
+    }
+
+    h1 {
+        font-size: 24px !important;
+        font-weight: 700 !important;
+        line-height: 1.5 !important;
+        margin-top: 2.5rem !important;
+        margin-bottom: 1.2rem !important;
+    }
+
+    main p,
+    article p,
+    span[itemprop="articleBody"] p,
+    .content p {
+        font-size: 1rem !important;
+        line-height: 1.5 !important;
+        margin-bottom: 1.4rem !important;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        margin: 3rem auto 4rem !important;
+        padding: 0 1.25rem !important;
+    }
+
+    h1 {
+        font-size: 22px !important;
+        margin-top: 2rem !important;
+        margin-bottom: 1rem !important;
+    }
+
+    ul.posts li a {
+        font-size: 1.1rem !important;
+        line-height: 1.35 !important;
+    }
+
+    ul.posts li .post-number {
+        font-size: 1.05rem !important;
+        width: 2.1rem !important;
+    }
+
+    .show-more {
+        font-size: 1.05rem !important;
+    }
+
+    .main-menu a {
+        font-size: 1.05rem !important;
+    }
+}
+
+
+.site-header {
+    display: block !important;
+    width: 100% !important;
+    margin: 0 0 1rem !important;
+    padding: 0 !important;
+    text-align: right !important;
+}
+
+.site-title {
+    display: inline-block !important;
+    width: fit-content !important;
+    color: #111 !important;
+    font-size: 1.5rem !important;
+    font-weight: 400 !important;
+    line-height: 1.5 !important;
+    text-decoration: none !important;
+}
+
+.header-dash {
+    display: block !important;
+    width: fit-content !important;
+    margin: 0 0 0 auto !important;
+    font-size: 16px !important;
+    line-height: 1 !important;
+}
+
+
+
+/* Navigation dưới pagination */
+.main-menu {
+    margin-top: 1.2rem !important;
+    margin-bottom: 0 !important;
+}
+
+.main-menu ul {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-end !important;
+    gap: 0 !important;
+    list-style: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+.main-menu li {
+    display: flex !important;
+    align-items: center !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    line-height: 1 !important;
+}
+
+.main-menu a {
+    color: #666 !important;
+    text-decoration: none !important;
+    font-size: 1rem !important;
+    line-height: 1 !important;
+    transition: color 0.2s ease;
+}
+
+.main-menu a:hover {
+    color: #333 !important;
+}
+
+/* Dark mode */
+body.dark-theme .main-menu a {
+    color: #666 !important;
+}
+
+body.dark-theme .main-menu a:hover {
+    color: #ddd !important;
+}
