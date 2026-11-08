@@ -1,0 +1,1668 @@
+@charset "UTF-8";
+
+/* =========================================================
+   MỤC LỤC
+   1. Biến (màu, layout, theo breakpoint)
+   2. Base
+   3. Khung layout
+   4. Typography + tiêu đề trang
+   5. Link
+   6. Header, site title, menu
+   7. Danh sách bài (ul.posts, tag, tìm kiếm, trang chủ)
+   8. Nội dung bài: ảnh, blockquote, list, bảng
+   9. Tag, pagination, ô tìm kiếm, show-more
+  10. Dropdown chọn năm (trang chủ)
+  11. Responsive: tablet, <=600, <=480
+
+   QUY ƯỚC
+   - Muốn đổi màu / khoảng cách chung: sửa ở mục 1.
+   - Dark mode: chỉ đổi biến ở body.dark-theme (mục 1). Rule dark riêng
+     của từng component nằm ngay cạnh component đó.
+   - Breakpoint dùng chung: 480 / 600 / 720 / 1024.
+   - Điện thoại dọc = (max-width: 720px) and (orientation: portrait),
+     (max-width: 599px).
+   ========================================================= */
+
+
+/* =========================================================
+   1. BIẾN
+   ========================================================= */
+:root {
+  /* Màu */
+  --bg: #fff;
+  --text: #2e2e2e;
+  --heading: #111;
+  --muted: #888;
+  --hover: #111;
+  --list-hover: #888;
+  --border: #ddd;
+  --hover-bg: rgba(0, 0, 0, .045);
+  --menu-shadow: 0 4px 14px rgba(0, 0, 0, .10);
+  --menu-bg: rgba(255, 255, 255, .85);
+  --quote-text: #555;
+  --link: #555;
+  --link-border: #ddd;
+  --tag-hash: #bbb;
+  --img-b: 1;
+  --img-c: 1;
+  --quote-bg: #f3f7f5;
+  --quote-border: #a8c8b8;
+
+  /* Layout (đổi theo breakpoint ở mục 3) */
+  --content-max: 460px;   /* bề rộng cột nội dung */
+  --header-mb: 1.5rem;    /* khoảng cách dưới site title */
+  --menu-gap: 1.5rem;     /* khoảng cách giữa các mục menu */
+  --menu-offset: var(--menu-gap); /* khoảng cách từ site title tới menu */
+  --font: "Inter", sans-serif;
+  --fs: 1rem;
+  --fs1: .875rem;
+
+}
+
+body.dark-theme {
+  --bg: #202020;
+  --text: #e0e0e0;
+  --heading: #fff;
+  --muted: #999;
+  --hover: #fff;
+  --list-hover: #fff;
+  --border: #444;
+  --hover-bg: rgba(255, 255, 255, .06);
+  --menu-shadow: 0 4px 14px rgba(0, 0, 0, .45);
+  --menu-bg: rgba(255, 255, 255, .07);
+  --link: var(--text);
+  --img-b: .85;
+  --img-c: 1.1;
+  --quote-bg: #292e2c;
+  --quote-border: #668d7b;
+  --quote-text: #d0d5d2;
+}
+
+/* =========================================================
+   2. BASE
+   ========================================================= */
+html {
+  width: 100%;
+  overflow-x: clip;
+}
+
+html,
+body {
+  background-color: var(--bg) !important;
+  color: var(--text);
+  font-family: var(--font);
+  line-height: 1.5 !important;
+  font-weight: 400 !important;
+  letter-spacing: -0.01em !important;
+  text-align: left !important;
+  -webkit-font-smoothing: antialiased !important;
+  -moz-osx-font-smoothing: grayscale !important;
+  text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+/* <html> nằm ngoài body.dark-theme nên không nhận biến dark → ghi cứng */
+html:has(body.dark-theme) {
+  background-color: #202020 !important;
+}
+
+body {
+  width: 100% !important;
+  max-width: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  box-sizing: border-box !important;
+  overflow-x: clip;
+}
+
+main,
+article,
+section,
+.content,
+.page-content,
+footer {
+  width: 100% !important;
+  max-width: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+header {
+  width: 100% !important;
+  max-width: none !important;
+  margin: 0 0 3rem !important;
+  padding: 0 !important;
+  justify-content: flex-start !important;
+  align-items: baseline !important;
+}
+
+/* Dark mode: ép màu chữ chung.
+   LƯU Ý: độ ưu tiên là (0,1,1) vì body.dark-theme vẫn được tính.
+   Rule nào cần màu khác trong dark phải có độ ưu tiên cao hơn,
+   hoặc bằng và viết SAU rule này (menu, tag, pagination... đều đã vậy). */
+body.dark-theme :where(h2, h3, h4, h5, h6, p, li, span, a, time, strong, em, b, i) {
+  color: var(--text) !important;
+}
+
+body.dark-theme h1 {
+  color: var(--heading) !important;
+}
+
+body.dark-theme :where(.wrapper, .container, .main, main) {
+  background-color: var(--bg) !important;
+}
+
+
+/* =========================================================
+   3. KHUNG LAYOUT
+   Mặc định = desktop/tablet (cột 460px, menu ngang).
+   Mỗi breakpoint chỉ đổi biến ở :root.
+   ========================================================= */
+
+/* Điện thoại xoay ngang: cột nội dung không giới hạn 460 */
+@media (orientation: landscape) and (min-width: 600px) and (max-width: 720px) {
+  :root {
+    --content-max: none;
+    --header-mb: 1rem;
+  }
+}
+
+/* Điện thoại dọc: sidebar nằm trên nội dung */
+@media (max-width: 720px) and (orientation: portrait), (max-width: 599px) {
+  :root {
+    --header-mb: 1rem;
+    --menu-gap: 1rem;
+  }
+
+  .site-layout {
+    gap: 24px !important;
+  }
+
+  .home-page .home-layout {
+    gap: 14px !important;
+  }
+
+  .home-page .home-sidebar::after,
+  .site-layout > .sidebar::after {
+    content: "";
+    display: block;
+    margin-top: 10px;
+  }
+
+    /* Khôi phục menu trên mobile */
+  .home-page .home-sidebar,
+  .site-layout > .sidebar {
+    display: block !important;
+  }
+
+  .site-layout .site-header,
+  .home-page .home-sidebar .site-header {
+    display: block !important;
+    width: 100% !important;
+    margin-bottom: var(--header-mb) !important;
+  }
+
+  .site-layout .main-menu,
+  .home-page .home-sidebar .main-menu {
+    margin: 0 !important;
+  }
+
+  .site-layout .main-menu ul,
+  .home-page .home-sidebar .main-menu ul {
+    justify-content: flex-start !important;
+    flex-wrap: wrap !important;
+  }
+}
+
+/* Khung ngoài */
+.home-page,
+.site-layout {
+  width: calc(100% - 48px) !important;
+  margin: 2rem auto 6rem !important;
+  padding: 0 !important;
+  box-sizing: border-box !important;
+}
+
+.home-page {
+  max-width: none !important;
+}
+
+.site-layout {
+  max-width:500px !important;
+}
+
+/* Trục dọc: sidebar trên, nội dung dưới */
+.home-page .home-layout,
+.site-layout {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 0 !important;
+  align-items: flex-start !important;
+}
+
+.home-page .home-layout {
+  width: 100% !important;
+  max-width: 500px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+/* Sidebar */
+.home-page .home-sidebar,
+.site-layout > .sidebar {
+  position: static !important;
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  justify-content: flex-start !important;
+  width: 100% !important;
+  max-width: 500px !important;
+  min-width: 0 !important;
+  margin: 0 auto !important;
+  padding: 0 !important;
+  border: 0 !important;
+  text-align: left !important;
+  transform: none !important;
+  box-sizing: border-box !important;
+}
+
+/* Nội dung (trang chủ + trang bài viết) */
+.home-page .home-content,
+.site-layout > main.content {
+  width: 100% !important;
+  max-width: 500px;
+  margin: 1.25rem auto 0 !important;
+  padding: 0 !important;
+  min-width: 0 !important;
+  box-sizing: border-box !important;
+  overflow-wrap: break-word;
+}
+
+.home-page .home-layout,
+.site-layout > main.content > section {
+  min-width: 0 !important;
+  box-sizing: border-box !important;
+}
+
+/* Vùng đọc bài */
+.site-layout > main.content > section > span[itemprop="articleBody"] {
+  display: block !important;
+  width: 100% !important;
+  max-width: 760px !important;
+  margin-top: 0 !important;
+  box-sizing: border-box !important;
+}
+
+.site-layout > main.content > section > span[itemprop="articleBody"] table {
+  max-width: 660px !important;
+  box-sizing: border-box !important;
+}
+
+.home-page img,
+.site-layout img,
+.site-layout iframe,
+.site-layout video,
+.site-layout pre,
+.site-layout table {
+  max-width: 100% !important;
+}
+
+.site-layout pre,
+.site-layout table {
+  overflow-x: auto;
+}
+
+
+/* PC (chuột/trackpad, >1024px): cả cột nằm sát trái.
+   iPad và điện thoại (cảm ứng) giữ nguyên canh giữa.
+   Chỉnh khoảng cách lề trái ở --pc-left. */
+@media (min-width: 1025px) and (hover: hover) and (pointer: fine) {
+  :root {
+    --pc-left: clamp(48px, 8vw, 160px);
+  }
+
+  .home-page,
+  .site-layout {
+    width: calc(100% - var(--pc-left) - 48px) !important;
+    margin-left: var(--pc-left) !important;
+    margin-right: 0 !important;
+  }
+
+  .home-page .home-layout,
+  .home-page .home-sidebar,
+  .site-layout > .sidebar,
+  .home-page .home-content,
+  .site-layout > main.content {
+    margin-left: 0 !important;
+    margin-right: auto !important;
+  }
+}
+
+
+
+
+
+/* =========================================================
+   4. TYPOGRAPHY
+   ========================================================= */
+h1,
+h2,
+h3,
+h4,
+h5 {
+  color: var(--heading);
+  line-height: 1.5;
+  font-weight: 400 !important;
+  margin-top: 0 !important;
+  text-align: left !important;
+}
+
+h1 {
+  font-size: clamp(1.4rem, 4vw, 1.6rem) !important;
+  margin: 3.5rem 0 2rem !important;
+  letter-spacing: -0.01em !important;
+  line-height: 1.5 !important;
+  font-weight: 700 !important;
+}
+
+h2 {
+  font-size: clamp(1.1rem, 3.5vw, 1.35rem) !important;
+  margin-bottom: 0.8em !important;
+}
+
+h3 {
+  font-size: clamp(1rem, 3vw, 1.2rem) !important;
+  margin-bottom: 0.5em !important;
+  font-style: italic;
+}
+
+article h2,
+article h3,
+article h4,
+.post-content h2,
+.post-content h3 {
+  margin-top: 2.5em !important;
+}
+
+/* Đoạn văn. Danh sách selector dài là cố ý: mỗi cái có độ ưu tiên khác
+   nhau để thắng các rule khác ở từng ngữ cảnh. Muốn đổi cỡ chữ thì
+   sửa ở đây (desktop), mục 11 (mobile / tablet). */
+p,
+main p,
+article p,
+span[itemprop="articleBody"] p,
+.content p,
+table,
+table th,
+table td {
+  font-size: var(--fs) !important;
+  color: var(--text) !important;
+  line-height: 1.65 !important;
+}
+
+p,
+main p,
+article p,
+span[itemprop="articleBody"] p,
+.content p {
+  margin: 0 0 1.5rem !important;
+}
+
+/* --- Tiêu đề trang: bài viết / tìm kiếm / tag dùng chung kiểu chữ --- */
+.site-layout > main.content > section:has(span[itemprop="articleBody"]) > h1,
+.site-layout > main.content:has(#search-input) > section > h1,
+.site-layout > main.content.tag-page > section > h1 {
+  color: var(--heading) !important;
+  font-size: var(--fs) !important;
+  font-weight: 550 !important;
+  line-height: 1.4 !important;
+  margin: 0 0 20px !important;
+  padding: 0 !important;
+  transform: none !important;
+}
+
+/* Riêng bài viết: có khoảng cách trên */
+.site-layout > main.content > section:has(span[itemprop="articleBody"]) > h1 {
+  margin: 0px 0 20px !important;
+}
+
+@media (max-width: 720px) {
+  .site-layout > main.content > section:has(span[itemprop="articleBody"]) > h1 {
+    margin-bottom: 28px !important;
+  }
+}
+
+/* Riêng trang tag: "#tên-tag" viết thường */
+.site-layout > main.content.tag-page > section > h1 {
+  text-transform: lowercase;
+}
+
+.site-layout > main.content.tag-page > section > h1::before {
+  content: "#";
+  margin-right: 0.05em;
+}
+
+/* Tiêu đề page thường (không phải bài viết, không phải tìm kiếm) */
+.site-layout:not(:has(.article-back)) > main.content:not(:has(#search-input)) > section > h1:first-child {
+  margin-top: 0 !important;
+  margin-bottom: 20px !important;
+  padding: 0 !important;
+  transform: none !important;
+}
+
+
+/* =========================================================
+   5. LINK
+   ========================================================= */
+article a,
+.post-content a {
+  color: var(--link) !important;
+  border-bottom: 1px solid var(--link-border) !important;
+  text-decoration: none;
+  transition: border-color 0.3s ease;
+}
+
+article a:hover,
+.post-content a:hover {
+  color: var(--hover) !important;
+  border-bottom-color: var(--hover) !important;
+}
+
+.post-title a,
+.posts li a,
+header a,
+footer a {
+  border-bottom: none !important;
+  text-decoration: none !important;
+  color: var(--text);
+  transition: color 0.2s ease-in-out;
+}
+
+#theme-toggle,
+ul.posts li a,
+.header-left a {
+  -webkit-user-select: none !important;
+  -ms-user-select: none !important;
+  user-select: none !important;
+  -webkit-tap-highlight-color: transparent !important;
+}
+
+
+/* =========================================================
+   6. HEADER, SITE TITLE, MENU
+   ========================================================= */
+.site-header {
+  display: block !important;
+  margin: 0 0 1rem !important;
+  padding: 0 !important;
+  width: 100%;
+  text-align: right !important;
+}
+
+.site-layout .site-header,
+.home-page .home-sidebar .site-header {
+  display: flex !important;
+  flex: 0 0 auto !important;
+  width: auto !important;
+  margin: 0 !important;
+  text-align: left !important;
+}
+
+.site-title {
+  display: inline-block !important;
+  width: fit-content !important;
+  color: var(--heading) !important;
+  font-family: var(--font) !important;
+  font-size: var(--fs) !important;
+  font-weight: 550 !important;
+  line-height: 1.5 !important;
+  letter-spacing: -0.01em !important;
+  text-decoration: none !important;
+}
+
+/* Nút Back ở trang bài viết */
+.site-layout .site-title.article-back {
+  display: inline-grid !important;
+  align-items: center !important;
+  justify-content: flex-start !important;
+  width: auto !important;
+  height: auto !important;
+  min-height: 0 !important;
+  margin-left: 0 !important;
+  padding: 0 !important;
+  border: none !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  color: var(--heading) !important;
+  -webkit-text-fill-color: var(--heading) !important;
+  font-size: var(--fs) !important;
+  font-weight: 550 !important;
+  letter-spacing: -0.02em !important;
+  line-height: 1.5 !important;
+  text-decoration: none !important;
+  transform: none !important;
+  flex-shrink: 0 !important;
+  transition: color 0.2s ease;
+}
+
+.article-back .back-label,
+.article-back .title-sizer {
+  grid-area: 1 / 1;
+  justify-self: start;
+}
+
+/* back: cùng cỡ với leqa nhưng không làm nở nút */
+.article-back .back-label {
+  width: 0;
+  overflow: visible;
+  white-space: nowrap;
+}
+
+.article-back .title-sizer {
+  visibility: hidden;
+  pointer-events: none;
+}
+
+
+.site-layout .site-title.article-back:hover,
+.site-layout .site-title.article-back:focus,
+.site-layout .site-title.article-back:focus-visible,
+.site-layout .site-title.article-back:active {
+  color: var(--heading) !important;
+  -webkit-text-fill-color: var(--heading) !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  outline: none !important;
+}
+
+.site-layout > .sidebar,
+.home-page .home-sidebar {
+  padding-bottom: 16px !important;
+}
+
+
+
+/* Logo + nút đổi theme */
+.site-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.site-brand #theme-toggle {
+  margin: 0;
+}
+
+#theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--muted) !important;
+  font-size: 1rem !important;
+  font-weight: 400 !important;
+  line-height: 1 !important;
+  cursor: pointer !important;
+  appearance: none;
+  -webkit-appearance: none;
+}
+
+#theme-toggle:hover {
+  color: var(--hover) !important;
+}
+
+#theme-toggle svg {
+  display: block;
+  width: 17px;
+  height: 17px;
+}
+
+body.dark-theme #theme-toggle svg {
+  stroke: var(--muted) !important;
+}
+
+/* Menu (kiểu dọc, căn phải: chỉ còn dùng khi menu nằm NGOÀI
+   .site-layout / .home-sidebar. Nếu không có trường hợp đó có thể xóa) */
+.main-menu {
+  margin-top: 1.2rem !important;
+  margin-bottom: 0 !important;
+}
+
+.main-menu ul {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: flex-end !important;
+  gap: 0 !important;
+  list-style: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.main-menu li {
+  display: flex !important;
+  align-items: center !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  line-height: 1 !important;
+}
+
+.main-menu li::after {
+  content: none !important;
+}
+
+.main-menu a {
+  color: var(--muted) !important;
+  text-decoration: none !important;
+  font-size: 1rem !important;
+  line-height: 1 !important;
+  transition: color 0.2s ease;
+}
+
+.main-menu a i {
+  color: inherit !important;
+}
+
+.main-menu a:hover {
+  color: var(--hover) !important;
+}
+
+body.dark-theme .main-menu a.active,
+body.dark-theme .main-menu a[aria-current="page"] {
+  color: var(--heading) !important;
+}
+
+
+/* Active navigation - light mode */
+body:not(.dark-theme) .main-menu a.active,
+body:not(.dark-theme) .main-menu a[aria-current="page"] {
+  color: var(--heading) !important;
+}
+
+
+
+body.dark-theme .menu-separator {
+  color: #666 !important;
+}
+
+/* Menu ngang dưới site title (kiểu đang dùng).
+   Khoảng cách giữa các mục: biến --menu-gap */
+.site-layout .main-menu,
+.home-page .home-sidebar .main-menu {
+  flex: 0 0 auto !important;
+  margin: 0 0 0 var(--menu-offset) !important;
+  text-align: left !important;
+}
+
+.site-layout .main-menu ul,
+.home-page .home-sidebar .main-menu ul {
+  flex-direction: row !important;
+  flex-wrap: nowrap !important;
+  align-items: center !important;
+  justify-content: flex-start !important;
+  gap: var(--menu-gap) !important;
+}
+
+.site-layout .main-menu a:hover,
+.site-layout .main-menu a:focus-visible,
+.site-layout .main-menu a.active {
+  font-weight: 400 !important;
+}
+
+
+/* =========================================================
+   7. DANH SÁCH BÀI
+   ========================================================= */
+
+/* --- ul.posts (các trang thường) --- */
+ul.posts {
+  list-style: none !important;
+  padding: 0 !important;
+  margin: 1rem 0 0 !important;
+}
+
+.site-layout > main.content > section > ul.posts {
+  margin-top: 0.5rem !important;
+}
+
+.site-layout > main.content.tag-page > section > ul.posts {
+  margin-top: 0 !important;
+}
+
+@media (max-width: 720px) {
+  .site-layout > main.content.tag-page > section > ul.posts {
+    margin-top: 1.5rem !important;
+  }
+}
+
+ul.posts li {
+  display: flex !important;
+  align-items: baseline !important;
+  margin-bottom: 0.2rem !important;
+}
+
+ul.posts li::before {
+  content: none !important;
+  display: none !important;
+}
+
+ul.posts li .post-number,
+ul.posts li time {
+  display: none !important;
+}
+
+ul.posts li a {
+  display: inline-block !important;
+  color: var(--text) !important;
+  font-weight: 400;
+  letter-spacing: -0.015em !important;
+  font-size: 1.08rem !important;
+  line-height: 1.4 !important;
+  text-align: left !important;
+  text-decoration: none !important;
+}
+
+ul.posts li a:hover {
+  color: var(--list-hover) !important;
+}
+
+ul.posts li.post-hidden {
+  display: none !important;
+}
+
+/* --- Trang tag --- */
+.tag-page .tag-posts {
+  list-style: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  width: 100% !important;
+}
+
+/* --- Trang tag: ngày trái, tiêu đề phải --- */
+.tag-page .tag-posts > li {
+  display: grid !important;
+  grid-template-columns: 96px minmax(0, 1fr) !important;
+  column-gap: 8px !important;
+  align-items: baseline !important;
+  margin: 0 0 0.5rem !important;
+  padding: 0 !important;
+  min-width: 0 !important;
+  list-style: none !important;
+}
+
+.tag-page .tag-posts > li::before,
+.tag-page .tag-posts > li > a::before {
+  content: none !important;
+  display: none !important;
+}
+
+/* Tiêu đề bên phải */
+.tag-page .tag-posts > li > a {
+  grid-column: 2;
+  grid-row: 1;
+  display: block !important;
+  min-width: 0 !important;
+  width: fit-content !important;
+  max-width: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  font-family: var(--font) !important;
+  font-size: 1rem !important;
+  font-weight: 400 !important;
+  line-height: 1.5 !important;
+  letter-spacing: -0.01em !important;
+  text-decoration: none !important;
+  text-underline-offset: 4px !important;
+  opacity: 1;
+  transition: opacity 0.25s ease, color 0.25s ease;
+}
+
+/* Ngày tháng bên trái */
+.tag-page .tag-posts > li > time {
+  grid-column: 1;
+  grid-row: 1;
+  display: block !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  color: var(--muted) !important;
+  font-size: 0.9rem !important;
+  line-height: 1.5 !important;
+  text-align: left !important;
+  white-space: nowrap !important;
+  font-variant-numeric: tabular-nums !important;
+}
+
+/* Hiệu ứng spotlight */
+@media (hover: hover) {
+  .tag-page .tag-posts:has(li:hover) li > a {
+    opacity: 0.3;
+  }
+
+  .tag-page .tag-posts:has(li:hover) li:hover > a {
+    opacity: 1;
+  }
+
+ .tag-page .tag-posts > li:hover > a {
+  color: var(--heading) !important;
+  text-decoration: underline !important;
+  text-decoration-color: var(--heading) !important;
+}
+
+  .tag-page .tag-posts > li:hover > time {
+    color: var(--heading) !important;
+    opacity: 1 !important;
+  }
+}
+
+/* --- Kết quả tìm kiếm ---
+   li ẩn mặc định (không dùng !important) để JS bật lại
+   bằng style.display = "grid" / "block". */
+#search-results {
+  list-style: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  width: 100% !important;
+}
+
+#search-results li {
+  display: none;
+  grid-template-columns: 96px minmax(0, 1fr);
+  column-gap: 8px;
+  align-items: baseline;
+  margin: 0 0 0.5rem !important;
+  padding: 0 !important;
+  width: 100% !important;
+  min-width: 0 !important;
+  line-height: 1.5 !important;
+  list-style: none !important;
+}
+
+#search-results li::before,
+#search-results li a::before {
+  content: none !important;
+  display: none !important;
+}
+
+#search-results li time {
+  grid-column: 1;
+  grid-row: 1;
+  text-align: left !important;
+  display: block !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  color: var(--muted) !important;
+  opacity: 0.55 !important;
+  font-size: 0.9rem !important;
+  line-height: 1.5 !important;
+  font-variant-numeric: tabular-nums !important;
+  white-space: nowrap !important;
+  transition: color 0.2s ease, opacity 0.2s ease;
+}
+
+@media (hover: hover) {
+  #search-results li:hover time {
+    color: var(--heading) !important;
+    opacity: 1 !important;
+  }
+
+  .tag-page .tag-posts > li {
+  pointer-events: none;
+}
+
+.tag-page .tag-posts > li > a,
+.tag-page .tag-posts > li > time {
+  pointer-events: auto;
+}
+}
+
+#search-results li a {
+  grid-column: 2;
+  grid-row: 1;
+  display: block !important;
+  min-width: 0 !important;
+  width: fit-content !important;
+  max-width: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  font-size: 1rem !important;
+  line-height: 1.5 !important;
+  text-align: left !important;
+  text-decoration: none !important;
+  text-underline-offset: 4px !important;
+  opacity: 1;
+  transition: opacity 0.25s ease, color 0.25s ease;
+}
+
+/* Hiệu ứng spotlight cho kết quả tìm kiếm */
+
+@media (hover: hover) {
+  #search-results:has(li:hover) li a {
+    opacity: 0.3;
+  }
+
+  #search-results:has(li:hover) li:hover a {
+    opacity: 1;
+  }
+}
+
+#search-results li a:hover {
+  color: var(--heading) !important;
+  text-decoration: underline !important;
+  text-decoration-color: var(--heading) !important;
+}
+
+#search-results li {
+  pointer-events: none;
+}
+
+#search-results li a,
+#search-results li time {
+  pointer-events: auto;
+}
+
+#no-results {
+  display: none;
+}
+
+/* --- Danh sách trang chủ --- */
+.home-page ul.home-post-list {
+  list-style: none !important;
+  margin-left: 0 !important;
+  padding-left: 0 !important;
+}
+
+.home-page ul.home-post-list li.home-post {
+  display: grid !important;
+  grid-template-columns: 56px minmax(0, 1fr) !important;
+  column-gap: 8px !important;
+  align-items: baseline !important;
+  margin: 0 !important;
+  padding: 4px 0 4px 0 !important;
+  padding-inline-start: 0 !important;
+  text-indent: 0 !important;
+  line-height: 1.4 !important;
+  min-height: 0 !important;
+}
+
+.home-page ul.home-post-list li::before,
+.home-page ul.home-post-list li a::before {
+  content: none !important;
+  display: none !important;
+}
+
+.home-page ul.home-post-list li time {
+  grid-column: 1 !important;
+  grid-row: 1 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  justify-self: start !important;
+  float: none !important; 
+  display: block !important;
+  color: var(--muted) !important;
+  font-size: 0.875rem !important;
+  text-align: left !important;
+  white-space: nowrap;
+  opacity: 0.55 !important;
+  visibility: visible !important;
+  transition: color 0.2s ease;
+}
+
+.home-page ul.home-post-list li.home-post:hover time {
+  color: var(--text) !important;
+}
+
+@media (hover: hover) {
+  .home-page ul.home-post-list li.home-post:hover time {
+    color: var(--heading) !important;
+    opacity: 1 !important;
+  }
+}
+
+.home-page ul.home-post-list li a {
+  width: fit-content !important;
+  max-width: 100% !important;
+  grid-column: 2;
+  grid-row: 1;
+  display: block !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+  box-shadow: none !important;
+  color: var(--text) !important;
+  font-size: var(--fs) !important;
+  font-weight: 400 !important;
+  line-height: 1.4 !important;
+  text-decoration: none !important;
+}
+
+.home-page ul.home-post-list li a:hover {
+  color: var(--heading) !important;
+  text-decoration: underline !important;
+  text-decoration-color: var(--heading) !important;
+  text-underline-offset: 4px !important;
+}
+
+.home-page ul.home-post-list li.home-post {
+  pointer-events: none;
+}
+
+.home-page ul.home-post-list li.home-post a,
+.home-page ul.home-post-list li.home-post time {
+  pointer-events: auto;
+}
+
+/* Hiệu ứng spotlight cho danh sách bài viết */
+.home-page .home-post-list a {
+  opacity: 1;
+  transition: opacity 0.25s ease, color 0.25s ease;
+}
+
+@media (hover: hover) {
+  .home-page .home-post-list:has(li:hover) li a {
+    opacity: 0.3;
+  }
+
+  .home-page .home-post-list:has(li:hover) li:hover a {
+    opacity: 1;
+  }
+}
+
+/* Ẩn theo năm / "xem thêm". Độ ưu tiên cao hơn li.home-post
+   nên không phụ thuộc thứ tự viết trong file. */
+.home-page ul.home-post-list li.home-post:is(.year-hidden, .post-hidden) {
+  display: none !important;
+}
+
+@media (max-width: 720px) {
+  .home-page ul.home-post-list li.home-post {
+    padding: 3px 0 !important;
+  }
+}
+
+/* Nút xem thêm ở cuối trang chủ */
+.home-page .home-show-more {
+  display: block;
+  width: fit-content;
+  margin: 18px 0 0 !important;
+  padding-left: 0 !important;
+  text-indent: 0 !important;
+}
+
+.home-page .home-show-more[hidden] {
+  display: none !important;
+}
+
+
+/* =========================================================
+   8. NỘI DUNG BÀI: ẢNH, BLOCKQUOTE, LIST, BẢNG
+   ========================================================= */
+
+/* Ảnh: trắng đen, rê chuột ra màu */
+article img,
+.post-content img,
+.content img,
+span[itemprop="articleBody"] img {
+  display: block;
+  width: auto !important;
+  max-width: 100% !important;
+  height: auto !important;
+  max-height: none !important;
+  aspect-ratio: auto !important;
+  object-fit: contain !important;
+  border: none !important;
+  margin: 2em auto;
+  filter: grayscale(100%) brightness(var(--img-b)) contrast(var(--img-c)) !important;
+  transition: filter 0.5s ease !important;
+}
+
+/* Ảnh trang Giới thiệu: chỉ khác phần giới hạn chiều cao + bo góc */
+.site-layout:not(:has(.article-back)) > main.content > section > span[itemprop="articleBody"] img {
+  max-height: 420px !important;
+  border-radius: 4px !important;
+  margin: 2em auto !important;
+}
+
+article img:hover {
+  filter: grayscale(0%) brightness(var(--img-b)) contrast(var(--img-c)) !important;
+}
+
+body.dark-theme img {
+  filter: brightness(var(--img-b)) contrast(var(--img-c));
+  border-color: #333 !important;
+}
+
+body.dark-theme header a img,
+body.dark-theme .menu a img {
+  mix-blend-mode: normal !important;
+  filter: none !important;
+}
+
+/* Blockquote – dạng khối nền nhạt */
+blockquote {
+  margin: 1.2rem 0 !important;
+  padding: 14px 20px !important;
+  border: none !important;
+  border-left: 2px solid var(--quote-border) !important;
+  border-radius: 0 8px 8px 0 !important;
+  background: var(--quote-bg) !important;
+  color: var(--quote-text) !important;
+  font-style: normal !important;
+  opacity: 1 !important;
+  text-align: left !important;
+  box-sizing: border-box !important;
+}
+
+span[itemprop="articleBody"] blockquote p,
+.post-content blockquote p,
+blockquote p {
+  margin: 0 !important;
+  padding: 0 !important;
+  line-height: 1.65 !important;
+  font-style: normal !important;
+  color: var(--quote-text) !important;
+}
+
+/* Bỏ dấu ngoặc kép tự động */
+blockquote p::before,
+blockquote p::after {
+  content: none !important;
+}
+
+/* Màu chữ trong quote. Nhiều selector là cố ý (thang độ ưu tiên)
+   để thắng rule màu của p / a ở các ngữ cảnh khác nhau */
+blockquote *,
+body main blockquote *,
+span[itemprop="articleBody"] blockquote *,
+.post-content blockquote * {
+  color: var(--quote-text) !important;
+}
+
+/* Danh sách dấu * */
+article ul,
+.post-content ul,
+.content ul,
+span[itemprop="articleBody"] ul {
+  list-style: none !important;
+  padding-left: 0 !important;
+}
+
+main ul li,
+article ul li,
+span[itemprop="articleBody"] ul li,
+.post-content ul li,
+.content ul li {
+  font-size: 1rem !important;
+  line-height: 1.5 !important;
+  margin-bottom: 0.35rem !important;
+}
+
+article ul li,
+.post-content ul li,
+span[itemprop="articleBody"] ul li {
+  position: relative !important;
+  padding-left: 1.2rem !important;
+}
+
+article ul li::before,
+.post-content ul li::before,
+span[itemprop="articleBody"] ul li::before {
+  content: "*" !important;
+  position: absolute !important;
+  left: 0 !important;
+  top: 0 !important;
+  color: inherit !important;
+}
+
+main ol li,
+article ol li,
+.post-content ol li,
+.content ol li,
+span[itemprop="articleBody"] ol li {
+  font-size: 1rem !important;
+  line-height: 1.5 !important;
+  margin-bottom: 1.2rem !important;
+  color: inherit !important;
+}
+
+main ol li ul,
+article ol li ul,
+.post-content ol li ul {
+  margin-top: 1.2rem !important;
+  margin-bottom: 0 !important;
+}
+
+/* Bảng: nền trong suốt, màu theo biến (light + dark dùng chung) */
+table {
+  margin-bottom: 2rem !important;
+}
+
+table,
+table :is(thead, tbody, tfoot, tr, th, td) {
+  background: transparent !important;
+  color: var(--text) !important;
+  border-color: var(--border) !important;
+}
+
+table :is(th, td) :where(p, span, a, strong, em, b, i, code) {
+  color: inherit !important;
+}
+
+/* Dark mode: ảnh PNG (sơ đồ, nét vẽ nền trong suốt) đảo màu */
+body.dark-theme span[itemprop="articleBody"] img[src$=".png"] {
+  filter: invert(1) grayscale(100%) brightness(var(--img-b)) contrast(var(--img-c)) !important;
+}
+/* =========================================================
+   9. TAG, PAGINATION, TÌM KIẾM, SHOW-MORE
+   ========================================================= */
+
+/* Tag cuối bài: #tag */
+.tags a,
+.post-tags a,
+.post-meta a[href*="/tags/"] {
+  display: inline-block !important;
+  background: none !important;
+  color: var(--muted) !important;
+  padding: 0 !important;
+  border: none !important;
+  box-shadow: none !important;
+  border-radius: 0 !important;
+  font-family: inherit !important;
+  font-weight: 400 !important;
+  text-decoration: none !important;
+  margin: 0 8px 0 0 !important;
+  transition: color 0.2s ease !important;
+}
+
+.tags a::before,
+.post-tags a::before,
+.post-meta a[href*="/tags/"]::before {
+  content: "#" !important;
+  display: inline-block !important;
+  color: var(--tag-hash) !important;
+  text-decoration: none !important;
+  margin-right: 1px !important;
+}
+
+/* Không gạch chân / viền cho mọi link tag; chỉ gạch khi rê chuột */
+a[href*="/tags/"] {
+  border-bottom: none !important;
+  box-shadow: none !important;
+  text-decoration: none !important;
+}
+
+.tags a:hover,
+.post-tags a:hover,
+.post-meta a[href*="/tags/"]:hover,
+a[href*="/tags/"]:hover {
+  color: var(--hover) !important;
+  text-decoration: underline !important;
+  text-decoration-color: currentColor !important;
+  text-decoration-thickness: 1px !important;
+  text-underline-offset: 4px !important;
+}
+
+.meta .tag,
+.meta .tag a,
+.meta .tag-hash {
+  font-size: 0.875rem !important;
+}
+
+/* Ngày tháng cuối bài */
+.meta time {
+  font-size: 0.875rem !important;
+  color: var(--muted) !important;
+}
+
+.site-layout > main.content > section > .meta {
+  margin-top: 1rem !important;
+  padding-top: 0 !important;
+}
+
+/* Pagination */
+.pagination {
+  display: flex !important;
+  justify-content: flex-start !important;
+  align-items: center !important;
+  margin-top: 1.5rem !important;
+  padding: 0 !important;
+}
+
+.pagination a {
+  color: var(--muted) !important;
+  font-size: 1rem !important;
+  text-decoration: none !important;
+  transition: color 0.2s ease !important;
+}
+
+.pagination a:hover {
+  color: var(--hover) !important;
+}
+
+.pagination-empty {
+  display: none !important;
+}
+
+/* Search box - Minimal underline */
+.search-box {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  max-width: 50%;
+  box-sizing: border-box;
+  padding: 0 0 10px;
+  margin: 0 0 1.5rem;
+  border: none;
+  border-bottom: 1px solid var(--border);
+  border-radius: 0;
+  background: transparent;
+}
+
+.search-box:focus-within {
+  border-bottom-color: var(--heading);
+}
+
+.search-icon {
+  display: none !important;
+}
+
+.search-box input {
+  flex: 1;
+  min-width: 0;
+  width: 100%;
+  padding: 0;
+  border: none !important;
+  outline: none !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  color: var(--text) !important;
+  font: inherit;
+  font-size: 1rem !important;
+}
+
+.search-box input::placeholder {
+  color: var(--muted);
+  opacity: 1;
+}
+
+/* Dark mode */
+.dark-theme .search-box input::-webkit-search-cancel-button {
+  filter: invert(1);
+}
+
+/* Nút Xem thêm */
+.show-more {
+  display: block;
+  margin: 0.8rem 0 0;
+  padding: 0;
+  border: none;
+  background: none;
+  color: var(--muted);
+  font: inherit;
+  font-size: 15px;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.show-more:hover {
+  color: var(--text);
+}
+
+.show-more::after {
+  content: "";
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  margin-left: 8px;
+  border-right: 1.5px solid currentColor;
+  border-bottom: 1.5px solid currentColor;
+  transform: rotate(45deg) translateY(-2px);
+  vertical-align: middle;
+}
+
+
+/* =========================================================
+   10. DROPDOWN CHỌN NĂM (TRANG CHỦ)
+   ========================================================= */
+.home-page .home-year-selector {
+  position: relative;
+  top: 0 !important;
+  display: block;
+  width: 100%;
+  margin: 0 0 20px !important;
+  padding: 0 !important;
+  text-align: left !important;
+}
+
+.home-page .year-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  font-family: inherit;
+  font-size: 1.125rem;
+  font-weight: 550;
+  cursor: pointer;
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.home-page .year-toggle:focus-visible {
+  outline: 1px solid var(--muted);
+  outline-offset: 4px;
+}
+
+.home-page .year-chevron {
+  width: 7px;
+  height: 7px;
+  border-right: 1.5px solid currentColor;
+  border-bottom: 1.5px solid currentColor;
+  transform: rotate(45deg);
+  transition: transform 180ms ease;
+}
+
+.home-page .year-toggle[aria-expanded="true"] .year-chevron {
+  transform: rotate(225deg);
+}
+
+.home-page .year-menu {
+  position: absolute;
+  z-index: 20;
+  top: calc(100% + 12px);
+  left: 0;
+  right: auto;
+  min-width: 0;
+  width: max-content;
+  padding: 6px;
+  border: 1px solid var(--border);
+  border-radius: 7px;
+  background: var(--menu-bg);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: var(--menu-shadow);
+  animation: year-menu-in 160ms ease-out;
+}
+
+.home-page .year-menu[hidden] {
+  display: none !important;
+}
+
+.home-page .year-option {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+  padding: 7px 10px;
+  border: 0;
+  border-radius: 4px;
+  background: transparent;
+  color: var(--muted);
+  font-family: inherit;
+  font-size: .875rem;
+  text-align: left;
+  cursor: pointer;
+  transition: background 150ms ease, color 150ms ease;
+}
+
+.home-page .year-option:hover {
+  color: var(--hover);
+}
+
+@media (pointer: coarse) {
+  .home-page .year-option {
+    padding: 12px 10px;
+  }
+}
+
+/* Năm đang chọn: phân biệt bằng màu + độ đậm (không dùng dấu tick) */
+.home-page .year-option[aria-pressed="true"] {
+  color: var(--heading);
+  font-weight: 600;
+}
+
+/* Dark mode: thắng rule ép màu chung ở mục 2 */
+body.dark-theme .home-page .year-option:not([aria-pressed="true"]):not(:hover),
+body.dark-theme .home-page .year-option:not([aria-pressed="true"]):not(:hover) span {
+  color: var(--muted) !important;
+}
+
+body.dark-theme .home-page .year-option[aria-pressed="true"],
+body.dark-theme .home-page .year-option[aria-pressed="true"] span {
+  color: var(--heading) !important;
+}
+
+/* Ẩn dấu tick */
+.home-page .year-check {
+  display: none !important;
+}
+
+@keyframes year-menu-in {
+  from {
+    opacity: 0;
+    transform: translateY(-5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .home-page .year-menu {
+    animation: none;
+  }
+}
+
+
+/* =========================================================
+   11. RESPONSIVE
+   Chỉ chứa phần chỉnh cỡ chữ theo thiết bị.
+   Phần layout theo breakpoint nằm ở mục 3 (biến) và cạnh từng component.
+   ========================================================= */
+
+/* Điện thoại <= 600 */
+@media (max-width: 600px) {
+  header {
+    justify-content: space-between !important;
+    align-items: center !important;
+    gap: 0.5rem !important;
+  }
+
+  header a:not(:has(img)) {
+    font-size: 1rem !important;
+  }
+
+  #theme-toggle {
+    margin-left: 0 !important;
+  }
+
+  h1 {
+    font-size: 24px !important;
+    font-weight: 700 !important;
+    line-height: 1.5 !important;
+    margin-top: 2.5rem !important;
+    margin-bottom: 1.2rem !important;
+  }
+
+main p,
+article p,
+span[itemprop="articleBody"] p,
+.content p,
+table,
+table th,
+table td {
+  font-size: 1rem !important;
+  line-height: 1.65 !important;
+}
+
+main p,
+article p,
+span[itemprop="articleBody"] p,
+.content p {
+  margin-bottom: 1.4rem !important;
+}
+
+    /* Kích thước chữ danh sách trong bài viết trên mobile */
+  main ul li,
+  article ul li,
+  span[itemprop="articleBody"] ul li,
+  .post-content ul li,
+  .content ul li {
+    font-size: 1rem !important;
+    line-height: 1.65 !important;
+  }
+}
+
+/* Điện thoại nhỏ <= 480 */
+@media (max-width: 480px) {
+  h1 {
+    font-size: 22px !important;
+    margin-top: 2rem !important;
+    margin-bottom: 1rem !important;
+  }
+
+  .show-more {
+    font-size: .875rem;
+  }
+}
+
+/* iPad / tablet 721–1024: chữ to hơn, layout giữ nguyên */
+@media (min-width: 721px) and (max-width: 1024px) {
+  .home-page ul.home-post-list li a {
+    font-size: 1.125rem !important;
+    line-height: 1.5 !important;
+  }
+
+  .home-page ul.home-post-list li time {
+    font-size: 1rem !important;
+  }
+
+  .home-page .year-toggle {
+    font-size: 1.125rem !important;
+  }
+
+  .site-title {
+    font-size: 1.35rem !important;
+  }
+
+  .main-menu a {
+    font-size: 1rem !important;
+  }
+
+ p,
+main p,
+article p,
+span[itemprop="articleBody"] p,
+.content p,
+table,
+table th,
+table td {
+  font-size: --var(--fs1) !important;
+  color: var(--text) !important;
+  line-height: 1.65 !important;
+}
+}
