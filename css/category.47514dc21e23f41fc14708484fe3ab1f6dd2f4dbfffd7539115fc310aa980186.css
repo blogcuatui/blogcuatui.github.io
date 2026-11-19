@@ -1,0 +1,127 @@
+/* =========================================================
+   CATEGORY — leqa log
+   Dán vào cuối assets/css/custom.css hoặc file CSS đang dùng.
+   Dùng class riêng để không ảnh hưởng Archive / Tags.
+   ========================================================= */
+
+/* Trang danh sách danh mục */
+.category-index .category-list,
+.category-term .category-posts {
+  list-style: none !important;
+  width: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.category-index .category-list {
+  margin-top: 2rem !important;
+}
+
+.category-index .category-list > li {
+  display: grid !important;
+  grid-template-columns: minmax(0, 1fr) auto !important;
+  align-items: baseline !important;
+  column-gap: 16px !important;
+  margin: 0 !important;
+  padding: 9px 0 !important;
+  border-bottom: 1px solid var(--border) !important;
+}
+
+.category-index .category-list > li::before,
+.category-term .category-posts > li::before {
+  content: none !important;
+  display: none !important;
+}
+
+.category-index .category-list > li > a {
+  min-width: 0 !important;
+  color: var(--text) !important;
+  font-size: 1.08rem !important;
+  line-height: 1.45 !important;
+  font-weight: 400 !important;
+  text-decoration: none !important;
+  overflow-wrap: anywhere;
+}
+
+.category-index .category-list > li > a:hover {
+  color: var(--list-hover) !important;
+}
+
+.category-index .category-count,
+.category-index .category-total,
+.category-term .category-description {
+  color: var(--muted) !important;
+  font-size: 1rem !important;
+  font-weight: 400 !important;
+  font-variant-numeric: tabular-nums;
+}
+
+.category-index .category-count {
+  white-space: nowrap;
+}
+
+.category-index .category-total {
+  margin: 1.25rem 0 0 !important;
+}
+
+/* Trang bài viết thuộc một danh mục */
+.category-term .category-description {
+  margin: -10px 0 2rem !important;
+}
+
+.category-term .category-posts > li {
+  display: grid !important;
+  grid-template-columns: minmax(0, 1fr) auto !important;
+  align-items: baseline !important;
+  column-gap: 16px !important;
+  margin: 0 !important;
+  padding: 9px 0 !important;
+  border-bottom: 1px solid var(--border) !important;
+  min-width: 0 !important;
+}
+
+.category-term .category-posts > li > a {
+  min-width: 0 !important;
+  color: var(--text) !important;
+  font-size: 1.08rem !important;
+  line-height: 1.45 !important;
+  font-weight: 400 !important;
+  text-decoration: none !important;
+  overflow-wrap: anywhere;
+}
+
+.category-term .category-posts > li > a:hover {
+  color: var(--list-hover) !important;
+}
+
+.category-term .category-posts > li > time {
+  color: var(--muted) !important;
+  font-size: 1rem !important;
+  line-height: 1.45 !important;
+  white-space: nowrap !important;
+  font-variant-numeric: tabular-nums !important;
+}
+
+/* Dark mode dùng đúng biến màu sẵn có của blog */
+body.dark-theme .category-index .category-list > li,
+body.dark-theme .category-term .category-posts > li {
+  border-bottom-color: var(--border) !important;
+}
+
+@media (max-width: 480px) {
+  .category-index .category-list > li,
+  .category-term .category-posts > li {
+    column-gap: 10px !important;
+    padding: 8px 0 !important;
+  }
+
+  .category-index .category-list > li > a,
+  .category-term .category-posts > li > a {
+    font-size: 1rem !important;
+  }
+
+  .category-index .category-count,
+  .category-term .category-posts > li > time {
+    font-size: .9rem !important;
+  }
+}
