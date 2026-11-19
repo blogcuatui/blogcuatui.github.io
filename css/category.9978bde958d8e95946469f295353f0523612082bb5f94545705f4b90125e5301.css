@@ -1,0 +1,173 @@
+/* =========================================================
+   CATEGORY — leqa log
+   Chỉ điều khiển giao diện hai trang taxonomy và term.
+   Chiều rộng khung trang term được đặt riêng trong custom.css.
+   ========================================================= */
+
+/* Danh sách danh mục và danh sách bài trong danh mục */
+.category-index .category-list,
+.category-term .category-posts {
+  display: flex !important;
+  flex-direction: column !important;
+  list-style: none !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* Tiêu đề hai trang dùng cùng cỡ và cùng kiểu chữ */
+.site-layout.is-category-index > main.category-index > section > h1,
+.site-layout.is-category-term > main.category-term > section > h1 {
+  color: var(--heading) !important;
+  font-size: 1.5rem !important;
+  font-weight: 500 !important;
+  line-height: 1.3 !important;
+  letter-spacing: -0.02em !important;
+}
+
+/* Trang danh sách Categories */
+.category-index .category-list {
+  margin-top: 2rem !important;
+}
+
+.category-index .category-list > li {
+  display: grid !important;
+  grid-template-columns: minmax(0, 1fr) auto !important;
+  align-items: baseline !important;
+  column-gap: 16px !important;
+  width: 100% !important;
+  box-sizing: border-box !important;
+  margin: 0 !important;
+  padding: 11px 0 !important;
+}
+
+.category-index .category-list > li::before,
+.category-term .category-posts > li::before {
+  content: none !important;
+  display: none !important;
+}
+
+.category-index .category-list > li > a {
+  display: block !important;
+  min-width: 0 !important;
+  color: var(--text) !important;
+  font-size: 1.0625rem !important;
+  line-height: 1.45 !important;
+  font-weight: 400 !important;
+  text-decoration: none !important;
+  overflow-wrap: anywhere !important;
+}
+
+.category-index .category-list > li > a:hover,
+.category-term .category-posts > li > a:hover {
+  color: var(--list-hover) !important;
+}
+
+.category-index .category-count,
+.category-index .category-total,
+.category-term .category-description {
+  color: var(--muted) !important;
+  font-size: 1rem !important;
+  font-weight: 400 !important;
+  font-variant-numeric: tabular-nums !important;
+}
+
+.category-index .category-count {
+  white-space: nowrap !important;
+}
+
+.category-index .category-total {
+  margin: 1.25rem 0 0 !important;
+}
+
+/* Trang bài viết thuộc một danh mục */
+.site-layout.is-category-term > main.category-term > section > h1 {
+  margin: 5rem 0 1.5rem !important;
+}
+
+.category-term .category-description {
+  margin: 0 0 3.5rem !important;
+  line-height: 1.5 !important;
+}
+
+.category-term .category-posts > li {
+  display: grid !important;
+  grid-template-columns: minmax(0, 1fr) auto !important;
+  align-items: baseline !important;
+  column-gap: 16px !important;
+  width: 100% !important;
+  box-sizing: border-box !important;
+  min-width: 0 !important;
+  margin: 0 !important;
+  padding: 11px 0 !important;
+}
+
+.category-term .category-posts > li > a {
+  display: block !important;
+  min-width: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  color: var(--text) !important;
+  font-size: 1.0625rem !important;
+  line-height: 1.45 !important;
+  font-weight: 400 !important;
+  text-decoration: none !important;
+  white-space: normal !important;
+  overflow: visible !important;
+  text-overflow: clip !important;
+  overflow-wrap: anywhere !important;
+}
+
+.category-term .category-posts > li > time {
+  display: block !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  color: var(--muted) !important;
+  font-size: 1.0625rem !important;
+  line-height: 1.45 !important;
+  text-align: right !important;
+  white-space: nowrap !important;
+  font-variant-numeric: tabular-nums !important;
+}
+
+/* Màn hình desktop và iPad: cỡ chữ danh sách đồng bộ trang chủ */
+@media (min-width: 721px) {
+  .category-index .category-list > li > a,
+  .category-term .category-posts > li > a,
+  .category-term .category-posts > li > time {
+    font-size: 1.125rem !important;
+  }
+}
+
+/* Điện thoại */
+@media (max-width: 720px) {
+  .site-layout.is-category-index > main.category-index > section > h1,
+  .site-layout.is-category-term > main.category-term > section > h1 {
+    font-size: 1.375rem !important;
+  }
+
+  .site-layout.is-category-term > main.category-term > section > h1 {
+    margin: 3rem 0 1.5rem !important;
+  }
+
+  .category-term .category-description {
+    margin-bottom: 2.75rem !important;
+  }
+
+  .category-index .category-list > li,
+  .category-term .category-posts > li {
+    column-gap: 10px !important;
+    padding: 10px 0 !important;
+  }
+
+  .category-index .category-list > li > a,
+  .category-term .category-posts > li > a {
+    font-size: 1rem !important;
+  }
+
+  .category-index .category-count,
+  .category-term .category-posts > li > time {
+    font-size: .9rem !important;
+  }
+}
